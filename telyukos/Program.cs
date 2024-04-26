@@ -1,7 +1,10 @@
-﻿internal class Program
+﻿using telyukos;
+
+internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+       menu Menu = new menu();
+        Menu.menuUtama();
     }
 }
