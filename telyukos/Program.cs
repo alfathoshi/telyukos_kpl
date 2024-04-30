@@ -1,12 +1,21 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
+﻿using telyukos;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
-		Console.WriteLine('a');
+		configCreateKos config = new configCreateKos();
+
+        Console.WriteLine(config.konfig.nama_kos);
+
+
+        string nama = Console.ReadLine();
+
+		config.konfig.nama_kos = nama;
+
+		config.WriteConfigFile();
+
+		Console.WriteLine(config.konfig.nama_kos);
     }
 }
 
