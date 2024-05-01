@@ -1,16 +1,38 @@
-﻿using System.Globalization;
-using telyukos;
+﻿using Newtonsoft.Json;
+using System.Text.Json;
 
-internal class Program
+class Program
 {
     private static void Main(string[] args)
     {
+        List<Account> akun = new List<Account>();
+
+        jsonAdress json = new jsonAdress();
+
+        using (StreamReader reader = new StreamReader(json.filepath))
+        {
+            akun = JsonConvert.DeserializeObject<List<Account>>(reader.ReadToEnd());
+        }
+
+        foreach (var item in akun)
+        {
+            Console.WriteLine(item.username);
+        }
+        Console.WriteLine();
+
+
+        akun.Add(new Account(100, "a", "b", "c"));
+
+
+        foreach (var item in akun)
+        {
+            Console.WriteLine(item.username);
+        }
 
 
 
 
-
-		/*configCreateKos config = new configCreateKos();
+        /*configCreateKos config = new configCreateKos();
 
         Console.WriteLine(config.konfig.nama_kos);
 
@@ -25,12 +47,6 @@ internal class Program
     }
 }
 
-public static class clientAPI
-{
-	static HttpClient client = new HttpClient();
-	static HttpResponseMessage response;
-	
-}
 
 /*CRUD Pemilik Kos {
 	Create Kos (Automata, Table Driven, RunCog, API)
