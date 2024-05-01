@@ -44,12 +44,12 @@ namespace API.Controllers
         {
             if (_users.Any(u => u.Email == user.Email))
             {
-                return Conflict("User already exists");
+                return Conflict("Email sudah terdaftar");
             }
 
             _users.Add(user);
             SaveUsers();
-            return Ok("User registered successfully");
+            return Ok("Registrasi berhasil");
         }
 
         [HttpPost("login")]
@@ -58,10 +58,10 @@ namespace API.Controllers
             var existingUser = _users.FirstOrDefault(u => u.Email == user.Email && u.Password == user.Password);
             if (existingUser == null)
             {
-                return NotFound("User not found");
+                return Unauthorized("Email atau password salah");
             }
 
-            return Ok("Login successful");
+            return Ok("Login berhasil");
         }
     }
 }
