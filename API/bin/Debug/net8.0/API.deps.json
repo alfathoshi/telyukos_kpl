@@ -1289,7 +1289,6 @@
       "telyukos/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Mvc": "2.2.0",
-          "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "8.0.4",
           "Newtonsoft.Json": "13.0.3",
           "RestSharp": "110.2.0"
         },
