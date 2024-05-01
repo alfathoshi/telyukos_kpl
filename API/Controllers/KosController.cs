@@ -15,7 +15,14 @@ namespace API.Controllers
 
         public KosController()
         {
-            LoadKosListFromFile(); // Load data dari file saat aplikasi dimulai
+            try
+            {
+                LoadKosListFromFile(); // Load data dari file saat aplikasi dimulai
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error load data: {ex.Message}");
+            }
         }
 
         [HttpGet]
