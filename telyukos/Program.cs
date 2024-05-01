@@ -75,11 +75,15 @@ internal class Program
                     HttpResponseMessage responseGetAll = await httpClient.GetAsync("api/Kos");
                     responseGetAll.EnsureSuccessStatusCode();
                     Kos[] allKos = await responseGetAll.Content.ReadFromJsonAsync<Kos[]>();
+
+                    // Urutkan data berdasarkan ID
+                    allKos = allKos.OrderBy(k => k.Id).ToArray();
+
                     Console.WriteLine("Data Kos:");
                     foreach (var kos in allKos)
-        {
+                    {
                         Console.WriteLine($"ID: {kos.Id}, Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
-        }
+                    }
                     break;
 
                 case "0":
