@@ -1,7 +1,9 @@
-﻿internal class Program
+﻿using telyukos;
+internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        Akun sistemAkun = new Akun();
+        sistemAkun.ActiveTrigger(Akun.AkunTrigger.submit);
     }
 }
