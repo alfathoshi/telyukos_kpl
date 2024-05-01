@@ -77,9 +77,9 @@ internal class Program
                     Kos[] allKos = await responseGetAll.Content.ReadFromJsonAsync<Kos[]>();
                     Console.WriteLine("Data Kos:");
                     foreach (var kos in allKos)
-                    {
+        {
                         Console.WriteLine($"ID: {kos.Id}, Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
-                    }
+        }
                     break;
 
                 case "0":
@@ -89,7 +89,7 @@ internal class Program
                 default:
                     Console.WriteLine("Pilihan tidak valid. Silakan pilih lagi.");
                     break;
-            }
+    }
 
             Console.WriteLine();
         }
