@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("telyukos")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bfb22504e7c1dbc1a19d9be4eead48a43357317c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a306083ed106e8b66b1db92cf18feb99807975a8")]
 [assembly: System.Reflection.AssemblyProductAttribute("telyukos")]
 [assembly: System.Reflection.AssemblyTitleAttribute("telyukos")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

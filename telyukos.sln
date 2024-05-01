@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "telyukos", "telyukos\telyuk
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{00A04FA3-E303-4C68-8C39-5F6AEB111801}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "telyukos-library", "telyukos-library\telyukos-library.csproj", "{71668040-AC9E-4CD0-B6B7-1B236475E9A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{00A04FA3-E303-4C68-8C39-5F6AEB111801}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00A04FA3-E303-4C68-8C39-5F6AEB111801}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00A04FA3-E303-4C68-8C39-5F6AEB111801}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71668040-AC9E-4CD0-B6B7-1B236475E9A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71668040-AC9E-4CD0-B6B7-1B236475E9A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71668040-AC9E-4CD0-B6B7-1B236475E9A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71668040-AC9E-4CD0-B6B7-1B236475E9A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
