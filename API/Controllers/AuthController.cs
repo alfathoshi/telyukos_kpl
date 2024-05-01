@@ -1,6 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
+using telyukos;
 
 namespace API.Controllers
 {
@@ -8,18 +12,44 @@ namespace API.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly List<User> _users = new List<User>();
+        private const string filePath = "users.json";
+        private List<User> _users;
+
+        public AuthController()
+        {
+            LoadUsers();
+        }
+
+        private void LoadUsers()
+        {
+            if (System.IO.File.Exists(filePath))
+            {
+                string json = System.IO.File.ReadAllText(filePath);
+                _users = JsonSerializer.Deserialize<List<User>>(json);
+            }
+            else
+            {
+                _users = new List<User>();
+            }
+        }
+
+        private void SaveUsers()
+        {
+            string json = JsonSerializer.Serialize(_users);
+            System.IO.File.WriteAllText(filePath, json);
+        }
 
         [HttpPost("register")]
         public IActionResult Register(User user)
         {
             if (_users.Any(u => u.Email == user.Email))
             {
-                return Conflict("Email sudah terdaftar");
+                return Conflict("User already exists");
             }
 
             _users.Add(user);
-            return Ok("Registrasi berhasil");
+            SaveUsers();
+            return Ok("User registered successfully");
         }
 
         [HttpPost("login")]
@@ -28,18 +58,10 @@ namespace API.Controllers
             var existingUser = _users.FirstOrDefault(u => u.Email == user.Email && u.Password == user.Password);
             if (existingUser == null)
             {
-                return Unauthorized("Email atau password salah");
+                return NotFound("User not found");
             }
 
-            // Implement authentication logic here (e.g., generate JWT token)
-
-            return Ok("Login berhasil");
+            return Ok("Login successful");
         }
-    }
-
-    public class User
-    {
-        public string Email { get; set; }
-        public string Password { get; set; }
     }
 }
