@@ -7,4 +7,5 @@ namespace telyukos
         public int Harga { get; set; }
         public string Alamat { get; set; }
     }
+
 }
