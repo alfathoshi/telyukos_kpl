@@ -1,10 +1,16 @@
-﻿using telyukos;
+﻿using System.Globalization;
+using telyukos;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
-		configCreateKos config = new configCreateKos();
+
+
+
+
+
+		/*configCreateKos config = new configCreateKos();
 
         Console.WriteLine(config.konfig.nama_kos);
 
@@ -15,8 +21,15 @@ internal class Program
 
 		config.WriteConfigFile();
 
-		Console.WriteLine(config.konfig.nama_kos);
+		Console.WriteLine(config.konfig.nama_kos);*/
     }
+}
+
+public static class clientAPI
+{
+	static HttpClient client = new HttpClient();
+	static HttpResponseMessage response;
+	
 }
 
 /*CRUD Pemilik Kos {
