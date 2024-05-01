@@ -2,6 +2,8 @@
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using telyukos_library.Searching;
+using telyukos_library.Common;
+using System.Reflection.Emit;
 
 internal class Program
 {
@@ -44,19 +46,28 @@ internal class Program
         //Console.WriteLine("Index of 'lemon': " + SequentialSearch<string>.Search(stringArray, "lemon"));
 
 
+        // ========== Tutorial make generate ID
+        int numberOfIDs = 20; // Jumlah ID yang ingin dihasilkan
 
+        Console.WriteLine("Generated IDs:");
+
+        for (int i = 0; i < numberOfIDs; i++)
+        {
+            string id = RandomIntegerGenerator.GenerateID();
+            Console.WriteLine(id);
+        }
 
         // ========== tutorial parsing pake library newtonsoft ==========
-        Mahasiswa objMhs = new Mahasiswa();
+        //Mahasiswa objMhs = new Mahasiswa();
 
-        objMhs.NIM = 122011389;
-        objMhs.nama = "Alan";
-        objMhs.alamat = "Bandung";
+        //objMhs.NIM = 122011389;
+        //objMhs.nama = "Alan";
+        //objMhs.alamat = "Bandung";
 
-        // Serialisasi
-        string JsonOutpuMahasiswa = JsonConvert.SerializeObject(objMhs);
-        // pastiin letak folder nya sesuai, yg dibawah cmn contoh ya
-        File.WriteAllText("D://JSON/Mahasiswa.json", JsonOutpuMahasiswa);
+        //// Serialisasi
+        //string JsonOutpuMahasiswa = JsonConvert.SerializeObject(objMhs);
+        //// pastiin letak folder nya sesuai, yg dibawah cmn contoh ya
+        //File.WriteAllText("D://JSON/Mahasiswa.json", JsonOutpuMahasiswa);
 
         // Deserialisasi
         //string HasilBacaJson = File.ReadAllText("D://JSON/Mahasiswa.json");
@@ -67,7 +78,6 @@ internal class Program
         //Console.WriteLine("NIM: " + MhsBaca.NIM);
         //Console.WriteLine("Nama: " + MhsBaca.nama);
         //Console.WriteLine("Alamat: " + MhsBaca.alamat);
-
     }
 
     // buat class yang mau diparsing duluu
