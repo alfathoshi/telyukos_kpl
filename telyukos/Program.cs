@@ -37,16 +37,30 @@ internal class Program
 
                         User loginUser = new User { Email = email, Password = password };
                         HttpResponseMessage responseLogin = await httpClient.PostAsJsonAsync("api/Auth/login", loginUser);
-                        responseLogin.EnsureSuccessStatusCode();
-                        string responseBodyLogin = await responseLogin.Content.ReadAsStringAsync();
-                        Console.WriteLine("Response Login:");
-                        Console.WriteLine(responseBodyLogin);
 
-                        if (responseBodyLogin == "Login successful")
+                        if (responseLogin.IsSuccessStatusCode)
                         {
-                            isLoggedIn = true;
+                            string responseBodyLogin = await responseLogin.Content.ReadAsStringAsync();
+                            Console.WriteLine("Response Login:");
+                            Console.WriteLine(responseBodyLogin);
+
+                            if (responseBodyLogin == "Login berhasil")
+                            {
+                                isLoggedIn = true;
+                                Console.WriteLine("Login berhasil");
+                            }
+                        }
+                        else if (responseLogin.StatusCode == System.Net.HttpStatusCode.BadRequest || responseLogin.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+                        {
+                            Console.WriteLine("Email / Password tidak sesuai");
+                        }
+                        else
+                        {
+                            // Handle other status codes
+                            Console.WriteLine("Failed to login: " + responseLogin.StatusCode);
                         }
                         break;
+
 
                     case "2":
                         // Register
