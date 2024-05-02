@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security;
 using telyukos;
 
 namespace telyukos
@@ -77,16 +78,8 @@ namespace telyukos
         {
             //menu awal
             menu tampilanMenu = new menu();
-            currentState = getNextState(currentState,Trigger);
-            tampilanMenu.header();
-
-            //switch(currentState)
-            //{
-                //menu auth 
-                //case 1:
-                    //tampilanMenu.authPage();
-            //}
-
+            stateAkun StateAkhir  = getNextState(currentState,Trigger);
+            currentState = StateAkhir;
         }
     }
 }
