@@ -76,5 +76,13 @@
             Console.WriteLine("=                     ***                     =");
             Console.WriteLine("===============================================");
         }
+
+        public void chooseKosMenu()
+        {
+            Console.WriteLine("Menu:");
+            Console.WriteLine("1. Pilih Kos");
+            Console.WriteLine("0. Kembali");
+
+        }
     }
 }

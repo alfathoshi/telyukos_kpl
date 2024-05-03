@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Xml.Linq;
 using telyukos;
 
 namespace API.Controllers
@@ -101,5 +102,32 @@ namespace API.Controllers
             return Ok(new { message = "Login berhasil", role = existingUser.Role });
         }
 
+        [HttpDelete("{id}")]
+        public IActionResult DeleteKos(string id)
+        {
+            var existingKos = _users.FirstOrDefault(k => k.Email == id);
+            if (existingKos == null)
+            {
+                return NotFound("Kos tidak ditemukan");
+            }
+
+            _users.Remove(existingKos);
+            SaveUsers(); // Simpan data ke file setelah dihapus
+            return Ok("Kos berhasil dihapus");
+        }
+
+        [HttpPut("{akun}")]
+        public IActionResult Reservasi(string akun, Kos kos)
+        {
+            var existingUser = _users.FirstOrDefault(k => k.Email == akun);
+            if (existingUser == null)
+            {
+                return NotFound("Kos tidak ditemukan");
+            }
+
+            existingUser.Kos.Add(kos);
+            SaveUsers(); // Simpan data ke file setelah diperbarui
+            return Ok("Reservasi berhasil");
+        }
     }
 }

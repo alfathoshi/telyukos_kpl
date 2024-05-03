@@ -4,11 +4,12 @@ using System.Net.Http.Json;
 using System.Threading.Tasks;
 using telyukos;
 using telyukos_library.Menu;
+using telyukos_library.Searching;
 
 internal class Program
 {
     private static bool isLoggedIn = false;
-    private static string roleAkun = "";
+    private static User Akun;
 
     static async Task Main(string[] args)
     {
@@ -45,7 +46,7 @@ internal class Program
 
                             string responseBodyLogin = await responseLogin.Content.ReadAsStringAsync();
                             isLoggedIn = true;
-                            roleAkun = user.Role;
+                            Akun = user;
                             Console.WriteLine("Login berhasil");
 
                         }
@@ -114,9 +115,63 @@ internal class Program
             }
             else
             {
-                if (roleAkun == "penyewa")
+                if (Akun.Role == "penyewa")
                 {
-                    Console.WriteLine("penyewa");
+                    _menu.mainManuRenter();
+                    string menuChoice = Console.ReadLine();
+
+                    switch (menuChoice)
+                    {
+                        case "1":
+                            HttpResponseMessage responseGetAll = await httpClient.GetAsync("api/Kos");
+                            responseGetAll.EnsureSuccessStatusCode();
+                            Kos[] allKos = await responseGetAll.Content.ReadFromJsonAsync<Kos[]>();
+
+                            // Urutkan data berdasarkan ID
+                            allKos = allKos.OrderBy(k => k.Id).ToArray();
+
+                            Console.WriteLine("Data Kos:");
+                            foreach (var kos in allKos)
+                            {
+                                Console.WriteLine($"Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
+                            }
+                            _menu.chooseKosMenu();
+                            string choice = Console.ReadLine();
+                            if (choice == "1")
+                            {
+                                Kos kosRent = new Kos();
+                                Console.WriteLine("Silahkan tulis nama kos");
+                                Console.Write("Kos: ");
+                                string namakos = Console.ReadLine();
+                                foreach (var kos in allKos)
+                                {
+                                    if (kos.Nama == namakos)
+                                        kosRent = kos;
+                                }
+                                HttpResponseMessage responseRent = await httpClient.PutAsJsonAsync("api/Auth/user", kosRent);
+                                responseRent.EnsureSuccessStatusCode();
+                                Console.WriteLine("Succes");
+
+                            } 
+
+                            break;
+                        case "2":
+                            Console.WriteLine("Cari Kos");
+                            break;
+                        case "3":
+                            Console.WriteLine("My Kos");
+
+                            Console.WriteLine("Data Kos:");
+                            foreach (var kos in Akun.Kos)
+                            {
+                                Console.WriteLine($"ID: {kos.Id}, Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
+                            }
+                            break;
+                        case "4":
+                            isLoggedIn = false; break;
+                        case "5":
+                            exit = true; break;
+                    }
                     break;
                 }
                 else
