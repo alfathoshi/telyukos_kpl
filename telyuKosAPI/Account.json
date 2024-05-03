@@ -1,1 +1,26 @@
-[{"ID":0,"username":"admin","password":"admin","role":"admin"},{"ID":0,"username":"star","password":"123","role":"user"},{"ID":0,"username":"mubina","password":"321","role":"user"},{"ID":0,"username":"string","password":"string","role":"string"}]
+[
+  {
+    "ID": 0,
+    "username": "admin",
+    "password": "admin",
+    "role": "admin"
+  },
+  {
+    "ID": 0,
+    "username": "star",
+    "password": "123",
+    "role": "user"
+  },
+  {
+    "ID": 0,
+    "username": "mubina",
+    "password": "321",
+    "role": "user"
+  },
+  {
+    "ID": 0,
+    "username": "string",
+    "password": "string",
+    "role": "string"
+  }
+]

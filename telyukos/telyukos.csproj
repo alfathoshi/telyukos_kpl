@@ -12,8 +12,4 @@
     <PackageReference Include="RestSharp" Version="110.2.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\telyuKosAPI\telyuKosAPI.csproj" />
-  </ItemGroup>
-
 </Project>
