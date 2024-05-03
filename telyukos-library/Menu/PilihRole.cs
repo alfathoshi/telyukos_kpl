@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace telyukos_library.Menu.PemilikKos
+namespace telyukos_library.Menu
 {
-    public class PemilikKos
+    public class PilihRole
     {
-        public void MenuAwal()
+        public PilihRole()
         {
             Console.WriteLine("===============================================");
             Console.WriteLine("=             Aplikasi TelyuKos               =");
@@ -17,17 +17,15 @@ namespace telyukos_library.Menu.PemilikKos
             Console.WriteLine("=    Tugas Besar Konstruksi Perangkat Lunak   =");
             Console.WriteLine("===============================================");
             Console.WriteLine("=                    ***                      =");
-            Console.WriteLine("=         Selamat Datang Pemilik Kos          =");
-            Console.WriteLine("=   Silahkan Pilih Menu Yang Anda Inginkan!   =");
+            Console.WriteLine("=      Selamat Datang di Aplikasi TelyuKos    =");
+            Console.WriteLine("=             Tentukan Role Anda              =");
             Console.WriteLine("=                    ***                      =");
             Console.WriteLine("=                                             =");
-            Console.WriteLine("= 1. Upload Kos                               =");
-            Console.WriteLine("= 2. Edit Kos                                 =");
-            Console.WriteLine("= 3. Delete Kos                               =");
-            Console.WriteLine("= 4. Kembali                                  =");
+            Console.WriteLine("= 1. Pemilik Kos                              =");
+            Console.WriteLine("= 2. Penyewa Kos                              =");
+            Console.WriteLine("= 3. Kembali                                  =");
             Console.WriteLine("===============================================");
         }
 
-        
     }
 }

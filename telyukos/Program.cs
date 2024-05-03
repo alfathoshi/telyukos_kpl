@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using telyukos;
+using telyukos_library.Menu;
 
 internal class Program
 {
@@ -16,13 +17,11 @@ internal class Program
         bool exit = false;
         while (!exit)
         {
+            Menu _menu = new Menu();
             if (!isLoggedIn)
             {
-                Console.WriteLine("Login or Register:");
-                Console.WriteLine("1. Login");
-                Console.WriteLine("2. Register");
-                Console.WriteLine("0. Exit");
-                Console.Write("Choice: ");
+                _menu.header();
+
                 string choice = Console.ReadLine();
 
                 switch (choice)
@@ -109,19 +108,14 @@ internal class Program
             }
             else
             {
-                Console.WriteLine();
-                Console.WriteLine("Menu:");
-                Console.WriteLine("1. Add Kos");
-                Console.WriteLine("2. Update Kos");
-                Console.WriteLine("3. Delete Kos");
-                Console.WriteLine("4. Show All Kos");
-                Console.WriteLine("0. Exit");
-                Console.Write("Choice: ");
+                _menu.mainMenu();
+               
                 string menuChoice = Console.ReadLine();
 
                 switch (menuChoice)
                 {
                     case "1":
+                        _menu.uploadKos();
                         // Tambah Kos
                         Console.Write("Nama Kos: ");
                         string namaKos = Console.ReadLine();

@@ -102,3 +102,5 @@ C:\Users\alfat\Documents\College\C#\telyukos\telyukos\obj\Debug\net8.0\refint\te
 C:\Users\alfat\Documents\College\C#\telyukos\telyukos\obj\Debug\net8.0\telyuKos.pdb
 C:\Users\alfat\Documents\College\C#\telyukos\telyukos\obj\Debug\net8.0\telyuKos.genruntimeconfig.cache
 C:\Users\alfat\Documents\College\C#\telyukos\telyukos\obj\Debug\net8.0\ref\telyuKos.dll
+C:\Users\alfat\Documents\College\C#\telyukos\telyukos\bin\Debug\net8.0\telyukos-library.dll
+C:\Users\alfat\Documents\College\C#\telyukos\telyukos\bin\Debug\net8.0\telyukos-library.pdb

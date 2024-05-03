@@ -10,6 +10,7 @@ namespace telyukos
 
             public string pesan_ditolak { get; set; }
             public string pesan_diterima { get; set; }
+            public int id {  get; set; }
             public string nama_kos { get; set; }
             public int harga_kos { get; set; }
             public string alamat_kos { get; set; }

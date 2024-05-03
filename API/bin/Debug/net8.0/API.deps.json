@@ -11,7 +11,7 @@
           "Microsoft.AspNetCore.Mvc": "2.2.0",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "8.0.4",
           "Swashbuckle.AspNetCore": "6.4.0",
-          "telyuKos": "1.0.0"
+          "telyukos": "1.0.0"
         },
         "runtime": {
           "API.dll": {}
@@ -1286,13 +1286,19 @@
           "System.Xml.XPath": "4.3.0"
         }
       },
-      "telyuKos/1.0.0": {
+      "telyukos/1.0.0": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.3",
-          "RestSharp": "110.2.0"
+          "RestSharp": "110.2.0",
+          "telyukos-library": "1.0.0"
         },
         "runtime": {
           "telyukos.dll": {}
+        }
+      },
+      "telyukos-library/1.0.0": {
+        "runtime": {
+          "telyukos-library.dll": {}
         }
       }
     }
@@ -2444,7 +2450,12 @@
       "path": "system.xml.xpath.xdocument/4.3.0",
       "hashPath": "system.xml.xpath.xdocument.4.3.0.nupkg.sha512"
     },
-    "telyuKos/1.0.0": {
+    "telyukos/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "telyukos-library/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

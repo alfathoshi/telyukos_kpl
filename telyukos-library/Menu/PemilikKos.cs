@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace telyukos_library.Menu.MainMenu
+namespace telyukos_library.Menu
 {
-    public class MainMenu
+    public class PemilikKos
     {
-        public MainMenu()
+        public void MenuAwal()
         {
             Console.WriteLine("===============================================");
             Console.WriteLine("=             Aplikasi TelyuKos               =");
@@ -17,13 +17,12 @@ namespace telyukos_library.Menu.MainMenu
             Console.WriteLine("=    Tugas Besar Konstruksi Perangkat Lunak   =");
             Console.WriteLine("===============================================");
             Console.WriteLine("=                    ***                      =");
-            Console.WriteLine("=   Silahkan Pilih Menu Yang Anda Inginkan    =");
+            Console.WriteLine("=         Selamat Datang Pemilik Kos          =");
+            Console.WriteLine("=   Silahkan Pilih Menu Yang Anda Inginkan!   =");
             Console.WriteLine("=                    ***                      =");
-            Console.WriteLine("=                                             =");
-            Console.WriteLine("= 1. Login                                    =");
-            Console.WriteLine("= 2. Register                                 =");
-            Console.WriteLine("= 0. Keluar                                   =");
             Console.WriteLine("===============================================");
         }
+
+
     }
 }

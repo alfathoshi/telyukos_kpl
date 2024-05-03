@@ -1,31 +1,50 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace telyukos_library.Menu.PemilikKos
+﻿namespace telyukos_library.Menu
 {
-    public class UploadKos
+    public class Menu
     {
-        public void NamaKos()
-        {
-            Console.WriteLine("===============================================");
-            Console.WriteLine("=             Aplikasi TelyuKos               =");
-            Console.WriteLine("=         Created by Kelompok 3 KPL           =");
-            Console.WriteLine("=      Wildan, Bintang, Arga, Farah, Faris    =");
-            Console.WriteLine("=    Tugas Besar Konstruksi Perangkat Lunak   =");
-            Console.WriteLine("===============================================");
-            Console.WriteLine("=                     ***                     =");
-            Console.WriteLine("=                Menu Upload Kos              =");
-            Console.WriteLine("=           Silahkan Isi Data Berikut:        =");
-            Console.WriteLine("=                     ***                     =");
-            Console.WriteLine("=                                             =");
-            Console.WriteLine("= Masukkan Nama Kos Anda:                     =");
-            Console.WriteLine("===============================================");
-        }
 
-        public void Alamat()
+        public void header()
+        {
+            Console.WriteLine("===============================================");
+            Console.WriteLine("=             Aplikasi TelyuKos               =");
+            Console.WriteLine("=         Created by Kelompok 3 KPL           =");
+            Console.WriteLine("=      Wildan, Bintang, Arga, Farah, Faris    =");
+            Console.WriteLine("=    Tugas Besar Konstruksi Perangkat Lunak   =");
+            Console.WriteLine("===============================================");
+            Console.WriteLine("=                    ***                      =");
+            Console.WriteLine("=               Halaman Login                 =");
+            Console.WriteLine("=                    ***                      =");
+            Console.WriteLine("===============================================");
+            Console.WriteLine();
+            Console.WriteLine("Login or Register:");
+            Console.WriteLine("1. Login");
+            Console.WriteLine("2. Register");
+            Console.WriteLine("0. Exit");
+            Console.Write("Choice: ");
+        }
+        public void mainMenu()
+        {
+            Console.WriteLine("===============================================");
+            Console.WriteLine("=             Aplikasi TelyuKos               =");
+            Console.WriteLine("=         Created by Kelompok 3 KPL           =");
+            Console.WriteLine("=      Wildan, Bintang, Arga, Farah, Faris    =");
+            Console.WriteLine("=    Tugas Besar Konstruksi Perangkat Lunak   =");
+            Console.WriteLine("===============================================");
+            Console.WriteLine("=                    ***                      =");
+            Console.WriteLine("=   Silahkan Pilih Menu Yang Anda Inginkan    =");
+            Console.WriteLine("=                    ***                      =");
+            Console.WriteLine("===============================================");
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Menu:");
+            Console.WriteLine("1. Add Kos");
+            Console.WriteLine("2. Update Kos");
+            Console.WriteLine("3. Delete Kos");
+            Console.WriteLine("4. Show All Kos");
+            Console.WriteLine("0. Exit");
+            Console.Write("Choice: ");
+        }
+        public void uploadKos()
         {
             Console.WriteLine("===============================================");
             Console.WriteLine("=             Aplikasi TelyuKos               =");
@@ -37,27 +56,7 @@ namespace telyukos_library.Menu.PemilikKos
             Console.WriteLine("=                Menu Upload Kos              =");
             Console.WriteLine("=           Silahkan Isi Data Berikut:        =");
             Console.WriteLine("=                     ***                     =");
-            Console.WriteLine("=                                             =");
-            Console.WriteLine("= Masukkan Alamat Kos   :                     =");
             Console.WriteLine("===============================================");
         }
-
-        public void JumlahKamar()
-        {
-            Console.WriteLine("===============================================");
-            Console.WriteLine("=             Aplikasi TelyuKos               =");
-            Console.WriteLine("=         Created by Kelompok 3 KPL           =");
-            Console.WriteLine("=      Wildan, Bintang, Arga, Farah, Faris    =");
-            Console.WriteLine("=    Tugas Besar Konstruksi Perangkat Lunak   =");
-            Console.WriteLine("===============================================");
-            Console.WriteLine("=                     ***                     =");
-            Console.WriteLine("=                Menu Upload Kos              =");
-            Console.WriteLine("=           Silahkan Isi Data Berikut:        =");
-            Console.WriteLine("=                     ***                     =");
-            Console.WriteLine("=                                             =");
-            Console.WriteLine("= Masukkan Jumlah Kamar Yang Tersedia:        =");
-            Console.WriteLine("===============================================");
-        }
-        
     }
 }

@@ -2796,18 +2796,29 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
-      "telyuKos/1.0.0": {
+      "telyukos/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Newtonsoft.Json": "13.0.3",
-          "RestSharp": "110.2.0"
+          "RestSharp": "110.2.0",
+          "telyukos-library": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/telyuKos.dll": {}
+          "bin/placeholder/telyukos.dll": {}
         },
         "runtime": {
-          "bin/placeholder/telyuKos.dll": {}
+          "bin/placeholder/telyukos.dll": {}
+        }
+      },
+      "telyukos-library/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/telyukos-library.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/telyukos-library.dll": {}
         }
       }
     }
@@ -8031,10 +8042,15 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
-    "telyuKos/1.0.0": {
+    "telyukos/1.0.0": {
       "type": "project",
-      "path": "../telyukos/telyuKos.csproj",
-      "msbuildProject": "../telyukos/telyuKos.csproj"
+      "path": "../telyukos/telyukos.csproj",
+      "msbuildProject": "../telyukos/telyukos.csproj"
+    },
+    "telyukos-library/1.0.0": {
+      "type": "project",
+      "path": "../telyukos-library/telyukos-library.csproj",
+      "msbuildProject": "../telyukos-library/telyukos-library.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -8042,7 +8058,7 @@
       "Microsoft.AspNetCore.Mvc >= 2.2.0",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 8.0.4",
       "Swashbuckle.AspNetCore >= 6.4.0",
-      "telyuKos >= 1.0.0"
+      "telyukos >= 1.0.0"
     ]
   },
   "packageFolders": {

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("telyukos-library")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+47c5eda86901edbeedef521d2ba3f41fabe3b111")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+363f2c1cd7a069762413b55410e09d065e40f1f9")]
 [assembly: System.Reflection.AssemblyProductAttribute("telyukos-library")]
 [assembly: System.Reflection.AssemblyTitleAttribute("telyukos-library")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
