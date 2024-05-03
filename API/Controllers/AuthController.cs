@@ -50,6 +50,23 @@ namespace API.Controllers
             return Ok(_users);
         }
 
+        [HttpGet("{name}")]
+        public IActionResult GetUserbyName(string name)
+        {
+            if (_users.Count == 0)
+            {
+                return Ok("Belum ada data");
+            }
+
+            foreach (User user in _users)
+            {
+                if (user.Email == name) {
+                    return Ok(user);
+                }
+            }
+            return Ok("Data tidak ada");
+        }
+
         [HttpPost("register")]
         public IActionResult Register(User user)
         {

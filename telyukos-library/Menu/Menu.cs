@@ -22,7 +22,7 @@
             Console.WriteLine("0. Exit");
             Console.Write("Choice: ");
         }
-        public void mainMenu()
+        public void mainMenuOwner()
         {
             Console.WriteLine("===============================================");
             Console.WriteLine("=             Aplikasi TelyuKos               =");
@@ -35,7 +35,6 @@
             Console.WriteLine("=                    ***                      =");
             Console.WriteLine("===============================================");
             Console.WriteLine();
-            Console.WriteLine();
             Console.WriteLine("Menu:");
             Console.WriteLine("1. Add Kos");
             Console.WriteLine("2. Update Kos");
@@ -43,6 +42,25 @@
             Console.WriteLine("4. Show All Kos");
             Console.WriteLine("0. Exit");
             Console.Write("Choice: ");
+        }
+        public void mainManuRenter()
+        {
+            Console.WriteLine("===============================================");
+            Console.WriteLine("=             Aplikasi TelyuKos               =");
+            Console.WriteLine("=         Created by Kelompok 3 KPL           =");
+            Console.WriteLine("=      Wildan, Bintang, Arga, Farah, Faris    =");
+            Console.WriteLine("=    Tugas Besar Konstruksi Perangkat Lunak   =");
+            Console.WriteLine("===============================================");
+            Console.WriteLine("=                    ***                      =");
+            Console.WriteLine("=   Silahkan Pilih Menu Yang Anda Inginkan    =");
+            Console.WriteLine("=                    ***                      =");
+            Console.WriteLine("===============================================");
+            Console.WriteLine();
+            Console.WriteLine("Menu:");
+            Console.WriteLine("1.Lihat Daftar Kos ");
+            Console.WriteLine("2.Cari Kos");
+            Console.WriteLine("3.My Kos");
+            Console.WriteLine("0.Kembali");
         }
         public void uploadKos()
         {
