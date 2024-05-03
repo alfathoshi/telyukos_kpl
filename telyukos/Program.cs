@@ -4,7 +4,7 @@ using System.Net.Http.Json;
 using System.Threading.Tasks;
 using telyukos;
 
-internal class Program
+class Program
 {
     private static User loggedInUser;
     private static bool isLoggedIn = false;
