@@ -4,9 +4,8 @@ using System.Net.Http.Json;
 using System.Threading.Tasks;
 using telyukos;
 
-class Program
+internal class Program
 {
-    private static User loggedInUser;
     private static bool isLoggedIn = false;
 
     static async Task Main(string[] args)
@@ -35,20 +34,15 @@ class Program
                         Console.Write("Password: ");
                         string password = Console.ReadLine();
 
-                        User loginUser = new User { Email = email, Password = password };
+                        User loginUser = new User { Email = email, Password = password, Role = "" };
                         HttpResponseMessage responseLogin = await httpClient.PostAsJsonAsync("api/Auth/login", loginUser);
 
                         if (responseLogin.IsSuccessStatusCode)
                         {
                             string responseBodyLogin = await responseLogin.Content.ReadAsStringAsync();
-                            Console.WriteLine("Response Login:");
-                            Console.WriteLine(responseBodyLogin);
+                            isLoggedIn = true;
+                            Console.WriteLine("Login berhasil");
 
-                            if (responseBodyLogin == "Login berhasil")
-                            {
-                                isLoggedIn = true;
-                                Console.WriteLine("Login berhasil");
-                            }
                         }
                         else if (responseLogin.StatusCode == System.Net.HttpStatusCode.BadRequest || responseLogin.StatusCode == System.Net.HttpStatusCode.Unauthorized)
                         {
@@ -62,20 +56,47 @@ class Program
                         break;
 
 
+
+
                     case "2":
                         // Register
                         Console.Write("Email: ");
                         string newEmail = Console.ReadLine();
                         Console.Write("Password: ");
                         string newPassword = Console.ReadLine();
+                        Console.Write("Role (penyewa/pemilik): ");
+                        string role = Console.ReadLine();
 
-                        User newUser = new User { Email = newEmail, Password = newPassword };
+                        User newUser = new User { Email = newEmail, Password = newPassword, Role = role };
                         HttpResponseMessage responseRegister = await httpClient.PostAsJsonAsync("api/Auth/register", newUser);
-                        responseRegister.EnsureSuccessStatusCode();
-                        string responseBodyRegister = await responseRegister.Content.ReadAsStringAsync();
-                        Console.WriteLine("Response Register:");
-                        Console.WriteLine(responseBodyRegister);
+
+                        if (responseRegister.IsSuccessStatusCode)
+                        {
+                            string responseBodyRegister = await responseRegister.Content.ReadAsStringAsync();
+                            Console.WriteLine("Response Register:");
+                            Console.WriteLine(responseBodyRegister);
+                        }
+                        else if (responseRegister.StatusCode == System.Net.HttpStatusCode.BadRequest)
+                        {
+                            string errorMessage = await responseRegister.Content.ReadAsStringAsync();
+                            Console.WriteLine("Failed to register: " + errorMessage);
+                        }
+                        else
+                        {
+                            string errorMessage = await responseRegister.Content.ReadAsStringAsync();
+                            if (errorMessage.Contains("Email sudah terdaftar"))
+                            {
+                                Console.WriteLine("Email sudah terdaftar");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Failed to register: " + responseRegister.StatusCode);
+                            }
+                        }
                         break;
+
+
+
 
                     case "0":
                         Environment.Exit(0);
@@ -104,8 +125,23 @@ class Program
                         // Tambah Kos
                         Console.Write("Nama Kos: ");
                         string namaKos = Console.ReadLine();
-                        Console.Write("Harga Kos: ");
-                        int hargaKos = int.Parse(Console.ReadLine());
+
+                        int hargaKos;
+                        bool isHargaValid = false;
+                        do
+                        {
+                            Console.Write("Harga Kos: ");
+                            string hargaKosInput = Console.ReadLine();
+                            if (int.TryParse(hargaKosInput, out hargaKos))
+                            {
+                                isHargaValid = true;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Input harga tidak valid. Silakan masukkan angka.");
+                            }
+                        } while (!isHargaValid);
+
                         Console.Write("Alamat Kos: ");
                         string alamatKos = Console.ReadLine();
 
@@ -117,14 +153,37 @@ class Program
                         Console.WriteLine(responseBodyPost);
                         break;
 
+
                     case "2":
                         // Update Kos
-                        Console.Write("Index Kos yang akan diupdate: ");
-                        int indexUpdate = int.Parse(Console.ReadLine());
+                        int indexUpdate;
+                        bool isIndexValid;
+                        do
+                        {
+                            Console.Write("Index Kos yang akan diupdate: ");
+                            string inputIndexUpdate = Console.ReadLine();
+                            isIndexValid = int.TryParse(inputIndexUpdate, out indexUpdate);
+                            if (!isIndexValid)
+                            {
+                                Console.WriteLine("Index Kos harus berupa angka. Silakan coba lagi.");
+                            }
+                        } while (!isIndexValid);
+
                         Console.Write("Nama Kos baru: ");
                         string namaKosUpdate = Console.ReadLine();
-                        Console.Write("Harga Kos baru: ");
-                        int hargaKosUpdate = int.Parse(Console.ReadLine());
+                        int hargaKosUpdate;
+                        bool isHargaValid_UPDATE;
+                        do
+                        {
+                            Console.Write("Harga Kos baru: ");
+                            string inputHargaKosUpdate = Console.ReadLine();
+                            isHargaValid_UPDATE = int.TryParse(inputHargaKosUpdate, out hargaKosUpdate);
+                            if (!isHargaValid_UPDATE)
+                            {
+                                Console.WriteLine("Harga Kos harus berupa angka. Silakan coba lagi.");
+                            }
+                        } while (!isHargaValid_UPDATE);
+
                         Console.Write("Alamat Kos baru: ");
                         string alamatKosUpdate = Console.ReadLine();
 
@@ -136,10 +195,36 @@ class Program
                         Console.WriteLine(responseBodyPut);
                         break;
 
+
                     case "3":
                         // Hapus Kos
-                        Console.Write("Index Kos yang akan dihapus: ");
-                        int indexDelete = int.Parse(Console.ReadLine());
+
+                        //GET DULU
+                        HttpResponseMessage ambil = await httpClient.GetAsync("api/Kos");
+                        ambil.EnsureSuccessStatusCode();
+                        Kos[] kosAda = await ambil.Content.ReadFromJsonAsync<Kos[]>();
+
+                        // Urutkan data berdasarkan ID
+                        kosAda = kosAda.OrderBy(k => k.Id).ToArray();
+
+                        Console.WriteLine("Data Kos:");
+                        foreach (var kos in kosAda)
+                        {
+                            Console.WriteLine($"ID: {kos.Id}, Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
+                        }
+
+                        int indexDelete;
+                        bool isIndexValid_DEL;
+                        do
+                        {
+                            Console.Write("Pilih ID kos yang akan dihapus: ");
+                            string inputIndexDelete = Console.ReadLine();
+                            isIndexValid_DEL = int.TryParse(inputIndexDelete, out indexDelete);
+                            if (!isIndexValid_DEL)
+                            {
+                                Console.WriteLine("ID harus berupa angka. Silakan coba lagi.");
+                            }
+                        } while (!isIndexValid_DEL);
 
                         HttpResponseMessage responseDelete = await httpClient.DeleteAsync($"api/Kos/{indexDelete}");
                         responseDelete.EnsureSuccessStatusCode();
@@ -147,6 +232,8 @@ class Program
                         Console.WriteLine("Response DELETE:");
                         Console.WriteLine(responseBodyDelete);
                         break;
+
+
 
                     case "4":
                         // Tampilkan Semua Kos

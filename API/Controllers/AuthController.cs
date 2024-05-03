@@ -39,16 +39,6 @@ namespace API.Controllers
             System.IO.File.WriteAllText(filePath, json);
         }
 
-        public IActionResult GetAccount()
-        {
-            if (_users.Count == 0)
-            {
-                return Ok("Belum ada data");
-            }
-
-            return Ok(_users);
-        }
-
         [HttpPost("register")]
         public IActionResult Register(User user)
         {
@@ -57,10 +47,18 @@ namespace API.Controllers
                 return Conflict("Email sudah terdaftar");
             }
 
+            if (user.Role.ToLower() != "penyewa" && user.Role.ToLower() != "pemilik")
+            {
+                return BadRequest("Role harus diisi dengan 'penyewa' atau 'pemilik'");
+            }
+
             _users.Add(user);
             SaveUsers();
             return Ok("Registrasi berhasil");
         }
+
+
+
 
         [HttpPost("login")]
         public IActionResult Login(User user)
@@ -71,7 +69,8 @@ namespace API.Controllers
                 return Unauthorized("Email atau password salah");
             }
 
-            return Ok("Login berhasil");
+            return Ok(new { message = "Login berhasil", role = existingUser.Role });
         }
+
     }
 }
