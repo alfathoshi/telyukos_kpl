@@ -2,9 +2,9 @@
 namespace telyukos
 {
     //table driven
-    public static class Role
+    public class Role
     {
-        public enum RoleUser { PENYEWA, PEMILIK }
+        public enum RoleUser { RENTER, OWNER }
 
         public static string getRole(RoleUser roleName)
         {
