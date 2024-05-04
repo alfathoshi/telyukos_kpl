@@ -1,11 +1,11 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 
-namespace telyukos-library.Menu.PenyewaKos
+namespace telyukos_library.Menu.PenyewaKos
 {
     public class ReservasiKos
     {
@@ -31,7 +31,7 @@ namespace telyukos-library.Menu.PenyewaKos
             new Transition(ReservasiState.PILIH_KOS,ReservasiTrigger.PILIH_RESERVASI,ReservasiState.RESERVASI),
             new Transition(ReservasiState.PILIH_KOS,ReservasiTrigger.BACK,ReservasiState.LIHAT_INFORMASI_KOS),
             new Transition(ReservasiState.RESERVASI,ReservasiTrigger.MENGISI_DATA,ReservasiState.DAFTAR_RESERVASI),
-            new Transition(ReservasiState.DAFTAR_RESERVASI,ReservasiTrigger.MELAKUKAN_PEMBAYARAN,ReservasiState.BAYAR)
+            new Transition(ReservasiState.DAFTAR_RESERVASI,ReservasiTrigger.MELAKUKAN_PEMBAYARAN,ReservasiState.BAYAR),
             new Transition(ReservasiState.BAYAR,ReservasiTrigger.DAFTAR_DITERIMA,ReservasiState.RESERVASI_BERHASIL),
             new Transition(ReservasiState.CANCEL_BAYAR,ReservasiTrigger.DAFTAR_DITOLAK,ReservasiState.RESERVASI_GAGAL),
 
@@ -70,3 +70,4 @@ namespace telyukos-library.Menu.PenyewaKos
         }
     }
 }
+*/
