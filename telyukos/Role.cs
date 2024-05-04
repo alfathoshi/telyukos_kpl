@@ -2,14 +2,14 @@
 namespace telyukos
 {
     //table driven
-    public class Role
+    public static class Role
     {
-        public enum Role { Role1, Role2 }
+        public enum RoleUser { PENYEWA, PEMILIK }
 
-        public static string getRole(Role roleName)
+        public static string getRole(RoleUser roleName)
         {
-            string[] inputUser = { PENYEWA, PEMILIK }
-            return inputUser[(string)roleName];
+            string[] inputUser = { "penyewa", "pemilik" };
+            return inputUser[(int)roleName];
         }
 
     }
