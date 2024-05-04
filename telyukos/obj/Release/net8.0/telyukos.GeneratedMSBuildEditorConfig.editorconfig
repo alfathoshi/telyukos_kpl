@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = telyukos
-build_property.ProjectDir = C:\Users\wilda\Downloads\telyukos_kpl-7610afbfe65689e5c7a3ee4a322da9f126948b17\telyukos_kpl-7610afbfe65689e5c7a3ee4a322da9f126948b17\telyukos\
+build_property.ProjectDir = D:\Documents\Kuliah\Matkul\Semester 4\KPL\tubes\telyukos_kpl\telyukos\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
