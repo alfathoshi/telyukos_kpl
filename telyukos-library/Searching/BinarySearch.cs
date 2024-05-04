@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace telyukos_library.Searching
 {
-    public class BinarySearch<T> where T : IComparable<T>
+    public class BinarySearch<T>
     {
-        public static int Search(T[] array, T target)
+        public static int Search(T[] array, string target)
         {
             int left = 0;
             int right = array.Length - 1;
