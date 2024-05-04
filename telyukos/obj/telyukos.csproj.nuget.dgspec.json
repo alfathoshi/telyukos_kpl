@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos\\telyukos.csproj": {}
+    "C:\\Users\\wilda\\Downloads\\telyukos_kpl-7610afbfe65689e5c7a3ee4a322da9f126948b17\\telyukos_kpl-7610afbfe65689e5c7a3ee4a322da9f126948b17\\telyukos\\telyukos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos-library.csproj": {
+    "C:\\Users\\wilda\\Downloads\\telyukos_kpl-7610afbfe65689e5c7a3ee4a322da9f126948b17\\telyukos_kpl-7610afbfe65689e5c7a3ee4a322da9f126948b17\\telyukos-library\\telyukos-library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos-library.csproj",
+        "projectUniqueName": "C:\\Users\\wilda\\Downloads\\telyukos_kpl-7610afbfe65689e5c7a3ee4a322da9f126948b17\\telyukos_kpl-7610afbfe65689e5c7a3ee4a322da9f126948b17\\telyukos-library\\telyukos-library.csproj",
         "projectName": "telyukos-library",
-        "projectPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos-library.csproj",
-        "packagesPath": "C:\\Users\\alfat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\obj\\",
+        "projectPath": "C:\\Users\\wilda\\Downloads\\telyukos_kpl-7610afbfe65689e5c7a3ee4a322da9f126948b17\\telyukos_kpl-7610afbfe65689e5c7a3ee4a322da9f126948b17\\telyukos-library\\telyukos-library.csproj",
+        "packagesPath": "C:\\Users\\wilda\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\wilda\\Downloads\\telyukos_kpl-7610afbfe65689e5c7a3ee4a322da9f126948b17\\telyukos_kpl-7610afbfe65689e5c7a3ee4a322da9f126948b17\\telyukos-library\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\alfat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\wilda\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,17 +64,17 @@
         }
       }
     },
-    "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos\\telyukos.csproj": {
+    "C:\\Users\\wilda\\Downloads\\telyukos_kpl-7610afbfe65689e5c7a3ee4a322da9f126948b17\\telyukos_kpl-7610afbfe65689e5c7a3ee4a322da9f126948b17\\telyukos\\telyukos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos\\telyukos.csproj",
+        "projectUniqueName": "C:\\Users\\wilda\\Downloads\\telyukos_kpl-7610afbfe65689e5c7a3ee4a322da9f126948b17\\telyukos_kpl-7610afbfe65689e5c7a3ee4a322da9f126948b17\\telyukos\\telyukos.csproj",
         "projectName": "telyukos",
-        "projectPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos\\telyukos.csproj",
-        "packagesPath": "C:\\Users\\alfat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos\\obj\\",
+        "projectPath": "C:\\Users\\wilda\\Downloads\\telyukos_kpl-7610afbfe65689e5c7a3ee4a322da9f126948b17\\telyukos_kpl-7610afbfe65689e5c7a3ee4a322da9f126948b17\\telyukos\\telyukos.csproj",
+        "packagesPath": "C:\\Users\\wilda\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\wilda\\Downloads\\telyukos_kpl-7610afbfe65689e5c7a3ee4a322da9f126948b17\\telyukos_kpl-7610afbfe65689e5c7a3ee4a322da9f126948b17\\telyukos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\alfat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\wilda\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -88,8 +88,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos-library.csproj": {
-                "projectPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos-library.csproj"
+              "C:\\Users\\wilda\\Downloads\\telyukos_kpl-7610afbfe65689e5c7a3ee4a322da9f126948b17\\telyukos_kpl-7610afbfe65689e5c7a3ee4a322da9f126948b17\\telyukos-library\\telyukos-library.csproj": {
+                "projectPath": "C:\\Users\\wilda\\Downloads\\telyukos_kpl-7610afbfe65689e5c7a3ee4a322da9f126948b17\\telyukos_kpl-7610afbfe65689e5c7a3ee4a322da9f126948b17\\telyukos-library\\telyukos-library.csproj"
               }
             }
           }
@@ -112,10 +112,6 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
-            },
-            "RestSharp": {
-              "target": "Package",
-              "version": "[110.2.0, )"
             }
           },
           "imports": [
