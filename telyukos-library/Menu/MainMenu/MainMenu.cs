@@ -8,7 +8,7 @@ namespace telyukos_library.Menu.MainMenu
 {
     public class MainMenu
     {
-        public MainMenu()
+        public static void Menu()
         {
             Console.WriteLine("===============================================");
             Console.WriteLine("=             Aplikasi TelyuKos               =");

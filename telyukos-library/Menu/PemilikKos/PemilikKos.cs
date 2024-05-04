@@ -8,7 +8,7 @@ namespace telyukos_library.Menu.PemilikKos
 {
     public class PemilikKos
     {
-        public void MenuAwal()
+        public static void MenuAwal()
         {
             Console.WriteLine("===============================================");
             Console.WriteLine("=             Aplikasi TelyuKos               =");
