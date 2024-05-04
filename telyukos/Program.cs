@@ -300,5 +300,159 @@ internal class Program
 }
 
         
-
+      
                 
+        //objMhs.nama = "Alan";
+        //objMhs.alamat = "Bandung";
+
+        //// Serialisasi
+        //string JsonOutpuMahasiswa = JsonConvert.SerializeObject(objMhs);
+        //// pastiin letak folder nya sesuai, yg dibawah cmn contoh ya
+        //File.WriteAllText("D://JSON/Mahasiswa.json", JsonOutpuMahasiswa);
+
+        // Deserialisasi
+        //string HasilBacaJson = File.ReadAllText("D://JSON/Mahasiswa.json");
+        //// pastiin letak folder nya sesuai, yg dibawah cmn contoh ya
+        //Mahasiswa MhsBaca = JsonConvert.DeserializeObject<Mahasiswa>(HasilBacaJson);
+
+        //Console.WriteLine("======== Newtonsoft.Json ========");
+        //Console.WriteLine("NIM: " + MhsBaca.NIM);
+        //Console.WriteLine("Nama: " + MhsBaca.nama);
+        //Console.WriteLine("Alamat: " + MhsBaca.alamat);
+
+    }
+}
+
+        //objMhs.NIM = 122011389;
+        //objMhs.nama = "Alan";
+        //objMhs.alamat = "Bandung";
+
+        //// Serialisasi
+        //string JsonOutpuMahasiswa = JsonConvert.SerializeObject(objMhs);
+        //// pastiin letak folder nya sesuai, yg dibawah cmn contoh ya
+        //File.WriteAllText("D://JSON/Mahasiswa.json", JsonOutpuMahasiswa);
+
+        // Deserialisasi
+        //string HasilBacaJson = File.ReadAllText("D://JSON/Mahasiswa.json");
+        //// pastiin letak folder nya sesuai, yg dibawah cmn contoh ya
+        //Mahasiswa MhsBaca = JsonConvert.DeserializeObject<Mahasiswa>(HasilBacaJson);
+
+        //Console.WriteLine("======== Newtonsoft.Json ========");
+        //Console.WriteLine("NIM: " + MhsBaca.NIM);
+        //Console.WriteLine("Nama: " + MhsBaca.nama);
+        //Console.WriteLine("Alamat: " + MhsBaca.alamat);
+
+    }
+}
+
+        //objMhs.NIM = 122011389;
+        //objMhs.nama = "Alan";
+        //objMhs.alamat = "Bandung";
+
+        //// Serialisasi
+        //string JsonOutpuMahasiswa = JsonConvert.SerializeObject(objMhs);
+        //// pastiin letak folder nya sesuai, yg dibawah cmn contoh ya
+        //File.WriteAllText("D://JSON/Mahasiswa.json", JsonOutpuMahasiswa);
+
+        // Deserialisasi
+        //string HasilBacaJson = File.ReadAllText("D://JSON/Mahasiswa.json");
+        //// pastiin letak folder nya sesuai, yg dibawah cmn contoh ya
+        //Mahasiswa MhsBaca = JsonConvert.DeserializeObject<Mahasiswa>(HasilBacaJson);
+
+        //Console.WriteLine("======== Newtonsoft.Json ========");
+        //Console.WriteLine("NIM: " + MhsBaca.NIM);
+        //Console.WriteLine("Nama: " + MhsBaca.nama);
+        //Console.WriteLine("Alamat: " + MhsBaca.alamat);
+
+    }
+}
+
+        //objMhs.NIM = 122011389;
+        //objMhs.nama = "Alan";
+        //objMhs.alamat = "Bandung";
+
+        //// Serialisasi
+        //string JsonOutpuMahasiswa = JsonConvert.SerializeObject(objMhs);
+        //// pastiin letak folder nya sesuai, yg dibawah cmn contoh ya
+        //File.WriteAllText("D://JSON/Mahasiswa.json", JsonOutpuMahasiswa);
+
+        // Deserialisasi
+        //string HasilBacaJson = File.ReadAllText("D://JSON/Mahasiswa.json");
+        //// pastiin letak folder nya sesuai, yg dibawah cmn contoh ya
+        //Mahasiswa MhsBaca = JsonConvert.DeserializeObject<Mahasiswa>(HasilBacaJson);
+
+        //Console.WriteLine("======== Newtonsoft.Json ========");
+        //Console.WriteLine("NIM: " + MhsBaca.NIM);
+        //Console.WriteLine("Nama: " + MhsBaca.nama);
+        //Console.WriteLine("Alamat: " + MhsBaca.alamat);
+
+    }
+}
+
+        //objMhs.NIM = 122011389;
+        //objMhs.nama = "Alan";
+        //objMhs.alamat = "Bandung";
+
+        //// Serialisasi
+        //string JsonOutpuMahasiswa = JsonConvert.SerializeObject(objMhs);
+        //// pastiin letak folder nya sesuai, yg dibawah cmn contoh ya
+        //File.WriteAllText("D://JSON/Mahasiswa.json", JsonOutpuMahasiswa);
+
+        // Deserialisasi
+        //string HasilBacaJson = File.ReadAllText("D://JSON/Mahasiswa.json");
+        //// pastiin letak folder nya sesuai, yg dibawah cmn contoh ya
+        //Mahasiswa MhsBaca = JsonConvert.DeserializeObject<Mahasiswa>(HasilBacaJson);
+
+        //Console.WriteLine("======== Newtonsoft.Json ========");
+        //Console.WriteLine("NIM: " + MhsBaca.NIM);
+        //Console.WriteLine("Nama: " + MhsBaca.nama);
+        //Console.WriteLine("Alamat: " + MhsBaca.alamat);
+
+    }
+}
+
+        //objMhs.NIM = 122011389;
+        //objMhs.nama = "Alan";
+        //objMhs.alamat = "Bandung";
+
+        //// Serialisasi
+        //string JsonOutpuMahasiswa = JsonConvert.SerializeObject(objMhs);
+        //// pastiin letak folder nya sesuai, yg dibawah cmn contoh ya
+        //File.WriteAllText("D://JSON/Mahasiswa.json", JsonOutpuMahasiswa);
+
+        // Deserialisasi
+        //string HasilBacaJson = File.ReadAllText("D://JSON/Mahasiswa.json");
+        //// pastiin letak folder nya sesuai, yg dibawah cmn contoh ya
+        //Mahasiswa MhsBaca = JsonConvert.DeserializeObject<Mahasiswa>(HasilBacaJson);
+
+        //Console.WriteLine("======== Newtonsoft.Json ========");
+        //Console.WriteLine("NIM: " + MhsBaca.NIM);
+        //Console.WriteLine("Nama: " + MhsBaca.nama);
+        //Console.WriteLine("Alamat: " + MhsBaca.alamat);
+
+    }
+}
+
+
+
+
+    // buat class yang mau diparsing duluu
+    public class Mahasiswa
+    {
+        public int NIM;
+        public string nama;
+        public string alamat;
+
+    }
+
+    //buat foreach
+    public static void DisplayArray<T>(T[] array)
+    {
+        foreach (var item in array)
+        {
+            Console.Write(item + " ");
+        }
+        Console.WriteLine();
+    }
+}
+
