@@ -4,5 +4,12 @@
   "success": true,
   "projectFilePath": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos-library\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
