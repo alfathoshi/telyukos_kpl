@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "zmgrRAxZePaTFLAmlOGmpO5Ht8+d1atrNRo8awXwnD7aRuD9VdqVL2pfNEDZoY/uYyYkhkBhAJw1KDxDnjDF4g==",
+  "success": true,
+  "projectFilePath": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos\\telyukos.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\wilda\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

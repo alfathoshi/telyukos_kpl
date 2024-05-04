@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace telyukos_library.Menu.MainMenu
+namespace telyukos_library.Menu
 {
     public class PilihRole
     {
@@ -26,6 +26,6 @@ namespace telyukos_library.Menu.MainMenu
             Console.WriteLine("= 3. Kembali                                  =");
             Console.WriteLine("===============================================");
         }
-        
+
     }
 }

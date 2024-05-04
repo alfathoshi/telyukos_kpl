@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace telyukos_library.Menu
+namespace telyukos_library.Menu.PemilikKos
 {
     public class PemilikKos
     {
-        public void MenuAwal()
+        public static void MenuAwal()
         {
             Console.WriteLine("===============================================");
             Console.WriteLine("=             Aplikasi TelyuKos               =");
@@ -20,9 +20,14 @@ namespace telyukos_library.Menu
             Console.WriteLine("=         Selamat Datang Pemilik Kos          =");
             Console.WriteLine("=   Silahkan Pilih Menu Yang Anda Inginkan!   =");
             Console.WriteLine("=                    ***                      =");
+            Console.WriteLine("=                                             =");
+            Console.WriteLine("= 1. Upload Kos                               =");
+            Console.WriteLine("= 2. Edit Kos                                 =");
+            Console.WriteLine("= 3. Delete Kos                               =");
+            Console.WriteLine("= 4. Kembali                                  =");
             Console.WriteLine("===============================================");
         }
 
-
+        
     }
 }
