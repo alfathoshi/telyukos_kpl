@@ -1,12 +1,14 @@
 ﻿using System;
 using telyukos_library.Menu.MainMenu;
 using static telyukos.Akun;
+using telyukos;
 
 //Automata
-namespace telyukos {
-
-	internal class RegistrasiPenyewa
+namespace telyukos
 {
+
+    internal class AkunRegisPenyewa
+    {
         public enum StatePenyewa { START, REGIS_PENYEWA, REGISTRASI, REGISTER_BERHASIL, KELUAR, SUBMITREG, MENU_AWAL, HOME_PAGE_PENYEWA, BERHASIL_DAFTAR }
 
         public enum AkunTrigger { TULIS_START, PILIH_PENYEWA, BATAL, MENGISI_DATA, PILIH_REGIS, REGISTER_BERHASIL }
@@ -27,7 +29,7 @@ namespace telyukos {
 
         Transition[] transitions =
         {
-            
+
             new Transition(StatePenyewa.START,AkunTrigger.TULIS_START ,StatePenyewa.MENU_AWAL),
             new Transition(StatePenyewa.MENU_AWAL,AkunTrigger.PILIH_REGIS, StatePenyewa.REGISTRASI),
             new Transition(StatePenyewa.MENU_AWAL,AkunTrigger.BATAL, StatePenyewa.KELUAR),
@@ -56,7 +58,7 @@ namespace telyukos {
         }
         public void ActiveTrigger(AkunTrigger Trigger)
         {
-           currentState = getNextState(currentState, Trigger);
+            currentState = getNextState(currentState, Trigger);
 
             if (currentState == StatePenyewa.START)
             {
@@ -69,7 +71,7 @@ namespace telyukos {
             }
             else if (currentState == StatePenyewa.REGISTER_BERHASIL)
             {
-               Console.WriteLine("--- Berhasil Melakukan Registrasi ---");
+                Console.WriteLine("--- Berhasil Melakukan Registrasi ---");
             }
             else if (currentState == StatePenyewa.KELUAR)
             {
@@ -95,3 +97,18 @@ namespace telyukos {
 
 
 }
+
+
+
+/*using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace telyukos
+{
+    internal class AkunRegisPenyewa
+    {
+    }
+}*/

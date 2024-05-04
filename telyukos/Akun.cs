@@ -8,16 +8,9 @@ namespace telyukos
 {
     internal class Akun
     {
-
-
         public enum stateAkun { START, REGIS_PEMILIK, REGIS_PENYEWA, LOGIN, REGISTRASI, REGISTER_BERHASIL, KELUAR, SUBMITREG, SUBMITLOG, MENU_AWAL, HOME_PAGE_PEMILIK, HOME_PAGE_PENYEWA, GAGAL_LOGIN, BERHASIL_DAFTAR }
 
         public enum AkunTrigger { TULIS_START, PILIH_PEMILIK, PILIH_PENYEWA, BATAL, MENGISI_DATA, PILIH_REGIS, PILIH_LOGIN, REGISTER_BERHASIL, LOGIN_DITERIMA, LOGIN_DITOLAK }
-
-        public enum stateAkun {START,REGIS_PEMILIK,REGIS_PENYEWA,LOGIN,REGISTRASI, REGISTER_BERHASIL, KELUAR,SUBMITREG,SUBMITLOG,MENU_AWAL, HOME_PAGE_PEMILIK , HOME_PAGE_PENYEWA, GAGAL_LOGIN,BERHASIL_DAFTAR }
-
-        public enum AkunTrigger{TULIS_START,PILIH_PEMILIK,PILIH_PENYEWA,BATAL,MENGISI_DATA,PILIH_REGIS,PILIH_LOGIN, REGISTER_BERHASIL,LOGIN_DITERIMA,LOGIN_DITOLAK }
-
 
         class Transition
         {
@@ -26,9 +19,9 @@ namespace telyukos
             public stateAkun StateAkhir;
 
 
-            public Transition(stateAkun stateAwal, AkunTrigger trigger, stateAkun stateAkhir)
 
-            public Transition (stateAkun stateAwal, AkunTrigger trigger, stateAkun stateAkhir)
+
+            public Transition(stateAkun stateAwal, AkunTrigger trigger, stateAkun stateAkhir)
 
             {
                 StateAwal = stateAwal;
@@ -43,7 +36,7 @@ namespace telyukos
 
             new Transition(stateAkun.START,AkunTrigger.TULIS_START ,stateAkun.MENU_AWAL),
 
-            new Transition(stateAkun.START,AkunTrigger.TULIS_START ,stateAkun.MENU_AWAL),   
+            new Transition(stateAkun.START,AkunTrigger.TULIS_START ,stateAkun.MENU_AWAL),
 
             new Transition(stateAkun.MENU_AWAL,AkunTrigger.PILIH_REGIS, stateAkun.REGISTRASI),
             new Transition(stateAkun.MENU_AWAL,AkunTrigger.PILIH_LOGIN, stateAkun.LOGIN),
@@ -83,8 +76,6 @@ namespace telyukos
 
         public stateAkun getNextState(stateAkun StateAwal, AkunTrigger trigger)
 
-        public stateAkun getNextState(stateAkun StateAwal,AkunTrigger trigger)
-
         {
             stateAkun StateAkhir = StateAwal;
             for (int i = 0; i < transitions.Length; i++)
@@ -109,53 +100,47 @@ namespace telyukos
             {
                 Console.WriteLine("REGISTRASI BERHASIL!!");
 
-            //menu awal
-            menu tampilanMenu = new menu();
-            tampilanMenu.header();
-            currentState = getNextState(currentState,Trigger);
+                //menu awal
+                menu tampilanMenu = new menu();
+                tampilanMenu.header();
+                currentState = getNextState(currentState, Trigger);
 
-            if (currentState == stateAkun.BERHASIL_DAFTAR)
-            {
-                console.WriteLine("REGISTRASI BERHASIL!!");
+                if (currentState == stateAkun.BERHASIL_DAFTAR)
+                {
+                    Console.WriteLine("REGISTRASI BERHASIL!!");
+
+                }
+                else if (currentState == stateAkun.HOME_PAGE_PEMILIK)
+                {
+                    Console.WriteLine("==========PEMILIK==========");
+
+                    Console.WriteLine("1.Tambahkan Kos");
+                    Console.WriteLine("2.Lihat Kos");
+                    Console.WriteLine("3.Edit Kos");
+                    Console.WriteLine("4.Delete Kos");
+                    Console.WriteLine("0.Kembali");
+                }
+                else if (currentState == stateAkun.HOME_PAGE_PENYEWA)
+                {
+                    Console.WriteLine("==========PENYEWA==========");
+
+                    Console.WriteLine("1.Lihat Daftar Kos ");
+                    Console.WriteLine("2.Informasi Kos");
+                    Console.WriteLine("3.Reservasi Kos");
+                    Console.WriteLine("0.Kembali");
+                }
+                else if (currentState == stateAkun.GAGAL_LOGIN)
+                {
+                    Console.WriteLine("                    LOGIN GAGAL!!                 ");
+                    Console.WriteLine("Sesuaikan Username & Password yang anda telah buat");
+                }
+                else if (currentState == stateAkun.MENU_AWAL)
+                {
+                    MainMenu m = new MainMenu();
+                }
 
             }
-            else if (currentState == stateAkun.HOME_PAGE_PEMILIK)
-            {
-                Console.WriteLine("==========PEMILIK==========");
 
-                Console.WriteLine("1.Tambahkan Kos");
-                Console.WriteLine("2.Lihat Kos");
-                Console.WriteLine("3.Edit Kos");
-                Console.WriteLine("4.Delete Kos");
-                Console.WriteLine("0.Kembali");
-
-                Console.WriteLine("1.Tambahkan Kos")
-                Console.WriteLine("2.Lihat Kos")
-                Console.WriteLine("3.Edit Kos")
-                Console.WriteLine("4.Delete Kos")
-                Console.WriteLine("0.Kembali")
-
-            }
-            else if (currentState == stateAkun.HOME_PAGE_PENYEWA)
-            {
-                Console.WriteLine("==========PENYEWA==========");
-
-                Console.WriteLine("1.Lihat Daftar Kos ");
-                Console.WriteLine("2.Informasi Kos");
-                Console.WriteLine("3.Reservasi Kos");
-                Console.WriteLine("0.Kembali");
-            }
-            else if (currentState == stateAkun.GAGAL_LOGIN)
-            {
-                Console.WriteLine("                    LOGIN GAGAL!!                 ");
-                Console.WriteLine("Sesuaikan Username & Password yang anda telah buat");
-            }
-            else if (currentState == stateAkun.MENU_AWAL)
-            {
-                MainMenu m = new MainMenu();
-            }
-          
         }
-    
     }
 }

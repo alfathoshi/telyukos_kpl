@@ -3,7 +3,7 @@ using telyukos;
 using System.Diagnostics;
 using static telyukos.RentStatus;
 
-namespace PenyewaKos
+namespace telyukos
 
 {
     internal class ReservasiKos
@@ -33,8 +33,6 @@ namespace PenyewaKos
             new Transition(ReservasiState.RESERVASI,ReservasiTrigger.MENGISI_DATA,ReservasiState.DAFTAR_RESERVASI),
             new Transition(ReservasiState.DAFTAR_RESERVASI,ReservasiTrigger.DAFTAR_DITERIMA,ReservasiState.RESERVASI_BERHASIL),
             new Transition(ReservasiState.DAFTAR_RESERVASI,ReservasiTrigger.DAFTAR_DITOLAK,ReservasiState.RESERVASI_GAGAL),
-
-
      };
 
         public ReservasiState GetNextState(ReservasiState stateAwal, ReservasiTrigger trigger)
@@ -61,7 +59,7 @@ namespace PenyewaKos
 
         public void ActiveTrigger(ReservasiTrigger trigger)
         {
-            RentsStatus rent1 = RentsStatus.Status1;
+            
             string status1 = getRentStatus(RentsStatus.Status1);
             
 

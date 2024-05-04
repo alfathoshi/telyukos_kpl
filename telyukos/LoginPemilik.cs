@@ -5,20 +5,20 @@ using static telyukos.Akun;
 
 namespace telyukos
 {
-    internal class LoginPemilik
+    internal class AkunLoginPemilik
     {
 
-        public enum StatePenyewa { START, LOGIN, KELUAR, SUBMITLOG, MENU_AWAL, HOME_PAGE_PEMILIK, GAGAL_LOGIN }
+        public enum StatePemilik { START, LOGIN, KELUAR, SUBMITLOG, MENU_AWAL, HOME_PAGE_PEMILIK, GAGAL_LOGIN }
 
         public enum AkunTrigger { TULIS_START, BATAL, MENGISI_DATA, PILIH_LOGIN, LOGIN_DITERIMA, LOGIN_DITOLAK }
 
         class Transition
         {
-            public StatePenyewa StateAwal;
+            public StatePemilik StateAwal;
             public AkunTrigger Trigger;
-            public StatePenyewa StateAkhir;
+            public StatePemilik StateAkhir;
 
-            public Transition(StatePenyewa stateAwal, AkunTrigger trigger, StatePenyewa stateAkhir)
+            public Transition(StatePemilik stateAwal, AkunTrigger trigger, StatePemilik stateAkhir)
             {
                 StateAwal = stateAwal;
                 StateAkhir = stateAkhir;
@@ -29,21 +29,22 @@ namespace telyukos
         Transition[] transitions =
         {
 
-            new Transition(StatePenyewa.START,AkunTrigger.TULIS_START ,StatePenyewa.MENU_AWAL),
-            new Transition(StatePenyewa.MENU_AWAL,AkunTrigger.PILIH_LOGIN, StatePenyewa.LOGIN),
-            new Transition(StatePenyewa.MENU_AWAL,AkunTrigger.BATAL, StatePenyewa.KELUAR),
+            new Transition(StatePemilik.START,AkunTrigger.TULIS_START ,StatePemilik.MENU_AWAL),
+            new Transition(StatePemilik.MENU_AWAL,AkunTrigger.PILIH_LOGIN, StatePemilik.LOGIN),
+            new Transition(StatePemilik.MENU_AWAL,AkunTrigger.BATAL, StatePemilik.KELUAR),
 
             //Regis
-            new Transition(StatePenyewa.LOGIN,AkunTrigger.MENGISI_DATA,StatePenyewa.SUBMITLOG),
-            new Transition(StatePenyewa.SUBMITLOG,AkunTrigger.LOGIN_DITERIMA,StatePenyewa.HOME_PAGE_PEMILIK),
-            new Transition(StatePenyewa.SUBMITLOG,AkunTrigger.LOGIN_DITOLAK,StatePenyewa.GAGAL_LOGIN),
-            new Transition(StatePenyewa.LOGIN,AkunTrigger.BATAL,StatePenyewa.MENU_AWAL),
+            new Transition(StatePemilik.LOGIN,AkunTrigger.MENGISI_DATA,StatePemilik.SUBMITLOG),
+            new Transition(StatePemilik.SUBMITLOG,AkunTrigger.LOGIN_DITERIMA,StatePemilik.HOME_PAGE_PEMILIK),
+            new Transition(StatePemilik.SUBMITLOG,AkunTrigger.LOGIN_DITOLAK,StatePemilik.GAGAL_LOGIN),
+            new Transition(StatePemilik.LOGIN,AkunTrigger.BATAL,StatePemilik.MENU_AWAL),
         };
 
-        public StatePenyewa currentState = StatePenyewa.START;
-        public StatePenyewa getNextState(StatePenyewa StateAwal, AkunTrigger trigger)
+        public StatePemilik currentState = StatePemilik.START;
+        menu tampilan = new menu();
+        public StatePemilik getNextState(StatePemilik StateAwal, AkunTrigger trigger)
         {
-            StatePenyewa StateAkhir = StateAwal;
+            StatePemilik StateAkhir = StateAwal;
             for (int i = 0; i < transitions.Length; i++)
             {
                 Transition perubahan = transitions[i];
@@ -58,33 +59,28 @@ namespace telyukos
         {
             currentState = getNextState(currentState, Trigger);
 
-            if (currentState == StatePenyewa.START)
+            if (currentState == StatePemilik.START)
             {
                 Console.WriteLine("=== LOGIN ===");
 
             }
-            else if (currentState == StatePenyewa.LOGIN)
+            else if (currentState == StatePemilik.LOGIN)
             {
                 Console.WriteLine("=== Silakan Login ===");
             }
-            else if (currentState == StatePenyewa.HOME_PAGE_PEMILIK)
+            else if (currentState == StatePemilik.HOME_PAGE_PEMILIK)
             {
-                Console.WriteLine("==========PEMILIK==========");
-                Console.WriteLine("1.Tambahkan Kos");
-                Console.WriteLine("2.Lihat Kos");
-                Console.WriteLine("3.Edit Kos");
-                Console.WriteLine("4.Delete Kos");
-                Console.WriteLine("0.Kembali");
+                tampilan.ownerMainPage();
             }
-            else if (currentState == StatePenyewa.KELUAR)
+            else if (currentState == StatePemilik.KELUAR)
             {
                 Console.WriteLine("--- Batal Login ---");
             }
-            else if (currentState == StatePenyewa.GAGAL_LOGIN)
+            else if (currentState == StatePemilik.GAGAL_LOGIN)
             {
                 Console.WriteLine("--- Data Salah ---");
             }
-            else if (currentState == StatePenyewa.MENU_AWAL)
+            else if (currentState == StatePemilik.MENU_AWAL)
             {
                 MainMenu m = new MainMenu();
             }
@@ -93,3 +89,86 @@ namespace telyukos
     }
 
 }
+
+/*using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static telyukos.Akun;
+using telyukos;
+
+namespace telyukos
+{
+    internal class AkunLoginPemilik
+    {
+        public enum LoginPemilikState { LOGIN, SUBMITLOG, HOME_PAGE_PEMILIK, GAGAL_LOGIN, KELUAR }
+        public enum LoginPemilikTrigger { MENGISI_DATA, LOGIN_DITERIMA_PEMILIK, LOGIN_DITOLAK, BATAL }
+
+        class Transition
+        {
+            public LoginPemilikState StateAwal;
+            public LoginPemilikTrigger Trigger;
+            public LoginPemilikState StateAkhir;
+
+
+            public Transition(LoginPemilikState stateAwal, LoginPemilikTrigger trigger, LoginPemilikState stateAkhir)
+
+
+            {
+                StateAwal = stateAwal;
+                StateAkhir = stateAkhir;
+                Trigger = trigger;
+            }
+        }
+
+        Transition[] transitions =
+        {
+
+            new Transition(LoginPemilikState.LOGIN, LoginPemilikTrigger.MENGISI_DATA, LoginPemilikState.SUBMITLOG),
+            new Transition(LoginPemilikState.SUBMITLOG, LoginPemilikTrigger.LOGIN_DITERIMA_PEMILIK, LoginPemilikState.HOME_PAGE_PEMILIK),
+            new Transition(LoginPemilikState.SUBMITLOG, LoginPemilikTrigger.LOGIN_DITOLAK, LoginPemilikState.GAGAL_LOGIN),
+            new Transition(LoginPemilikState.LOGIN, LoginPemilikTrigger.BATAL, LoginPemilikState.KELUAR),
+        };
+
+        public LoginPemilikState currentState = LoginPemilikState.LOGIN;
+
+        public LoginPemilikState getNextState(LoginPemilikState StateAwal, LoginPemilikTrigger trigger)
+
+        {
+            LoginPemilikState StateAkhir = StateAwal;
+            for (int i = 0; i < transitions.Length; i++)
+            {
+                Transition perubahan = transitions[i];
+                if (StateAwal == perubahan.StateAwal && trigger == perubahan.Trigger)
+                {
+                    StateAkhir = perubahan.StateAkhir;
+                }
+            }
+            return StateAkhir;
+        }
+
+        menu tampilan =  new menu();
+        public void ActiveTrigger(LoginPemilikTrigger Trigger)
+        {
+
+            currentState = getNextState(currentState, Trigger);
+
+            if(currentState == LoginPemilikState.HOME_PAGE_PEMILIK) 
+            {
+                Console.WriteLine("Selamat Datang Di Akun Pemilik");
+            }
+            else if(currentState == LoginPemilikState.GAGAL_LOGIN)
+            {
+                Console.WriteLine("                    LOGIN GAGAL!!                 ");
+                Console.WriteLine("Sesuaikan Username & Password yang anda telah buat");
+            }
+            else if(currentState == LoginPemilikState.KELUAR)
+            {
+                tampilan.authPage();
+            }
+
+        }
+    }
+}
+*/

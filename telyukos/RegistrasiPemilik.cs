@@ -1,12 +1,13 @@
 ﻿using System;
 using telyukos_library.Menu.MainMenu;
 using static telyukos.Akun;
+using telyukos;
 
 //Automata
 namespace telyukos
 {
 
-    internal class RegistrasiPemilik
+    internal class AkunRegisPemilik
     {
         public enum StatePemilik { START, REGIS_PEMILIK, REGISTRASI, REGISTER_BERHASIL, KELUAR, SUBMITREG, MENU_AWAL, HOME_PAGE_PEMILIK, BERHASIL_DAFTAR }
 
@@ -96,3 +97,18 @@ namespace telyukos
 
 
 }
+
+
+/*using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace telyukos
+{
+    internal class AkunRegisPemilik
+    {
+
+    }
+}*/
