@@ -8,7 +8,7 @@ namespace telyukos_library.Menu.LoginMenu
 {
     public class LoginPage
     {
-        public void UserName() 
+        public static void UserName() 
         {
             Console.WriteLine("===============================================");
             Console.WriteLine("=             Aplikasi TelyuKos               =");
@@ -24,7 +24,7 @@ namespace telyukos_library.Menu.LoginMenu
             Console.WriteLine("===============================================");
         }
 
-        public void PassWord()
+        public static void PassWord()
         {
             Console.WriteLine("===============================================");
             Console.WriteLine("=             Aplikasi TelyuKos               =");
