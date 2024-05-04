@@ -14,12 +14,12 @@
             Console.WriteLine("=                    ***                      =");
             Console.WriteLine("=               Halaman Masuk                 =");
             Console.WriteLine("=                    ***                      =");
+            Console.WriteLine("=                                             =");
+            Console.WriteLine("= Login or Register:                          =");
+            Console.WriteLine("= 1. Login                                    =");
+            Console.WriteLine("= 2. Register                                 =");
+            Console.WriteLine("= 0. Exit                                     =");
             Console.WriteLine("===============================================");
-            Console.WriteLine();
-            Console.WriteLine("Login or Register:");
-            Console.WriteLine("1. Login");
-            Console.WriteLine("2. Register");
-            Console.WriteLine("0. Exit");
             Console.Write("Choice: ");
         }
         public void mainMenuOwner()
@@ -33,15 +33,15 @@
             Console.WriteLine("=                    ***                      =");
             Console.WriteLine("=   Silahkan Pilih Menu Yang Anda Inginkan    =");
             Console.WriteLine("=                    ***                      =");
+            Console.WriteLine("=                                             =");
+            Console.WriteLine("= Menu:                                       =");
+            Console.WriteLine("= 1. Add Kos                                  =");
+            Console.WriteLine("= 2. Update Kos                               =");
+            Console.WriteLine("= 3. Delete Kos                               =");
+            Console.WriteLine("= 4. Show All Kos                             =");
+            Console.WriteLine("= 5. Logout                                   =");
+            Console.WriteLine("= 0. Exit                                     =");
             Console.WriteLine("===============================================");
-            Console.WriteLine();
-            Console.WriteLine("Menu:");
-            Console.WriteLine("1. Add Kos");
-            Console.WriteLine("2. Update Kos");
-            Console.WriteLine("3. Delete Kos");
-            Console.WriteLine("4. Show All Kos");
-            Console.WriteLine("5. Logout");
-            Console.WriteLine("0. Exit");
             Console.Write("Choice: ");
         }
         public void mainManuRenter()
@@ -55,14 +55,14 @@
             Console.WriteLine("=                    ***                      =");
             Console.WriteLine("=   Silahkan Pilih Menu Yang Anda Inginkan    =");
             Console.WriteLine("=                    ***                      =");
+            Console.WriteLine("=                                             =");
+            Console.WriteLine("= Menu:                                       =");
+            Console.WriteLine("= 1. Lihat Daftar Kos                         =");
+            Console.WriteLine("= 2. Cari Kos                                 =");
+            Console.WriteLine("= 3. My Kos                                   =");
+            Console.WriteLine("= 4. Logout                                   =");
+            Console.WriteLine("= 0. Kembali                                  =");
             Console.WriteLine("===============================================");
-            Console.WriteLine();
-            Console.WriteLine("Menu:");
-            Console.WriteLine("1. Lihat Daftar Kos ");
-            Console.WriteLine("2. Cari Kos");
-            Console.WriteLine("3. My Kos");
-            Console.WriteLine("4. Logout");
-            Console.WriteLine("0. Kembali");
             Console.Write("Choice: ");
         }
         public void uploadKos()
@@ -85,7 +85,6 @@
             Console.WriteLine("Menu:");
             Console.WriteLine("1. Pilih Kos");
             Console.WriteLine("0. Kembali");
-
         }
 
         public void helloWorld()
