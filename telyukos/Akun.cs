@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security;
 using telyukos;
-
+using telyukos_library.Menu.MainMenu;
 
 
 namespace telyukos
@@ -88,6 +88,7 @@ namespace telyukos
             if (currentState == stateAkun.BERHASIL_DAFTAR)
             {
                 Console.WriteLine("REGISTRASI BERHASIL!!");
+            
             }
             else if (currentState == stateAkun.HOME_PAGE_PEMILIK)
             {
@@ -111,7 +112,11 @@ namespace telyukos
                 Console.WriteLine("                    LOGIN GAGAL!!                 ");
                 Console.WriteLine("Sesuaikan Username & Password yang anda telah buat");
             }
-
+            else if (currentState == stateAkun.MENU_AWAL)
+            {
+                MainMenu m = new MainMenu();
+            }
+          
         }
     
     }

@@ -2,11 +2,11 @@
 namespace telyukos {
     public class RentStatus
     {
-        public enum RentsStatus { Status1, Status2, Status3 }
+        public enum RentsStatus { Status1, Status2}
 
         public static string getRentStatus(RentsStatus status)
         {
-            string[] input = { "Tersedia", "Disewa", "Penuh" };
+            string[] input = { "Tersedia", "Disewa"};
             return input[(int)status];
 
         }
