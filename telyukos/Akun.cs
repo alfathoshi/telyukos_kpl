@@ -101,7 +101,11 @@ namespace telyukos
             tampilanMenu.header();
             currentState = getNextState(currentState,Trigger);
 
-            if (currentState == stateAkun.BERHASIL_DAFTAR)
+            if(currentState == stateAkun.REGISTRASI)
+            {
+                tampilanMenu.registerPage();
+            }
+            else if (currentState == stateAkun.BERHASIL_DAFTAR)
             {
                 Console.WriteLine("REGISTRASI BERHASIL!!");
 
