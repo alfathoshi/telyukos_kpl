@@ -186,7 +186,7 @@ internal class Program
                         case "5":
                             app.currentState = app.getNextState(app.currentState, AuthState.Trigger.CLOSE);
                             break;
-                        default: 
+                        default:
                             Console.WriteLine("Invalid Choice"); break;
                     }
                 }
