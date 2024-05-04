@@ -151,10 +151,17 @@ internal class Program
                             }
                             break;
                         case "2":
+                            HttpResponseMessage res = await httpClient.GetAsync("api/Kos");
+                            res.EnsureSuccessStatusCode();
+                            Kos[] findKos = await res.Content.ReadFromJsonAsync<Kos[]>();
+
+                            // Urutkan data berdasarkan ID
+                            findKos = findKos.OrderBy(k => k.Id).ToArray();
                             Console.WriteLine("Cari Kos");
                             Console.WriteLine("Silahkan tulis nama kos");
                             Console.Write("Kos: ");
                             string namaKos = Console.ReadLine();
+                            Console.WriteLine(SequentialSearch<Kos>.Search(findKos, new Kos { Nama = namaKos}));
                             break;
                         case "3":
                             Console.WriteLine("My Kos");

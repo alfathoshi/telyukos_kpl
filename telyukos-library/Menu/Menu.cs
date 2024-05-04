@@ -87,5 +87,10 @@
             Console.WriteLine("0. Kembali");
 
         }
+
+        public void helloWorld()
+        {
+            Console.WriteLine("Hello World!");
+        }
     }
 }
