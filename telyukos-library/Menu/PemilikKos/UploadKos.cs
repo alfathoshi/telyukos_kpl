@@ -8,7 +8,7 @@ namespace telyukos_library.Menu.PemilikKos
 {
     public class UploadKos
     {
-        public void NamaKos()
+        public static void NamaKos()
         {
             Console.WriteLine("===============================================");
             Console.WriteLine("=             Aplikasi TelyuKos               =");
@@ -25,7 +25,7 @@ namespace telyukos_library.Menu.PemilikKos
             Console.WriteLine("===============================================");
         }
 
-        public void Alamat()
+        public static void Alamat()
         {
             Console.WriteLine("===============================================");
             Console.WriteLine("=             Aplikasi TelyuKos               =");
@@ -42,7 +42,7 @@ namespace telyukos_library.Menu.PemilikKos
             Console.WriteLine("===============================================");
         }
 
-        public void JumlahKamar()
+        public static void JumlahKamar()
         {
             Console.WriteLine("===============================================");
             Console.WriteLine("=             Aplikasi TelyuKos               =");
