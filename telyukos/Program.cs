@@ -4,11 +4,27 @@ using System.Security.Cryptography.X509Certificates;
 using telyukos_library.Searching;
 using telyukos_library.Common;
 using System.Reflection.Emit;
+using telyukos_library.Sorting;
+using telyukos_library;
+using telyukos_library.Menu.MainMenu;
+using telyukos_library.Menu.PemilikKos;
+using telyukos_library.Menu.LoginMenu;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
+        //===============================================================
+        //=                                                             =
+        //=                                                             =
+        //=                     Tutorial Make Library                   =
+        //=           Silahkan uncomment tutorial yang mau dipake       =
+        //=                                                             =
+        //=                                                             =
+        //===============================================================
+
+
+
         // ========== Tutorial make binary search nya ==========
 
         //int[] intArray = { 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 };
@@ -26,6 +42,7 @@ internal class Program
         //Console.WriteLine("\nSearching in stringArray:");
         //Console.WriteLine("Index of 'banana': " + BinarySearch<string>.Search(stringArray, "banana"));
         //Console.WriteLine("Index of 'lemon': " + BinarySearch<string>.Search(stringArray, "lemon"));
+
 
         // ========== Tutorial make Sequential Search nya ==========
 
@@ -46,16 +63,55 @@ internal class Program
         //Console.WriteLine("Index of 'lemon': " + SequentialSearch<string>.Search(stringArray, "lemon"));
 
 
-        // ========== Tutorial make generate ID
-        int numberOfIDs = 20; // Jumlah ID yang ingin dihasilkan
+        // ========== Tutorial make generate ID ====================
+        //int numberOfIDs = 20; // Jumlah ID yang ingin dihasilkan
 
-        Console.WriteLine("Generated IDs:");
+        //Console.WriteLine("Generated IDs:");
 
-        for (int i = 0; i < numberOfIDs; i++)
-        {
-            string id = RandomIntegerGenerator.GenerateID();
-            Console.WriteLine(id);
-        }
+        //for (int i = 0; i < numberOfIDs; i++)
+        //{
+        //    string id = RandomIntegerGenerator.GenerateID();
+        //    Console.WriteLine(id);
+        //}
+
+        // =========== Tutorial make Selection Sort ================
+
+        //int[] intArray = { 64, 25, 12, 22, 11 };
+        //double[] doubleArray = { 1.3, 5.5, 0.7, 2.1, 3.8 };
+        //string[] stringArray = { "banana", "apple", "orange", "grape", "kiwi" };
+
+        //// Ascending sort
+        //Console.WriteLine("Ascending Sort:");
+        //SelectionSort<int>.SortAscending(intArray);
+        //// Display array utk foreach, function nya ada dibawah, cek aja
+        //DisplayArray(intArray);
+
+        //SelectionSort<double>.SortAscending(doubleArray);
+        //DisplayArray(doubleArray);
+
+        //SelectionSort<string>.SortAscending(stringArray);
+        //DisplayArray(stringArray);
+
+        //// Descending sort
+        //Console.WriteLine("\nDescending Sort:");
+        //SelectionSort<int>.SortDescending(intArray);
+        //DisplayArray(intArray);
+
+        //SelectionSort<double>.SortDescending(doubleArray);
+        //DisplayArray(doubleArray);
+
+        //SelectionSort<string>.SortDescending(stringArray);
+        //DisplayArray(stringArray);
+
+
+        // ==================== Tutorial memakai library menu ========================
+
+        // karena method di class nya memakai static, jadi g perlu dibuat objek
+        // Langsung aja tulis Class.NamaMethod();
+
+        // Contoh:
+        PilihRole.Role();
+
 
         // ========== tutorial parsing pake library newtonsoft ==========
         //Mahasiswa objMhs = new Mahasiswa();
@@ -78,7 +134,9 @@ internal class Program
         //Console.WriteLine("NIM: " + MhsBaca.NIM);
         //Console.WriteLine("Nama: " + MhsBaca.nama);
         //Console.WriteLine("Alamat: " + MhsBaca.alamat);
+
     }
+
 
     // buat class yang mau diparsing duluu
     public class Mahasiswa
@@ -88,4 +146,13 @@ internal class Program
         public string alamat;
     }
 
+    //buat foreach
+    public static void DisplayArray<T>(T[] array)
+    {
+        foreach (var item in array)
+        {
+            Console.Write(item + " ");
+        }
+        Console.WriteLine();
+    }
 }
