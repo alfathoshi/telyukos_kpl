@@ -8,7 +8,7 @@ namespace telyukos_library.Menu.MainMenu
 {
     public class PilihRole
     {
-        public PilihRole()
+        public static void Role()
         {
             Console.WriteLine("===============================================");
             Console.WriteLine("=             Aplikasi TelyuKos               =");
