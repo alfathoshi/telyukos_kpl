@@ -1,7 +1,4 @@
-﻿using System;
-using System.Net.Http;
-using System.Net.Http.Json;
-using System.Threading.Tasks;
+﻿using System.Net.Http.Json;
 using telyukos;
 using telyukos_library.Menu;
 using telyukos_library.Searching;
@@ -25,6 +22,7 @@ internal class Program
                 _menu.header();
 
                 string choice = Console.ReadLine();
+                Console.WriteLine();
 
                 switch (choice)
                 {
@@ -38,6 +36,7 @@ internal class Program
                         User loginUser = new User { Email = email, Password = password, Role = "" };
                         HttpResponseMessage responseLogin = await httpClient.PostAsJsonAsync("api/Auth/login", loginUser);
 
+                        Console.WriteLine();
                         if (responseLogin.IsSuccessStatusCode)
                         {
                             HttpResponseMessage responseGetUser = await httpClient.GetAsync("api/Auth/" + email);
@@ -60,9 +59,6 @@ internal class Program
                             Console.WriteLine("Failed to login: " + responseLogin.StatusCode);
                         }
                         break;
-
-
-
 
                     case "2":
                         // Register
@@ -101,9 +97,6 @@ internal class Program
                         }
                         break;
 
-
-
-
                     case "0":
                         Environment.Exit(0);
                         break;
@@ -115,10 +108,12 @@ internal class Program
             }
             else
             {
+
                 if (Akun.Role == "penyewa")
                 {
                     _menu.mainManuRenter();
                     string menuChoice = Console.ReadLine();
+                    Console.WriteLine();
 
                     switch (menuChoice)
                     {
@@ -150,13 +145,16 @@ internal class Program
                                 }
                                 HttpResponseMessage responseRent = await httpClient.PutAsJsonAsync("api/Auth/user", kosRent);
                                 responseRent.EnsureSuccessStatusCode();
-                                Console.WriteLine("Succes");
-
-                            } 
-
+                                Console.WriteLine();
+                                Console.WriteLine("Reservasi Kos Berhasil");
+                                Console.WriteLine("Silahkan selesaikan pembayaran");
+                            }
                             break;
                         case "2":
                             Console.WriteLine("Cari Kos");
+                            Console.WriteLine("Silahkan tulis nama kos");
+                            Console.Write("Kos: ");
+                            string namaKos = Console.ReadLine();
                             break;
                         case "3":
                             Console.WriteLine("My Kos");
@@ -170,9 +168,8 @@ internal class Program
                         case "4":
                             isLoggedIn = false; break;
                         case "5":
-                            exit = true; break;
+                            Environment.Exit(0); break;
                     }
-                    break;
                 }
                 else
                 {
@@ -180,6 +177,7 @@ internal class Program
 
 
                     string menuChoice = Console.ReadLine();
+                    Console.WriteLine();
 
                     switch (menuChoice)
                     {
@@ -313,6 +311,8 @@ internal class Program
                                 Console.WriteLine($"ID: {kos.Id}, Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
                             }
                             break;
+                        case "5":
+                            isLoggedIn = false; break;
 
                         case "0":
                             exit = true;
