@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 
 namespace telyukos-library.Menu.PenyewaKos
@@ -48,7 +52,7 @@ namespace telyukos-library.Menu.PenyewaKos
             return stateAkhir;
         }
 
-        public void ActiveTrigger(ReservasiState trigger)
+        public static void ActiveTrigger(ReservasiState trigger)
         {
             currentState = GetNextState(currentState, trigger);
             if (currentState == ReservasiState.DAFTAR_RESERVASI)
