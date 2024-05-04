@@ -104,3 +104,24 @@ C:\Users\alfat\Documents\College\C#\telyukos\telyukos\obj\Debug\net8.0\telyuKos.
 C:\Users\alfat\Documents\College\C#\telyukos\telyukos\obj\Debug\net8.0\ref\telyuKos.dll
 C:\Users\alfat\Documents\College\C#\telyukos\telyukos\bin\Debug\net8.0\telyukos-library.dll
 C:\Users\alfat\Documents\College\C#\telyukos\telyukos\bin\Debug\net8.0\telyukos-library.pdb
+D:\Documents\Kuliah\Matkul\Semester 4\KPL\tubes\telyukos_kpl\telyukos\obj\Debug\net8.0\telyukos.dll
+D:\Documents\Kuliah\Matkul\Semester 4\KPL\tubes\telyukos_kpl\telyukos\obj\Debug\net8.0\refint\telyukos.dll
+D:\Documents\Kuliah\Matkul\Semester 4\KPL\tubes\telyukos_kpl\telyukos\obj\Debug\net8.0\telyukos.pdb
+D:\Documents\Kuliah\Matkul\Semester 4\KPL\tubes\telyukos_kpl\telyukos\bin\Debug\net8.0\telyukos.exe
+D:\Documents\Kuliah\Matkul\Semester 4\KPL\tubes\telyukos_kpl\telyukos\bin\Debug\net8.0\telyukos.deps.json
+D:\Documents\Kuliah\Matkul\Semester 4\KPL\tubes\telyukos_kpl\telyukos\bin\Debug\net8.0\telyukos.runtimeconfig.json
+D:\Documents\Kuliah\Matkul\Semester 4\KPL\tubes\telyukos_kpl\telyukos\bin\Debug\net8.0\telyukos.dll
+D:\Documents\Kuliah\Matkul\Semester 4\KPL\tubes\telyukos_kpl\telyukos\bin\Debug\net8.0\telyukos.pdb
+D:\Documents\Kuliah\Matkul\Semester 4\KPL\tubes\telyukos_kpl\telyukos\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Documents\Kuliah\Matkul\Semester 4\KPL\tubes\telyukos_kpl\telyukos\bin\Debug\net8.0\RestSharp.dll
+D:\Documents\Kuliah\Matkul\Semester 4\KPL\tubes\telyukos_kpl\telyukos\bin\Debug\net8.0\telyukos-library.dll
+D:\Documents\Kuliah\Matkul\Semester 4\KPL\tubes\telyukos_kpl\telyukos\bin\Debug\net8.0\telyukos-library.pdb
+D:\Documents\Kuliah\Matkul\Semester 4\KPL\tubes\telyukos_kpl\telyukos\obj\Debug\net8.0\telyukos.csproj.AssemblyReference.cache
+D:\Documents\Kuliah\Matkul\Semester 4\KPL\tubes\telyukos_kpl\telyukos\obj\Debug\net8.0\telyukos.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents\Kuliah\Matkul\Semester 4\KPL\tubes\telyukos_kpl\telyukos\obj\Debug\net8.0\telyukos.AssemblyInfoInputs.cache
+D:\Documents\Kuliah\Matkul\Semester 4\KPL\tubes\telyukos_kpl\telyukos\obj\Debug\net8.0\telyukos.AssemblyInfo.cs
+D:\Documents\Kuliah\Matkul\Semester 4\KPL\tubes\telyukos_kpl\telyukos\obj\Debug\net8.0\telyukos.csproj.CoreCompileInputs.cache
+D:\Documents\Kuliah\Matkul\Semester 4\KPL\tubes\telyukos_kpl\telyukos\obj\Debug\net8.0\telyukos.sourcelink.json
+D:\Documents\Kuliah\Matkul\Semester 4\KPL\tubes\telyukos_kpl\telyukos\obj\Debug\net8.0\telyukos.csproj.Up2Date
+D:\Documents\Kuliah\Matkul\Semester 4\KPL\tubes\telyukos_kpl\telyukos\obj\Debug\net8.0\telyukos.genruntimeconfig.cache
+D:\Documents\Kuliah\Matkul\Semester 4\KPL\tubes\telyukos_kpl\telyukos\obj\Debug\net8.0\ref\telyukos.dll

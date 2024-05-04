@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos\\telyukos.csproj": {}
+    "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos\\telyukos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos-library.csproj": {
+    "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos-library.csproj",
+        "projectUniqueName": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj",
         "projectName": "telyukos-library",
-        "projectPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos-library.csproj",
-        "packagesPath": "C:\\Users\\alfat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\obj\\",
+        "projectPath": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj",
+        "packagesPath": "C:\\Users\\wilda\\.nuget\\packages\\",
+        "outputPath": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos-library\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\alfat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\wilda\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,17 +64,17 @@
         }
       }
     },
-    "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos\\telyukos.csproj": {
+    "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos\\telyukos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos\\telyukos.csproj",
+        "projectUniqueName": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos\\telyukos.csproj",
         "projectName": "telyukos",
-        "projectPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos\\telyukos.csproj",
-        "packagesPath": "C:\\Users\\alfat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos\\obj\\",
+        "projectPath": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos\\telyukos.csproj",
+        "packagesPath": "C:\\Users\\wilda\\.nuget\\packages\\",
+        "outputPath": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\alfat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\wilda\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -88,8 +88,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos-library.csproj": {
-                "projectPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos-library.csproj"
+              "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj": {
+                "projectPath": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj"
               }
             }
           }
