@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using telyukos_library.Searching;
@@ -9,11 +9,14 @@ using telyukos_library;
 using telyukos_library.Menu.MainMenu;
 using telyukos_library.Menu.PemilikKos;
 using telyukos_library.Menu.LoginMenu;
+using System;
+
 
 internal class Program
 {
     private static void Main(string[] args)
     {
+
         //===============================================================
         //=                                                             =
         //=                                                             =
@@ -144,6 +147,7 @@ internal class Program
         public int NIM;
         public string nama;
         public string alamat;
+
     }
 
     //buat foreach
