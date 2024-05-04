@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj",
+      "projectUniqueName": "C:\\Users\\wilda\\Downloads\\telyukos_kpl-bintang_1302223099\\telyukos_kpl-bintang_1302223099\\telyukos-library\\telyukos-library.csproj",
       "projectName": "telyukos-library",
-      "projectPath": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj",
+      "projectPath": "C:\\Users\\wilda\\Downloads\\telyukos_kpl-bintang_1302223099\\telyukos_kpl-bintang_1302223099\\telyukos-library\\telyukos-library.csproj",
       "packagesPath": "C:\\Users\\wilda\\.nuget\\packages\\",
-      "outputPath": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos-library\\obj\\",
+      "outputPath": "C:\\Users\\wilda\\Downloads\\telyukos_kpl-bintang_1302223099\\telyukos_kpl-bintang_1302223099\\telyukos-library\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\wilda\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -69,13 +69,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos-library\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos\\telyukos.csproj": {}
+    "C:\\Users\\wilda\\Downloads\\telyukos_kpl-bintang_1302223099\\telyukos_kpl-bintang_1302223099\\telyukos\\telyukos.csproj": {}
   },
   "projects": {
-    "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj": {
+    "C:\\Users\\wilda\\Downloads\\telyukos_kpl-bintang_1302223099\\telyukos_kpl-bintang_1302223099\\telyukos-library\\telyukos-library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj",
+        "projectUniqueName": "C:\\Users\\wilda\\Downloads\\telyukos_kpl-bintang_1302223099\\telyukos_kpl-bintang_1302223099\\telyukos-library\\telyukos-library.csproj",
         "projectName": "telyukos-library",
-        "projectPath": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj",
+        "projectPath": "C:\\Users\\wilda\\Downloads\\telyukos_kpl-bintang_1302223099\\telyukos_kpl-bintang_1302223099\\telyukos-library\\telyukos-library.csproj",
         "packagesPath": "C:\\Users\\wilda\\.nuget\\packages\\",
-        "outputPath": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos-library\\obj\\",
+        "outputPath": "C:\\Users\\wilda\\Downloads\\telyukos_kpl-bintang_1302223099\\telyukos_kpl-bintang_1302223099\\telyukos-library\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\wilda\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -64,14 +64,14 @@
         }
       }
     },
-    "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos\\telyukos.csproj": {
+    "C:\\Users\\wilda\\Downloads\\telyukos_kpl-bintang_1302223099\\telyukos_kpl-bintang_1302223099\\telyukos\\telyukos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos\\telyukos.csproj",
+        "projectUniqueName": "C:\\Users\\wilda\\Downloads\\telyukos_kpl-bintang_1302223099\\telyukos_kpl-bintang_1302223099\\telyukos\\telyukos.csproj",
         "projectName": "telyukos",
-        "projectPath": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos\\telyukos.csproj",
+        "projectPath": "C:\\Users\\wilda\\Downloads\\telyukos_kpl-bintang_1302223099\\telyukos_kpl-bintang_1302223099\\telyukos\\telyukos.csproj",
         "packagesPath": "C:\\Users\\wilda\\.nuget\\packages\\",
-        "outputPath": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos\\obj\\",
+        "outputPath": "C:\\Users\\wilda\\Downloads\\telyukos_kpl-bintang_1302223099\\telyukos_kpl-bintang_1302223099\\telyukos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\wilda\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -88,8 +88,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj": {
-                "projectPath": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj"
+              "C:\\Users\\wilda\\Downloads\\telyukos_kpl-bintang_1302223099\\telyukos_kpl-bintang_1302223099\\telyukos-library\\telyukos-library.csproj": {
+                "projectPath": "C:\\Users\\wilda\\Downloads\\telyukos_kpl-bintang_1302223099\\telyukos_kpl-bintang_1302223099\\telyukos-library\\telyukos-library.csproj"
               }
             }
           }
@@ -112,6 +112,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[110.2.0, )"
             }
           },
           "imports": [
