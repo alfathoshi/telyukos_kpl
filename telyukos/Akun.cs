@@ -2,12 +2,13 @@
 using System.Diagnostics;
 using System.Security;
 using telyukos;
+using telyukos_library.Menu;
 using telyukos_library.Menu.MainMenu;
 
 
 namespace telyukos
 {
-    internal class Akun
+    public class Akun
     {
 
 
@@ -103,7 +104,7 @@ namespace telyukos
 
             if(currentState == stateAkun.REGISTRASI)
             {
-                tampilanMenu.registerPage();
+                tampilanMenu.helloWorld();
             }
             else if (currentState == stateAkun.BERHASIL_DAFTAR)
             {

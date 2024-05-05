@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using telyukos_library.Menu;
 using telyukos_library.Menu.MainMenu;
 using static telyukos.Akun;
 
@@ -71,7 +72,7 @@ namespace telyukos
             }
             else if (currentState == StatePenyewa.HOME_PAGE_PENYEWA)
             {
-                tampilan.renterMainPage();
+                tampilan.mainManuRenter();
             }
             else if (currentState == StatePenyewa.KELUAR)
             {

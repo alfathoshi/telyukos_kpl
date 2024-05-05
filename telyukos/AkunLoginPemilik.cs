@@ -1,4 +1,5 @@
 ﻿using System;
+using telyukos_library.Menu;
 using telyukos_library.Menu.MainMenu;
 using static telyukos.Akun;
 
@@ -70,7 +71,7 @@ namespace telyukos
             }
             else if (currentState == StatePemilik.HOME_PAGE_PEMILIK)
             {
-                tampilan.ownerMainPage();
+                tampilan.mainMenuOwner();
             }
             else if (currentState == StatePemilik.KELUAR)
             {
