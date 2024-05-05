@@ -2,6 +2,7 @@
 using telyukos;
 using telyukos_library.Menu;
 using telyukos_library.Searching;
+using telyukos_library.Common;
 
 internal class Program
 {
@@ -47,16 +48,19 @@ internal class Program
                             isLoggedIn = true;
                             Akun = user;
                             Console.WriteLine("Login berhasil");
+                            ResetConsole.Reset();
 
                         }
                         else if (responseLogin.StatusCode == System.Net.HttpStatusCode.BadRequest || responseLogin.StatusCode == System.Net.HttpStatusCode.Unauthorized)
                         {
                             Console.WriteLine("Email / Password tidak sesuai");
+                            ResetConsole.Reset();
                         }
                         else
                         {
                             // Handle other status codes
                             Console.WriteLine("Failed to login: " + responseLogin.StatusCode);
+                            ResetConsole.Reset();
                         }
                         break;
 
@@ -77,11 +81,13 @@ internal class Program
                             string responseBodyRegister = await responseRegister.Content.ReadAsStringAsync();
                             Console.WriteLine("Response Register:");
                             Console.WriteLine(responseBodyRegister);
+                            ResetConsole.Reset();
                         }
                         else if (responseRegister.StatusCode == System.Net.HttpStatusCode.BadRequest)
                         {
                             string errorMessage = await responseRegister.Content.ReadAsStringAsync();
                             Console.WriteLine("Failed to register: " + errorMessage);
+                            ResetConsole.Reset();
                         }
                         else
                         {
@@ -89,10 +95,12 @@ internal class Program
                             if (errorMessage.Contains("Email sudah terdaftar"))
                             {
                                 Console.WriteLine("Email sudah terdaftar");
+                                ResetConsole.Reset();
                             }
                             else
                             {
                                 Console.WriteLine("Failed to register: " + responseRegister.StatusCode);
+                                ResetConsole.Reset();
                             }
                         }
                         break;
@@ -103,6 +111,7 @@ internal class Program
 
                     default:
                         Console.WriteLine("Invalid choice.");
+                        ResetConsole.Reset();
                         break;
                 }
             }

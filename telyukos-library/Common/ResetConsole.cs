@@ -9,7 +9,7 @@ namespace telyukos_library.Common
     public class ResetConsole
     {
         // Berfungsi untuk membuat jarak di console agar terlihat ter reset (biar lega liat terminal nya)
-        public ResetConsole()
+        public static void Reset()
         {
             Console.WriteLine();
             Console.WriteLine();
