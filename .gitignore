@@ -361,13 +361,4 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-/telyukos/obj/Debug/net8.0/telyukos.sourcelink.json
-/telyukos/obj/Debug/net8.0/telyukos.AssemblyInfoInputs.cache
-/telyukos/obj/Debug/net8.0/telyukos.AssemblyInfo.cs
-/API/obj/Debug/net8.0/API.sourcelink.json
-/API/obj/Debug/net8.0/API.AssemblyInfoInputs.cache
-/API/obj/Debug/net8.0/API.AssemblyInfo.cs
-/API
-telyukos-library/obj/Debug/net8.0/telyukos-library.AssemblyInfo.cs
-telyukos-library/obj/Debug/net8.0/telyukos-library.AssemblyInfoInputs.cache
-telyukos/obj/Debug/net8.0/telyukos.csproj.AssemblyReference.cache
+
