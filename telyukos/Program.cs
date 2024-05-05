@@ -200,11 +200,35 @@ internal class Program
                             }
                             break;
                         case "4":
+                            HttpResponseMessage resp = await httpClient.GetAsync("api/Kos");
+                            resp.EnsureSuccessStatusCode();
+                            Kos[] filterKos = await resp.Content.ReadFromJsonAsync<Kos[]>();
+                            static IEnumerable<Kos> FilterKosByPrice(Kos[] kosList, int minPrice, int maxPrice)
+                            {
+                                return kosList.Where(k => k.Harga >= minPrice && k.Harga <= maxPrice);
+                            }
+
                             Console.WriteLine("Filter Kos Berdasarkan Rentang Harga");
                             Console.Write("Masukkan harga minimum: ");
                             int minPrice = Convert.ToInt32(Console.ReadLine());
                             Console.Write("Masukkan harga maksimum: ");
                             int maxPrice = Convert.ToInt32(Console.ReadLine());
+
+                            var filteredKos = FilterKosByPrice(filterKos, minPrice, maxPrice);
+
+                            if (filteredKos.Any())
+                            {
+                                Console.WriteLine($"Kos dengan harga antara {minPrice} dan {maxPrice} ditemukan:");
+                                foreach (var kos in filteredKos)
+                                {
+                                    Console.WriteLine($"ID: {kos.Id},  Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine($"Tidak ada kos dengan harga antara {minPrice} dan {maxPrice} ditemukan.");
+                            }
+
                             break;
                         case "5":
                             isLoggedIn = false; break;
