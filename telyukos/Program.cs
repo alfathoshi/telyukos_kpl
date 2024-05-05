@@ -48,8 +48,8 @@ internal class Program
                             string responseBodyLogin = await responseLogin.Content.ReadAsStringAsync();
                             isLoggedIn = true;
                             Akun = user;
-                            Console.WriteLine("Login berhasil");
                             ResetConsole.Reset();
+                            Console.WriteLine("Login berhasil");
 
                         }
                         else if (responseLogin.StatusCode == System.Net.HttpStatusCode.BadRequest || responseLogin.StatusCode == System.Net.HttpStatusCode.Unauthorized)
@@ -80,28 +80,28 @@ internal class Program
                         if (responseRegister.IsSuccessStatusCode)
                         {
                             string responseBodyRegister = await responseRegister.Content.ReadAsStringAsync();
+                            ResetConsole.Reset();
                             Console.WriteLine("Response Register:");
                             Console.WriteLine(responseBodyRegister);
-                            ResetConsole.Reset();
                         }
                         else if (responseRegister.StatusCode == System.Net.HttpStatusCode.BadRequest)
                         {
                             string errorMessage = await responseRegister.Content.ReadAsStringAsync();
-                            Console.WriteLine("Failed to register: " + errorMessage);
                             ResetConsole.Reset();
+                            Console.WriteLine("Failed to register: " + errorMessage);
                         }
                         else
                         {
                             string errorMessage = await responseRegister.Content.ReadAsStringAsync();
                             if (errorMessage.Contains("Email sudah terdaftar"))
                             {
-                                Console.WriteLine("Email sudah terdaftar");
                                 ResetConsole.Reset();
+                                Console.WriteLine("Email sudah terdaftar");
                             }
                             else
                             {
-                                Console.WriteLine("Failed to register: " + responseRegister.StatusCode);
                                 ResetConsole.Reset();
+                                Console.WriteLine("Failed to register: " + responseRegister.StatusCode);
                             }
                         }
                         break;
@@ -138,7 +138,7 @@ internal class Program
                             Console.WriteLine("Data Kos:");
                             foreach (var kos in allKos)
                             {
-                                Console.WriteLine($"Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
+                                Console.WriteLine($"ID: {kos.Id}, Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
                             }
                             _menu.chooseKosMenu();
                             string choice = Console.ReadLine();
@@ -156,6 +156,7 @@ internal class Program
                                 HttpResponseMessage responseRent = await httpClient.PutAsJsonAsync("api/Auth/user", kosRent);
                                 responseRent.EnsureSuccessStatusCode();
                                 Console.WriteLine();
+                                ResetConsole.Reset();
                                 Console.WriteLine("Reservasi Kos Berhasil");
                                 Console.WriteLine("Silahkan selesaikan pembayaran");
                             }
@@ -172,16 +173,8 @@ internal class Program
                             Console.Write("Kos: ");
                             string namaKos = Console.ReadLine();
                             //Console.WriteLine(SequentialSearch<Kos>.Search(findKos, new Kos { Nama = namaKos }));
-                            //Kos cariKos = null;
-                            //foreach (var item in findKos)
-                            //{
-                            //    if (item.Nama.Equals(namaKos))
-                            //    {
-                            //        cariKos = item;
-                            //        break;
-                            //    }
-                            //}
 
+                            ResetConsole.Reset();
                             Kos cariKos = SearchKos.Search(findKos, k => k.Nama.Equals(namaKos));
                             if (cariKos != null)
                             {
@@ -255,6 +248,7 @@ internal class Program
                             string responseBodyPost = await responsePost.Content.ReadAsStringAsync();
                             Console.WriteLine("Response POST:");
                             Console.WriteLine(responseBodyPost);
+                            ResetConsole.Reset();
                             break;
 
 
@@ -297,6 +291,7 @@ internal class Program
                             string responseBodyPut = await responsePut.Content.ReadAsStringAsync();
                             Console.WriteLine("Response PUT:");
                             Console.WriteLine(responseBodyPut);
+                            ResetConsole.Reset();
                             break;
 
 
@@ -335,6 +330,7 @@ internal class Program
                             string responseBodyDelete = await responseDelete.Content.ReadAsStringAsync();
                             Console.WriteLine("Response DELETE:");
                             Console.WriteLine(responseBodyDelete);
+                            ResetConsole.Reset();
                             break;
 
 
@@ -348,6 +344,7 @@ internal class Program
                             // Urutkan data berdasarkan ID
                             allKos = allKos.OrderBy(k => k.Id).ToArray();
 
+                            ResetConsole.Reset();
                             Console.WriteLine("Data Kos:");
                             foreach (var kos in allKos)
                             {
@@ -355,10 +352,13 @@ internal class Program
                             }
                             break;
                         case "5":
-                            isLoggedIn = false; break;
+                            isLoggedIn = false;
+                            ResetConsole.Reset();
+                            break;
 
                         case "0":
                             exit = true;
+                            ResetConsole.Reset();
                             break;
 
                         default:
