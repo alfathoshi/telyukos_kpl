@@ -135,27 +135,31 @@ internal class Program
                             Console.WriteLine("Data Kos:");
                             foreach (var kos in allKos)
                             {
-                                Console.WriteLine($"Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
+                                Console.WriteLine($"ID: {kos.Id}, Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
                             }
-                            _menu.chooseKosMenu();
-                            string choice = Console.ReadLine();
-                            if (choice == "1")
+
+                            Console.WriteLine();
+                            Console.WriteLine("Silahkan pilih kos untuk reservasi (masukkan ID kos):");
+                            int selectedId;
+                            if (!int.TryParse(Console.ReadLine(), out selectedId))
                             {
-                                Kos kosRent = new Kos();
-                                Console.WriteLine("Silahkan tulis nama kos");
-                                Console.Write("Kos: ");
-                                string namakos = Console.ReadLine();
-                                foreach (var kos in allKos)
-                                {
-                                    if (kos.Nama == namakos)
-                                        kosRent = kos;
-                                }
-                                HttpResponseMessage responseRent = await httpClient.PutAsJsonAsync("api/Auth/user", kosRent);
-                                responseRent.EnsureSuccessStatusCode();
-                                Console.WriteLine();
-                                Console.WriteLine("Reservasi Kos Berhasil");
-                                Console.WriteLine("Silahkan selesaikan pembayaran");
+                                Console.WriteLine("Inputan tidak sesuai dengan ID kos manapun");
+                                break;
                             }
+
+                            // Cari kos berdasarkan ID yang dipilih
+                            Kos kosRent = allKos.FirstOrDefault(k => k.Id == selectedId);
+                            if (kosRent == null)
+                            {
+                                Console.WriteLine("Kos dengan ID tersebut tidak ditemukan");
+                                break;
+                            }
+
+                            HttpResponseMessage responseRent = await httpClient.PutAsJsonAsync("api/Auth/user", kosRent);
+                            responseRent.EnsureSuccessStatusCode();
+                            Console.WriteLine();
+                            Console.WriteLine("Reservasi Kos Berhasil");
+                            Console.WriteLine("Silahkan selesaikan pembayaran");
                             break;
                         case "2":
                             HttpResponseMessage res = await httpClient.GetAsync("api/Kos");
@@ -171,10 +175,13 @@ internal class Program
                             Console.WriteLine(SequentialSearch<Kos>.Search(findKos, new Kos { Nama = namaKos }));
                             break;
                         case "3":
+                            HttpResponseMessage responseGetUser = await httpClient.GetAsync("api/Auth/" + Akun.Email);
+                            responseGetUser.EnsureSuccessStatusCode();
+                            User user = await responseGetUser.Content.ReadFromJsonAsync<User>();
                             Console.WriteLine("My Kos");
 
                             Console.WriteLine("Data Kos:");
-                            foreach (var kos in Akun.Kos)
+                            foreach (var kos in user.Kos)
                             {
                                 Console.WriteLine($"ID: {kos.Id}, Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
                             }
@@ -183,7 +190,7 @@ internal class Program
                             app.currentState = app.getNextState(app.currentState, AuthState.Trigger.LOGOUT);
                             ; break;
 
-                        case "5":
+                        case "0":
                             app.currentState = app.getNextState(app.currentState, AuthState.Trigger.CLOSE);
                             break;
                         default:

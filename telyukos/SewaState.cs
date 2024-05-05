@@ -8,10 +8,10 @@ namespace telyukos
 {
     public class SewaState
     {
-        public enum ReservasiState { START, PILIH_KOS, RESERVASI, LIHAT_INFORMASI_KOS, DAFTAR_RESERVASI, RESERVASI_BERHASIL, RESERVASI_GAGAL }
-        public enum ReservasiTrigger { MULAI, MELIHAT_KOS, MENGISI_DATA, BACK, DAFTAR_DITERIMA, DAFTAR_DITOLAK, PILIH_RESERVASI }
+        public enum ReservasiState {LIHAT_KOS, PILIH_KOS, RESERVASI, RESERVASI_BERHASIL, RESERVASI_CANCEL }
+        public enum ReservasiTrigger { PILIH_KOS, KONFIRMASI, CANCEL }
 
-        public ReservasiState currentState = ReservasiState.START;
+        public ReservasiState currentState = ReservasiState.LIHAT_KOS;
         public class Transition
         {
             public ReservasiState stateAwal;
@@ -26,13 +26,10 @@ namespace telyukos
         }
         Transition[] transisi =
         {
-            new Transition(ReservasiState.START, ReservasiTrigger.MULAI, ReservasiState.LIHAT_INFORMASI_KOS),
-            new Transition(ReservasiState.LIHAT_INFORMASI_KOS,ReservasiTrigger.MELIHAT_KOS,ReservasiState.PILIH_KOS),
-            new Transition(ReservasiState.PILIH_KOS,ReservasiTrigger.PILIH_RESERVASI,ReservasiState.RESERVASI),
-            new Transition(ReservasiState.PILIH_KOS,ReservasiTrigger.BACK,ReservasiState.LIHAT_INFORMASI_KOS),
-            new Transition(ReservasiState.RESERVASI,ReservasiTrigger.MENGISI_DATA,ReservasiState.DAFTAR_RESERVASI),
-            new Transition(ReservasiState.DAFTAR_RESERVASI,ReservasiTrigger.DAFTAR_DITERIMA,ReservasiState.RESERVASI_BERHASIL),
-            new Transition(ReservasiState.DAFTAR_RESERVASI,ReservasiTrigger.DAFTAR_DITOLAK,ReservasiState.RESERVASI_GAGAL),
+            new Transition(ReservasiState.LIHAT_KOS,ReservasiTrigger.PILIH_KOS,ReservasiState.RESERVASI),
+            new Transition(ReservasiState.RESERVASI,ReservasiTrigger.KONFIRMASI,ReservasiState.RESERVASI_BERHASIL),
+            new Transition(ReservasiState.RESERVASI,ReservasiTrigger.CANCEL,ReservasiState.RESERVASI_CANCEL),
+
      };
 
         public ReservasiState GetNextState(ReservasiState stateAwal, ReservasiTrigger trigger)

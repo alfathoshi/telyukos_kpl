@@ -8,7 +8,7 @@ namespace telyukos
 {
     public class KosStatus
     {
-        public enum RentsStatus { Status1, Status2 }
+        public enum RentsStatus { AVAIL, FULL }
 
         public static string getRentStatus(RentsStatus status)
         {

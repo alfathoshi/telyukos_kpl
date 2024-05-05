@@ -15,6 +15,7 @@ namespace API.Controllers
     {
         private const string filePath = "users.json";
         private List<User> _users;
+        private List<Kos> kos = new List<Kos>();
 
         public AuthController()
         {
@@ -81,7 +82,7 @@ namespace API.Controllers
                 return BadRequest("Role harus diisi dengan 'penyewa' atau 'pemilik'");
             }
 
-
+            user.Kos = kos;
             _users.Add(user);
             SaveUsers();
             return Ok("Registrasi berhasil");
