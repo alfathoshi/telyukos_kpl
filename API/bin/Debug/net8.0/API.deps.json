@@ -11,7 +11,8 @@
           "Microsoft.AspNetCore.Mvc": "2.2.0",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "8.0.4",
           "Swashbuckle.AspNetCore": "6.4.0",
-          "telyukos": "1.0.0"
+          "telyukos": "1.0.0",
+          "telyukos-library": "1.0.0"
         },
         "runtime": {
           "API.dll": {}

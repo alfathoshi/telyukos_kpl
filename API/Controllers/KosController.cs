@@ -28,10 +28,7 @@ namespace API.Controllers
         [HttpGet]
         public IActionResult GetAllKos()
         {
-            if (_kosList.Count == 0)
-            {
-                return Ok("Belum ada data");
-            }
+            
 
             return Ok(_kosList);
         }

@@ -66,13 +66,25 @@ internal class Program
 
                     case "2":
                         // Register
-                        Console.WriteLine();
                         Console.Write("Email: ");
                         string newEmail = Console.ReadLine();
                         Console.Write("Password: ");
                         string newPassword = Console.ReadLine();
-                        Console.Write("Role (penyewa/pemilik): ");
+                        Console.WriteLine();
+                        Console.Write("Role: \n1. Penyewa | 2. Pemilik \nPilih: ");
                         string role = Console.ReadLine();
+                        Console.WriteLine();
+                        if (role == "1")
+                        {
+                            role = Role.getRole(Role.RoleUser.RENTER);
+                        } else if (role == "2")
+                        {
+                            role = Role.getRole(Role.RoleUser.OWNER);
+                        } else
+                        {
+                            Console.WriteLine("Invalid Choice");
+                            break;
+                        }
 
                         User newUser = new User { Email = newEmail, Password = newPassword, Role = role };
                         HttpResponseMessage responseRegister = await httpClient.PostAsJsonAsync("api/Auth/register", newUser);
@@ -102,7 +114,6 @@ internal class Program
                             }
                         }
                         break;
-
                     case "0":
                         app.currentState = app.getNextState(app.currentState, AuthState.Trigger.CLOSE);
                         break;
@@ -114,10 +125,8 @@ internal class Program
             }
             else
             {
-
                 if (Akun.Role == Role.getRole(Role.RoleUser.RENTER))
                 {
-
                     _menu.mainManuRenter();
                     string menuChoice = Console.ReadLine();
                     Console.WriteLine();
@@ -129,37 +138,44 @@ internal class Program
                             responseGetAll.EnsureSuccessStatusCode();
                             Kos[] allKos = await responseGetAll.Content.ReadFromJsonAsync<Kos[]>();
 
-                            // Urutkan data berdasarkan ID
-                            allKos = allKos.OrderBy(k => k.Id).ToArray();
-
-                            Console.WriteLine("Data Kos:");
-                            foreach (var kos in allKos)
+                            if (allKos.Length == 0)
                             {
-                                Console.WriteLine($"ID: {kos.Id}, Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
+                                Console.WriteLine("Tidak ada kos untuk ditampilkan");
                             }
-
-                            Console.WriteLine();
-                            Console.WriteLine("Silahkan pilih kos untuk reservasi (masukkan ID kos):");
-                            int selectedId;
-                            if (!int.TryParse(Console.ReadLine(), out selectedId))
+                            else
                             {
-                                Console.WriteLine("Inputan tidak sesuai dengan ID kos manapun");
-                                break;
-                            }
+                                // Urutkan data berdasarkan ID
+                                allKos = allKos.OrderBy(k => k.Id).ToArray();
 
-                            // Cari kos berdasarkan ID yang dipilih
-                            Kos kosRent = allKos.FirstOrDefault(k => k.Id == selectedId);
-                            if (kosRent == null)
-                            {
-                                Console.WriteLine("Kos dengan ID tersebut tidak ditemukan");
-                                break;
-                            }
+                                Console.WriteLine("Data Kos:");
+                                foreach (var kos in allKos)
+                                {
+                                    Console.WriteLine($"ID: {kos.Id}, Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
+                                }
 
-                            HttpResponseMessage responseRent = await httpClient.PutAsJsonAsync("api/Auth/user", kosRent);
-                            responseRent.EnsureSuccessStatusCode();
-                            Console.WriteLine();
-                            Console.WriteLine("Reservasi Kos Berhasil");
-                            Console.WriteLine("Silahkan selesaikan pembayaran");
+                                Console.WriteLine();
+                                Console.WriteLine("Silahkan pilih kos untuk reservasi (masukkan ID kos):");
+                                int selectedId;
+                                if (!int.TryParse(Console.ReadLine(), out selectedId))
+                                {
+                                    Console.WriteLine("Inputan tidak sesuai dengan ID kos manapun");
+                                    break;
+                                }
+
+                                // Cari kos berdasarkan ID yang dipilih
+                                Kos kosRent = allKos.FirstOrDefault(k => k.Id == selectedId);
+                                if (kosRent == null)
+                                {
+                                    Console.WriteLine("Kos dengan ID tersebut tidak ditemukan");
+                                    break;
+                                }
+
+                                HttpResponseMessage responseRent = await httpClient.PutAsJsonAsync("api/Auth/" + Akun.Email, kosRent);
+                                responseRent.EnsureSuccessStatusCode();
+                                Console.WriteLine();
+                                Console.WriteLine("Reservasi Kos Berhasil");
+                                Console.WriteLine("Silahkan selesaikan pembayaran");
+                            }
                             break;
                         case "2":
                             HttpResponseMessage res = await httpClient.GetAsync("api/Kos");
@@ -172,19 +188,33 @@ internal class Program
                             Console.WriteLine("Silahkan tulis nama kos");
                             Console.Write("Kos: ");
                             string namaKos = Console.ReadLine();
-                            Console.WriteLine(SequentialSearch<Kos>.Search(findKos, new Kos { Nama = namaKos }));
+                            Kos cariKos = SearchKos.Search(findKos, k => k.Nama.Equals(namaKos));
+                            if (cariKos != null)
+                            {
+                                Console.WriteLine($"Kos dengan nama '{namaKos}' ditemukan.");
+                                Console.WriteLine($"ID: {cariKos.Id}");
+                                Console.WriteLine($"Harga: {cariKos.Harga}");
+                                Console.WriteLine($"Alamat: {cariKos.Alamat}");
+                            }
+                            else
+                            {
+                                Console.WriteLine($"Kos dengan nama '{namaKos}' tidak ditemukan.");
+                            }
                             break;
                         case "3":
                             HttpResponseMessage responseGetUser = await httpClient.GetAsync("api/Auth/" + Akun.Email);
                             responseGetUser.EnsureSuccessStatusCode();
                             User user = await responseGetUser.Content.ReadFromJsonAsync<User>();
                             Console.WriteLine("My Kos");
-
+                            Console.WriteLine();
                             Console.WriteLine("Data Kos:");
                             foreach (var kos in user.Kos)
                             {
                                 Console.WriteLine($"ID: {kos.Id}, Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
                             }
+                            Console.WriteLine();
+                            Console.Write("Tap to back...");
+                            Console.ReadLine();
                             break;
                         case "4":
                             app.currentState = app.getNextState(app.currentState, AuthState.Trigger.LOGOUT);
@@ -234,6 +264,8 @@ internal class Program
                             Kos newKos = new Kos { Nama = namaKos, Harga = hargaKos, Alamat = alamatKos };
                             HttpResponseMessage responsePost = await httpClient.PostAsJsonAsync("api/Kos", newKos);
                             responsePost.EnsureSuccessStatusCode();
+                            HttpResponseMessage responseRent = await httpClient.PutAsJsonAsync("api/Auth/" + Akun.Email, newKos);
+                            responseRent.EnsureSuccessStatusCode();
                             string responseBodyPost = await responsePost.Content.ReadAsStringAsync();
                             Console.WriteLine("Response POST:");
                             Console.WriteLine(responseBodyPost);
@@ -319,21 +351,26 @@ internal class Program
                             Console.WriteLine(responseBodyDelete);
                             break;
 
-
-
                         case "4":
                             // Tampilkan Semua Kos
                             HttpResponseMessage responseGetAll = await httpClient.GetAsync("api/Kos");
                             responseGetAll.EnsureSuccessStatusCode();
                             Kos[] allKos = await responseGetAll.Content.ReadFromJsonAsync<Kos[]>();
 
-                            // Urutkan data berdasarkan ID
-                            allKos = allKos.OrderBy(k => k.Id).ToArray();
-
-                            Console.WriteLine("Data Kos:");
-                            foreach (var kos in allKos)
+                            if (allKos.Length == 0)
                             {
-                                Console.WriteLine($"ID: {kos.Id}, Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
+                                Console.WriteLine("Tidak ada kos untuk ditampilkan");
+                            }
+                            else
+                            {
+                                // Urutkan data berdasarkan ID
+                                allKos = allKos.OrderBy(k => k.Id).ToArray();
+
+                                Console.WriteLine("Data Kos:");
+                                foreach (var kos in allKos)
+                                {
+                                    Console.WriteLine($"ID: {kos.Id}, Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
+                                }
                             }
                             break;
                         case "5":
@@ -343,15 +380,12 @@ internal class Program
                         case "0":
                             app.currentState = app.getNextState(app.currentState, AuthState.Trigger.CLOSE);
                             break;
-
                         default:
                             Console.WriteLine("Pilihan tidak sesuai.");
                             break;
                     }
                 }
-
             }
-
             Console.WriteLine();
         }
     }

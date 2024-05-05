@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\telyukos-library\telyukos-library.csproj" />
     <ProjectReference Include="..\telyukos\telyukos.csproj" />
   </ItemGroup>
 
