@@ -1,5 +1,4 @@
 ﻿using telyukos_library.Menu;
-using static telyukos.RegisterState;
 
 namespace telyukos
 {
