@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using telyukos;
+using telyukos.Model;
 
 namespace API.Controllers
 {

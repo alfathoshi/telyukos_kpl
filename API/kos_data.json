@@ -1,1 +1,14 @@
-[{"Id":1,"Nama":"rjwl","Harga":10000,"Alamat":"skbrs","Kapasitas":2,"Status":0,"Penyewa":["renter","renter"]}]
+[
+  {
+    "Id": 1,
+    "Nama": "rjwl",
+    "Harga": 10000,
+    "Alamat": "skbrs",
+    "Kapasitas": 2,
+    "Status": 0,
+    "Penyewa": [
+      "renter",
+      "renter"
+    ]
+  }
+]

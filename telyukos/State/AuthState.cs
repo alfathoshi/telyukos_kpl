@@ -1,10 +1,10 @@
 ﻿using telyukos_library.Menu;
 
-namespace telyukos
+namespace telyukos.State
 {
     public class AuthState
     {
-        public enum State { START, LOGIN,  EXIT }
+        public enum State { START, LOGIN, EXIT }
 
         public enum Trigger { MASUK, LOGIN_DITERIMA, CLOSE, LOGOUT }
 

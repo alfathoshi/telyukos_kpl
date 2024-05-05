@@ -1,5 +1,5 @@
 ﻿using System;
-namespace telyukos
+namespace telyukos.State
 {
     //table driven
     public class Role

@@ -1,5 +1,6 @@
 ﻿using System.Net.Http.Json;
-using telyukos;
+using telyukos.Model;
+using telyukos.State;
 using telyukos_library.Menu;
 using telyukos_library.Searching;
 

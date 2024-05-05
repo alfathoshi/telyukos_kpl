@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static telyukos.KosStatus;
+using static telyukos.State.KosStatus;
 
-namespace telyukos
+namespace telyukos.State
 {
     public class SewaState
     {

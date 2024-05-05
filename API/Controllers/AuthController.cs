@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Xml.Linq;
-using telyukos;
+using telyukos.Model;
 
 namespace API.Controllers
 {

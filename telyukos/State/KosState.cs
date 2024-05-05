@@ -1,9 +1,9 @@
-﻿namespace telyukos
+﻿namespace telyukos.State
 {
     internal class createKos
     {
-        public enum kosState { BELUM_TERDAFTAR, DAFTAR, BERHASIL, GAGAL}
-        public enum kosTrigger { MENGISI_DATA, DAFTAR_DITERIMA, DAFTAR_DITOLAK, DAFTAR_DICANCEL}
+        public enum kosState { BELUM_TERDAFTAR, DAFTAR, BERHASIL, GAGAL }
+        public enum kosTrigger { MENGISI_DATA, DAFTAR_DITERIMA, DAFTAR_DITOLAK, DAFTAR_DICANCEL }
 
         public kosState currentState = kosState.BELUM_TERDAFTAR;
         public class Transition
@@ -46,10 +46,12 @@
             if (currentState == kosState.BERHASIL)
             {
                 Console.WriteLine("Pendaftaran berhasil!");
-            } else if (currentState == kosState.GAGAL)
+            }
+            else if (currentState == kosState.GAGAL)
             {
                 Console.WriteLine("Pendaftaran gagal");
-            } else if (currentState == kosState.BELUM_TERDAFTAR)
+            }
+            else if (currentState == kosState.BELUM_TERDAFTAR)
             {
                 Console.WriteLine("Kos tidak terdaftar");
             }
