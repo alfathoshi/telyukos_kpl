@@ -31,7 +31,8 @@
             Console.WriteLine("=    Tugas Besar Konstruksi Perangkat Lunak   =");
             Console.WriteLine("===============================================");
             Console.WriteLine("=                    ***                      =");
-            Console.WriteLine("=   Silahkan Pilih Menu Yang Anda Inginkan    =");
+            Console.WriteLine("=              Menu Pemilik Kos               =");
+            Console.WriteLine("=   Silahkan Pilih Menu Yang Anda Inginkan!   =");
             Console.WriteLine("=                    ***                      =");
             Console.WriteLine("=                                             =");
             Console.WriteLine("= Menu:                                       =");
@@ -53,6 +54,7 @@
             Console.WriteLine("=    Tugas Besar Konstruksi Perangkat Lunak   =");
             Console.WriteLine("===============================================");
             Console.WriteLine("=                    ***                      =");
+            Console.WriteLine("=              Menu Penyewa Kos               =");
             Console.WriteLine("=   Silahkan Pilih Menu Yang Anda Inginkan    =");
             Console.WriteLine("=                    ***                      =");
             Console.WriteLine("=                                             =");
@@ -60,7 +62,8 @@
             Console.WriteLine("= 1. Lihat Daftar Kos                         =");
             Console.WriteLine("= 2. Cari Kos                                 =");
             Console.WriteLine("= 3. My Kos                                   =");
-            Console.WriteLine("= 4. Logout                                   =");
+            Console.WriteLine("= 4. Filter Kos by                            =");
+            Console.WriteLine("= 5. Logout                                   =");
             Console.WriteLine("= 0. Kembali                                  =");
             Console.WriteLine("===============================================");
             Console.Write("Choice: ");

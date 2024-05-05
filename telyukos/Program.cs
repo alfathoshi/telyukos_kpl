@@ -200,8 +200,15 @@ internal class Program
                             }
                             break;
                         case "4":
-                            isLoggedIn = false; break;
+                            Console.WriteLine("Filter Kos Berdasarkan Rentang Harga");
+                            Console.Write("Masukkan harga minimum: ");
+                            int minPrice = Convert.ToInt32(Console.ReadLine());
+                            Console.Write("Masukkan harga maksimum: ");
+                            int maxPrice = Convert.ToInt32(Console.ReadLine());
+                            break;
                         case "5":
+                            isLoggedIn = false; break;
+                        case "6":
                             Environment.Exit(0); break;
                     }
                 }
