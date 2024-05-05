@@ -4,14 +4,14 @@
     "D:\\AAL\\Coding\\Tubes\\telyukos_kpl-bintang_1302223099\\telyukos\\telyukos.csproj": {}
   },
   "projects": {
-    "D:\\AAL\\Coding\\Tubes\\telyukos_kpl-bintang_1302223099\\telyukos\\telyukos.csproj": {
+    "D:\\AAL\\Coding\\Tubes\\telyukos_kpl-bintang_1302223099\\telyukos-library\\telyukos-library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AAL\\Coding\\Tubes\\telyukos_kpl-bintang_1302223099\\telyukos\\telyukos.csproj",
-        "projectName": "telyukos",
-        "projectPath": "D:\\AAL\\Coding\\Tubes\\telyukos_kpl-bintang_1302223099\\telyukos\\telyukos.csproj",
+        "projectUniqueName": "D:\\AAL\\Coding\\Tubes\\telyukos_kpl-bintang_1302223099\\telyukos-library\\telyukos-library.csproj",
+        "projectName": "telyukos-library",
+        "projectPath": "D:\\AAL\\Coding\\Tubes\\telyukos_kpl-bintang_1302223099\\telyukos-library\\telyukos-library.csproj",
         "packagesPath": "C:\\Users\\CATURWARGA COMPUTER\\.nuget\\packages\\",
-        "outputPath": "D:\\AAL\\Coding\\Tubes\\telyukos_kpl-bintang_1302223099\\telyukos\\obj\\",
+        "outputPath": "D:\\AAL\\Coding\\Tubes\\telyukos_kpl-bintang_1302223099\\telyukos-library\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\CATURWARGA COMPUTER\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,11 +44,71 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\AAL\\Coding\\Tubes\\telyukos_kpl-bintang_1302223099\\telyukos\\telyukos.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\AAL\\Coding\\Tubes\\telyukos_kpl-bintang_1302223099\\telyukos\\telyukos.csproj",
+        "projectName": "telyukos",
+        "projectPath": "D:\\AAL\\Coding\\Tubes\\telyukos_kpl-bintang_1302223099\\telyukos\\telyukos.csproj",
+        "packagesPath": "C:\\Users\\CATURWARGA COMPUTER\\.nuget\\packages\\",
+        "outputPath": "D:\\AAL\\Coding\\Tubes\\telyukos_kpl-bintang_1302223099\\telyukos\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\CATURWARGA COMPUTER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\AAL\\Coding\\Tubes\\telyukos_kpl-bintang_1302223099\\telyukos-library\\telyukos-library.csproj": {
+                "projectPath": "D:\\AAL\\Coding\\Tubes\\telyukos_kpl-bintang_1302223099\\telyukos-library\\telyukos-library.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.AspNetCore.Mvc": {
-              "target": "Package",
-              "version": "[2.2.0, )"
-            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"

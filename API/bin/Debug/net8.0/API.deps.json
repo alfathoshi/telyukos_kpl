@@ -1288,12 +1288,17 @@
       },
       "telyukos/1.0.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Mvc": "2.2.0",
           "Newtonsoft.Json": "13.0.3",
-          "RestSharp": "110.2.0"
+          "RestSharp": "110.2.0",
+          "telyukos-library": "1.0.0"
         },
         "runtime": {
           "telyukos.dll": {}
+        }
+      },
+      "telyukos-library/1.0.0": {
+        "runtime": {
+          "telyukos-library.dll": {}
         }
       }
     }
@@ -2446,6 +2451,11 @@
       "hashPath": "system.xml.xpath.xdocument.4.3.0.nupkg.sha512"
     },
     "telyukos/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "telyukos-library/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

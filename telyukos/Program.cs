@@ -1,12 +1,12 @@
-﻿using System;
-using System.Net.Http;
-using System.Net.Http.Json;
-using System.Threading.Tasks;
+﻿using System.Net.Http.Json;
 using telyukos;
+using telyukos_library.Menu;
+using telyukos_library.Searching;
 
 internal class Program
 {
     private static bool isLoggedIn = false;
+    private static User Akun;
 
     static async Task Main(string[] args)
     {
@@ -16,14 +16,13 @@ internal class Program
         bool exit = false;
         while (!exit)
         {
+            Menu _menu = new Menu();
             if (!isLoggedIn)
             {
-                Console.WriteLine("Login or Register:");
-                Console.WriteLine("1. Login");
-                Console.WriteLine("2. Register");
-                Console.WriteLine("0. Exit");
-                Console.Write("Choice: ");
+                _menu.header();
+
                 string choice = Console.ReadLine();
+                Console.WriteLine();
 
                 switch (choice)
                 {
@@ -37,10 +36,16 @@ internal class Program
                         User loginUser = new User { Email = email, Password = password, Role = "" };
                         HttpResponseMessage responseLogin = await httpClient.PostAsJsonAsync("api/Auth/login", loginUser);
 
+                        Console.WriteLine();
                         if (responseLogin.IsSuccessStatusCode)
                         {
+                            HttpResponseMessage responseGetUser = await httpClient.GetAsync("api/Auth/" + email);
+                            responseGetUser.EnsureSuccessStatusCode();
+                            User user = await responseGetUser.Content.ReadFromJsonAsync<User>();
+
                             string responseBodyLogin = await responseLogin.Content.ReadAsStringAsync();
                             isLoggedIn = true;
+                            Akun = user;
                             Console.WriteLine("Login berhasil");
 
                         }
@@ -54,9 +59,6 @@ internal class Program
                             Console.WriteLine("Failed to login: " + responseLogin.StatusCode);
                         }
                         break;
-
-
-
 
                     case "2":
                         // Register
@@ -95,9 +97,6 @@ internal class Program
                         }
                         break;
 
-
-
-
                     case "0":
                         Environment.Exit(0);
                         break;
@@ -109,156 +108,221 @@ internal class Program
             }
             else
             {
-                Console.WriteLine();
-                Console.WriteLine("Menu:");
-                Console.WriteLine("1. Add Kos");
-                Console.WriteLine("2. Update Kos");
-                Console.WriteLine("3. Delete Kos");
-                Console.WriteLine("4. Show All Kos");
-                Console.WriteLine("0. Exit");
-                Console.Write("Choice: ");
-                string menuChoice = Console.ReadLine();
 
-                switch (menuChoice)
+                if (Akun.Role == "penyewa")
                 {
-                    case "1":
-                        // Tambah Kos
-                        Console.Write("Nama Kos: ");
-                        string namaKos = Console.ReadLine();
+                    _menu.mainManuRenter();
+                    string menuChoice = Console.ReadLine();
+                    Console.WriteLine();
 
-                        int hargaKos;
-                        bool isHargaValid = false;
-                        do
-                        {
-                            Console.Write("Harga Kos: ");
-                            string hargaKosInput = Console.ReadLine();
-                            if (int.TryParse(hargaKosInput, out hargaKos))
+                    switch (menuChoice)
+                    {
+                        case "1":
+                            HttpResponseMessage responseGetAll = await httpClient.GetAsync("api/Kos");
+                            responseGetAll.EnsureSuccessStatusCode();
+                            Kos[] allKos = await responseGetAll.Content.ReadFromJsonAsync<Kos[]>();
+
+                            // Urutkan data berdasarkan ID
+                            allKos = allKos.OrderBy(k => k.Id).ToArray();
+
+                            Console.WriteLine("Data Kos:");
+                            foreach (var kos in allKos)
                             {
-                                isHargaValid = true;
+                                Console.WriteLine($"ID: {kos.Id}, Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
                             }
-                            else
+
+                            Console.WriteLine();
+                            Console.WriteLine("Silahkan pilih kos untuk reservasi (masukkan ID kos):");
+                            int selectedId;
+                            if (!int.TryParse(Console.ReadLine(), out selectedId))
                             {
-                                Console.WriteLine("Input harga tidak valid. Silakan masukkan angka.");
+                                Console.WriteLine("Inputan tidak sesuai dengan ID kos manapun");
+                                break;
                             }
-                        } while (!isHargaValid);
 
-                        Console.Write("Alamat Kos: ");
-                        string alamatKos = Console.ReadLine();
-
-                        Kos newKos = new Kos { Nama = namaKos, Harga = hargaKos, Alamat = alamatKos };
-                        HttpResponseMessage responsePost = await httpClient.PostAsJsonAsync("api/Kos", newKos);
-                        responsePost.EnsureSuccessStatusCode();
-                        string responseBodyPost = await responsePost.Content.ReadAsStringAsync();
-                        Console.WriteLine("Response POST:");
-                        Console.WriteLine(responseBodyPost);
-                        break;
-
-
-                    case "2":
-                        // Update Kos
-                        int indexUpdate;
-                        bool isIndexValid;
-                        do
-                        {
-                            Console.Write("Index Kos yang akan diupdate: ");
-                            string inputIndexUpdate = Console.ReadLine();
-                            isIndexValid = int.TryParse(inputIndexUpdate, out indexUpdate);
-                            if (!isIndexValid)
+                            // Cari kos berdasarkan ID yang dipilih
+                            Kos kosRent = allKos.FirstOrDefault(k => k.Id == selectedId);
+                            if (kosRent == null)
                             {
-                                Console.WriteLine("Index Kos harus berupa angka. Silakan coba lagi.");
+                                Console.WriteLine("Kos dengan ID tersebut tidak ditemukan");
+                                break;
                             }
-                        } while (!isIndexValid);
 
-                        Console.Write("Nama Kos baru: ");
-                        string namaKosUpdate = Console.ReadLine();
-                        int hargaKosUpdate;
-                        bool isHargaValid_UPDATE;
-                        do
-                        {
-                            Console.Write("Harga Kos baru: ");
-                            string inputHargaKosUpdate = Console.ReadLine();
-                            isHargaValid_UPDATE = int.TryParse(inputHargaKosUpdate, out hargaKosUpdate);
-                            if (!isHargaValid_UPDATE)
+                            HttpResponseMessage responseRent = await httpClient.PutAsJsonAsync("api/Auth/user", kosRent);
+                            responseRent.EnsureSuccessStatusCode();
+                            Console.WriteLine();
+                            Console.WriteLine("Reservasi Kos Berhasil");
+                            Console.WriteLine("Silahkan selesaikan pembayaran");
+                            break;
+
+                        case "2":
+                            Console.WriteLine("My Kos");
+
+                            Console.WriteLine("Data Kos:");
+                            foreach (var kos in Akun.Kos)
                             {
-                                Console.WriteLine("Harga Kos harus berupa angka. Silakan coba lagi.");
+                                Console.WriteLine($"ID: {kos.Id}, Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
                             }
-                        } while (!isHargaValid_UPDATE);
-
-                        Console.Write("Alamat Kos baru: ");
-                        string alamatKosUpdate = Console.ReadLine();
-
-                        Kos updatedKos = new Kos { Nama = namaKosUpdate, Harga = hargaKosUpdate, Alamat = alamatKosUpdate };
-                        HttpResponseMessage responsePut = await httpClient.PutAsJsonAsync($"api/Kos/{indexUpdate}", updatedKos);
-                        responsePut.EnsureSuccessStatusCode();
-                        string responseBodyPut = await responsePut.Content.ReadAsStringAsync();
-                        Console.WriteLine("Response PUT:");
-                        Console.WriteLine(responseBodyPut);
-                        break;
-
-
-                    case "3":
-                        // Hapus Kos
-
-                        //GET DULU
-                        HttpResponseMessage ambil = await httpClient.GetAsync("api/Kos");
-                        ambil.EnsureSuccessStatusCode();
-                        Kos[] kosAda = await ambil.Content.ReadFromJsonAsync<Kos[]>();
-
-                        // Urutkan data berdasarkan ID
-                        kosAda = kosAda.OrderBy(k => k.Id).ToArray();
-
-                        Console.WriteLine("Data Kos:");
-                        foreach (var kos in kosAda)
-                        {
-                            Console.WriteLine($"ID: {kos.Id}, Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
-                        }
-
-                        int indexDelete;
-                        bool isIndexValid_DEL;
-                        do
-                        {
-                            Console.Write("Pilih ID kos yang akan dihapus: ");
-                            string inputIndexDelete = Console.ReadLine();
-                            isIndexValid_DEL = int.TryParse(inputIndexDelete, out indexDelete);
-                            if (!isIndexValid_DEL)
-                            {
-                                Console.WriteLine("ID harus berupa angka. Silakan coba lagi.");
-                            }
-                        } while (!isIndexValid_DEL);
-
-                        HttpResponseMessage responseDelete = await httpClient.DeleteAsync($"api/Kos/{indexDelete}");
-                        responseDelete.EnsureSuccessStatusCode();
-                        string responseBodyDelete = await responseDelete.Content.ReadAsStringAsync();
-                        Console.WriteLine("Response DELETE:");
-                        Console.WriteLine(responseBodyDelete);
-                        break;
-
-
-
-                    case "4":
-                        // Tampilkan Semua Kos
-                        HttpResponseMessage responseGetAll = await httpClient.GetAsync("api/Kos");
-                        responseGetAll.EnsureSuccessStatusCode();
-                        Kos[] allKos = await responseGetAll.Content.ReadFromJsonAsync<Kos[]>();
-
-                        // Urutkan data berdasarkan ID
-                        allKos = allKos.OrderBy(k => k.Id).ToArray();
-
-                        Console.WriteLine("Data Kos:");
-                        foreach (var kos in allKos)
-                        {
-                            Console.WriteLine($"ID: {kos.Id}, Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
-                        }
-                        break;
-
-                    case "0":
-                        exit = true;
-                        break;
-
-                    default:
-                        Console.WriteLine("Pilihan tidak sesuai.");
-                        break;
+                            break;
+                        case "3":
+                            isLoggedIn = false; break;
+                        case "4":
+                            Environment.Exit(0); break;
+                    }
                 }
+                else
+                {
+                    _menu.mainMenuOwner();
+
+
+                    string menuChoice = Console.ReadLine();
+                    Console.WriteLine();
+
+                    switch (menuChoice)
+                    {
+                        case "1":
+                            _menu.uploadKos();
+                            // Tambah Kos
+                            Console.Write("Nama Kos: ");
+                            string namaKos = Console.ReadLine();
+
+                            int hargaKos;
+                            bool isHargaValid = false;
+                            do
+                            {
+                                Console.Write("Harga Kos: ");
+                                string hargaKosInput = Console.ReadLine();
+                                if (int.TryParse(hargaKosInput, out hargaKos))
+                                {
+                                    isHargaValid = true;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Input harga tidak valid. Silakan masukkan angka.");
+                                }
+                            } while (!isHargaValid);
+
+                            Console.Write("Alamat Kos: ");
+                            string alamatKos = Console.ReadLine();
+
+                            Kos newKos = new Kos { Nama = namaKos, Harga = hargaKos, Alamat = alamatKos };
+                            HttpResponseMessage responsePost = await httpClient.PostAsJsonAsync("api/Kos", newKos);
+                            responsePost.EnsureSuccessStatusCode();
+                            string responseBodyPost = await responsePost.Content.ReadAsStringAsync();
+                            Console.WriteLine("Response POST:");
+                            Console.WriteLine(responseBodyPost);
+                            break;
+
+
+                        case "2":
+                            // Update Kos
+                            int indexUpdate;
+                            bool isIndexValid;
+                            do
+                            {
+                                Console.Write("Index Kos yang akan diupdate: ");
+                                string inputIndexUpdate = Console.ReadLine();
+                                isIndexValid = int.TryParse(inputIndexUpdate, out indexUpdate);
+                                if (!isIndexValid)
+                                {
+                                    Console.WriteLine("Index Kos harus berupa angka. Silakan coba lagi.");
+                                }
+                            } while (!isIndexValid);
+
+                            Console.Write("Nama Kos baru: ");
+                            string namaKosUpdate = Console.ReadLine();
+                            int hargaKosUpdate;
+                            bool isHargaValid_UPDATE;
+                            do
+                            {
+                                Console.Write("Harga Kos baru: ");
+                                string inputHargaKosUpdate = Console.ReadLine();
+                                isHargaValid_UPDATE = int.TryParse(inputHargaKosUpdate, out hargaKosUpdate);
+                                if (!isHargaValid_UPDATE)
+                                {
+                                    Console.WriteLine("Harga Kos harus berupa angka. Silakan coba lagi.");
+                                }
+                            } while (!isHargaValid_UPDATE);
+
+                            Console.Write("Alamat Kos baru: ");
+                            string alamatKosUpdate = Console.ReadLine();
+
+                            Kos updatedKos = new Kos { Nama = namaKosUpdate, Harga = hargaKosUpdate, Alamat = alamatKosUpdate };
+                            HttpResponseMessage responsePut = await httpClient.PutAsJsonAsync($"api/Kos/{indexUpdate}", updatedKos);
+                            responsePut.EnsureSuccessStatusCode();
+                            string responseBodyPut = await responsePut.Content.ReadAsStringAsync();
+                            Console.WriteLine("Response PUT:");
+                            Console.WriteLine(responseBodyPut);
+                            break;
+
+
+                        case "3":
+                            // Hapus Kos
+
+                            //GET DULU
+                            HttpResponseMessage ambil = await httpClient.GetAsync("api/Kos");
+                            ambil.EnsureSuccessStatusCode();
+                            Kos[] kosAda = await ambil.Content.ReadFromJsonAsync<Kos[]>();
+
+                            // Urutkan data berdasarkan ID
+                            kosAda = kosAda.OrderBy(k => k.Id).ToArray();
+
+                            Console.WriteLine("Data Kos:");
+                            foreach (var kos in kosAda)
+                            {
+                                Console.WriteLine($"ID: {kos.Id}, Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
+                            }
+
+                            int indexDelete;
+                            bool isIndexValid_DEL;
+                            do
+                            {
+                                Console.Write("Pilih ID kos yang akan dihapus: ");
+                                string inputIndexDelete = Console.ReadLine();
+                                isIndexValid_DEL = int.TryParse(inputIndexDelete, out indexDelete);
+                                if (!isIndexValid_DEL)
+                                {
+                                    Console.WriteLine("ID harus berupa angka. Silakan coba lagi.");
+                                }
+                            } while (!isIndexValid_DEL);
+
+                            HttpResponseMessage responseDelete = await httpClient.DeleteAsync($"api/Kos/{indexDelete}");
+                            responseDelete.EnsureSuccessStatusCode();
+                            string responseBodyDelete = await responseDelete.Content.ReadAsStringAsync();
+                            Console.WriteLine("Response DELETE:");
+                            Console.WriteLine(responseBodyDelete);
+                            break;
+
+
+
+                        case "4":
+                            // Tampilkan Semua Kos
+                            HttpResponseMessage responseGetAll = await httpClient.GetAsync("api/Kos");
+                            responseGetAll.EnsureSuccessStatusCode();
+                            Kos[] allKos = await responseGetAll.Content.ReadFromJsonAsync<Kos[]>();
+
+                            // Urutkan data berdasarkan ID
+                            allKos = allKos.OrderBy(k => k.Id).ToArray();
+
+                            Console.WriteLine("Data Kos:");
+                            foreach (var kos in allKos)
+                            {
+                                Console.WriteLine($"ID: {kos.Id}, Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
+                            }
+                            break;
+                        case "5":
+                            isLoggedIn = false; break;
+
+                        case "0":
+                            exit = true;
+                            break;
+
+                        default:
+                            Console.WriteLine("Pilihan tidak sesuai.");
+                            break;
+                    }
+                }
+
             }
 
             Console.WriteLine();

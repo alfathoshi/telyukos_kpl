@@ -1,8 +1,12 @@
-﻿namespace telyukos
+﻿using System;
+using telyukos;
+
+
+namespace telyukos
 {
     internal class menu
     {
-       public void header()
+        public void header()
         {
             Console.WriteLine("###     -----------------     ###");
             Console.WriteLine("###         TelyuKos          ###");
@@ -29,7 +33,7 @@
             Console.WriteLine("2. Penyewa Kos");
             Console.WriteLine();
             Console.Write("Username : ");
-            string username =  Console.ReadLine();
+            string username = Console.ReadLine();
             Console.Write("Password : ");
             string password = Console.ReadLine();
             Console.WriteLine();
@@ -54,7 +58,7 @@
             Console.WriteLine("0. Keluar");
         }
 
-        public void ownerMainPage() 
+        public void ownerMainPage()
         {
             Console.WriteLine("###     -------- Menu Utama --------     ###");
             Console.WriteLine();

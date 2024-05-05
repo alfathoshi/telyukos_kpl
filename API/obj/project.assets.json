@@ -2800,15 +2800,25 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "Microsoft.AspNetCore.Mvc": "2.2.0",
           "Newtonsoft.Json": "13.0.3",
-          "RestSharp": "110.2.0"
+          "RestSharp": "110.2.0",
+          "telyukos-library": "1.0.0"
         },
         "compile": {
           "bin/placeholder/telyukos.dll": {}
         },
         "runtime": {
           "bin/placeholder/telyukos.dll": {}
+        }
+      },
+      "telyukos-library/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/telyukos-library.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/telyukos-library.dll": {}
         }
       }
     }
@@ -8036,6 +8046,11 @@
       "type": "project",
       "path": "../telyukos/telyukos.csproj",
       "msbuildProject": "../telyukos/telyukos.csproj"
+    },
+    "telyukos-library/1.0.0": {
+      "type": "project",
+      "path": "../telyukos-library/telyukos-library.csproj",
+      "msbuildProject": "../telyukos-library/telyukos-library.csproj"
     }
   },
   "projectFileDependencyGroups": {
