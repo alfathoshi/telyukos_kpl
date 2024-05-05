@@ -367,3 +367,7 @@ FodyWeavers.xsd
 /API/obj/Debug/net8.0/API.sourcelink.json
 /API/obj/Debug/net8.0/API.AssemblyInfoInputs.cache
 /API/obj/Debug/net8.0/API.AssemblyInfo.cs
+/API
+telyukos-library/obj/Debug/net8.0/telyukos-library.AssemblyInfo.cs
+telyukos-library/obj/Debug/net8.0/telyukos-library.AssemblyInfoInputs.cache
+telyukos/obj/Debug/net8.0/telyukos.csproj.AssemblyReference.cache
