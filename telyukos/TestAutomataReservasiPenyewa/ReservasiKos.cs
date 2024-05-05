@@ -92,7 +92,7 @@ namespace telyukos
             }
             else if (currentState == ReservasiState.RESERVASI_BERHASIL)
             {
-                Console.WriteLine("RESERVASI BERHASIL!!");
+                Console.WriteLine("=== DAFTAR RESERVASI BERHASIL ===");
             }
             else if (currentState == ReservasiState.RESERVASI_GAGAL)
             {
