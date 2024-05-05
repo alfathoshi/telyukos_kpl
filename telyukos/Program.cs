@@ -5,24 +5,20 @@ using telyukos_library.Searching;
 
 internal class Program
 {
+    private static bool isLoggedIn = false;
     private static User Akun;
-    private static AuthState app = new AuthState();
 
     static async Task Main(string[] args)
     {
         HttpClient httpClient = new HttpClient();
         httpClient.BaseAddress = new Uri("https://localhost:7126/"); // Sesuaikan dengan URL API Anda
 
-        app.currentState = AuthState.State.START;
-
-        while (app.currentState != AuthState.State.EXIT)
+        bool exit = false;
+        while (!exit)
         {
-
             Menu _menu = new Menu();
-
-            if (app.currentState != AuthState.State.LOGIN)
+            if (!isLoggedIn)
             {
-
                 _menu.header();
 
                 string choice = Console.ReadLine();
@@ -39,16 +35,16 @@ internal class Program
 
                         User loginUser = new User { Email = email, Password = password, Role = "" };
                         HttpResponseMessage responseLogin = await httpClient.PostAsJsonAsync("api/Auth/login", loginUser);
+
                         Console.WriteLine();
                         if (responseLogin.IsSuccessStatusCode)
                         {
-                            app.currentState = app.getNextState(app.currentState, AuthState.Trigger.LOGIN_DITERIMA);
-
                             HttpResponseMessage responseGetUser = await httpClient.GetAsync("api/Auth/" + email);
                             responseGetUser.EnsureSuccessStatusCode();
                             User user = await responseGetUser.Content.ReadFromJsonAsync<User>();
 
                             string responseBodyLogin = await responseLogin.Content.ReadAsStringAsync();
+                            isLoggedIn = true;
                             Akun = user;
                             Console.WriteLine("Login berhasil");
 
@@ -66,7 +62,6 @@ internal class Program
 
                     case "2":
                         // Register
-                        Console.WriteLine();
                         Console.Write("Email: ");
                         string newEmail = Console.ReadLine();
                         Console.Write("Password: ");
@@ -76,7 +71,6 @@ internal class Program
 
                         User newUser = new User { Email = newEmail, Password = newPassword, Role = role };
                         HttpResponseMessage responseRegister = await httpClient.PostAsJsonAsync("api/Auth/register", newUser);
-
 
                         if (responseRegister.IsSuccessStatusCode)
                         {
@@ -104,7 +98,7 @@ internal class Program
                         break;
 
                     case "0":
-                        app.currentState = app.getNextState(app.currentState, AuthState.Trigger.CLOSE);
+                        Environment.Exit(0);
                         break;
 
                     default:
@@ -115,9 +109,8 @@ internal class Program
             else
             {
 
-                if (Akun.Role == Role.getRole(Role.RoleUser.RENTER))
+                if (Akun.Role == "penyewa")
                 {
-
                     _menu.mainManuRenter();
                     string menuChoice = Console.ReadLine();
                     Console.WriteLine();
@@ -168,7 +161,7 @@ internal class Program
                             Console.WriteLine("Silahkan tulis nama kos");
                             Console.Write("Kos: ");
                             string namaKos = Console.ReadLine();
-                            Console.WriteLine(SequentialSearch<Kos>.Search(findKos, new Kos { Nama = namaKos }));
+                            Console.WriteLine(SequentialSearch<Kos>.Search(findKos, new Kos { Nama = namaKos}));
                             break;
                         case "3":
                             Console.WriteLine("My Kos");
@@ -180,19 +173,15 @@ internal class Program
                             }
                             break;
                         case "4":
-                            app.currentState = app.getNextState(app.currentState, AuthState.Trigger.LOGOUT);
-                            ; break;
-
+                            isLoggedIn = false; break;
                         case "5":
-                            app.currentState = app.getNextState(app.currentState, AuthState.Trigger.CLOSE);
-                            break;
-                        default: 
-                            Console.WriteLine("Invalid Choice"); break;
+                            Environment.Exit(0); break;
                     }
                 }
                 else
                 {
                     _menu.mainMenuOwner();
+
 
                     string menuChoice = Console.ReadLine();
                     Console.WriteLine();
@@ -330,11 +319,10 @@ internal class Program
                             }
                             break;
                         case "5":
-                            app.currentState = app.getNextState(app.currentState, AuthState.Trigger.LOGOUT);
-                            break;
+                            isLoggedIn = false; break;
 
                         case "0":
-                            app.currentState = app.getNextState(app.currentState, AuthState.Trigger.CLOSE);
+                            exit = true;
                             break;
 
                         default:
