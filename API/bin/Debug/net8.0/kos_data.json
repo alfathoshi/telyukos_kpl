@@ -1,26 +1,3 @@
 [
-  {
-    "Id": 1,
-    "Nama": "pondok",
-    "Harga": 10000,
-    "Alamat": "sukbir"
-  },
-  {
-    "Id": 1,
-    "Nama": "rajawali",
-    "Harga": 1000000,
-    "Alamat": "sukbir"
-  },
-  {
-    "Id": 1,
-    "Nama": "bbb",
-    "Harga": 10,
-    "Alamat": "bbb"
-  },
-  {
-    "Id": 2,
-    "Nama": "Pondok Agung",
-    "Harga": 10000,
-    "Alamat": "Sukabirus"
-  }
+  
 ]

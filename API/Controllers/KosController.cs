@@ -11,7 +11,8 @@ namespace API.Controllers
     [ApiController]
     public class KosController : ControllerBase
     {
-        private List<Kos> _kosList = new List<Kos>();
+        private List<Kos> _kosList;
+        private List<User> users = new List<User>();
 
         public KosController()
         {
@@ -28,15 +29,32 @@ namespace API.Controllers
         [HttpGet]
         public IActionResult GetAllKos()
         {
-            
-
             return Ok(_kosList);
+        }
+
+        [HttpGet("{name}")]
+        public IActionResult GetUserbyName(string name)
+        {
+            if (_kosList.Count == 0)
+            {
+                return Ok("Belum ada data");
+            }
+
+            foreach (Kos kos in _kosList)
+            {
+                if (kos.Nama == name)
+                {
+                    return Ok(kos);
+                }
+            }
+            return Ok("Data tidak ada");
         }
 
         [HttpPost]
         public IActionResult CreateKos(Kos kos)
         {
             // Cek apakah ada ID yang kosong (0)
+            kos.Penyewa = new List<string>();
             var emptyId = _kosList.FirstOrDefault(k => k.Id == 0);
             if (emptyId != null)
             {
@@ -45,6 +63,9 @@ namespace API.Controllers
                 emptyId.Nama = kos.Nama;
                 emptyId.Harga = kos.Harga;
                 emptyId.Alamat = kos.Alamat;
+                emptyId.Status = kos.Status;
+                emptyId.Kapasitas = kos.Kapasitas;
+                emptyId.Penyewa = kos.Penyewa;
             }
             else
             {
@@ -76,6 +97,9 @@ namespace API.Controllers
             existingKos.Nama = kos.Nama;
             existingKos.Harga = kos.Harga;
             existingKos.Alamat = kos.Alamat;
+            existingKos.Status = kos.Status;
+            existingKos.Kapasitas = kos.Kapasitas;
+            existingKos.Penyewa = kos.Penyewa;
             SaveKosListToFile(); // Simpan data ke file setelah diperbarui
             return Ok("Kos berhasil diperbarui");
         }
@@ -109,7 +133,7 @@ namespace API.Controllers
             }
         }
 
-        
+       
 
     }
 }

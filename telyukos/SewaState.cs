@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static telyukos.KosStatus;
 
 namespace telyukos
 {
     public class SewaState
     {
-        public enum ReservasiState {LIHAT_KOS, PILIH_KOS, RESERVASI, RESERVASI_BERHASIL, RESERVASI_CANCEL }
+        public enum ReservasiState { LIHAT_KOS, RESERVASI, RESERVASI_BERHASIL, RESERVASI_CANCEL }
         public enum ReservasiTrigger { PILIH_KOS, KONFIRMASI, CANCEL }
 
         public ReservasiState currentState = ReservasiState.LIHAT_KOS;
@@ -52,6 +54,26 @@ namespace telyukos
                 }
             }
             return stateAkhir;
+        }
+
+        public void ActiveTrigger(ReservasiTrigger trigger)
+        {
+
+            string status1 = getRentStatus(RentsStatus.AVAIL);
+
+
+            currentState = GetNextState(currentState, trigger);
+            Debug.Assert(currentState == GetNextState(currentState, trigger));
+            if (currentState == ReservasiState.RESERVASI_BERHASIL)
+            {
+                Console.WriteLine("Reservasi Kos Berhasil");
+                Console.WriteLine("Silahkan selesaikan pembayaran");
+            }
+            else if (currentState == ReservasiState.RESERVASI_CANCEL)
+            {
+                Console.WriteLine("Cancel reservasi");
+
+            }
         }
     }
 }

@@ -15,11 +15,18 @@ namespace API.Controllers
     {
         private const string filePath = "users.json";
         private List<User> _users;
-        private List<Kos> kos = new List<Kos>();
+        private List<Kos> _kos = new List<Kos>();
 
         public AuthController()
         {
-            LoadUsers();
+            try
+            {
+                LoadUsers(); // Load data dari file saat aplikasi dimulai
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error load data: {ex.Message}");
+            }
         }
 
         private void LoadUsers()
@@ -62,7 +69,8 @@ namespace API.Controllers
 
             foreach (User user in _users)
             {
-                if (user.Email == name) {
+                if (user.Email == name)
+                {
                     return Ok(user);
                 }
             }
@@ -82,7 +90,7 @@ namespace API.Controllers
                 return BadRequest("Role harus diisi dengan 'penyewa' atau 'pemilik'");
             }
 
-            user.Kos = kos;
+            user.Kos = _kos;
             _users.Add(user);
             SaveUsers();
             return Ok("Registrasi berhasil");
@@ -123,9 +131,9 @@ namespace API.Controllers
             var existingUser = _users.FirstOrDefault(k => k.Email == akun);
             if (existingUser == null)
             {
-                return NotFound("Kos tidak ditemukan");
+                return NotFound("User tidak ditemukan");
             }
-
+            kos.Penyewa = null;
             existingUser.Kos.Add(kos);
             SaveUsers(); // Simpan data ke file setelah diperbarui
             return Ok("Reservasi berhasil");

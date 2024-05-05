@@ -7,6 +7,7 @@ internal class Program
 {
     private static User Akun;
     private static AuthState app = new AuthState();
+    private static SewaState sewa = new SewaState();
 
     static async Task Main(string[] args)
     {
@@ -77,10 +78,12 @@ internal class Program
                         if (role == "1")
                         {
                             role = Role.getRole(Role.RoleUser.RENTER);
-                        } else if (role == "2")
+                        }
+                        else if (role == "2")
                         {
                             role = Role.getRole(Role.RoleUser.OWNER);
-                        } else
+                        }
+                        else
                         {
                             Console.WriteLine("Invalid Choice");
                             break;
@@ -169,12 +172,37 @@ internal class Program
                                     Console.WriteLine("Kos dengan ID tersebut tidak ditemukan");
                                     break;
                                 }
+                                else if (kosRent.Penyewa.Count() == kosRent.Kapasitas)
+                                {
+                                    Console.WriteLine("Kos sudah penuh");
+                                    break;
+                                }
+                                sewa.currentState = SewaState.ReservasiState.RESERVASI;
+                                Console.WriteLine(kosRent.Nama);
+                                Console.WriteLine($"Konfirmasi sewa kos: y/n");
+                                Console.Write("Choice: ");
+                                string choice = Console.ReadLine();
 
-                                HttpResponseMessage responseRent = await httpClient.PutAsJsonAsync("api/Auth/" + Akun.Email, kosRent);
-                                responseRent.EnsureSuccessStatusCode();
-                                Console.WriteLine();
-                                Console.WriteLine("Reservasi Kos Berhasil");
-                                Console.WriteLine("Silahkan selesaikan pembayaran");
+                                if (choice == "y")
+                                {
+                                    HttpResponseMessage responseRent = await httpClient.PutAsJsonAsync("api/Auth/" + Akun.Email, kosRent);
+                                    responseRent.EnsureSuccessStatusCode();
+                                    kosRent.Penyewa.Add(Akun.Email);
+                                    Kos updatedKos = kosRent;
+                                    HttpResponseMessage responsePut = await httpClient.PutAsJsonAsync($"api/Kos/{selectedId}", updatedKos);
+                                    responsePut.EnsureSuccessStatusCode();
+                                    Console.WriteLine();
+                                    sewa.ActiveTrigger(SewaState.ReservasiTrigger.KONFIRMASI);
+
+                                }
+                                else if (choice == "n")
+                                {
+                                    sewa.ActiveTrigger(SewaState.ReservasiTrigger.CANCEL);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Invalid Choice");
+                                }
                             }
                             break;
                         case "2":
@@ -260,18 +288,19 @@ internal class Program
 
                             Console.Write("Alamat Kos: ");
                             string alamatKos = Console.ReadLine();
+                            Console.Write("Kapasitas Kos: ");
+                            int kapasitas = int.Parse(Console.ReadLine());
 
-                            Kos newKos = new Kos { Nama = namaKos, Harga = hargaKos, Alamat = alamatKos };
+                            Kos newKos = new Kos { Nama = namaKos, Harga = hargaKos, Alamat = alamatKos, Kapasitas = kapasitas, Status = KosStatus.RentsStatus.AVAIL, Penyewa = new List<string>() };
                             HttpResponseMessage responsePost = await httpClient.PostAsJsonAsync("api/Kos", newKos);
                             responsePost.EnsureSuccessStatusCode();
                             HttpResponseMessage responseRent = await httpClient.PutAsJsonAsync("api/Auth/" + Akun.Email, newKos);
                             responseRent.EnsureSuccessStatusCode();
                             string responseBodyPost = await responsePost.Content.ReadAsStringAsync();
+                            Console.WriteLine();
                             Console.WriteLine("Response POST:");
                             Console.WriteLine(responseBodyPost);
                             break;
-
-
                         case "2":
                             // Update Kos
                             int indexUpdate;
