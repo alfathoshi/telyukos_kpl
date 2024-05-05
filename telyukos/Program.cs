@@ -3,6 +3,7 @@ using telyukos;
 using telyukos_library.Menu;
 using telyukos_library.Searching;
 using telyukos_library.Common;
+using System;
 
 internal class Program
 {
@@ -170,7 +171,31 @@ internal class Program
                             Console.WriteLine("Silahkan tulis nama kos");
                             Console.Write("Kos: ");
                             string namaKos = Console.ReadLine();
-                            Console.WriteLine(SequentialSearch<Kos>.Search(findKos, new Kos { Nama = namaKos}));
+                            //Console.WriteLine(SequentialSearch<Kos>.Search(findKos, new Kos { Nama = namaKos }));
+                            //Kos cariKos = null;
+                            //foreach (var item in findKos)
+                            //{
+                            //    if (item.Nama.Equals(namaKos))
+                            //    {
+                            //        cariKos = item;
+                            //        break;
+                            //    }
+                            //}
+
+                            Kos cariKos = SearchKos.Search(findKos, k => k.Nama.Equals(namaKos));
+                            if (cariKos != null)
+                            {
+                                Console.WriteLine($"Kos dengan nama '{namaKos}' ditemukan.");
+                                Console.WriteLine($"ID: {cariKos.Id}");
+                                Console.WriteLine($"Harga: {cariKos.Harga}");
+                                Console.WriteLine($"Alamat: {cariKos.Alamat}");
+                            }
+                            else
+                            {
+                                Console.WriteLine($"Kos dengan nama '{namaKos}' tidak ditemukan.");
+                            }
+
+
                             break;
                         case "3":
                             Console.WriteLine("My Kos");
@@ -194,6 +219,8 @@ internal class Program
 
                     string menuChoice = Console.ReadLine();
                     Console.WriteLine();
+
+                    //Pemilik Kos
 
                     switch (menuChoice)
                     {
