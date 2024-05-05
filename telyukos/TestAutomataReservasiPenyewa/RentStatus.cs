@@ -6,7 +6,7 @@ namespace telyukos {
 
         public static string getRentStatus(RentsStatus status)
         {
-            string[] input = { "Tersedia", "Disewa"};
+            string[] input = { "Tersedia", "Penuh"};
             return input[(int)status];
 
         }

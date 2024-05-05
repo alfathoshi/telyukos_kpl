@@ -5,7 +5,12 @@ VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "telyukos", "telyukos\telyukos.csproj", "{0845E476-8F10-4CC9-A13A-343BBA4BEF64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "telyukos-library", "telyukos-library\telyukos-library.csproj", "{6CF77AB4-8F43-471A-9C67-40AA634DC201}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "telyukos-library", "telyukos-library\telyukos-library.csproj", "{6CF77AB4-8F43-471A-9C67-40AA634DC201}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8CAD6979-204B-4194-8934-E63951591B1A}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -84,8 +84,7 @@ namespace telyukos
                 string duration = Console.ReadLine();
             }
             else if (currentState == ReservasiState.LIHAT_INFORMASI_KOS)
-            {
-                
+            {         
                 Console.WriteLine("===== DAFTAR KOS =====");
                 Console.WriteLine("1.) Kos Mawar [Jl.Damai No.1] [Rp 1.000.000/bulan] - " + status1);
                 Console.WriteLine("2.) Kos Melati [Jl.Peace No.1] [Rp 2.000.000/bulan] - " + status1);
