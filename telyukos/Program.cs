@@ -350,8 +350,19 @@ internal class Program
                             // Update Kos
                             int indexUpdate;
                             bool isIndexValid;
-                            apiLibraries apiLib = new apiLibraries(httpClient);
-                            Console.WriteLine(apiLib.GetAsync<Kos[]>("api/Kos")); 
+                            //GET DULU
+                            HttpResponseMessage take = await httpClient.GetAsync("api/Kos");
+                            take.EnsureSuccessStatusCode();
+                            Kos[] adaKos = await take.Content.ReadFromJsonAsync<Kos[]>();
+
+                            // Urutkan data berdasarkan ID
+                            adaKos = adaKos.OrderBy(k => k.Id).ToArray();
+
+                            Console.WriteLine("Data Kos:");
+                            foreach (var kos in adaKos)
+                            {
+                                Console.WriteLine($"ID: {kos.Id}, Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
+                            }
                             do
                             {
                                 Console.Write("Index Kos yang akan diupdate: ");
