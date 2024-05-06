@@ -1,14 +1,1 @@
-[
-  {
-    "Id": 1,
-    "Nama": "rjwl",
-    "Harga": 10000,
-    "Alamat": "skbrs",
-    "Kapasitas": 2,
-    "Status": 0,
-    "Penyewa": [
-      "renter",
-      "renter"
-    ]
-  }
-]
+[{"Id":1,"Nama":"rjwl","Harga":10000,"Alamat":"skbrs","Kapasitas":2,"Status":0,"Penyewa":["renter"]},{"Id":3,"Nama":"asfaf","Harga":34,"Alamat":"safsfas","Kapasitas":22,"Status":0,"Penyewa":["renter"]},{"Id":2,"Nama":"tes","Harga":10,"Alamat":"tes","Kapasitas":1,"Status":1,"Penyewa":["renter"]}]

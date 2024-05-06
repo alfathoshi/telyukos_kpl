@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace telyukos_library.Searching
 {
-    internal class FilterKos
+    public static class FilterKos <T>
     {
+        public static IEnumerable<T> FilterKosByPrice(T[] kosList, Func<T, int> getPrice, int minPrice, int maxPrice)
+        {
+            return kosList.Where(k => getPrice(k) >= minPrice && getPrice(k) <= maxPrice);
+        }
     }
 }
