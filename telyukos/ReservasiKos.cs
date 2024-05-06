@@ -4,9 +4,8 @@ using System.Diagnostics;
 using static telyukos.RentStatus;
 
 namespace telyukos
-
 {
-    internal class ReservasiKos
+    public class ReservasiKos
     {
         public enum ReservasiState { START, PILIH_KOS, RESERVASI, LIHAT_INFORMASI_KOS, DAFTAR_RESERVASI, RESERVASI_BERHASIL, RESERVASI_GAGAL }
         public enum ReservasiTrigger { MULAI, MELIHAT_KOS, MENGISI_DATA, BACK, DAFTAR_DITERIMA, DAFTAR_DITOLAK, PILIH_RESERVASI }
@@ -32,7 +31,6 @@ namespace telyukos
             new Transition(ReservasiState.PILIH_KOS,ReservasiTrigger.BACK,ReservasiState.LIHAT_INFORMASI_KOS),
             new Transition(ReservasiState.RESERVASI,ReservasiTrigger.MENGISI_DATA,ReservasiState.DAFTAR_RESERVASI),
             new Transition(ReservasiState.DAFTAR_RESERVASI,ReservasiTrigger.DAFTAR_DITERIMA,ReservasiState.RESERVASI_BERHASIL),
-            new Transition(ReservasiState.DAFTAR_RESERVASI,ReservasiTrigger.DAFTAR_DITOLAK,ReservasiState.RESERVASI_GAGAL),
      };
 
         public ReservasiState GetNextState(ReservasiState stateAwal, ReservasiTrigger trigger)
