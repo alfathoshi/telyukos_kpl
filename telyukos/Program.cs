@@ -184,11 +184,7 @@ internal class Program
                                 Console.WriteLine($"Harga: {cariKos.Harga}");
                                 Console.WriteLine($"Alamat: {cariKos.Alamat}");
                             }
-
-                            Console.WriteLine();
-                            Console.WriteLine("Silahkan pilih kos untuk reservasi (masukkan ID kos):");
-                            int selectedId;
-                            if (!int.TryParse(Console.ReadLine(), out selectedId))
+                            else
                             {
                                 Console.WriteLine($"Kos dengan nama '{namaKos}' tidak ditemukan.");
                             }

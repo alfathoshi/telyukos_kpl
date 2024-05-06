@@ -28,9 +28,6 @@ namespace API.Controllers
         [HttpGet]
         public IActionResult GetAllKos()
         {
-            // Postcondition: Jumlah data tidak boleh negatif
-            System.Diagnostics.Debug.Assert(_kosList.Count >= 0);
-
             if (_kosList.Count == 0)
             {
                 return Ok("Belum ada data");
@@ -39,41 +36,9 @@ namespace API.Controllers
             return Ok(_kosList);
         }
 
-        [HttpGet("search")]
-        public IActionResult SearchKos(string nama)
-        {
-            // Precondition: Nama tidak boleh kosong
-            System.Diagnostics.Debug.Assert(!string.IsNullOrWhiteSpace(nama));
-
-            var result = _kosList.Where(k => k.Nama.ToLower().Contains(nama.ToLower())).ToList();
-            if (result.Count == 0)
-            {
-                return NotFound("Kos tidak ditemukan");
-            }
-
-            return Ok(result);
-        }
-
-
-
         [HttpPost]
         public IActionResult CreateKos(Kos kos)
         {
-            // Precondition: Kos tidak boleh null
-            System.Diagnostics.Debug.Assert(kos != null);
-
-            // Precondition: ID harus positif
-            System.Diagnostics.Debug.Assert(kos.Id > 0);
-
-            // Precondition: Nama tidak boleh kosong
-            System.Diagnostics.Debug.Assert(!string.IsNullOrWhiteSpace(kos.Nama));
-
-            // Precondition: Harga harus positif
-            System.Diagnostics.Debug.Assert(kos.Harga > 0);
-
-            // Precondition: Alamat tidak boleh kosong
-            System.Diagnostics.Debug.Assert(!string.IsNullOrWhiteSpace(kos.Alamat));
-
             // Cek apakah ada ID yang kosong (0)
             var emptyId = _kosList.FirstOrDefault(k => k.Id == 0);
             if (emptyId != null)
@@ -102,25 +67,9 @@ namespace API.Controllers
 
 
 
-
         [HttpPut("{id}")]
         public IActionResult UpdateKos(int id, Kos kos)
         {
-            // Precondition: ID harus positif
-            System.Diagnostics.Debug.Assert(id > 0);
-
-            // Precondition: Kos tidak boleh null
-            System.Diagnostics.Debug.Assert(kos != null);
-
-            // Precondition: Nama tidak boleh kosong
-            System.Diagnostics.Debug.Assert(!string.IsNullOrWhiteSpace(kos.Nama));
-
-            // Precondition: Harga harus positif
-            System.Diagnostics.Debug.Assert(kos.Harga > 0);
-
-            // Precondition: Alamat tidak boleh kosong
-            System.Diagnostics.Debug.Assert(!string.IsNullOrWhiteSpace(kos.Alamat));
-
             var existingKos = _kosList.FirstOrDefault(k => k.Id == id);
             if (existingKos == null)
             {
@@ -134,13 +83,9 @@ namespace API.Controllers
             return Ok("Kos berhasil diperbarui");
         }
 
-
         [HttpDelete("{id}")]
         public IActionResult DeleteKos(int id)
         {
-            // Precondition: ID harus positif
-            System.Diagnostics.Debug.Assert(id > 0);
-
             var existingKos = _kosList.FirstOrDefault(k => k.Id == id);
             if (existingKos == null)
             {
@@ -151,7 +96,6 @@ namespace API.Controllers
             SaveKosListToFile(); // Simpan data ke file setelah dihapus
             return Ok("Kos berhasil dihapus");
         }
-
 
         private void SaveKosListToFile()
         {
@@ -168,11 +112,7 @@ namespace API.Controllers
             }
         }
 
-        internal void ClearKosList()
-        {
-            _kosList.Clear();
-        }
-
+        
 
     }
 }
