@@ -122,7 +122,6 @@ namespace telyukos
         {
             try
             {
-
                 resp = await httpClient.PostAsJsonAsync("api/Kos", newKos);
                 resp.EnsureSuccessStatusCode();
                 HttpResponseMessage responseRent = await httpClient.PutAsJsonAsync("api/Auth/" + Akun.Email, newKos);

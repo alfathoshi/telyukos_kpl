@@ -201,13 +201,16 @@ namespace API.Controllers
             var existingUser = _users.FirstOrDefault(k => k.Email == akun);
             if (existingUser == null)
             {
-                return NotFound("Kos tidak ditemukan");
+                return NotFound("User tidak ditemukan");
             }
             // Precondition: Kos tidak boleh duplikat
             if (kos.Penyewa.Contains(existingUser.Email))
             {
-                Console.WriteLine("testes");
                 return Conflict("Kos sudah terdaftar");
+            }
+            if (existingUser.Kos == null)
+            {
+                existingUser.Kos = new List<Kos>();
             }
             kos.Penyewa = null;
             existingUser.Kos.Add(kos);
