@@ -12,6 +12,7 @@
             Console.WriteLine("=    Tugas Besar Konstruksi Perangkat Lunak   =");
             Console.WriteLine("===============================================");
             Console.WriteLine("=                    ***                      =");
+            Console.WriteLine("=          Selamat Datang di TelyuKos         =");
             Console.WriteLine("=               Halaman Masuk                 =");
             Console.WriteLine("=                    ***                      =");
             Console.WriteLine("=                                             =");
@@ -62,9 +63,9 @@
             Console.WriteLine("= 1. Lihat Daftar Kos                         =");
             Console.WriteLine("= 2. Cari Kos                                 =");
             Console.WriteLine("= 3. My Kos                                   =");
-            Console.WriteLine("= 4. Filter Kos by                            =");
+            Console.WriteLine("= 4. Filter Kos by harga                      =");
             Console.WriteLine("= 5. Logout                                   =");
-            Console.WriteLine("= 0. Kembali                                  =");
+            Console.WriteLine("= 6. Kembali                                  =");
             Console.WriteLine("===============================================");
             Console.Write("Choice: ");
         }

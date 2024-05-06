@@ -4,6 +4,7 @@ using telyukos_library.Menu;
 using telyukos_library.Searching;
 using telyukos_library.Common;
 using System;
+using telyukos_library.Contract;
 
 internal class Program
 {
@@ -200,6 +201,7 @@ internal class Program
                             }
                             break;
                         case "4":
+                            //Filter kos
                             HttpResponseMessage resp = await httpClient.GetAsync("api/Kos");
                             resp.EnsureSuccessStatusCode();
                             Kos[] filterKos = await resp.Content.ReadFromJsonAsync<Kos[]>();
@@ -209,10 +211,37 @@ internal class Program
                             }
 
                             Console.WriteLine("Filter Kos Berdasarkan Rentang Harga");
-                            Console.Write("Masukkan harga minimum: ");
-                            int minPrice = Convert.ToInt32(Console.ReadLine());
-                            Console.Write("Masukkan harga maksimum: ");
-                            int maxPrice = Convert.ToInt32(Console.ReadLine());
+                            int minPrice;
+                            bool validInputMinPrice = false;
+                            do
+                            {
+                                Console.Write("Masukkan harga minimum: ");
+                                minPrice = Convert.ToInt32(Console.ReadLine());
+
+                                // Memeriksa apakah harga minimum memenuhi kontrak
+                                validInputMinPrice = FilterContract.CheckContract(minPrice, 100000, 15000000);
+
+                                if (!validInputMinPrice)
+                                {
+                                    Console.WriteLine("Input tidak sesuai kontrak. Harga minimal harus lebih dari atau sama dengan Rp. 100.000");
+                                }
+                            } while (!validInputMinPrice);
+
+                            int maxPrice;
+                            bool validInputMaxPrice = false;
+                            do
+                            {
+                                Console.Write("Masukkan harga maksimum: ");
+                                maxPrice = Convert.ToInt32(Console.ReadLine());
+
+                                // Memeriksa apakah harga maksimum memenuhi kontrak
+                                validInputMaxPrice = FilterContract.CheckContract(maxPrice, 100000, 15000000);
+
+                                if (!validInputMaxPrice)
+                                {
+                                    Console.WriteLine("Input tidak sesuai kontrak. Harga maksimal harus kurang dari atau sama dengan Rp. 15.000.000");
+                                }
+                            } while (!validInputMaxPrice);
 
                             var filteredKos = FilterKosByPrice(filterKos, minPrice, maxPrice);
 
