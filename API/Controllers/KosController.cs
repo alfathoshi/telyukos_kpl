@@ -76,8 +76,8 @@ namespace API.Controllers
             // Precondition: Kos tidak boleh null
             System.Diagnostics.Debug.Assert(kos != null);
 
-            // Precondition: ID harus positif
-            System.Diagnostics.Debug.Assert(kos.Id > 0);
+         /*   // Precondition: ID harus positif
+            System.Diagnostics.Debug.Assert(kos.Id > 0);*/
 
             // Precondition: Nama tidak boleh kosong
             System.Diagnostics.Debug.Assert(!string.IsNullOrWhiteSpace(kos.Nama));

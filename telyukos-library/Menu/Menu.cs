@@ -62,7 +62,7 @@
             Console.WriteLine("2. Cari Kos");
             Console.WriteLine("3. My Kos");
             Console.WriteLine("4. Filter Kos");
-            Console.WriteLine("4. Logout");
+            Console.WriteLine("5. Logout");
             Console.WriteLine("0. Kembali");
             Console.Write("Choice: ");
         }
