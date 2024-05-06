@@ -1,1 +1,32 @@
-[{"Email":"admin","Password":"admin","Role":"pemilik","Kos":null},{"Email":"user","Password":"user","Role":"penyewa","Kos":[{"Id":1,"Nama":"Pondok","Harga":1000000,"Alamat":"SukBir"},{"Id":0,"Nama":"raja","Harga":2000000,"Alamat":"wali"},{"Id":4,"Nama":"arfiz","Harga":3000000,"Alamat":"Umaya"},{"Id":5,"Nama":"nnn","Harga":2000000,"Alamat":"sukbir"},{"Id":7,"Nama":"Syamsul Ilmi","Harga":500000,"Alamat":"Sukabirus"}]},{"Email":"wildanniam","Password":"wildanniam","Role":"pemilik","Kos":null},{"Email":"niamwildan","Password":"niamwildan","Role":"penyewa","Kos":null}]
+[
+  { "Email": "admin", "Password": "admin", "Role": "pemilik", "Kos": null },
+  {
+    "Email": "user",
+    "Password": "user",
+    "Role": "penyewa",
+    "Kos": [
+      { "Id": 1, "Nama": "Pondok", "Harga": 1000000, "Alamat": "SukBir" },
+      { "Id": 0, "Nama": "raja", "Harga": 2000000, "Alamat": "wali" },
+      { "Id": 4, "Nama": "arfiz", "Harga": 3000000, "Alamat": "Umaya" },
+      { "Id": 5, "Nama": "nnn", "Harga": 2000000, "Alamat": "sukbir" },
+      {
+        "Id": 7,
+        "Nama": "Syamsul Ilmi",
+        "Harga": 500000,
+        "Alamat": "Sukabirus"
+      }
+    ]
+  },
+  {
+    "Email": "wildanniam",
+    "Password": "wildanniam",
+    "Role": "pemilik",
+    "Kos": null
+  },
+  {
+    "Email": "niamwildan",
+    "Password": "niamwildan",
+    "Role": "penyewa",
+    "Kos": null
+  }
+]
