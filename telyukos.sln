@@ -5,7 +5,9 @@ VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "telyukos", "telyukos\telyukos.csproj", "{0845E476-8F10-4CC9-A13A-343BBA4BEF64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "telyukos-library", "telyukos-library\telyukos-library.csproj", "{6CF77AB4-8F43-471A-9C67-40AA634DC201}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "telyukos-library", "telyukos-library\telyukos-library.csproj", "{6CF77AB4-8F43-471A-9C67-40AA634DC201}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTesting", "UnitTesting\UnitTesting.csproj", "{F28EED0F-0ECE-444E-BBF7-E00E1D32D15A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{6CF77AB4-8F43-471A-9C67-40AA634DC201}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CF77AB4-8F43-471A-9C67-40AA634DC201}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CF77AB4-8F43-471A-9C67-40AA634DC201}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F28EED0F-0ECE-444E-BBF7-E00E1D32D15A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F28EED0F-0ECE-444E-BBF7-E00E1D32D15A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F28EED0F-0ECE-444E-BBF7-E00E1D32D15A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F28EED0F-0ECE-444E-BBF7-E00E1D32D15A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
