@@ -1,6 +1,8 @@
-﻿using System.Net.Http.Json;
+﻿using System.Diagnostics;
+using System.Net.Http.Json;
 using telyukos.Model;
 using telyukos.State;
+using telyukos_library.apiLib;
 using telyukos_library.Menu;
 using telyukos_library.Searching;
 
@@ -179,22 +181,28 @@ internal class Program
                                     break;
                                 }
                                 sewa.currentState = SewaState.ReservasiState.RESERVASI;
-                                Console.WriteLine(kosRent.Nama);
+                                Console.WriteLine();
                                 Console.WriteLine($"Konfirmasi sewa kos: y/n");
                                 Console.Write("Choice: ");
                                 string choice = Console.ReadLine();
 
                                 if (choice == "y")
                                 {
-                                    HttpResponseMessage responseRent = await httpClient.PutAsJsonAsync("api/Auth/" + Akun.Email, kosRent);
-                                    responseRent.EnsureSuccessStatusCode();
-                                    kosRent.Penyewa.Add(Akun.Email);
-                                    Kos updatedKos = kosRent;
-                                    HttpResponseMessage responsePut = await httpClient.PutAsJsonAsync($"api/Kos/{selectedId}", updatedKos);
-                                    responsePut.EnsureSuccessStatusCode();
-                                    Console.WriteLine();
-                                    sewa.ActiveTrigger(SewaState.ReservasiTrigger.KONFIRMASI);
 
+                                    HttpResponseMessage responseRent = await httpClient.PutAsJsonAsync("api/Auth/" + Akun.Email, kosRent);
+                                    if (responseRent.IsSuccessStatusCode)
+                                    {
+                                        kosRent.Penyewa.Add(Akun.Email);
+                                        Kos updatedKos = kosRent;
+                                        HttpResponseMessage responsePut = await httpClient.PutAsJsonAsync($"api/Kos/{selectedId}", updatedKos);
+                                        responsePut.EnsureSuccessStatusCode();
+                                        Console.WriteLine();
+                                        sewa.ActiveTrigger(SewaState.ReservasiTrigger.KONFIRMASI);
+                                    } else
+                                    {
+                                        Console.WriteLine("Email sudah terdaftar");
+
+                                    }
                                 }
                                 else if (choice == "n")
                                 {
@@ -229,6 +237,9 @@ internal class Program
                             {
                                 Console.WriteLine($"Kos dengan nama '{namaKos}' tidak ditemukan.");
                             }
+                            Console.WriteLine();
+                            Console.Write("Tap to back...");
+                            Console.ReadLine();
                             break;
                         case "3":
                             HttpResponseMessage responseGetUser = await httpClient.GetAsync("api/Auth/" + Akun.Email);
@@ -246,6 +257,39 @@ internal class Program
                             Console.ReadLine();
                             break;
                         case "4":
+                            HttpResponseMessage resp = await httpClient.GetAsync("api/Kos");
+                            resp.EnsureSuccessStatusCode();
+                            Kos[] kosList = await resp.Content.ReadFromJsonAsync<Kos[]>();
+
+                            Console.WriteLine("Filter Kos Berdasarkan Rentang Harga");
+                            Console.Write("Masukkan harga minimum: ");
+                            int minPrice = Convert.ToInt32(Console.ReadLine());
+                            Console.Write("Masukkan harga maksimum: ");
+                            int maxPrice = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine();
+                            // Define a function to extract the price from Kos object
+                            Func<Kos, int> getPrice = k => k.Harga;
+
+                            // Filter kosList by price using the FilterKosByPrice method
+                            var filteredKos = FilterKos<Kos>.FilterKosByPrice(kosList, getPrice, minPrice, maxPrice);
+
+                            if (filteredKos.Any())
+                            {
+                                Console.WriteLine($"Kos dengan harga antara {minPrice} dan {maxPrice} ditemukan:");
+                                foreach (var kos in filteredKos)
+                                {
+                                    Console.WriteLine($"ID: {kos.Id},  Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine($"Tidak ada kos dengan harga antara {minPrice} dan {maxPrice} ditemukan.");
+                            }
+                            Console.WriteLine();
+                            Console.Write("Tap to back...");
+                            Console.ReadLine();
+                            break;
+                        case "5":
                             app.currentState = app.getNextState(app.currentState, AuthState.Trigger.LOGOUT);
                             ; break;
 
@@ -306,6 +350,8 @@ internal class Program
                             // Update Kos
                             int indexUpdate;
                             bool isIndexValid;
+                            apiLibraries apiLib = new apiLibraries(httpClient);
+                            Console.WriteLine(apiLib.GetAsync<Kos[]>("api/Kos")); 
                             do
                             {
                                 Console.Write("Index Kos yang akan diupdate: ");
@@ -319,6 +365,7 @@ internal class Program
 
                             Console.Write("Nama Kos baru: ");
                             string namaKosUpdate = Console.ReadLine();
+                            Debug.Assert(namaKosUpdate == null, message: "Tidak boleh null");
                             int hargaKosUpdate;
                             bool isHargaValid_UPDATE;
                             do
@@ -348,15 +395,15 @@ internal class Program
                             // Hapus Kos
 
                             //GET DULU
-                            HttpResponseMessage ambil = await httpClient.GetAsync("api/Kos");
-                            ambil.EnsureSuccessStatusCode();
-                            Kos[] kosAda = await ambil.Content.ReadFromJsonAsync<Kos[]>();
+                            HttpResponseMessage take = await httpClient.GetAsync("api/Kos");
+                            take.EnsureSuccessStatusCode();
+                            Kos[] adaKos = await take.Content.ReadFromJsonAsync<Kos[]>();
 
                             // Urutkan data berdasarkan ID
-                            kosAda = kosAda.OrderBy(k => k.Id).ToArray();
+                            adaKos = adaKos.OrderBy(k => k.Id).ToArray();
 
                             Console.WriteLine("Data Kos:");
-                            foreach (var kos in kosAda)
+                            foreach (var kos in adaKos)
                             {
                                 Console.WriteLine($"ID: {kos.Id}, Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
                             }
@@ -402,6 +449,9 @@ internal class Program
                                     Console.WriteLine($"ID: {kos.Id}, Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
                                 }
                             }
+                            Console.WriteLine();
+                            Console.Write("Tap to back...");
+                            Console.ReadLine();
                             break;
                         case "5":
                             app.currentState = app.getNextState(app.currentState, AuthState.Trigger.LOGOUT);

@@ -42,6 +42,11 @@ namespace API.Controllers
             }
         }
 
+        internal void SetUsers(List<User> users)
+        {
+            _users = users;
+        }
+
         private void SaveUsers()
         {
             string json = JsonSerializer.Serialize(_users);
@@ -62,6 +67,12 @@ namespace API.Controllers
         [HttpGet("{name}")]
         public IActionResult GetUserbyName(string name)
         {
+            // Precondition: Name harus valid
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                throw new ArgumentException("Nama tidak boleh kosong", nameof(name));
+            }
+
             if (_users.Count == 0)
             {
                 return Ok("Belum ada data");
@@ -80,28 +91,70 @@ namespace API.Controllers
         [HttpPost("register")]
         public IActionResult Register(User user)
         {
+            // Precondition: User tidak boleh null
+            if (user == null)
+            {
+                throw new ArgumentNullException(nameof(user));
+            }
+
+            // Precondition: Email harus valid
+            if (string.IsNullOrWhiteSpace(user.Email))
+            {
+                throw new ArgumentException("Email tidak boleh kosong", nameof(user.Email));
+            }
+
+            // Precondition: Password harus valid
+            if (string.IsNullOrWhiteSpace(user.Password))
+            {
+                throw new ArgumentException("Password tidak boleh kosong", nameof(user.Password));
+            }
+
+            // Precondition: Role harus diisi dengan 'penyewa' atau 'pemilik'
+            if (user.Role.ToLower() != "penyewa" && user.Role.ToLower() != "pemilik")
+            {
+                throw new ArgumentException("Role harus diisi dengan 'penyewa' atau 'pemilik'", nameof(user.Role));
+            }
+
+            // Precondition: Email harus unik
             if (_users.Any(u => u.Email == user.Email))
             {
                 return Conflict("Email sudah terdaftar");
             }
 
-            if (user.Role.ToLower() != "penyewa" && user.Role.ToLower() != "pemilik")
-            {
-                return BadRequest("Role harus diisi dengan 'penyewa' atau 'pemilik'");
-            }
-
-            user.Kos = _kos;
+            // Operasi registrasi berhasil
             _users.Add(user);
             SaveUsers();
+
+            // Postcondition: User terdaftar dalam daftar user
+            if (!_users.Contains(user))
+            {
+                throw new Exception("Registrasi gagal");
+            }
+
             return Ok("Registrasi berhasil");
         }
-
-
-
 
         [HttpPost("login")]
         public IActionResult Login(User user)
         {
+            // Precondition: User tidak boleh null
+            if (user == null)
+            {
+                throw new ArgumentNullException(nameof(user));
+            }
+
+            // Precondition: Email harus valid
+            if (string.IsNullOrWhiteSpace(user.Email))
+            {
+                throw new ArgumentException("Email tidak boleh kosong", nameof(user.Email));
+            }
+
+            // Precondition: Password harus valid
+            if (string.IsNullOrWhiteSpace(user.Password))
+            {
+                throw new ArgumentException("Password tidak boleh kosong", nameof(user.Password));
+            }
+
             var existingUser = _users.FirstOrDefault(u => u.Email == user.Email && u.Password == user.Password);
             if (existingUser == null)
             {
@@ -114,6 +167,12 @@ namespace API.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteKos(string id)
         {
+            // Precondition: ID harus valid
+            if (string.IsNullOrWhiteSpace(id))
+            {
+                throw new ArgumentException("ID tidak boleh kosong", nameof(id));
+            }
+
             var existingKos = _users.FirstOrDefault(k => k.Email == id);
             if (existingKos == null)
             {
@@ -128,15 +187,34 @@ namespace API.Controllers
         [HttpPut("{akun}")]
         public IActionResult Reservasi(string akun, Kos kos)
         {
+            // Precondition: Akun tidak boleh kosong
+            if (string.IsNullOrWhiteSpace(akun))
+            {
+                throw new ArgumentException("Akun tidak boleh kosong", nameof(akun));
+            }
+
+            // Precondition: Kos tidak boleh null
+            if (kos == null)
+            {
+                throw new ArgumentNullException(nameof(kos));
+            }
             var existingUser = _users.FirstOrDefault(k => k.Email == akun);
             if (existingUser == null)
             {
-                return NotFound("User tidak ditemukan");
+                return NotFound("Kos tidak ditemukan");
+            }
+            // Precondition: Kos tidak boleh duplikat
+            if (kos.Penyewa.Contains(existingUser.Email))
+            {
+                Console.WriteLine("testes");
+                return Conflict("Kos sudah terdaftar");
             }
             kos.Penyewa = null;
             existingUser.Kos.Add(kos);
             SaveUsers(); // Simpan data ke file setelah diperbarui
             return Ok("Reservasi berhasil");
+
+
         }
     }
 }

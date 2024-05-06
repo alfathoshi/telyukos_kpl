@@ -28,15 +28,6 @@
         "Kapasitas": 2,
         "Status": 0,
         "Penyewa": null
-      },
-      {
-        "Id": 1,
-        "Nama": "rjwl",
-        "Harga": 10000,
-        "Alamat": "skbrs",
-        "Kapasitas": 2,
-        "Status": 0,
-        "Penyewa": null
       }
     ]
   }
