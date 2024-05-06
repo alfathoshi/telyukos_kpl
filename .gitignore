@@ -390,3 +390,8 @@ telyukos/obj/Debug/net8.0/refint/telyukos.dll
 telyukos/obj/Debug/net8.0/telyukos.csproj.AssemblyReference.cache
 telyukos/obj/Debug/net8.0/telyukos.dll
 telyukos/obj/Debug/net8.0/telyukos.pdb
+telyukos/bin/Debug/net8.0/telyukos.exe
+telyukos/bin/Debug/net8.0/telyukos.dll
+API/bin/Debug/net8.0/telyukos.dll
+API/bin/Debug/net8.0/API.exe
+API/bin/Debug/net8.0/API.dll
