@@ -125,3 +125,24 @@ D:\Documents\Kuliah\Matkul\Semester 4\KPL\tubes\telyukos_kpl\telyukos\obj\Debug\
 D:\Documents\Kuliah\Matkul\Semester 4\KPL\tubes\telyukos_kpl\telyukos\obj\Debug\net8.0\telyukos.csproj.Up2Date
 D:\Documents\Kuliah\Matkul\Semester 4\KPL\tubes\telyukos_kpl\telyukos\obj\Debug\net8.0\telyukos.genruntimeconfig.cache
 D:\Documents\Kuliah\Matkul\Semester 4\KPL\tubes\telyukos_kpl\telyukos\obj\Debug\net8.0\ref\telyukos.dll
+D:\AAL\Coding\C#\GUITUBES\telyukos_kpl\telyukos\bin\Debug\net8.0\telyukos.exe
+D:\AAL\Coding\C#\GUITUBES\telyukos_kpl\telyukos\bin\Debug\net8.0\telyukos.deps.json
+D:\AAL\Coding\C#\GUITUBES\telyukos_kpl\telyukos\bin\Debug\net8.0\telyukos.runtimeconfig.json
+D:\AAL\Coding\C#\GUITUBES\telyukos_kpl\telyukos\bin\Debug\net8.0\telyukos.dll
+D:\AAL\Coding\C#\GUITUBES\telyukos_kpl\telyukos\bin\Debug\net8.0\telyukos.pdb
+D:\AAL\Coding\C#\GUITUBES\telyukos_kpl\telyukos\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\AAL\Coding\C#\GUITUBES\telyukos_kpl\telyukos\bin\Debug\net8.0\RestSharp.dll
+D:\AAL\Coding\C#\GUITUBES\telyukos_kpl\telyukos\bin\Debug\net8.0\telyukos-library.dll
+D:\AAL\Coding\C#\GUITUBES\telyukos_kpl\telyukos\bin\Debug\net8.0\telyukos-library.pdb
+D:\AAL\Coding\C#\GUITUBES\telyukos_kpl\telyukos\obj\Debug\net8.0\telyukos.csproj.AssemblyReference.cache
+D:\AAL\Coding\C#\GUITUBES\telyukos_kpl\telyukos\obj\Debug\net8.0\telyukos.GeneratedMSBuildEditorConfig.editorconfig
+D:\AAL\Coding\C#\GUITUBES\telyukos_kpl\telyukos\obj\Debug\net8.0\telyukos.AssemblyInfoInputs.cache
+D:\AAL\Coding\C#\GUITUBES\telyukos_kpl\telyukos\obj\Debug\net8.0\telyukos.AssemblyInfo.cs
+D:\AAL\Coding\C#\GUITUBES\telyukos_kpl\telyukos\obj\Debug\net8.0\telyukos.csproj.CoreCompileInputs.cache
+D:\AAL\Coding\C#\GUITUBES\telyukos_kpl\telyukos\obj\Debug\net8.0\telyukos.sourcelink.json
+D:\AAL\Coding\C#\GUITUBES\telyukos_kpl\telyukos\obj\Debug\net8.0\telyukos.csproj.Up2Date
+D:\AAL\Coding\C#\GUITUBES\telyukos_kpl\telyukos\obj\Debug\net8.0\telyukos.dll
+D:\AAL\Coding\C#\GUITUBES\telyukos_kpl\telyukos\obj\Debug\net8.0\refint\telyukos.dll
+D:\AAL\Coding\C#\GUITUBES\telyukos_kpl\telyukos\obj\Debug\net8.0\telyukos.pdb
+D:\AAL\Coding\C#\GUITUBES\telyukos_kpl\telyukos\obj\Debug\net8.0\telyukos.genruntimeconfig.cache
+D:\AAL\Coding\C#\GUITUBES\telyukos_kpl\telyukos\obj\Debug\net8.0\ref\telyukos.dll

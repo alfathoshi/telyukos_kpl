@@ -64,31 +64,25 @@ namespace API.Controllers
             return Ok(_users);
         }
 
-        [HttpGet("{name}")]
-        public IActionResult GetUserbyName(string name)
+        [HttpGet("{email}")]
+        public IActionResult GetUserbyName(string email)
         {
-            // Precondition: Name harus valid
-            if (string.IsNullOrWhiteSpace(name))
+            if (string.IsNullOrWhiteSpace(email))
             {
-                throw new ArgumentException("Nama tidak boleh kosong", nameof(name));
+                throw new ArgumentException("Email tidak boleh kosong", nameof(email));
             }
 
-            if (_users.Count == 0)
+            var user = _users.FirstOrDefault(u => u.Email == email);
+            if (user == null)
             {
-                return Ok("Belum ada data");
+                return NotFound("Data tidak ada");
             }
-
-            foreach (User user in _users)
-            {
-                if (user.Email == name)
-                {
-                    return Ok(user);
-                }
-            }
-            return Ok("Data tidak ada");
+            return Ok(user);
         }
 
-        [HttpPost("register")]
+    
+
+    [HttpPost("register")]
         public IActionResult Register(User user)
         {
             // Precondition: User tidak boleh null
@@ -219,5 +213,7 @@ namespace API.Controllers
 
 
         }
+
+
     }
 }

@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "04J+n6ctsfeVn3UFUpKFJ9FaHWNg9HvX7tYUHZrHzGrahR/sBep1K8whMOwSbtC+DjX+3XYTMNhi0gNJoAp2Vg==",
+  "dgSpecHash": "Ppg4YvIkaaRGdHV2fqDy93JAnwSlUHDl8SOP+a5KTQGZw4rTUVU8kddpwc0jdF9nCCKsIom/o9GImU50poamOA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos\\telyukos.csproj",
+  "projectFilePath": "D:\\AAL\\Coding\\C#\\GUITUBES\\telyukos_kpl\\telyukos\\telyukos.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\alfat\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
-    "C:\\Users\\alfat\\.nuget\\packages\\restsharp\\110.2.0\\restsharp.110.2.0.nupkg.sha512",
-    "C:\\Users\\alfat\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
-    "C:\\Users\\alfat\\.nuget\\packages\\system.text.json\\7.0.2\\system.text.json.7.0.2.nupkg.sha512"
+    "C:\\Users\\CATURWARGA COMPUTER\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\CATURWARGA COMPUTER\\.nuget\\packages\\restsharp\\110.2.0\\restsharp.110.2.0.nupkg.sha512",
+    "C:\\Users\\CATURWARGA COMPUTER\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
+    "C:\\Users\\CATURWARGA COMPUTER\\.nuget\\packages\\system.text.json\\7.0.2\\system.text.json.7.0.2.nupkg.sha512"
   ],
   "logs": []
 }

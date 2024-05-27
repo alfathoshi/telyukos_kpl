@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos-library.csproj": {}
+    "D:\\AAL\\Coding\\C#\\GUITUBES\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos-library.csproj": {
+    "D:\\AAL\\Coding\\C#\\GUITUBES\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos-library.csproj",
+        "projectUniqueName": "D:\\AAL\\Coding\\C#\\GUITUBES\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj",
         "projectName": "telyukos-library",
-        "projectPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos-library.csproj",
-        "packagesPath": "C:\\Users\\alfat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\obj\\",
+        "projectPath": "D:\\AAL\\Coding\\C#\\GUITUBES\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj",
+        "packagesPath": "C:\\Users\\CATURWARGA COMPUTER\\.nuget\\packages\\",
+        "outputPath": "D:\\AAL\\Coding\\C#\\GUITUBES\\telyukos_kpl\\telyukos-library\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\alfat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\CATURWARGA COMPUTER\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

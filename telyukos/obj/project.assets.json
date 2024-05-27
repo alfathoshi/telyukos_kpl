@@ -251,19 +251,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\alfat\\.nuget\\packages\\": {}
+    "C:\\Users\\CATURWARGA COMPUTER\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos\\telyukos.csproj",
+      "projectUniqueName": "D:\\AAL\\Coding\\C#\\GUITUBES\\telyukos_kpl\\telyukos\\telyukos.csproj",
       "projectName": "telyukos",
-      "projectPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos\\telyukos.csproj",
-      "packagesPath": "C:\\Users\\alfat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos\\obj\\",
+      "projectPath": "D:\\AAL\\Coding\\C#\\GUITUBES\\telyukos_kpl\\telyukos\\telyukos.csproj",
+      "packagesPath": "C:\\Users\\CATURWARGA COMPUTER\\.nuget\\packages\\",
+      "outputPath": "D:\\AAL\\Coding\\C#\\GUITUBES\\telyukos_kpl\\telyukos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\alfat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\CATURWARGA COMPUTER\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -277,8 +277,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos-library.csproj": {
-              "projectPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos-library.csproj"
+            "D:\\AAL\\Coding\\C#\\GUITUBES\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj": {
+              "projectPath": "D:\\AAL\\Coding\\C#\\GUITUBES\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj"
             }
           }
         }
@@ -323,7 +323,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
