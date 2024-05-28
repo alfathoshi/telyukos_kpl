@@ -1,1 +1,52 @@
-[{"Email":"owner","Password":"owner","Role":"pemilik","Kos":[{"Id":0,"Nama":"Rajawali","Harga":10000000,"Alamat":"Sukabirus","Kapasitas":50,"Status":0,"Penyewa":null},{"Id":0,"Nama":"Cigan","Harga":15000000,"Alamat":"Ciganitri","Kapasitas":10,"Status":0,"Penyewa":null}]},{"Email":"renter","Password":"renter","Role":"penyewa","Kos":[{"Id":1,"Nama":"Rajawali","Harga":10000000,"Alamat":"Sukabirus","Kapasitas":50,"Status":0,"Penyewa":null}]}]
+[
+  {
+    "Email": "owner",
+    "Password": "owner",
+    "Role": "pemilik",
+    "Kos": [
+      {
+        "Id": 0,
+        "Nama": "Rajawali",
+        "Harga": 10000000,
+        "Alamat": "Sukabirus",
+        "Kapasitas": 50,
+        "Status": 0,
+        "Penyewa": null
+      },
+      {
+        "Id": 0,
+        "Nama": "Cigan",
+        "Harga": 15000000,
+        "Alamat": "Ciganitri",
+        "Kapasitas": 10,
+        "Status": 0,
+        "Penyewa": null
+      },
+      {
+        "Id": 0,
+        "Nama": "tes\\",
+        "Harga": 1000000,
+        "Alamat": "sukabirus",
+        "Kapasitas": 10,
+        "Status": 0,
+        "Penyewa": null
+      }
+    ]
+  },
+  {
+    "Email": "renter",
+    "Password": "renter",
+    "Role": "penyewa",
+    "Kos": [
+      {
+        "Id": 1,
+        "Nama": "Rajawali",
+        "Harga": 10000000,
+        "Alamat": "Sukabirus",
+        "Kapasitas": 50,
+        "Status": 0,
+        "Penyewa": null
+      }
+    ]
+  }
+]

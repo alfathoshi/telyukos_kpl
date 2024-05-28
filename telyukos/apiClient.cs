@@ -29,7 +29,7 @@ namespace telyukos
                     Console.WriteLine("Data Kos:");
                     foreach (var kos in kosAda)
                     {
-                        Console.WriteLine($"ID: {kos.Id}, Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
+                        Console.WriteLine($"ID: {kos.Id}, Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}, Status: {kos.Status}");
                     }
                 }
             }

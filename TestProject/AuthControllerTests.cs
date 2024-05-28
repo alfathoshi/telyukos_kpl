@@ -13,7 +13,7 @@ namespace Tests
         [TestInitialize]
         public void Setup()
         {
-            // Initialize AuthController with an empty user list
+            // Menginisiasi controller agar memiliki sebuah variabel kosong untuk dipanggil
             _authController = new AuthController();
             MethodInfo setUsersMethod = typeof(AuthController).GetMethod("SetUsers", BindingFlags.NonPublic | BindingFlags.Instance);
             setUsersMethod.Invoke(_authController, new object[] { new List<User>() });
@@ -63,8 +63,6 @@ namespace Tests
             // Assert
             Assert.IsInstanceOfType(result, typeof(ConflictObjectResult));
         }
-
-        // Add more test methods as needed...
 
     }
 }

@@ -15,6 +15,7 @@ namespace API.Tests
             _controller = new KosController();
         }
 
+        //Cek apakah kos bener kosong
         [TestMethod]
         public void GetAllKos_WhenEmpty_ReturnsOkWithMessage()
         {
@@ -31,6 +32,7 @@ namespace API.Tests
             Assert.AreEqual("Belum ada data", ((OkObjectResult)result).Value);
         }
 
+        //cek apakah yang di input valid
         [TestMethod]
         public void CreateKos_WithValidKos_ReturnsOkWithMessage()
         {
@@ -49,7 +51,7 @@ namespace API.Tests
             Assert.AreEqual("Kos berhasil ditambahkan", okResult.Value);
         }
 
-
+        //cek apakah konflik (kos duplikat)
         [TestMethod]
         public void CreateKos_WithExistingId_ReturnsOkWithMessage()
         {
@@ -71,6 +73,7 @@ namespace API.Tests
             Assert.AreEqual("Kos berhasil ditambahkan", okResult.Value);
         }
 
+        //mengecek apakah kos berhasil diubah
         [TestMethod]
         public void UpdateKos_WithValidId_ReturnsOkWithMessage()
         {
@@ -92,6 +95,7 @@ namespace API.Tests
             Assert.AreEqual("Kos berhasil diperbarui", okResult.Value);
         }
 
+        //mengecek apakah kos berhasil di delete
         [TestMethod]
         public void DeleteKos_WithValidId_ReturnsOkWithMessage()
         {
