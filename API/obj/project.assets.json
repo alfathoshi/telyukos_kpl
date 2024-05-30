@@ -8063,19 +8063,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\CATURWARGA COMPUTER\\.nuget\\packages\\": {}
+    "C:\\Users\\AAL\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\AAL\\Coding\\C#\\GUITUBES\\telyukos_kpl\\API\\API.csproj",
+      "projectUniqueName": "C:\\Arag\\Ngoding\\Tubes KPL\\telyukos_kpl\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "D:\\AAL\\Coding\\C#\\GUITUBES\\telyukos_kpl\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\CATURWARGA COMPUTER\\.nuget\\packages\\",
-      "outputPath": "D:\\AAL\\Coding\\C#\\GUITUBES\\telyukos_kpl\\API\\obj\\",
+      "projectPath": "C:\\Arag\\Ngoding\\Tubes KPL\\telyukos_kpl\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\AAL\\.nuget\\packages\\",
+      "outputPath": "C:\\Arag\\Ngoding\\Tubes KPL\\telyukos_kpl\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\CATURWARGA COMPUTER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\AAL\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8089,11 +8089,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\AAL\\Coding\\C#\\GUITUBES\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj": {
-              "projectPath": "D:\\AAL\\Coding\\C#\\GUITUBES\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj"
+            "C:\\Arag\\Ngoding\\Tubes KPL\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj": {
+              "projectPath": "C:\\Arag\\Ngoding\\Tubes KPL\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj"
             },
-            "D:\\AAL\\Coding\\C#\\GUITUBES\\telyukos_kpl\\telyukos\\telyukos.csproj": {
-              "projectPath": "D:\\AAL\\Coding\\C#\\GUITUBES\\telyukos_kpl\\telyukos\\telyukos.csproj"
+            "C:\\Arag\\Ngoding\\Tubes KPL\\telyukos_kpl\\telyukos\\telyukos.csproj": {
+              "projectPath": "C:\\Arag\\Ngoding\\Tubes KPL\\telyukos_kpl\\telyukos\\telyukos.csproj"
             }
           }
         }

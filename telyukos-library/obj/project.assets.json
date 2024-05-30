@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\CATURWARGA COMPUTER\\.nuget\\packages\\": {}
+    "C:\\Users\\AAL\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\AAL\\Coding\\C#\\GUITUBES\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj",
+      "projectUniqueName": "C:\\Arag\\Ngoding\\Tubes KPL\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj",
       "projectName": "telyukos-library",
-      "projectPath": "D:\\AAL\\Coding\\C#\\GUITUBES\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj",
-      "packagesPath": "C:\\Users\\CATURWARGA COMPUTER\\.nuget\\packages\\",
-      "outputPath": "D:\\AAL\\Coding\\C#\\GUITUBES\\telyukos_kpl\\telyukos-library\\obj\\",
+      "projectPath": "C:\\Arag\\Ngoding\\Tubes KPL\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj",
+      "packagesPath": "C:\\Users\\AAL\\.nuget\\packages\\",
+      "outputPath": "C:\\Arag\\Ngoding\\Tubes KPL\\telyukos_kpl\\telyukos-library\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\CATURWARGA COMPUTER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\AAL\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

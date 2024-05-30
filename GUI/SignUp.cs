@@ -3,6 +3,8 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Windows.Forms;
 using telyukos.Model;
+using System.Linq;
+using System.Drawing;
 
 namespace GUI
 {
@@ -16,7 +18,8 @@ namespace GUI
             httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri("https://localhost:7126/"); // Sesuaikan dengan URL API Anda
 
-            
+            // Event handler for password textbox text changed
+            textBoxPassword.TextChanged += TextBoxPassword_TextChanged;
         }
 
         private async void buttonSignUp_Click(object sender, EventArgs e)
@@ -52,6 +55,32 @@ namespace GUI
                     MessageBox.Show("Gagal melakukan registrasi: " + response.StatusCode, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void TextBoxPassword_TextChanged(object sender, EventArgs e)
+        {
+            string password = textBoxPassword.Text;
+            if (IsValidPassword(password))
+            {
+                labelPasswordCheck.Text = "Valid Password";
+                labelPasswordCheck.ForeColor = Color.Green;
+            }
+            else
+            {
+                labelPasswordCheck.Text = "Password must include symbols and numbers";
+                labelPasswordCheck.ForeColor = Color.Red;
+            }
+        }
+
+        private bool IsValidPassword(string password)
+        {
+            // Check if password contains at least one symbol and one number
+            return password.Any(char.IsDigit) && password.Any(ch => !char.IsLetterOrDigit(ch));
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

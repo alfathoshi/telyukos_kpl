@@ -1,6 +1,7 @@
 using System;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using telyukos.Model;
@@ -20,7 +21,10 @@ namespace GUI
             httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri("https://localhost:7126/"); // Sesuaikan dengan URL API Anda
 
-            // event handler
+            // Add event handler for password TextBox
+            textBox2.TextChanged += new EventHandler(this.textBox2_TextChanged);
+
+            // Add event handler for login button
             button1.Click += new EventHandler(this.button1_Click);
         }
 
@@ -65,5 +69,27 @@ namespace GUI
             }
         }
 
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            string password = textBox2.Text;
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            SignUp signUpGui = new SignUp();
+            
+            signUpGui.ShowDialog();
+
+            Close();
+
+        }
     }
 }
