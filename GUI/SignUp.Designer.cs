@@ -34,36 +34,32 @@
             // 
             // textBoxEmail
             // 
-            textBoxEmail.Location = new Point(759, 261);
-            textBoxEmail.Margin = new Padding(6, 6, 6, 6);
+            textBoxEmail.Location = new Point(409, 122);
             textBoxEmail.Name = "textBoxEmail";
-            textBoxEmail.Size = new Size(482, 39);
+            textBoxEmail.Size = new Size(261, 23);
             textBoxEmail.TabIndex = 0;
             // 
             // textBoxPassword
             // 
-            textBoxPassword.Location = new Point(759, 353);
-            textBoxPassword.Margin = new Padding(6, 6, 6, 6);
+            textBoxPassword.Location = new Point(409, 165);
             textBoxPassword.Name = "textBoxPassword";
-            textBoxPassword.Size = new Size(482, 39);
+            textBoxPassword.Size = new Size(261, 23);
             textBoxPassword.TabIndex = 1;
             // 
             // comboBoxRole
             // 
             comboBoxRole.FormattingEnabled = true;
             comboBoxRole.Items.AddRange(new object[] { "Penyewa", "Pemilik" });
-            comboBoxRole.Location = new Point(757, 476);
-            comboBoxRole.Margin = new Padding(6, 6, 6, 6);
+            comboBoxRole.Location = new Point(408, 236);
             comboBoxRole.Name = "comboBoxRole";
-            comboBoxRole.Size = new Size(482, 40);
+            comboBoxRole.Size = new Size(261, 23);
             comboBoxRole.TabIndex = 2;
             // 
             // buttonSignUp
             // 
-            buttonSignUp.Location = new Point(759, 528);
-            buttonSignUp.Margin = new Padding(6, 6, 6, 6);
+            buttonSignUp.Location = new Point(409, 261);
             buttonSignUp.Name = "buttonSignUp";
-            buttonSignUp.Size = new Size(139, 49);
+            buttonSignUp.Size = new Size(75, 23);
             buttonSignUp.TabIndex = 3;
             buttonSignUp.Text = "Sign Up";
             buttonSignUp.UseVisualStyleBackColor = true;
@@ -72,9 +68,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(759, 208);
+            label1.Location = new Point(409, 98);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(71, 32);
+            label1.Size = new Size(36, 15);
             label1.TabIndex = 4;
             label1.Text = "Email";
             label1.Click += label1_Click;
@@ -82,62 +79,70 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(759, 315);
+            label2.Location = new Point(409, 148);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(111, 32);
+            label2.Size = new Size(57, 15);
             label2.TabIndex = 5;
             label2.Text = "Password";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(757, 438);
+            label3.Location = new Point(408, 218);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(60, 32);
+            label3.Size = new Size(30, 15);
             label3.TabIndex = 6;
             label3.Text = "Role";
             // 
             // labelPasswordCheck
             // 
             labelPasswordCheck.ForeColor = Color.Red;
-            labelPasswordCheck.Location = new Point(757, 398);
+            labelPasswordCheck.Location = new Point(408, 187);
+            labelPasswordCheck.Margin = new Padding(2, 0, 2, 0);
             labelPasswordCheck.Name = "labelPasswordCheck";
-            labelPasswordCheck.Size = new Size(667, 44);
+            labelPasswordCheck.Size = new Size(359, 21);
             labelPasswordCheck.TabIndex = 7;
             labelPasswordCheck.Text = "Password must include at least one number and one symbol.";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(757, 120);
+            label4.Font = new Font("Segoe UI", 24F);
+            label4.Location = new Point(408, 42);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(154, 32);
+            label4.Size = new Size(207, 45);
             label4.TabIndex = 8;
             label4.Text = "Sign Up Now";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(68, 67);
+            pictureBox1.Location = new Point(39, 61);
+            pictureBox1.Margin = new Padding(2, 1, 2, 1);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(594, 574);
+            pictureBox1.Size = new Size(320, 269);
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(757, 672);
+            label5.Location = new Point(408, 315);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(378, 32);
+            label5.Size = new Size(178, 15);
             label5.TabIndex = 10;
-            label5.Text = "Already have an account? Sign Up";
+            label5.Text = "Already have an account? Log In\r\n";
+            label5.Click += label5_Click;
             // 
             // SignUp
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1486, 960);
+            ClientSize = new Size(800, 450);
             Controls.Add(label5);
             Controls.Add(pictureBox1);
             Controls.Add(label4);
@@ -149,7 +154,6 @@
             Controls.Add(comboBoxRole);
             Controls.Add(textBoxPassword);
             Controls.Add(textBoxEmail);
-            Margin = new Padding(6, 6, 6, 6);
             Name = "SignUp";
             Text = "Sign Up";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

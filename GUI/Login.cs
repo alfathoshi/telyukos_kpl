@@ -1,7 +1,6 @@
 using System;
 using System.Net.Http;
 using System.Net.Http.Json;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using telyukos.Model;
@@ -23,9 +22,6 @@ namespace GUI
 
             // Add event handler for password TextBox
             textBox2.TextChanged += new EventHandler(this.textBox2_TextChanged);
-
-            // Add event handler for login button
-            button1.Click += new EventHandler(this.button1_Click);
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -76,19 +72,28 @@ namespace GUI
 
         private void Login_Load(object sender, EventArgs e)
         {
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+
         }
 
         private void label5_Click(object sender, EventArgs e)
         {
             SignUp signUpGui = new SignUp();
-            
             signUpGui.ShowDialog();
+        }
 
-            Close();
+        private void label4_Click(object sender, EventArgs e)
+        {
+            ForgotPassword forgotPasswordGui = new ForgotPassword();
+            forgotPasswordGui.ShowDialog();
+        }
+
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
+        {
 
         }
     }

@@ -8,12 +8,9 @@ namespace GUI
         [STAThread]
         static void Main()
         {
-            Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            // Start with Login form
-            Application.Run(new Login());
+            Application.Run(new MainForm());
         }
     }
 }
