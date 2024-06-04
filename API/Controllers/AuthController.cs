@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity.Data;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -210,8 +211,33 @@ namespace API.Controllers
             existingUser.Kos.Add(kos);
             SaveUsers(); // Simpan data ke file setelah diperbarui
             return Ok("Reservasi berhasil");
+        }
 
+        [HttpPut("change-password")]
+        public IActionResult ChangePassword([FromBody] User user)
+        {
+            // Precondition: Email tidak boleh kosong
+            if (string.IsNullOrWhiteSpace(user.Email))
+            {
+                throw new ArgumentException("Email tidak boleh kosong", nameof(user.Email));
+            }
 
+            // Precondition: Password baru tidak boleh kosong
+            if (string.IsNullOrWhiteSpace(user.Password))
+            {
+                throw new ArgumentException("Password baru tidak boleh kosong", nameof(user.Password));
+            }
+
+            var existingUser = _users.FirstOrDefault(u => u.Email == user.Email);
+            if (existingUser == null)
+            {
+                return NotFound("Email tidak valid");
+            }
+
+            existingUser.Password = user.Password;
+            SaveUsers();
+
+            return Ok("Password berhasil diubah");
         }
 
 

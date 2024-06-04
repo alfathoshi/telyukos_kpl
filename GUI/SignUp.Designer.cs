@@ -29,6 +29,7 @@
             label4 = new Label();
             pictureBox1 = new PictureBox();
             label5 = new Label();
+            labelEmailCheck = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -38,10 +39,11 @@
             textBoxEmail.Name = "textBoxEmail";
             textBoxEmail.Size = new Size(261, 23);
             textBoxEmail.TabIndex = 0;
+            textBoxEmail.TextChanged += textBoxEmail_TextChanged;
             // 
             // textBoxPassword
             // 
-            textBoxPassword.Location = new Point(409, 165);
+            textBoxPassword.Location = new Point(409, 193);
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.Size = new Size(261, 23);
             textBoxPassword.TabIndex = 1;
@@ -50,14 +52,14 @@
             // 
             comboBoxRole.FormattingEnabled = true;
             comboBoxRole.Items.AddRange(new object[] { "Penyewa", "Pemilik" });
-            comboBoxRole.Location = new Point(408, 236);
+            comboBoxRole.Location = new Point(408, 264);
             comboBoxRole.Name = "comboBoxRole";
             comboBoxRole.Size = new Size(261, 23);
             comboBoxRole.TabIndex = 2;
             // 
             // buttonSignUp
             // 
-            buttonSignUp.Location = new Point(409, 261);
+            buttonSignUp.Location = new Point(409, 289);
             buttonSignUp.Name = "buttonSignUp";
             buttonSignUp.Size = new Size(75, 23);
             buttonSignUp.TabIndex = 3;
@@ -79,7 +81,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(409, 148);
+            label2.Location = new Point(409, 176);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(57, 15);
@@ -89,7 +91,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(408, 218);
+            label3.Location = new Point(408, 246);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(30, 15);
@@ -99,7 +101,7 @@
             // labelPasswordCheck
             // 
             labelPasswordCheck.ForeColor = Color.Red;
-            labelPasswordCheck.Location = new Point(408, 187);
+            labelPasswordCheck.Location = new Point(408, 219);
             labelPasswordCheck.Margin = new Padding(2, 0, 2, 0);
             labelPasswordCheck.Name = "labelPasswordCheck";
             labelPasswordCheck.Size = new Size(359, 21);
@@ -130,7 +132,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(408, 315);
+            label5.Location = new Point(408, 343);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
             label5.Size = new Size(178, 15);
@@ -138,11 +140,22 @@
             label5.Text = "Already have an account? Log In\r\n";
             label5.Click += label5_Click;
             // 
+            // labelEmailCheck
+            // 
+            labelEmailCheck.ForeColor = Color.Red;
+            labelEmailCheck.Location = new Point(408, 148);
+            labelEmailCheck.Margin = new Padding(2, 0, 2, 0);
+            labelEmailCheck.Name = "labelEmailCheck";
+            labelEmailCheck.Size = new Size(359, 21);
+            labelEmailCheck.TabIndex = 11;
+            labelEmailCheck.Text = "Email harus menggunakan domain";
+            // 
             // SignUp
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(labelEmailCheck);
             Controls.Add(label5);
             Controls.Add(pictureBox1);
             Controls.Add(label4);
@@ -174,5 +187,6 @@
         private Label label4;
         private PictureBox pictureBox1;
         private Label label5;
+        private Label labelEmailCheck;
     }
 }
