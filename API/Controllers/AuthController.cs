@@ -6,6 +6,8 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Xml.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using telyukos.Model;
 
 namespace API.Controllers
@@ -23,6 +25,7 @@ namespace API.Controllers
             try
             {
                 LoadUsers(); // Load data dari file saat aplikasi dimulai
+                HashExistingPasswords(); //Hash data yang anda jadi perubahan di json pun akan kena
             }
             catch (Exception ex)
             {
@@ -52,6 +55,29 @@ namespace API.Controllers
         {
             string json = JsonSerializer.Serialize(_users);
             System.IO.File.WriteAllText(filePath, json);
+        }
+
+        private string ComputeSha256Hash(string rawData)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
+
+        private void HashExistingPasswords()
+        {
+            foreach (var user in _users)
+            {
+                user.Password = ComputeSha256Hash(user.Password);
+            }
+            SaveUsers();
         }
 
         [HttpGet]
@@ -116,6 +142,9 @@ namespace API.Controllers
                 return Conflict("Email sudah terdaftar");
             }
 
+            // Hash password sebelum disimpan
+            user.Password = ComputeSha256Hash(user.Password);
+
             // Operasi registrasi berhasil
             _users.Add(user);
             SaveUsers();
@@ -150,7 +179,8 @@ namespace API.Controllers
                 throw new ArgumentException("Password tidak boleh kosong", nameof(user.Password));
             }
 
-            var existingUser = _users.FirstOrDefault(u => u.Email == user.Email && u.Password == user.Password);
+            // Bandingkan hash password
+            var existingUser = _users.FirstOrDefault(u => u.Email == user.Email && u.Password == ComputeSha256Hash(user.Password));
             if (existingUser == null)
             {
                 return Unauthorized("Email atau password salah");
