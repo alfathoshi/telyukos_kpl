@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,22 +8,48 @@ namespace GUI
 {
     public partial class ForgotPassword : Form
     {
+        private HttpClient httpClient;
+
         public ForgotPassword()
         {
             InitializeComponent();
+            httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri("https://localhost:7126/"); // Sesuaikan dengan URL API Anda
         }
-        //todo
-        //buat dia cek saja jika verification code (textbox1) bukan 1111, maka dia akan bilang kode verifikasi tidak sesuai. Jika 1111, maka ubah password yang ada di json (Akses controller API) sesuai dengan alamat email pada textbox2, ubahan password seperti yang di textbox3, jika email tidak ada di json maka bilang email tidak valid.
 
-        private void label1_Click(object sender, EventArgs e)
+        private async void buttonSubmit_Click(object sender, EventArgs e)
         {
+            string verificationCode = textBoxVerificationCode.Text;
+            string email = textBoxEmail.Text;
+            string newPassword = textBoxNewPassword.Text;
 
+            if (verificationCode != "1111")
+            {
+                MessageBox.Show("Kode verifikasi tidak sesuai", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Buat objek User untuk mengubah password
+            var user = new { Email = email, Password = newPassword, Role = "" };
+
+            // Buat permintaan PUT untuk mengubah password
+            HttpResponseMessage response = await httpClient.PutAsJsonAsync("api/Auth/change-password", user);
+
+            if (response.IsSuccessStatusCode)
+            {
+                MessageBox.Show("Password berhasil diubah", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+            {
+                MessageBox.Show("Email tidak valid", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("Gagal mengubah password: " + response.StatusCode, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
+<<<<<<< HEAD
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
@@ -46,5 +68,12 @@ namespace GUI
         {
 
         }
+=======
+        private void label1_Click(object sender, EventArgs e) { }
+        private void textBox1_TextChanged(object sender, EventArgs e) { }
+        private void textBox2_TextChanged(object sender, EventArgs e) { }
+        private void label4_Click(object sender, EventArgs e) { }
+        private void label2_Click(object sender, EventArgs e) { }
+>>>>>>> c9ed1c5039c4759c14e44a8469eaf81c333ea97a
     }
 }
