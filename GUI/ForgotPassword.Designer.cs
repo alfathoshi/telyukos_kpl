@@ -41,80 +41,89 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(44, 189);
+            label1.Location = new Point(63, 315);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(228, 15);
+            label1.Size = new Size(340, 25);
             label1.TabIndex = 0;
             label1.Text = "Check your email for the verification code";
             label1.Click += label1_Click;
             // 
             // textBoxVerificationCode
             // 
-            textBoxVerificationCode.Location = new Point(44, 207);
+            textBoxVerificationCode.Location = new Point(63, 345);
+            textBoxVerificationCode.Margin = new Padding(4, 5, 4, 5);
             textBoxVerificationCode.Name = "textBoxVerificationCode";
-            textBoxVerificationCode.Size = new Size(100, 23);
+            textBoxVerificationCode.Size = new Size(141, 31);
             textBoxVerificationCode.TabIndex = 1;
             textBoxVerificationCode.TextChanged += textBox1_TextChanged;
             // 
             // textBoxEmail
             // 
-            textBoxEmail.Location = new Point(44, 126);
+            textBoxEmail.Location = new Point(63, 210);
+            textBoxEmail.Margin = new Padding(4, 5, 4, 5);
             textBoxEmail.Name = "textBoxEmail";
-            textBoxEmail.Size = new Size(100, 23);
+            textBoxEmail.Size = new Size(141, 31);
             textBoxEmail.TabIndex = 3;
             textBoxEmail.TextChanged += textBox2_TextChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(44, 108);
+            label2.Location = new Point(63, 180);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(331, 15);
+            label2.Size = new Size(500, 25);
             label2.TabIndex = 2;
             label2.Text = "Put your email of the account you want to reset the password";
             label2.Click += label2_Click;
             // 
             // textBoxNewPassword
             // 
-            textBoxNewPassword.Location = new Point(44, 286);
+            textBoxNewPassword.Location = new Point(63, 477);
+            textBoxNewPassword.Margin = new Padding(4, 5, 4, 5);
             textBoxNewPassword.Name = "textBoxNewPassword";
-            textBoxNewPassword.Size = new Size(100, 23);
+            textBoxNewPassword.Size = new Size(141, 31);
             textBoxNewPassword.TabIndex = 5;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(44, 268);
+            label3.Location = new Point(63, 447);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(127, 15);
+            label3.Size = new Size(195, 25);
             label3.TabIndex = 4;
             label3.Text = "Set new password here";
             // 
             // buttonSubmit
             // 
-            buttonSubmit.Location = new Point(44, 351);
+            buttonSubmit.Location = new Point(63, 585);
+            buttonSubmit.Margin = new Padding(4, 5, 4, 5);
             buttonSubmit.Name = "buttonSubmit";
-            buttonSubmit.Size = new Size(75, 23);
+            buttonSubmit.Size = new Size(107, 38);
             buttonSubmit.TabIndex = 6;
             buttonSubmit.Text = "Submit";
             buttonSubmit.UseVisualStyleBackColor = true;
+            buttonSubmit.Click += buttonSubmit_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 20F);
-            label4.Location = new Point(44, 57);
+            label4.Location = new Point(63, 95);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(214, 37);
+            label4.Size = new Size(317, 54);
             label4.TabIndex = 7;
             label4.Text = "Forgot Password";
             label4.Click += label4_Click;
             // 
             // ForgotPassword
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1143, 750);
             Controls.Add(label4);
             Controls.Add(buttonSubmit);
             Controls.Add(textBoxNewPassword);
@@ -123,6 +132,7 @@
             Controls.Add(label2);
             Controls.Add(textBoxVerificationCode);
             Controls.Add(label1);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "ForgotPassword";
             Text = "Form1";
             ResumeLayout(false);
