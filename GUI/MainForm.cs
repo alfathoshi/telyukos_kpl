@@ -17,7 +17,7 @@ namespace GUI
 
         private void OpenLoginForm()
         {
-            Login loginForm = new Login();
+            RenterHome loginForm = new RenterHome();
             loginForm.FormClosed += (s, args) => this.Close();
             loginForm.ShowDialog();
         }

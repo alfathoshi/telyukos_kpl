@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\CATURWARGA COMPUTER\\.nuget\\packages\\": {}
+    "C:\\Users\\alfat\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\AAL\\Coding\\C#\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj",
+      "projectUniqueName": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos-library.csproj",
       "projectName": "telyukos-library",
-      "projectPath": "D:\\AAL\\Coding\\C#\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj",
-      "packagesPath": "C:\\Users\\CATURWARGA COMPUTER\\.nuget\\packages\\",
-      "outputPath": "D:\\AAL\\Coding\\C#\\telyukos_kpl\\telyukos-library\\obj\\",
+      "projectPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos-library.csproj",
+      "packagesPath": "C:\\Users\\alfat\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\CATURWARGA COMPUTER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\alfat\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -66,7 +66,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
