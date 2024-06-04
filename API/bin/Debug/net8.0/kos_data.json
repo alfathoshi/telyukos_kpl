@@ -1,3 +1,23 @@
 [
-  
+  {
+    "Id": 1,
+    "Nama": "Rajawali",
+    "Harga": 10000000,
+    "Alamat": "Sukabirus",
+    "Kapasitas": 50,
+    "Status": 0,
+    "Penyewa": [
+      "renter"
+    ]
+  },
+  {
+    "Id": 2,
+    "Nama": "Cigan",
+    "Harga": 15000000,
+    "Alamat": "Ciganitri",
+    "Kapasitas": 10,
+    "Status": 0,
+    "Penyewa": [
+    ]
+  }
 ]
