@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity.Data;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Xml.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using telyukos.Model;
 
 namespace API.Controllers
@@ -53,6 +56,20 @@ namespace API.Controllers
             System.IO.File.WriteAllText(filePath, json);
         }
 
+        private string ComputeSha256Hash(string rawData)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
+
         [HttpGet]
         public IActionResult GetUser()
         {
@@ -64,31 +81,25 @@ namespace API.Controllers
             return Ok(_users);
         }
 
-        [HttpGet("{name}")]
-        public IActionResult GetUserbyName(string name)
+        [HttpGet("{email}")]
+        public IActionResult GetUserbyName(string email)
         {
-            // Precondition: Name harus valid
-            if (string.IsNullOrWhiteSpace(name))
+            if (string.IsNullOrWhiteSpace(email))
             {
-                throw new ArgumentException("Nama tidak boleh kosong", nameof(name));
+                throw new ArgumentException("Email tidak boleh kosong", nameof(email));
             }
 
-            if (_users.Count == 0)
+            var user = _users.FirstOrDefault(u => u.Email == email);
+            if (user == null)
             {
-                return Ok("Belum ada data");
+                return NotFound("Data tidak ada");
             }
-
-            foreach (User user in _users)
-            {
-                if (user.Email == name)
-                {
-                    return Ok(user);
-                }
-            }
-            return Ok("Data tidak ada");
+            return Ok(user);
         }
 
-        [HttpPost("register")]
+    
+
+    [HttpPost("register")]
         public IActionResult Register(User user)
         {
             // Precondition: User tidak boleh null
@@ -120,6 +131,9 @@ namespace API.Controllers
             {
                 return Conflict("Email sudah terdaftar");
             }
+
+            // Hash password sebelum disimpan
+            user.Password = ComputeSha256Hash(user.Password);
 
             // Operasi registrasi berhasil
             _users.Add(user);
@@ -155,7 +169,8 @@ namespace API.Controllers
                 throw new ArgumentException("Password tidak boleh kosong", nameof(user.Password));
             }
 
-            var existingUser = _users.FirstOrDefault(u => u.Email == user.Email && u.Password == user.Password);
+            // Bandingkan hash password
+            var existingUser = _users.FirstOrDefault(u => u.Email == user.Email && u.Password == ComputeSha256Hash(user.Password));
             if (existingUser == null)
             {
                 return Unauthorized("Email atau password salah");
@@ -216,8 +231,34 @@ namespace API.Controllers
             existingUser.Kos.Add(kos);
             SaveUsers(); // Simpan data ke file setelah diperbarui
             return Ok("Reservasi berhasil");
+        }
 
+        [HttpPut("change-password")]
+        public IActionResult ChangePassword([FromBody] User user)
+        {
+            // Precondition: Email tidak boleh kosong
+            if (string.IsNullOrWhiteSpace(user.Email))
+            {
+                throw new ArgumentException("Email tidak boleh kosong", nameof(user.Email));
+            }
 
+            // Precondition: Password baru tidak boleh kosong
+            if (string.IsNullOrWhiteSpace(user.Password))
+            {
+                throw new ArgumentException("Password baru tidak boleh kosong", nameof(user.Password));
+            }
+
+            var existingUser = _users.FirstOrDefault(u => u.Email == user.Email);
+            if (existingUser == null)
+            {
+                return NotFound("Email tidak valid");
+            }
+
+            // Hash password baru sebelum disimpan
+            existingUser.Password = ComputeSha256Hash(user.Password);
+            SaveUsers();
+
+            return Ok("Password berhasil diubah");
         }
     }
 }
