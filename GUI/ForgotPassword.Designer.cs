@@ -98,7 +98,7 @@
             buttonSubmit.TabIndex = 6;
             buttonSubmit.Text = "Submit";
             buttonSubmit.UseVisualStyleBackColor = true;
-            buttonSubmit.Click += this.buttonSubmit_Click;
+            buttonSubmit.Click += buttonSubmit_Click;
             // 
             // label4
             // 
@@ -115,7 +115,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(422, 450);
             Controls.Add(label4);
             Controls.Add(buttonSubmit);
             Controls.Add(textBoxNewPassword);

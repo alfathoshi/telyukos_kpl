@@ -25,7 +25,6 @@ namespace API.Controllers
             try
             {
                 LoadUsers(); // Load data dari file saat aplikasi dimulai
-                HashExistingPasswords(); //Hash data yang anda jadi perubahan di json pun akan kena
             }
             catch (Exception ex)
             {
@@ -69,15 +68,6 @@ namespace API.Controllers
                 }
                 return builder.ToString();
             }
-        }
-
-        private void HashExistingPasswords()
-        {
-            foreach (var user in _users)
-            {
-                user.Password = ComputeSha256Hash(user.Password);
-            }
-            SaveUsers();
         }
 
         [HttpGet]
@@ -264,12 +254,11 @@ namespace API.Controllers
                 return NotFound("Email tidak valid");
             }
 
-            existingUser.Password = user.Password;
+            // Hash password baru sebelum disimpan
+            existingUser.Password = ComputeSha256Hash(user.Password);
             SaveUsers();
 
             return Ok("Password berhasil diubah");
         }
-
-
     }
 }
