@@ -4,6 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.AccessControl;
+using System.Security.Cryptography;
+using System.Text;
 using System.Text.Json;
 using System.Xml.Linq;
 using telyukos.Model;
@@ -54,6 +57,20 @@ namespace API.Controllers
             System.IO.File.WriteAllText(filePath, json);
         }
 
+        private string ComputeSha256Hash(string rawData)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
+
         [HttpGet]
         public IActionResult GetUser()
         {
@@ -70,7 +87,7 @@ namespace API.Controllers
         {
             if (string.IsNullOrWhiteSpace(email))
             {
-                throw new ArgumentException("Email tidak boleh kosong", nameof(email));
+                throw new ArgumentException("Email tidak b  oleh kosong", nameof(email));
             }
 
             var user = _users.FirstOrDefault(u => u.Email == email);
@@ -81,9 +98,9 @@ namespace API.Controllers
             return Ok(user);
         }
 
-    
 
-    [HttpPost("register")]
+
+        [HttpPost("register")]
         public IActionResult Register(User user)
         {
             // Precondition: User tidak boleh null
@@ -115,6 +132,9 @@ namespace API.Controllers
             {
                 return Conflict("Email sudah terdaftar");
             }
+
+            // Hash password sebelum disimpan
+            user.Password = ComputeSha256Hash(user.Password);
 
             // Operasi registrasi berhasil
             _users.Add(user);
@@ -150,7 +170,8 @@ namespace API.Controllers
                 throw new ArgumentException("Password tidak boleh kosong", nameof(user.Password));
             }
 
-            var existingUser = _users.FirstOrDefault(u => u.Email == user.Email && u.Password == user.Password);
+            // Bandingkan hash password
+            var existingUser = _users.FirstOrDefault(u => u.Email == user.Email && u.Password == ComputeSha256Hash(user.Password));
             if (existingUser == null)
             {
                 return Unauthorized("Email atau password salah");
@@ -234,12 +255,47 @@ namespace API.Controllers
                 return NotFound("Email tidak valid");
             }
 
-            existingUser.Password = user.Password;
+            // Hash password baru sebelum disimpan
+            existingUser.Password = ComputeSha256Hash(user.Password);
             SaveUsers();
 
             return Ok("Password berhasil diubah");
         }
 
+        [HttpPut("update-profile")]
+        public IActionResult UpdateProfile([FromBody] User updateUser)
+        {
+
+            // Precondition: Email tidak boleh kosong
+            if (string.IsNullOrWhiteSpace(updateUser.Email))
+            {
+                throw new ArgumentException("Email tidak boleh kosong", nameof(updateUser.Email));
+            }
+
+            // Precondition: Password baru tidak boleh kosong
+            if (string.IsNullOrWhiteSpace(updateUser.Password))
+            {
+                throw new ArgumentException("Password baru tidak boleh kosong", nameof(updateUser.Password));
+            }
+
+            // Bandingkan hash password
+            var existingUser = _users.FirstOrDefault(u => u.Role == updateUser.Role);
+            if (existingUser == null) 
+            {
+                return Unauthorized("Email atau password salah");
+
+            }
+            //hash password sebelum disimpan 
+            existingUser.Password = ComputeSha256Hash(updateUser.Password);
+            //update profile
+            existingUser.Email = updateUser.Email;
+            SaveUsers();
+
+            return Ok("Profile updated successfully.");
+
+        }
+
+    
 
     }
 }

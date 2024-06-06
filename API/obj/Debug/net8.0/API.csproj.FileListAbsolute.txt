@@ -270,9 +270,7 @@ C:\Users\LENOVO\Desktop\semester 4\Kontruksi Perangkat Lunak (KPL)\tubesTelyukos
 C:\Users\LENOVO\Desktop\semester 4\Kontruksi Perangkat Lunak (KPL)\tubesTelyukos\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\LENOVO\Desktop\semester 4\Kontruksi Perangkat Lunak (KPL)\tubesTelyukos\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\LENOVO\Desktop\semester 4\Kontruksi Perangkat Lunak (KPL)\tubesTelyukos\API\bin\Debug\net8.0\System.Security.Permissions.dll
-C:\Users\LENOVO\Desktop\semester 4\Kontruksi Perangkat Lunak (KPL)\tubesTelyukos\API\bin\Debug\net8.0\telyukos-library.dll
 C:\Users\LENOVO\Desktop\semester 4\Kontruksi Perangkat Lunak (KPL)\tubesTelyukos\API\bin\Debug\net8.0\telyukos.dll
-C:\Users\LENOVO\Desktop\semester 4\Kontruksi Perangkat Lunak (KPL)\tubesTelyukos\API\bin\Debug\net8.0\telyukos-library.pdb
 C:\Users\LENOVO\Desktop\semester 4\Kontruksi Perangkat Lunak (KPL)\tubesTelyukos\API\bin\Debug\net8.0\telyukos.pdb
 C:\Users\LENOVO\Desktop\semester 4\Kontruksi Perangkat Lunak (KPL)\tubesTelyukos\API\obj\Debug\net8.0\API.csproj.AssemblyReference.cache
 C:\Users\LENOVO\Desktop\semester 4\Kontruksi Perangkat Lunak (KPL)\tubesTelyukos\API\obj\Debug\net8.0\API.GeneratedMSBuildEditorConfig.editorconfig
@@ -290,3 +288,5 @@ C:\Users\LENOVO\Desktop\semester 4\Kontruksi Perangkat Lunak (KPL)\tubesTelyukos
 C:\Users\LENOVO\Desktop\semester 4\Kontruksi Perangkat Lunak (KPL)\tubesTelyukos\API\obj\Debug\net8.0\API.pdb
 C:\Users\LENOVO\Desktop\semester 4\Kontruksi Perangkat Lunak (KPL)\tubesTelyukos\API\obj\Debug\net8.0\API.genruntimeconfig.cache
 C:\Users\LENOVO\Desktop\semester 4\Kontruksi Perangkat Lunak (KPL)\tubesTelyukos\API\obj\Debug\net8.0\ref\API.dll
+C:\Users\LENOVO\Desktop\semester 4\Kontruksi Perangkat Lunak (KPL)\tubesTelyukos\API\bin\Debug\net8.0\telyukos_library.dll
+C:\Users\LENOVO\Desktop\semester 4\Kontruksi Perangkat Lunak (KPL)\tubesTelyukos\API\bin\Debug\net8.0\telyukos_library.pdb

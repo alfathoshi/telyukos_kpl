@@ -49,7 +49,7 @@ namespace GUI
             }
         }
 
-<<<<<<< HEAD
+
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
@@ -64,16 +64,11 @@ namespace GUI
 
         }
 
-        private void buttonSubmit_Click(object sender, EventArgs e)
-        {
 
-        }
-=======
+
         private void label1_Click(object sender, EventArgs e) { }
         private void textBox1_TextChanged(object sender, EventArgs e) { }
-        private void textBox2_TextChanged(object sender, EventArgs e) { }
-        private void label4_Click(object sender, EventArgs e) { }
-        private void label2_Click(object sender, EventArgs e) { }
->>>>>>> c9ed1c5039c4759c14e44a8469eaf81c333ea97a
+
+
     }
 }

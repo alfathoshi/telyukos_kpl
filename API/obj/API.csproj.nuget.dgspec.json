@@ -28,8 +28,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos-library\\telyukos-library.csproj": {
-                "projectPath": "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos-library\\telyukos-library.csproj"
+              "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos-library\\telyukos_library.csproj": {
+                "projectPath": "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos-library\\telyukos_library.csproj"
               },
               "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos\\telyukos.csproj": {
                 "projectPath": "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos\\telyukos.csproj"
@@ -88,12 +88,12 @@
         }
       }
     },
-    "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos-library\\telyukos-library.csproj": {
+    "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos-library\\telyukos_library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos-library\\telyukos-library.csproj",
-        "projectName": "telyukos-library",
-        "projectPath": "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos-library\\telyukos-library.csproj",
+        "projectUniqueName": "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos-library\\telyukos_library.csproj",
+        "projectName": "telyukos_library",
+        "projectPath": "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos-library\\telyukos_library.csproj",
         "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos-library\\obj\\",
         "projectStyle": "PackageReference",
@@ -172,8 +172,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos-library\\telyukos-library.csproj": {
-                "projectPath": "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos-library\\telyukos-library.csproj"
+              "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos-library\\telyukos_library.csproj": {
+                "projectPath": "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos-library\\telyukos_library.csproj"
               }
             }
           }

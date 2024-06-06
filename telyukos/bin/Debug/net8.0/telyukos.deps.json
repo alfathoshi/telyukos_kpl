@@ -10,7 +10,7 @@
         "dependencies": {
           "Newtonsoft.Json": "13.0.3",
           "RestSharp": "110.2.0",
-          "telyukos-library": "1.0.0"
+          "telyukos_library": "1.0.0"
         },
         "runtime": {
           "telyukos.dll": {}
@@ -41,9 +41,9 @@
           "System.Text.Encodings.Web": "7.0.0"
         }
       },
-      "telyukos-library/1.0.0": {
+      "telyukos_library/1.0.0": {
         "runtime": {
-          "telyukos-library.dll": {}
+          "telyukos_library.dll": {}
         }
       }
     }
@@ -82,7 +82,7 @@
       "path": "system.text.json/7.0.2",
       "hashPath": "system.text.json.7.0.2.nupkg.sha512"
     },
-    "telyukos-library/1.0.0": {
+    "telyukos_library/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
