@@ -4,6 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.AccessControl;
+using System.Security.Cryptography;
+using System.Text;
 using System.Text.Json;
 using System.Xml.Linq;
 using System.Security.Cryptography;
@@ -86,7 +89,7 @@ namespace API.Controllers
         {
             if (string.IsNullOrWhiteSpace(email))
             {
-                throw new ArgumentException("Email tidak boleh kosong", nameof(email));
+                throw new ArgumentException("Email tidak b  oleh kosong", nameof(email));
             }
 
             var user = _users.FirstOrDefault(u => u.Email == email);
@@ -97,9 +100,9 @@ namespace API.Controllers
             return Ok(user);
         }
 
-    
 
-    [HttpPost("register")]
+
+        [HttpPost("register")]
         public IActionResult Register(User user)
         {
             // Precondition: User tidak boleh null
@@ -260,5 +263,44 @@ namespace API.Controllers
 
             return Ok("Password berhasil diubah");
         }
+<<<<<<< HEAD
+=======
+
+        [HttpPut("update-profile")]
+        public IActionResult UpdateProfile([FromBody] User updateUser)
+        {
+
+            // Precondition: Email tidak boleh kosong
+            if (string.IsNullOrWhiteSpace(updateUser.Email))
+            {
+                throw new ArgumentException("Email tidak boleh kosong", nameof(updateUser.Email));
+            }
+
+            // Precondition: Password baru tidak boleh kosong
+            if (string.IsNullOrWhiteSpace(updateUser.Password))
+            {
+                throw new ArgumentException("Password baru tidak boleh kosong", nameof(updateUser.Password));
+            }
+
+            // Bandingkan hash password
+            var existingUser = _users.FirstOrDefault(u => u.Role == updateUser.Role);
+            if (existingUser == null) 
+            {
+                return Unauthorized("Email atau password salah");
+
+            }
+            //hash password sebelum disimpan 
+            existingUser.Password = ComputeSha256Hash(updateUser.Password);
+            //update profile
+            existingUser.Email = updateUser.Email;
+            SaveUsers();
+
+            return Ok("Profile updated successfully.");
+
+        }
+
+    
+
+>>>>>>> 6ad881225f42933f1fed2a3b3475d5e291352f9e
     }
 }

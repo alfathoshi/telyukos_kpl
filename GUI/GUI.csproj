@@ -10,8 +10,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\API\API.csproj" />
-    <ProjectReference Include="..\telyukos-library\telyukos-library.csproj" />
-    <ProjectReference Include="..\telyukos\telyukos.csproj" />
   </ItemGroup>
 
   <ItemGroup>

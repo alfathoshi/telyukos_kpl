@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\AAL\\Coding\\C#\\telyukos_kpl\\telyukos\\telyukos.csproj": {}
+    "C:\\TubesKPLGUI\\telyukos\\telyukos.csproj": {}
   },
   "projects": {
-    "D:\\AAL\\Coding\\C#\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj": {
+    "C:\\TubesKPLGUI\\telyukos-library\\telyukos_library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AAL\\Coding\\C#\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj",
-        "projectName": "telyukos-library",
-        "projectPath": "D:\\AAL\\Coding\\C#\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj",
-        "packagesPath": "C:\\Users\\CATURWARGA COMPUTER\\.nuget\\packages\\",
-        "outputPath": "D:\\AAL\\Coding\\C#\\telyukos_kpl\\telyukos-library\\obj\\",
+        "projectUniqueName": "C:\\TubesKPLGUI\\telyukos-library\\telyukos_library.csproj",
+        "projectName": "telyukos_library",
+        "projectPath": "C:\\TubesKPLGUI\\telyukos-library\\telyukos_library.csproj",
+        "packagesPath": "C:\\Users\\ELITEBOOK\\.nuget\\packages\\",
+        "outputPath": "C:\\TubesKPLGUI\\telyukos-library\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\CATURWARGA COMPUTER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ELITEBOOK\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,21 +60,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\AAL\\Coding\\C#\\telyukos_kpl\\telyukos\\telyukos.csproj": {
+    "C:\\TubesKPLGUI\\telyukos\\telyukos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AAL\\Coding\\C#\\telyukos_kpl\\telyukos\\telyukos.csproj",
+        "projectUniqueName": "C:\\TubesKPLGUI\\telyukos\\telyukos.csproj",
         "projectName": "telyukos",
-        "projectPath": "D:\\AAL\\Coding\\C#\\telyukos_kpl\\telyukos\\telyukos.csproj",
-        "packagesPath": "C:\\Users\\CATURWARGA COMPUTER\\.nuget\\packages\\",
-        "outputPath": "D:\\AAL\\Coding\\C#\\telyukos_kpl\\telyukos\\obj\\",
+        "projectPath": "C:\\TubesKPLGUI\\telyukos\\telyukos.csproj",
+        "packagesPath": "C:\\Users\\ELITEBOOK\\.nuget\\packages\\",
+        "outputPath": "C:\\TubesKPLGUI\\telyukos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\CATURWARGA COMPUTER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ELITEBOOK\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -88,8 +88,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\AAL\\Coding\\C#\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj": {
-                "projectPath": "D:\\AAL\\Coding\\C#\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj"
+              "C:\\TubesKPLGUI\\telyukos-library\\telyukos_library.csproj": {
+                "projectPath": "C:\\TubesKPLGUI\\telyukos-library\\telyukos_library.csproj"
               }
             }
           }
@@ -134,7 +134,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
