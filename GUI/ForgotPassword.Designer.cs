@@ -106,11 +106,8 @@
             buttonSubmit.Text = "Submit";
             buttonSubmit.UseVisualStyleBackColor = true;
             buttonSubmit.Click += buttonSubmit_Click;
-<<<<<<< HEAD
-=======
             buttonSubmit.Click += this.buttonSubmit_Click;
 
->>>>>>> 6ad881225f42933f1fed2a3b3475d5e291352f9e
             // 
             // label4
             // 
@@ -128,11 +125,11 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-<<<<<<< HEAD
+
             ClientSize = new Size(422, 450);
-=======
+
             ClientSize = new Size(1143, 750);
->>>>>>> 6ad881225f42933f1fed2a3b3475d5e291352f9e
+
             Controls.Add(label4);
             Controls.Add(buttonSubmit);
             Controls.Add(textBoxNewPassword);

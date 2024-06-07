@@ -9,8 +9,6 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
 using System.Xml.Linq;
-using System.Security.Cryptography;
-using System.Text;
 using telyukos.Model;
 
 namespace API.Controllers
@@ -263,8 +261,6 @@ namespace API.Controllers
 
             return Ok("Password berhasil diubah");
         }
-<<<<<<< HEAD
-=======
 
         [HttpPut("update-profile")]
         public IActionResult UpdateProfile([FromBody] User updateUser)
@@ -284,7 +280,7 @@ namespace API.Controllers
 
             // Bandingkan hash password
             var existingUser = _users.FirstOrDefault(u => u.Role == updateUser.Role);
-            if (existingUser == null) 
+            if (existingUser == null)
             {
                 return Unauthorized("Email atau password salah");
 
@@ -299,8 +295,7 @@ namespace API.Controllers
 
         }
 
-    
 
->>>>>>> 6ad881225f42933f1fed2a3b3475d5e291352f9e
+
     }
 }
