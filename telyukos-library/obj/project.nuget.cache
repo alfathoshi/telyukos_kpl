@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "A5VTgTAgoTG8IRT0RxiSTaDgc2Y4RVw+1JCGZwdO0QLAy5d8tJx48pOFHGpiWoOULBHxm+GDkTcOlhydsXKQ5g==",
+  "dgSpecHash": "v3auUu8idakpisUnM3n/tlFn8WJtxbWpq8hoPrnoCjF01rnvvLn3Dd71wWhrEAT5GhudSR+sFFJ7SaIizra3vw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos-library\\telyukos_library.csproj",
+  "projectFilePath": "C:\\TubesKPLGUI\\telyukos-library\\telyukos_library.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

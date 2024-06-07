@@ -125,7 +125,11 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+
+            ClientSize = new Size(422, 450);
+
             ClientSize = new Size(1143, 750);
+
             Controls.Add(label4);
             Controls.Add(buttonSubmit);
             Controls.Add(textBoxNewPassword);

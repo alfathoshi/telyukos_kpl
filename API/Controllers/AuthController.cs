@@ -280,7 +280,7 @@ namespace API.Controllers
 
             // Bandingkan hash password
             var existingUser = _users.FirstOrDefault(u => u.Role == updateUser.Role);
-            if (existingUser == null) 
+            if (existingUser == null)
             {
                 return Unauthorized("Email atau password salah");
 
@@ -295,7 +295,7 @@ namespace API.Controllers
 
         }
 
-    
+
 
     }
 }

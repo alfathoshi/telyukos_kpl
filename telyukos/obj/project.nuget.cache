@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "8O4qZ7nrjK+XQ3ETzvB33oJdqCnG3hg1ixMET/ScBxVoY4yadiixe/iNEfwL+TbWU37NAJs32vXH4UJyzbZMag==",
+  "dgSpecHash": "zPRELYsruHWwdvqwi7Clb+5yl4sjwWZpad2WS1jKXzOS8G5MmxHh+hTtdmPHTxxGRSvLb97sPwZ5HgPcJ+/Vzw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos\\telyukos.csproj",
+  "projectFilePath": "C:\\TubesKPLGUI\\telyukos\\telyukos.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\LENOVO\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
-    "C:\\Users\\LENOVO\\.nuget\\packages\\restsharp\\110.2.0\\restsharp.110.2.0.nupkg.sha512",
-    "C:\\Users\\LENOVO\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
-    "C:\\Users\\LENOVO\\.nuget\\packages\\system.text.json\\7.0.2\\system.text.json.7.0.2.nupkg.sha512"
+    "C:\\Users\\ELITEBOOK\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\ELITEBOOK\\.nuget\\packages\\restsharp\\110.2.0\\restsharp.110.2.0.nupkg.sha512",
+    "C:\\Users\\ELITEBOOK\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
+    "C:\\Users\\ELITEBOOK\\.nuget\\packages\\system.text.json\\7.0.2\\system.text.json.7.0.2.nupkg.sha512"
   ],
   "logs": []
 }

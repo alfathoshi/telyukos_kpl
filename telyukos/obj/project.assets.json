@@ -251,19 +251,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LENOVO\\.nuget\\packages\\": {}
+    "C:\\Users\\ELITEBOOK\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos\\telyukos.csproj",
+      "projectUniqueName": "C:\\TubesKPLGUI\\telyukos\\telyukos.csproj",
       "projectName": "telyukos",
-      "projectPath": "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos\\telyukos.csproj",
-      "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos\\obj\\",
+      "projectPath": "C:\\TubesKPLGUI\\telyukos\\telyukos.csproj",
+      "packagesPath": "C:\\Users\\ELITEBOOK\\.nuget\\packages\\",
+      "outputPath": "C:\\TubesKPLGUI\\telyukos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ELITEBOOK\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -277,8 +277,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos-library\\telyukos_library.csproj": {
-              "projectPath": "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos-library\\telyukos_library.csproj"
+            "C:\\TubesKPLGUI\\telyukos-library\\telyukos_library.csproj": {
+              "projectPath": "C:\\TubesKPLGUI\\telyukos-library\\telyukos_library.csproj"
             }
           }
         }
