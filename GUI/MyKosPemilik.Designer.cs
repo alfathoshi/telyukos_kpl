@@ -29,18 +29,22 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
+            namaColum = new DataGridViewTextBoxColumn();
+            hargaColum = new DataGridViewTextBoxColumn();
+            alamatColum = new DataGridViewTextBoxColumn();
+            kapasitasColum = new DataGridViewTextBoxColumn();
             label1 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            NamaText = new TextBox();
+            HargaText = new TextBox();
+            AlamatText = new TextBox();
+            KapasitasText = new TextBox();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            EditButton = new Button();
+            HapusButton = new Button();
             button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -49,11 +53,41 @@
             // 
             dataGridView1.BackgroundColor = Color.FromArgb(242, 239, 234);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { namaColum, hargaColum, alamatColum, kapasitasColum });
             dataGridView1.Location = new Point(20, 71);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(441, 354);
+            dataGridView1.Size = new Size(666, 433);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // namaColum
+            // 
+            namaColum.HeaderText = "Nama";
+            namaColum.MinimumWidth = 8;
+            namaColum.Name = "namaColum";
+            namaColum.Width = 150;
+            // 
+            // hargaColum
+            // 
+            hargaColum.HeaderText = "Harga";
+            hargaColum.MinimumWidth = 8;
+            hargaColum.Name = "hargaColum";
+            hargaColum.Width = 150;
+            // 
+            // alamatColum
+            // 
+            alamatColum.HeaderText = "Alamat";
+            alamatColum.MinimumWidth = 8;
+            alamatColum.Name = "alamatColum";
+            alamatColum.Width = 150;
+            // 
+            // kapasitasColum
+            // 
+            kapasitasColum.HeaderText = "Kapasitas";
+            kapasitasColum.MinimumWidth = 8;
+            kapasitasColum.Name = "kapasitasColum";
+            kapasitasColum.Width = 150;
             // 
             // label1
             // 
@@ -65,38 +99,38 @@
             label1.TabIndex = 1;
             label1.Text = "My Kos";
             // 
-            // textBox1
+            // NamaText
             // 
-            textBox1.Location = new Point(576, 129);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(194, 31);
-            textBox1.TabIndex = 2;
+            NamaText.Location = new Point(823, 162);
+            NamaText.Name = "NamaText";
+            NamaText.Size = new Size(194, 31);
+            NamaText.TabIndex = 2;
             // 
-            // textBox2
+            // HargaText
             // 
-            textBox2.Location = new Point(576, 185);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(194, 31);
-            textBox2.TabIndex = 3;
+            HargaText.Location = new Point(823, 218);
+            HargaText.Name = "HargaText";
+            HargaText.Size = new Size(194, 31);
+            HargaText.TabIndex = 3;
             // 
-            // textBox3
+            // AlamatText
             // 
-            textBox3.Location = new Point(576, 244);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(194, 31);
-            textBox3.TabIndex = 4;
+            AlamatText.Location = new Point(823, 277);
+            AlamatText.Name = "AlamatText";
+            AlamatText.Size = new Size(194, 31);
+            AlamatText.TabIndex = 4;
             // 
-            // textBox4
+            // KapasitasText
             // 
-            textBox4.Location = new Point(576, 306);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(194, 31);
-            textBox4.TabIndex = 5;
+            KapasitasText.Location = new Point(823, 339);
+            KapasitasText.Name = "KapasitasText";
+            KapasitasText.Size = new Size(194, 31);
+            KapasitasText.TabIndex = 5;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(483, 132);
+            label2.Location = new Point(730, 165);
             label2.Name = "label2";
             label2.Size = new Size(59, 25);
             label2.TabIndex = 6;
@@ -105,7 +139,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(483, 188);
+            label3.Location = new Point(730, 221);
             label3.Name = "label3";
             label3.Size = new Size(60, 25);
             label3.TabIndex = 7;
@@ -114,7 +148,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(483, 247);
+            label4.Location = new Point(730, 280);
             label4.Name = "label4";
             label4.Size = new Size(68, 25);
             label4.TabIndex = 8;
@@ -123,7 +157,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(483, 309);
+            label5.Location = new Point(730, 342);
             label5.Name = "label5";
             label5.Size = new Size(86, 25);
             label5.TabIndex = 9;
@@ -133,39 +167,41 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(483, 71);
+            label6.Location = new Point(730, 104);
             label6.Name = "label6";
             label6.Size = new Size(145, 38);
             label6.TabIndex = 10;
             label6.Text = "Detail Kos";
             // 
-            // button1
+            // EditButton
             // 
-            button1.BackColor = Color.Firebrick;
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(483, 343);
-            button1.Name = "button1";
-            button1.Size = new Size(145, 45);
-            button1.TabIndex = 11;
-            button1.Text = "Edit";
-            button1.UseVisualStyleBackColor = false;
+            EditButton.BackColor = Color.Firebrick;
+            EditButton.ForeColor = Color.White;
+            EditButton.Location = new Point(730, 376);
+            EditButton.Name = "EditButton";
+            EditButton.Size = new Size(145, 45);
+            EditButton.TabIndex = 11;
+            EditButton.Text = "Edit";
+            EditButton.UseVisualStyleBackColor = false;
+            EditButton.Click += editButton_Click;
             // 
-            // button2
+            // HapusButton
             // 
-            button2.BackColor = Color.Firebrick;
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(634, 343);
-            button2.Name = "button2";
-            button2.Size = new Size(136, 45);
-            button2.TabIndex = 12;
-            button2.Text = "Delete";
-            button2.UseVisualStyleBackColor = false;
+            HapusButton.BackColor = Color.Firebrick;
+            HapusButton.ForeColor = Color.White;
+            HapusButton.Location = new Point(881, 376);
+            HapusButton.Name = "HapusButton";
+            HapusButton.Size = new Size(136, 45);
+            HapusButton.TabIndex = 12;
+            HapusButton.Text = "Delete";
+            HapusButton.UseVisualStyleBackColor = false;
+            HapusButton.Click += hapusButton_Click;
             // 
             // button3
             // 
             button3.BackColor = Color.Firebrick;
             button3.ForeColor = Color.White;
-            button3.Location = new Point(561, 394);
+            button3.Location = new Point(808, 427);
             button3.Name = "button3";
             button3.Size = new Size(138, 44);
             button3.TabIndex = 13;
@@ -177,23 +213,24 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1051, 542);
             Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(HapusButton);
+            Controls.Add(EditButton);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(KapasitasText);
+            Controls.Add(AlamatText);
+            Controls.Add(HargaText);
+            Controls.Add(NamaText);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
             Name = "MyKosPemilik";
             Text = "Form1";
+            Load += MyKosPemilik_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -203,17 +240,21 @@
 
         private DataGridView dataGridView1;
         private Label label1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox NamaText;
+        private TextBox HargaText;
+        private TextBox AlamatText;
+        private TextBox KapasitasText;
         private Label label2;
         private Label label3;
         private Label label4;
         private Label label5;
         private Label label6;
-        private Button button1;
-        private Button button2;
+        private Button EditButton;
+        private Button HapusButton;
         private Button button3;
+        private DataGridViewTextBoxColumn namaColum;
+        private DataGridViewTextBoxColumn hargaColum;
+        private DataGridViewTextBoxColumn alamatColum;
+        private DataGridViewTextBoxColumn kapasitasColum;
     }
 }

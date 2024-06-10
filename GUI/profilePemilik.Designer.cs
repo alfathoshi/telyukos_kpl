@@ -40,6 +40,7 @@
             label3 = new Label();
             EditButton = new Button();
             pictureBox1 = new PictureBox();
+            MyKosPemilikButton = new Button();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -51,7 +52,7 @@
             panel2.BackColor = Color.FromArgb(242, 239, 234);
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(UsernameLabel);
-            panel2.Location = new Point(58, 415);
+            panel2.Location = new Point(124, 453);
             panel2.Name = "panel2";
             panel2.Size = new Size(362, 81);
             panel2.TabIndex = 3;
@@ -82,7 +83,7 @@
             panel1.Controls.Add(EmailLabel);
             panel1.Controls.Add(label3);
             panel1.ForeColor = Color.White;
-            panel1.Location = new Point(472, 27);
+            panel1.Location = new Point(528, 113);
             panel1.Name = "panel1";
             panel1.Size = new Size(369, 382);
             panel1.TabIndex = 6;
@@ -164,7 +165,7 @@
             EditButton.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             EditButton.BackColor = Color.Firebrick;
             EditButton.ForeColor = SystemColors.ButtonHighlight;
-            EditButton.Location = new Point(546, 424);
+            EditButton.Location = new Point(602, 510);
             EditButton.Name = "EditButton";
             EditButton.Size = new Size(220, 62);
             EditButton.TabIndex = 7;
@@ -177,13 +178,23 @@
             pictureBox1.BackColor = Color.FromArgb(255, 253, 239);
             pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.Image = Properties.Resources.download__2___1_;
-            pictureBox1.Location = new Point(58, 27);
+            pictureBox1.Location = new Point(124, 65);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(362, 382);
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
+            // 
+            // MyKosPemilikButton
+            // 
+            MyKosPemilikButton.Location = new Point(23, 24);
+            MyKosPemilikButton.Name = "MyKosPemilikButton";
+            MyKosPemilikButton.Size = new Size(72, 75);
+            MyKosPemilikButton.TabIndex = 8;
+            MyKosPemilikButton.Text = "Back";
+            MyKosPemilikButton.UseVisualStyleBackColor = true;
+            MyKosPemilikButton.Click += MyKosPemilikButton_Click;
             // 
             // profilePemilik
             // 
@@ -192,6 +203,7 @@
             AutoSize = true;
             BackColor = Color.White;
             ClientSize = new Size(920, 584);
+            Controls.Add(MyKosPemilikButton);
             Controls.Add(pictureBox1);
             Controls.Add(EditButton);
             Controls.Add(panel1);
@@ -221,5 +233,6 @@
         internal TextBox PasswordText;
         internal TextBox EmailText;
         private Label Role;
+        private Button MyKosPemilikButton;
     }
 }

@@ -39,7 +39,8 @@
             EditPassword = new TextBox();
             EditEmail = new TextBox();
             EmailLabelPasien = new Label();
-            EditButtonPasien = new Button();
+            EditButtonPenyewa = new Button();
+            MyKosPenyewaButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
@@ -48,7 +49,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.download__1___1_;
-            pictureBox1.Location = new Point(58, 27);
+            pictureBox1.Location = new Point(133, 85);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(362, 382);
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -60,7 +61,7 @@
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.FromArgb(242, 239, 234);
             panel2.Controls.Add(UsernameLabelPasien);
-            panel2.Location = new Point(58, 415);
+            panel2.Location = new Point(133, 473);
             panel2.Name = "panel2";
             panel2.Size = new Size(362, 81);
             panel2.TabIndex = 4;
@@ -88,7 +89,7 @@
             panel1.Controls.Add(EditPassword);
             panel1.Controls.Add(EditEmail);
             panel1.Controls.Add(EmailLabelPasien);
-            panel1.Location = new Point(472, 27);
+            panel1.Location = new Point(529, 96);
             panel1.Name = "panel1";
             panel1.Size = new Size(369, 382);
             panel1.TabIndex = 7;
@@ -100,9 +101,9 @@
             RoleLabel.ForeColor = Color.White;
             RoleLabel.Location = new Point(18, 294);
             RoleLabel.Name = "RoleLabel";
-            RoleLabel.Size = new Size(59, 25);
+            RoleLabel.Size = new Size(46, 25);
             RoleLabel.TabIndex = 7;
-            RoleLabel.Text = "label1";
+            RoleLabel.Text = "Role";
             // 
             // label3
             // 
@@ -163,18 +164,28 @@
             EmailLabelPasien.TabIndex = 0;
             EmailLabelPasien.Text = "Email";
             // 
-            // EditButtonPasien
+            // EditButtonPenyewa
             // 
-            EditButtonPasien.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            EditButtonPasien.BackColor = Color.Firebrick;
-            EditButtonPasien.ForeColor = Color.White;
-            EditButtonPasien.Location = new Point(544, 423);
-            EditButtonPasien.Name = "EditButtonPasien";
-            EditButtonPasien.Size = new Size(220, 62);
-            EditButtonPasien.TabIndex = 8;
-            EditButtonPasien.Text = "Edit";
-            EditButtonPasien.UseVisualStyleBackColor = false;
-            EditButtonPasien.Click += EditButtonPasien_Click;
+            EditButtonPenyewa.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            EditButtonPenyewa.BackColor = Color.Firebrick;
+            EditButtonPenyewa.ForeColor = Color.White;
+            EditButtonPenyewa.Location = new Point(601, 492);
+            EditButtonPenyewa.Name = "EditButtonPenyewa";
+            EditButtonPenyewa.Size = new Size(220, 62);
+            EditButtonPenyewa.TabIndex = 8;
+            EditButtonPenyewa.Text = "Edit";
+            EditButtonPenyewa.UseVisualStyleBackColor = false;
+            EditButtonPenyewa.Click += EditButtonPasien_Click;
+            // 
+            // MyKosPenyewaButton
+            // 
+            MyKosPenyewaButton.Location = new Point(33, 34);
+            MyKosPenyewaButton.Name = "MyKosPenyewaButton";
+            MyKosPenyewaButton.Size = new Size(72, 75);
+            MyKosPenyewaButton.TabIndex = 9;
+            MyKosPenyewaButton.Text = "Back";
+            MyKosPenyewaButton.UseVisualStyleBackColor = true;
+            MyKosPenyewaButton.Click += MyKosPenyewaButton_Click;
             // 
             // profilePenyewa
             // 
@@ -182,7 +193,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(920, 584);
-            Controls.Add(EditButtonPasien);
+            Controls.Add(MyKosPenyewaButton);
+            Controls.Add(EditButtonPenyewa);
             Controls.Add(panel1);
             Controls.Add(panel2);
             Controls.Add(pictureBox1);
@@ -210,7 +222,8 @@
         private TextBox EditPassword;
         private TextBox EditEmail;
         private Label EmailLabelPasien;
-        private Button EditButtonPasien;
+        private Button EditButtonPenyewa;
         private Label RoleLabel;
+        private Button MyKosPenyewaButton;
     }
 }

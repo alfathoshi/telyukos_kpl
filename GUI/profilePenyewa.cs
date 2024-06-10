@@ -20,7 +20,6 @@ namespace GUI
     {
         private static User Akun;
         private HttpClient httpClient;
-        private static AuthController app = new AuthController();
         public profilePenyewa(User user)
         {
             InitializeComponent();
@@ -30,8 +29,10 @@ namespace GUI
 
         }
 
+        //menampilkan daftar kos pada grid, dan pada textfield dari hasil method LoadUserProfilePenyewa
         private async void profilePenyewa_Load(object sender, EventArgs e)
         {
+            //memanggil method LoadUserProfilePenyewa
             await LoadUserProfilePenyewa();
         }
 
@@ -60,23 +61,27 @@ namespace GUI
                     // Cek apakah data user tidak null
                     if (user != null)
                     {
+                        //jika tidak null menampilkan data user pada textfield dan label
                         EditEmail.Text = user.Email;
                         EditPassword.Text = user.Password;
                         RoleLabel.Text = user.Role;
                         UsernameLabelPasien.Text = user.Email;
                     }
+                    //kondisi jika user tidak ada.
                     else
                     {
                         MessageBox.Show("User profile not found.");
                     }
                 }
                 else
+                //kondisi jika status response tidak valid.
                 {
                     MessageBox.Show("User profile not found.");
                 }
             }
             catch (Exception ex)
             {
+                //kondisi jika email yang diambil dari Akun yang sudah diset tidak sesuai.
                 MessageBox.Show($"Error loading profile: {ex.Message}");
             }
         }
@@ -107,21 +112,42 @@ namespace GUI
             // Buat objek User untuk mengubah password dan email
             var user = new { Email = newEmail, Password = newPassword, Role = Rolelama };
 
-            // Buat permintaan PUT untuk mengubah password dan email
+            // Buat permintaan API untuk mengubah password dan email.
             HttpResponseMessage response = await httpClient.PutAsJsonAsync("api/Auth/update-profile/", user);
 
+            //kondisi jika profile berhasil diubah.
             if (response.IsSuccessStatusCode)
             {
                 MessageBox.Show("Profile Berhasil Diubah", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            //kondisi jika profile email saat login harus sesuai dengan saat sign up , agar dapat masuk kedalam profile 
             else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
             {
                 MessageBox.Show("Email tidak valid", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            //kondisi jika password yang diubah tidak valid.
             else
             {
                 MessageBox.Show("Gagal mengubah password: " + response.StatusCode, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private async void MyKosPenyewaButton_Click(object sender, EventArgs e)
+        {
+            var akunUser = Akun?.Email;
+            // mengecek emnail dengan response message, dengan melakukan cek pada data json
+            HttpResponseMessage response = await httpClient.PostAsJsonAsync("api/Auth/", akunUser);
+
+            // Dapatkan data user berdasarkan email
+            response = await httpClient.GetAsync("api/Auth/" + akunUser);
+            response.EnsureSuccessStatusCode();
+
+            var responseData = await response.Content.ReadAsStringAsync();
+            var user = JsonConvert.DeserializeObject<User>(responseData);
+
+            //membuka frame My kos penyewa sesuai dengan data user.
+            MyKosPenyewa frameMyKos = new MyKosPenyewa(user);
+            frameMyKos.Show();
         }
     }
 }

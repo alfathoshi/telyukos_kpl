@@ -31,14 +31,15 @@
             label1 = new Label();
             button1 = new Button();
             panel1 = new Panel();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
+            KapasitasLabel = new Label();
+            AlamatLabel = new Label();
+            HargaLabel = new Label();
+            NamaLabel = new Label();
             label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            BatalSewaButton = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -66,10 +67,10 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(242, 239, 234);
-            panel1.Controls.Add(label9);
-            panel1.Controls.Add(label8);
-            panel1.Controls.Add(label7);
-            panel1.Controls.Add(label6);
+            panel1.Controls.Add(KapasitasLabel);
+            panel1.Controls.Add(AlamatLabel);
+            panel1.Controls.Add(HargaLabel);
+            panel1.Controls.Add(NamaLabel);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
@@ -79,35 +80,45 @@
             panel1.Size = new Size(569, 325);
             panel1.TabIndex = 3;
             // 
-            // label2
+            // KapasitasLabel
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(21, 46);
-            label2.Name = "label2";
-            label2.Size = new Size(126, 32);
-            label2.TabIndex = 0;
-            label2.Text = "Nama Kos:";
+            KapasitasLabel.AutoSize = true;
+            KapasitasLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            KapasitasLabel.Location = new Point(153, 236);
+            KapasitasLabel.Name = "KapasitasLabel";
+            KapasitasLabel.Size = new Size(112, 32);
+            KapasitasLabel.TabIndex = 7;
+            KapasitasLabel.Text = "Kapasitas";
             // 
-            // label3
+            // AlamatLabel
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F);
-            label3.Location = new Point(21, 109);
-            label3.Name = "label3";
-            label3.Size = new Size(82, 32);
-            label3.TabIndex = 1;
-            label3.Text = "Harga:";
+            AlamatLabel.AutoSize = true;
+            AlamatLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AlamatLabel.Location = new Point(153, 173);
+            AlamatLabel.Name = "AlamatLabel";
+            AlamatLabel.Size = new Size(88, 32);
+            AlamatLabel.TabIndex = 6;
+            AlamatLabel.Text = "Alamat";
             // 
-            // label4
+            // HargaLabel
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F);
-            label4.Location = new Point(21, 173);
-            label4.Name = "label4";
-            label4.Size = new Size(93, 32);
-            label4.TabIndex = 2;
-            label4.Text = "Alamat:";
+            HargaLabel.AutoSize = true;
+            HargaLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            HargaLabel.Location = new Point(153, 109);
+            HargaLabel.Name = "HargaLabel";
+            HargaLabel.Size = new Size(77, 32);
+            HargaLabel.TabIndex = 5;
+            HargaLabel.Text = "Harga";
+            // 
+            // NamaLabel
+            // 
+            NamaLabel.AutoSize = true;
+            NamaLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NamaLabel.Location = new Point(153, 46);
+            NamaLabel.Name = "NamaLabel";
+            NamaLabel.Size = new Size(77, 32);
+            NamaLabel.TabIndex = 4;
+            NamaLabel.Text = "Nama";
             // 
             // label5
             // 
@@ -119,45 +130,47 @@
             label5.TabIndex = 3;
             label5.Text = "Kapasitas:";
             // 
-            // label6
+            // label4
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(153, 46);
-            label6.Name = "label6";
-            label6.Size = new Size(78, 32);
-            label6.TabIndex = 4;
-            label6.Text = "label6";
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F);
+            label4.Location = new Point(21, 173);
+            label4.Name = "label4";
+            label4.Size = new Size(93, 32);
+            label4.TabIndex = 2;
+            label4.Text = "Alamat:";
             // 
-            // label7
+            // label3
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(153, 109);
-            label7.Name = "label7";
-            label7.Size = new Size(78, 32);
-            label7.TabIndex = 5;
-            label7.Text = "label7";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F);
+            label3.Location = new Point(21, 109);
+            label3.Name = "label3";
+            label3.Size = new Size(82, 32);
+            label3.TabIndex = 1;
+            label3.Text = "Harga:";
             // 
-            // label8
+            // label2
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(153, 173);
-            label8.Name = "label8";
-            label8.Size = new Size(78, 32);
-            label8.TabIndex = 6;
-            label8.Text = "label8";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F);
+            label2.Location = new Point(21, 46);
+            label2.Name = "label2";
+            label2.Size = new Size(126, 32);
+            label2.TabIndex = 0;
+            label2.Text = "Nama Kos:";
             // 
-            // label9
+            // BatalSewaButton
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(153, 236);
-            label9.Name = "label9";
-            label9.Size = new Size(78, 32);
-            label9.TabIndex = 7;
-            label9.Text = "label9";
+            BatalSewaButton.BackColor = Color.Firebrick;
+            BatalSewaButton.ForeColor = Color.White;
+            BatalSewaButton.Location = new Point(632, 292);
+            BatalSewaButton.Name = "BatalSewaButton";
+            BatalSewaButton.Size = new Size(133, 48);
+            BatalSewaButton.TabIndex = 4;
+            BatalSewaButton.Text = "Batal Sewa";
+            BatalSewaButton.UseVisualStyleBackColor = false;
+            BatalSewaButton.Click += BatalSewaButton_Click;
             // 
             // MyKosPenyewa
             // 
@@ -165,11 +178,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 450);
+            Controls.Add(BatalSewaButton);
             Controls.Add(panel1);
             Controls.Add(button1);
             Controls.Add(label1);
             Name = "MyKosPenyewa";
             Text = "Form1";
+            Load += MyKosPenyewa_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -185,9 +200,10 @@
         private Label label2;
         private Label label5;
         private Label label4;
-        private Label label6;
-        private Label label9;
-        private Label label8;
-        private Label label7;
+        private Label NamaLabel;
+        private Label KapasitasLabel;
+        private Label AlamatLabel;
+        private Label HargaLabel;
+        private Button BatalSewaButton;
     }
 }

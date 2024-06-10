@@ -87,7 +87,7 @@ namespace API.Controllers
         {
             if (string.IsNullOrWhiteSpace(email))
             {
-                throw new ArgumentException("Email tidak b  oleh kosong", nameof(email));
+                throw new ArgumentException("Email tidak boleh kosong", nameof(email));
             }
 
             var user = _users.FirstOrDefault(u => u.Email == email);
@@ -295,6 +295,105 @@ namespace API.Controllers
 
         }
 
+        [HttpPut("update-kos/{email}")]
+        public IActionResult UpdateKos(string email, [FromBody] Kos updatedKos)
+        {
+            // Periksa apakah email yang diberikan null, kosong
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                // Mengembalikan respons BadRequest dengan pesan yang menunjukkan bahwa email tidak boleh kosong
+                return BadRequest("Email tidak boleh kosong");
+            }
+
+            // Temukan pengguna dengan email yang cocok dari daftar pengguna
+            var existingUser = _users.FirstOrDefault(u => u.Email == email);
+            if (existingUser == null)
+            {
+                // Mengembalikan respon NotFound jika pengguna dengan email yang diberikan tidak ditemukan
+                return NotFound("User tidak ditemukan");
+            }
+
+            // Temukan Kos yang ada yang cocok dengan nama Kos yang diperbarui di daftar Kos pengguna
+            var existingKos = existingUser.Kos?.Find(k => k.Nama == updatedKos.Nama);
+            if (existingKos == null)
+            {
+                // Mengembalikan respon NotFound jika Kos dengan nama yang diberikan tidak ditemukan
+                return NotFound("Kos tidak ditemukan");
+            }
+
+            // Update kos properties dengan nilai dari Kos yang diperbarui
+            existingKos.Harga = updatedKos.Harga;
+            existingKos.Alamat = updatedKos.Alamat;
+            existingKos.Kapasitas = updatedKos.Kapasitas;
+
+            SaveUsers();
+
+            return Ok("Kos berhasil diperbarui");
+        }
+
+        [HttpDelete("delete-kos/{email}/{kosNama}")]
+        public IActionResult DeleteKos(string email, string kosNama)
+        {
+            // Periksa apakah email dan nama kos yang diberikan null, kosong
+            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(kosNama))
+            {
+                // Mengembalikan respons BadRequest jika email atau kosNama kosong, kosong
+                return BadRequest("Email dan nama kos tidak boleh kosong.");
+            }
+
+            // Temukan pengguna dengan email yang cocok dari daftar pengguna
+            var user = _users.FirstOrDefault(u => u.Email == email);
+            if (user == null)
+            {
+                // Mengembalikan respon NotFound jika pengguna dengan email yang diberikan tidak ditemukan
+                return NotFound("User tidak ditemukan.");
+            }
+
+            // Temukan nama kos yang yang sesuai pada data kos pengguna
+            var kos = user.Kos?.FirstOrDefault(k => k.Nama == kosNama);
+            if (kos == null)
+            {
+                // Mengembalikan respon NotFound jika Kos dengan nama yang diberikan tidak ditemukan
+                return NotFound("Kos tidak ditemukan.");
+            }
+
+            // Hapus Kos yang ditemukan dari daftar Kos pengguna
+            user.Kos.Remove(kos);   
+            //simpan perubahan pada data
+            SaveUsers(); 
+
+            return Ok("Kos berhasil dihapus.");
+        }
+
+
+        [HttpDelete("cancel-rental/{email}/{kosNama}/")]
+        public IActionResult CancelRental(string email, string kosNama)
+        {
+            // Temukan pengguna dengan email yang cocok dari daftar pengguna
+            var user = _users.FirstOrDefault(u => u.Email == email);
+            //kondisi jika nama pengguna(email tidak ada),atau kosong
+            if (user == null)
+            {
+                // Mengembalikan respon NotFound jika pengguna dengan email yang diberikan tidak ditemukan
+                return NotFound("User tidak ditemukan.");
+            }
+
+            //Temukan data nama Kos dari data pengguna
+            var kos = user.Kos?.FirstOrDefault(k => k.Nama == kosNama );
+            //kondisi jika nama nama kos tidak ada,atau kosong
+            if (kos == null)
+            {
+                // Mengembalikan respon NotFound jika Kos dengan nama yang diberikan tidak ditemukan
+                return NotFound("Kos tidak ditemukan.");
+            }
+
+            // batalkan sewa kos , jika nama kos ditemukan dari daftar Kos pengguna
+            user.Kos.Remove(kos);
+            //simpan perubahan pada data
+            SaveUsers(); 
+
+            return Ok("Sewa kos berhasil dibatalkan.");
+        }
 
 
     }
