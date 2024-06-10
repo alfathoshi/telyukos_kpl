@@ -39,6 +39,8 @@
             imageList2 = new ImageList(components);
             pictureBox1 = new PictureBox();
             TambahKosButton = new Button();
+            label1 = new Label();
+            OwnerName = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -127,11 +129,32 @@
             TambahKosButton.UseVisualStyleBackColor = true;
             TambahKosButton.Click += TambahKosButton_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(849, 24);
+            label1.Name = "label1";
+            label1.Size = new Size(114, 20);
+            label1.TabIndex = 9;
+            label1.Text = "Selamat datang";
+            // 
+            // OwnerName
+            // 
+            OwnerName.AutoSize = true;
+            OwnerName.Location = new Point(882, 55);
+            OwnerName.Name = "OwnerName";
+            OwnerName.Size = new Size(50, 20);
+            OwnerName.TabIndex = 11;
+            OwnerName.Text = "label5";
+            OwnerName.Click += OwnerName_Click;
+            // 
             // HomePageOwner
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1000, 660);
+            Controls.Add(OwnerName);
+            Controls.Add(label1);
             Controls.Add(TambahKosButton);
             Controls.Add(pictureBox1);
             Controls.Add(label3);
@@ -159,5 +182,7 @@
         private ImageList imageList2;
         private PictureBox pictureBox1;
         private Button TambahKosButton;
+        private Label label1;
+        private Label OwnerName;
     }
 }

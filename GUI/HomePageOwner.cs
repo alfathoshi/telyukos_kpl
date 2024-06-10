@@ -16,12 +16,14 @@ namespace GUI
     {
         private HttpClient httpClient;
         private List<Kos> kosList;
-        public HomePageOwner()
+        private static User Akun; // Variabel untuk menyimpan informasi pemilik kos yang sedang login
+        public HomePageOwner(User akun)
         {
             InitializeComponent();
             httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri("https://localhost:7126/"); // Sesuaikan dengan URL API Anda
             kosList = new List<Kos>();
+            Akun = akun; // Simpan informasi pemilik kos yang sedang login
             LoadKosList();
         }
 
@@ -172,6 +174,16 @@ namespace GUI
         private void TambahKosButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OwnerName_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"Username: {Akun.Email}", "Pemilik Kos", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

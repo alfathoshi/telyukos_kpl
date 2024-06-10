@@ -52,6 +52,19 @@ namespace GUI
                 Akun = user;
                 MessageBox.Show("Login berhasil", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //ntar pindah disini
+
+                //Pindah ke role user
+                if (Akun.Role == "Pemilik")
+                {
+                    // Buka HomePageOwner dan berikan objek user
+                    HomePageOwner homePageOwner = new HomePageOwner(Akun);
+                    homePageOwner.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Peran pengguna tidak sesuai", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest || response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
             {
