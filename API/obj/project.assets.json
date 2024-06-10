@@ -8063,19 +8063,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\CATURWARGA COMPUTER\\.nuget\\packages\\": {}
+    "C:\\Users\\wilda\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\AAL\\Coding\\C#\\telyukos_kpl\\API\\API.csproj",
+      "projectUniqueName": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_gui\\telyukos_kpl\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "D:\\AAL\\Coding\\C#\\telyukos_kpl\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\CATURWARGA COMPUTER\\.nuget\\packages\\",
-      "outputPath": "D:\\AAL\\Coding\\C#\\telyukos_kpl\\API\\obj\\",
+      "projectPath": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_gui\\telyukos_kpl\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\wilda\\.nuget\\packages\\",
+      "outputPath": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_gui\\telyukos_kpl\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\CATURWARGA COMPUTER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\wilda\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8083,17 +8083,18 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\AAL\\Coding\\C#\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj": {
-              "projectPath": "D:\\AAL\\Coding\\C#\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj"
+            "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_gui\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj": {
+              "projectPath": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_gui\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj"
             },
-            "D:\\AAL\\Coding\\C#\\telyukos_kpl\\telyukos\\telyukos.csproj": {
-              "projectPath": "D:\\AAL\\Coding\\C#\\telyukos_kpl\\telyukos\\telyukos.csproj"
+            "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_gui\\telyukos_kpl\\telyukos\\telyukos.csproj": {
+              "projectPath": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_gui\\telyukos_kpl\\telyukos\\telyukos.csproj"
             }
           }
         }
@@ -8145,7 +8146,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

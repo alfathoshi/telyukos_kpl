@@ -59,5 +59,15 @@ namespace GUI.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo_Telyu_Kos_Merah {
+            get {
+                object obj = ResourceManager.GetObject("Logo Telyu Kos Merah", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
