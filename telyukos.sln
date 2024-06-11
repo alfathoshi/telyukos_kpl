@@ -7,11 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "telyukos", "telyukos\telyuk
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{00A04FA3-E303-4C68-8C39-5F6AEB111801}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "telyukos-library", "telyukos-library\telyukos-library.csproj", "{71668040-AC9E-4CD0-B6B7-1B236475E9A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "telyukos_library", "telyukos-library\telyukos_library.csproj", "{71668040-AC9E-4CD0-B6B7-1B236475E9A4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject", "TestProject\TestProject.csproj", "{B652687C-3B94-4134-B91D-BD004A7AD16D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI\GUI.csproj", "{7C66A048-2B38-4F63-B3D1-405A94E91D1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GUI", "GUI\GUI.csproj", "{7C66A048-2B38-4F63-B3D1-405A94E91D1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

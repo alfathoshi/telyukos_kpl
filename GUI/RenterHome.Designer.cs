@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RenterHome));
-            dataGridView1 = new DataGridView();
             flowLayoutPanel1 = new FlowLayoutPanel();
             pictureBox1 = new PictureBox();
             homepage = new Panel();
@@ -40,7 +39,6 @@
             button3 = new Button();
             profile = new Panel();
             button4 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             homepage.SuspendLayout();
@@ -48,17 +46,6 @@
             mykos.SuspendLayout();
             profile.SuspendLayout();
             SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(402, 232);
-            dataGridView1.MultiSelect = false;
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 72;
-            dataGridView1.Size = new Size(940, 646);
-            dataGridView1.TabIndex = 0;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // flowLayoutPanel1
             // 
@@ -128,6 +115,7 @@
             button2.TabIndex = 0;
             button2.Text = "RESERVASI";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // mykos
             // 
@@ -173,13 +161,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1371, 900);
             Controls.Add(flowLayoutPanel1);
-            Controls.Add(dataGridView1);
             IsMdiContainer = true;
             Name = "RenterHome";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "RenterHome";
             Load += RenterHome_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             homepage.ResumeLayout(false);
@@ -190,8 +176,6 @@
         }
 
         #endregion
-
-        private DataGridView dataGridView1;
         private FlowLayoutPanel flowLayoutPanel1;
         private Button button1;
         private Panel homepage;
