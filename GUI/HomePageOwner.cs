@@ -173,7 +173,8 @@ namespace GUI
 
         private void TambahKosButton_Click(object sender, EventArgs e)
         {
-
+            AddKos addKosForm = new AddKos(Akun);
+            addKosForm.ShowDialog();
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -181,9 +182,24 @@ namespace GUI
 
         }
 
-        private void OwnerName_Click(object sender, EventArgs e)
+        private void label1_Click_2(object sender, EventArgs e)
         {
-            MessageBox.Show($"Username: {Akun.Email}", "Pemilik Kos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OwnerNameBox_TextChanged(object sender, EventArgs e)
+        {
+            OwnerNameBox.Text = Akun.Email;
+        }
+
+        private void RefreshButton_Click(object sender, EventArgs e)
+        {
+            LoadKosList();
         }
     }
 }

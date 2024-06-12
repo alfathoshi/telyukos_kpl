@@ -40,7 +40,9 @@
             pictureBox1 = new PictureBox();
             TambahKosButton = new Button();
             label1 = new Label();
-            OwnerName = new Label();
+            label4 = new Label();
+            OwnerNameBox = new TextBox();
+            RefreshButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -137,23 +139,42 @@
             label1.Size = new Size(114, 20);
             label1.TabIndex = 9;
             label1.Text = "Selamat datang";
+            label1.Click += label1_Click_2;
             // 
-            // OwnerName
+            // label4
             // 
-            OwnerName.AutoSize = true;
-            OwnerName.Location = new Point(882, 55);
-            OwnerName.Name = "OwnerName";
-            OwnerName.Size = new Size(50, 20);
-            OwnerName.TabIndex = 11;
-            OwnerName.Text = "label5";
-            OwnerName.Click += OwnerName_Click;
+            label4.AutoSize = true;
+            label4.Location = new Point(882, 98);
+            label4.Name = "label4";
+            label4.Size = new Size(0, 20);
+            label4.TabIndex = 12;
+            // 
+            // OwnerNameBox
+            // 
+            OwnerNameBox.Location = new Point(771, 57);
+            OwnerNameBox.Name = "OwnerNameBox";
+            OwnerNameBox.Size = new Size(207, 27);
+            OwnerNameBox.TabIndex = 13;
+            OwnerNameBox.TextChanged += OwnerNameBox_TextChanged;
+            // 
+            // RefreshButton
+            // 
+            RefreshButton.Location = new Point(447, 259);
+            RefreshButton.Name = "RefreshButton";
+            RefreshButton.Size = new Size(94, 29);
+            RefreshButton.TabIndex = 14;
+            RefreshButton.Text = "Refresh";
+            RefreshButton.UseVisualStyleBackColor = true;
+            RefreshButton.Click += RefreshButton_Click;
             // 
             // HomePageOwner
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1000, 660);
-            Controls.Add(OwnerName);
+            Controls.Add(RefreshButton);
+            Controls.Add(OwnerNameBox);
+            Controls.Add(label4);
             Controls.Add(label1);
             Controls.Add(TambahKosButton);
             Controls.Add(pictureBox1);
@@ -183,6 +204,8 @@
         private PictureBox pictureBox1;
         private Button TambahKosButton;
         private Label label1;
-        private Label OwnerName;
+        private Label label4;
+        private TextBox OwnerNameBox;
+        private Button RefreshButton;
     }
 }

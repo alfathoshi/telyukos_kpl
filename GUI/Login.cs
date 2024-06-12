@@ -54,12 +54,12 @@ namespace GUI
                 //ntar pindah disini
 
                 //Pindah ke role user
-                if (Akun.Role == "Pemilik")
+                if (user.Role == "Pemilik")
                 {
                     // Buka HomePageOwner dan berikan objek user
                     HomePageOwner homePageOwner = new HomePageOwner(Akun);
                     homePageOwner.Show();
-                    this.Hide();
+                    this.Hide();    
                 }
                 else
                 {
