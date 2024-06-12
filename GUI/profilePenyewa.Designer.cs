@@ -48,7 +48,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.download__1___1_;
+            pictureBox1.Image = (Image)Properties.Resources.ResourceManager.GetObject("download (1) (1).jpg");
             pictureBox1.Location = new Point(160, 102);
             pictureBox1.Margin = new Padding(4, 4, 4, 4);
             pictureBox1.Name = "pictureBox1";

@@ -9,12 +9,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\99df05b4-d55b-4277-9c89-9da815ff34ca.jpg" />
+    <None Remove="Resources\profile.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.6" />
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\API\API.csproj" />
+    <ProjectReference Include="..\telyukos-library\telyukos_library.csproj" />
+    <ProjectReference Include="..\telyukos\telyukos.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\99df05b4-d55b-4277-9c89-9da815ff34ca.jpg" />
+    <Resource Include="Resources\profile.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,13 +39,9 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Owner\" />
   </ItemGroup>
 
 </Project>

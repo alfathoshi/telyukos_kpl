@@ -1,7 +1,6 @@
 ﻿using System.Net.Http.Json;
 using telyukos.Model;
 using telyukos.State;
-using telyukos_library.Contract;
 using telyukos_library.Searching;
 
 namespace GUI.Renter

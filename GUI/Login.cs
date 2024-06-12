@@ -1,3 +1,4 @@
+using GUI.Owner;
 using System;
 using System.Net.Http;
 using System.Net.Http.Json;
@@ -54,12 +55,16 @@ namespace GUI
                 //ntar pindah disini
 
                 //Pindah ke role user
-                if (user.Role == "Pemilik")
+                if (Akun.Role == "Pemilik")
                 {
                     // Buka HomePageOwner dan berikan objek user
-                    HomePageOwner homePageOwner = new HomePageOwner(Akun);
-                    homePageOwner.Show();
-                    this.Hide();    
+                    OwnerHome ownerHome = new OwnerHome(Akun);
+                    ownerHome.Show();
+                }
+                else if (Akun.Role == "Penyewa")
+                {
+                    RenterHome renterHome = new RenterHome(Akun);
+                    renterHome.Show();
                 }
                 else
                 {
@@ -113,6 +118,11 @@ namespace GUI
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

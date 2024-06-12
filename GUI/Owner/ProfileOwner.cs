@@ -1,15 +1,13 @@
-﻿using Microsoft.AspNetCore.Http;
-using Newtonsoft.Json;
-using System.Net.Http.Json;
+﻿using System.Net.Http.Json;
 using telyukos.Model;
 
-namespace GUI.Renter
+namespace GUI.Owner
 {
-    public partial class Profile : UserControl
+    public partial class ProfileOwner : UserControl
     {
         private static User Akun;
         private HttpClient httpClient;
-        public Profile(User user)
+        public ProfileOwner(User user)
         {
             InitializeComponent();
             httpClient = new HttpClient();
@@ -30,6 +28,7 @@ namespace GUI.Renter
             {
                 UsernameLabelPasien.Text = Akun.Email;
             }
+
         }
         private async void EditButtonPasien_Click(object sender, EventArgs e)
         {

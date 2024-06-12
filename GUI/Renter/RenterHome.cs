@@ -6,14 +6,7 @@ namespace GUI
     public partial class RenterHome : Form
     {
 
-        private static List<Kos> listkos;
-
         private static User akun;
-
-        FormHome home;
-
-        MyKosPenyewa myKosRenter;
-
 
         public RenterHome(User user)
         {
@@ -38,7 +31,7 @@ namespace GUI
             addUserControl(home);
         }
 
-        
+
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
@@ -69,7 +62,7 @@ namespace GUI
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
-            Dispose ();
+            Dispose();
         }
     }
 }

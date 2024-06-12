@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_gui\\telyukos_kpl\\telyukos\\telyukos.csproj": {}
+    "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos\\telyukos.csproj": {}
   },
   "projects": {
-    "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_gui\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj": {
+    "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos_library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_gui\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj",
-        "projectName": "telyukos-library",
-        "projectPath": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_gui\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj",
-        "packagesPath": "C:\\Users\\wilda\\.nuget\\packages\\",
-        "outputPath": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_gui\\telyukos_kpl\\telyukos-library\\obj\\",
+        "projectUniqueName": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos_library.csproj",
+        "projectName": "telyukos_library",
+        "projectPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos_library.csproj",
+        "packagesPath": "C:\\Users\\alfat\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\wilda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\alfat\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -61,21 +60,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_gui\\telyukos_kpl\\telyukos\\telyukos.csproj": {
+    "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos\\telyukos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_gui\\telyukos_kpl\\telyukos\\telyukos.csproj",
+        "projectUniqueName": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos\\telyukos.csproj",
         "projectName": "telyukos",
-        "projectPath": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_gui\\telyukos_kpl\\telyukos\\telyukos.csproj",
-        "packagesPath": "C:\\Users\\wilda\\.nuget\\packages\\",
-        "outputPath": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_gui\\telyukos_kpl\\telyukos\\obj\\",
+        "projectPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos\\telyukos.csproj",
+        "packagesPath": "C:\\Users\\alfat\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\wilda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\alfat\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -83,15 +82,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_gui\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj": {
-                "projectPath": "D:\\Documents\\Kuliah\\Matkul\\Semester 4\\KPL\\tubes\\telyukos_gui\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj"
+              "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos_library.csproj": {
+                "projectPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos_library.csproj"
               }
             }
           }
@@ -136,7 +134,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

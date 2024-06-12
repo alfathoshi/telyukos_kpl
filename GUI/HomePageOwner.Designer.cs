@@ -114,7 +114,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.Logo_Telyu_Kos_Merah;
+            pictureBox1.Image = (Image)Properties.Resources.ResourceManager.GetObject("99df05b4-d55b-4277-9c89-9da815ff34ca.jpg");
             pictureBox1.Location = new Point(417, 39);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(161, 79);

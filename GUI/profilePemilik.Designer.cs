@@ -177,7 +177,7 @@
             // 
             pictureBox1.BackColor = Color.FromArgb(255, 253, 239);
             pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1.Image = Properties.Resources.download__2___1_;
+            pictureBox1.Image = (Image)Properties.Resources.ResourceManager.GetObject("download (2) (1).jpg");
             pictureBox1.Location = new Point(124, 65);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(362, 382);
