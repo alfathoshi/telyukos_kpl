@@ -5,6 +5,7 @@ namespace GUI
 {
     public partial class MainForm : Form
     {
+        UserControl user;
         public MainForm()
         {
             InitializeComponent();

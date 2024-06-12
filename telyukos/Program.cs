@@ -92,7 +92,7 @@ class Program
                         else
                         {
                             Console.WriteLine("Invalid Choice");
-                            break;
+                            
                         }
 
                         User newUser = new User { Email = newEmail, Password = newPassword, Role = role };
@@ -192,7 +192,6 @@ class Program
 
                                 if (choice == "y")
                                 {
-
                                     response = await httpClient.PutAsJsonAsync("api/Auth/" + Akun.Email, kosRent);
                                     if (response.IsSuccessStatusCode)
                                     {
@@ -428,7 +427,7 @@ class Program
 
                         case "3":
                             // Hapus Kos
-                            //GET DULU
+                            //GET DULU 
                             await api.GetAndDisplayKos(httpClient);
 
                             int indexDelete;

@@ -2802,7 +2802,7 @@
         "dependencies": {
           "Newtonsoft.Json": "13.0.3",
           "RestSharp": "110.2.0",
-          "telyukos-library": "1.0.0"
+          "telyukos_library": "1.0.0"
         },
         "compile": {
           "bin/placeholder/telyukos.dll": {}
@@ -2811,14 +2811,14 @@
           "bin/placeholder/telyukos.dll": {}
         }
       },
-      "telyukos-library/1.0.0": {
+      "telyukos_library/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
-          "bin/placeholder/telyukos-library.dll": {}
+          "bin/placeholder/telyukos_library.dll": {}
         },
         "runtime": {
-          "bin/placeholder/telyukos-library.dll": {}
+          "bin/placeholder/telyukos_library.dll": {}
         }
       }
     }
@@ -8047,10 +8047,10 @@
       "path": "../telyukos/telyukos.csproj",
       "msbuildProject": "../telyukos/telyukos.csproj"
     },
-    "telyukos-library/1.0.0": {
+    "telyukos_library/1.0.0": {
       "type": "project",
-      "path": "../telyukos-library/telyukos-library.csproj",
-      "msbuildProject": "../telyukos-library/telyukos-library.csproj"
+      "path": "../telyukos-library/telyukos_library.csproj",
+      "msbuildProject": "../telyukos-library/telyukos_library.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -8059,23 +8059,23 @@
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 8.0.4",
       "Swashbuckle.AspNetCore >= 6.4.0",
       "telyukos >= 1.0.0",
-      "telyukos-library >= 1.0.0"
+      "telyukos_library >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\CATURWARGA COMPUTER\\.nuget\\packages\\": {}
+    "C:\\Users\\alfat\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\AAL\\Coding\\C#\\telyukos_kpl\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "D:\\AAL\\Coding\\C#\\telyukos_kpl\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\CATURWARGA COMPUTER\\.nuget\\packages\\",
-      "outputPath": "D:\\AAL\\Coding\\C#\\telyukos_kpl\\API\\obj\\",
+      "projectPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\alfat\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\CATURWARGA COMPUTER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\alfat\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8089,11 +8089,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\AAL\\Coding\\C#\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj": {
-              "projectPath": "D:\\AAL\\Coding\\C#\\telyukos_kpl\\telyukos-library\\telyukos-library.csproj"
+            "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos_library.csproj": {
+              "projectPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos_library.csproj"
             },
-            "D:\\AAL\\Coding\\C#\\telyukos_kpl\\telyukos\\telyukos.csproj": {
-              "projectPath": "D:\\AAL\\Coding\\C#\\telyukos_kpl\\telyukos\\telyukos.csproj"
+            "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos\\telyukos.csproj": {
+              "projectPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos\\telyukos.csproj"
             }
           }
         }
@@ -8145,7 +8145,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

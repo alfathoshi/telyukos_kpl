@@ -122,5 +122,15 @@ namespace GUI
                 labelEmailCheck.ForeColor = Color.Red;
             }
         }
+
+        private void comboBoxRole_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

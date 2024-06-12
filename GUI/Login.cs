@@ -1,3 +1,4 @@
+using GUI.Owner;
 using System;
 using System.Net.Http;
 using System.Net.Http.Json;
@@ -52,6 +53,23 @@ namespace GUI
                 Akun = user;
                 MessageBox.Show("Login berhasil", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //ntar pindah disini
+
+                //Pindah ke role user
+                if (Akun.Role == "Pemilik")
+                {
+                    // Buka HomePageOwner dan berikan objek user
+                    OwnerHome ownerHome = new OwnerHome(Akun);
+                    ownerHome.Show();
+                }
+                else if (Akun.Role == "Penyewa")
+                {
+                    RenterHome renterHome = new RenterHome(Akun);
+                    renterHome.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Peran pengguna tidak sesuai", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest || response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
             {
@@ -95,6 +113,16 @@ namespace GUI
         private void textBox2_TextChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }
