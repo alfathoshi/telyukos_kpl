@@ -19,7 +19,7 @@ namespace GUI
         {
             InitializeComponent();
             akun = user;
-            Homepage home = new Homepage();
+            Homepage home = new Homepage(akun);
             addUserControl(home);
 
         }
@@ -34,19 +34,15 @@ namespace GUI
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            Homepage home = new Homepage();
+            Homepage home = new Homepage(akun);
             addUserControl(home);
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-            Reservasi reservasi = new Reservasi();
-            addUserControl(reservasi);
-        }
+        
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            My_Kos mykos = new My_Kos();
+            My_Kos mykos = new My_Kos(akun);
             addUserControl(mykos);
         }
 

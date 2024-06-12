@@ -33,16 +33,15 @@
             RoleLabel = new Label();
             label3 = new Label();
             RoleLabelPasien = new Label();
-            PasswordLabelPasien = new Label();
-            EditPassword = new TextBox();
             EditEmail = new TextBox();
             EmailLabelPasien = new Label();
-            panel2 = new Panel();
-            UsernameLabelPasien = new Label();
             pictureBox1 = new PictureBox();
+            changePass = new Button();
+            UsernameLabelPasien = new Label();
+            tableLayoutPanel1 = new TableLayoutPanel();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // EditButtonPenyewa
@@ -50,13 +49,14 @@
             EditButtonPenyewa.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             EditButtonPenyewa.BackColor = Color.Firebrick;
             EditButtonPenyewa.ForeColor = Color.White;
-            EditButtonPenyewa.Location = new Point(801, 589);
+            EditButtonPenyewa.Location = new Point(715, 567);
             EditButtonPenyewa.Margin = new Padding(4);
             EditButtonPenyewa.Name = "EditButtonPenyewa";
-            EditButtonPenyewa.Size = new Size(264, 74);
+            EditButtonPenyewa.Size = new Size(213, 97);
             EditButtonPenyewa.TabIndex = 12;
-            EditButtonPenyewa.Text = "Edit";
+            EditButtonPenyewa.Text = "Update\r\nEmail\r\n";
             EditButtonPenyewa.UseVisualStyleBackColor = false;
+            EditButtonPenyewa.Click += EditButtonPenyewa_Click;
             // 
             // panel1
             // 
@@ -66,21 +66,19 @@
             panel1.Controls.Add(RoleLabel);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(RoleLabelPasien);
-            panel1.Controls.Add(PasswordLabelPasien);
-            panel1.Controls.Add(EditPassword);
             panel1.Controls.Add(EditEmail);
             panel1.Controls.Add(EmailLabelPasien);
             panel1.Location = new Point(715, 114);
             panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(442, 458);
+            panel1.Size = new Size(442, 445);
             panel1.TabIndex = 11;
             // 
             // RoleLabel
             // 
             RoleLabel.AutoSize = true;
             RoleLabel.ForeColor = Color.White;
-            RoleLabel.Location = new Point(22, 353);
+            RoleLabel.Location = new Point(22, 296);
             RoleLabel.Margin = new Padding(4, 0, 4, 0);
             RoleLabel.Name = "RoleLabel";
             RoleLabel.Size = new Size(53, 30);
@@ -103,36 +101,17 @@
             // 
             RoleLabelPasien.AutoSize = true;
             RoleLabelPasien.ForeColor = Color.White;
-            RoleLabelPasien.Location = new Point(22, 310);
+            RoleLabelPasien.Location = new Point(22, 243);
             RoleLabelPasien.Margin = new Padding(4, 0, 4, 0);
             RoleLabelPasien.Name = "RoleLabelPasien";
             RoleLabelPasien.Size = new Size(53, 30);
             RoleLabelPasien.TabIndex = 5;
             RoleLabelPasien.Text = "Role";
-            // 
-            // PasswordLabelPasien
-            // 
-            PasswordLabelPasien.AutoSize = true;
-            PasswordLabelPasien.ForeColor = Color.White;
-            PasswordLabelPasien.Location = new Point(22, 206);
-            PasswordLabelPasien.Margin = new Padding(4, 0, 4, 0);
-            PasswordLabelPasien.Name = "PasswordLabelPasien";
-            PasswordLabelPasien.Size = new Size(99, 30);
-            PasswordLabelPasien.TabIndex = 4;
-            PasswordLabelPasien.Text = "Password";
-            // 
-            // EditPassword
-            // 
-            EditPassword.Location = new Point(22, 240);
-            EditPassword.Margin = new Padding(4);
-            EditPassword.Multiline = true;
-            EditPassword.Name = "EditPassword";
-            EditPassword.Size = new Size(387, 54);
-            EditPassword.TabIndex = 2;
+            RoleLabelPasien.Click += RoleLabelPasien_Click;
             // 
             // EditEmail
             // 
-            EditEmail.Location = new Point(22, 140);
+            EditEmail.Location = new Point(22, 162);
             EditEmail.Margin = new Padding(4);
             EditEmail.Multiline = true;
             EditEmail.Name = "EditEmail";
@@ -150,56 +129,75 @@
             EmailLabelPasien.TabIndex = 0;
             EmailLabelPasien.Text = "Email";
             // 
-            // panel2
-            // 
-            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel2.BackColor = Color.FromArgb(242, 239, 234);
-            panel2.Controls.Add(UsernameLabelPasien);
-            panel2.Location = new Point(240, 567);
-            panel2.Margin = new Padding(4);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(434, 97);
-            panel2.TabIndex = 10;
-            panel2.Paint += panel2_Paint;
-            // 
-            // UsernameLabelPasien
-            // 
-            UsernameLabelPasien.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            UsernameLabelPasien.AutoSize = true;
-            UsernameLabelPasien.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            UsernameLabelPasien.Location = new Point(150, 25);
-            UsernameLabelPasien.Margin = new Padding(4, 0, 4, 0);
-            UsernameLabelPasien.Name = "UsernameLabelPasien";
-            UsernameLabelPasien.Size = new Size(148, 38);
-            UsernameLabelPasien.TabIndex = 2;
-            UsernameLabelPasien.Text = "Username";
-            // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.download__1___1_;
-            pictureBox1.Location = new Point(240, 101);
+            pictureBox1.Location = new Point(240, 114);
             pictureBox1.Margin = new Padding(4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(434, 458);
-            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.Size = new Size(434, 445);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
+            // 
+            // changePass
+            // 
+            changePass.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            changePass.BackColor = Color.Firebrick;
+            changePass.ForeColor = Color.White;
+            changePass.Location = new Point(936, 567);
+            changePass.Margin = new Padding(4);
+            changePass.Name = "changePass";
+            changePass.Size = new Size(221, 97);
+            changePass.TabIndex = 12;
+            changePass.Text = "Change \r\nPassword";
+            changePass.UseVisualStyleBackColor = false;
+            changePass.Click += changePass_Click;
+            // 
+            // UsernameLabelPasien
+            // 
+            UsernameLabelPasien.AutoSize = true;
+            UsernameLabelPasien.BorderStyle = BorderStyle.FixedSingle;
+            UsernameLabelPasien.Dock = DockStyle.Fill;
+            UsernameLabelPasien.FlatStyle = FlatStyle.Flat;
+            UsernameLabelPasien.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            UsernameLabelPasien.Location = new Point(0, 0);
+            UsernameLabelPasien.Margin = new Padding(0);
+            UsernameLabelPasien.Name = "UsernameLabelPasien";
+            UsernameLabelPasien.Size = new Size(434, 97);
+            UsernameLabelPasien.TabIndex = 1;
+            UsernameLabelPasien.Text = "Username";
+            UsernameLabelPasien.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.BackColor = Color.FromArgb(242, 239, 234);
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(UsernameLabelPasien, 0, 0);
+            tableLayoutPanel1.Location = new Point(240, 567);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Size = new Size(434, 97);
+            tableLayoutPanel1.TabIndex = 13;
             // 
             // Profile
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(tableLayoutPanel1);
+            Controls.Add(changePass);
             Controls.Add(EditButtonPenyewa);
             Controls.Add(panel1);
-            Controls.Add(panel2);
             Controls.Add(pictureBox1);
             Name = "Profile";
             Size = new Size(1396, 765);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -210,12 +208,11 @@
         private Label RoleLabel;
         private Label label3;
         private Label RoleLabelPasien;
-        private Label PasswordLabelPasien;
-        private TextBox EditPassword;
         private TextBox EditEmail;
         private Label EmailLabelPasien;
-        private Panel panel2;
-        private Label UsernameLabelPasien;
         private PictureBox pictureBox1;
+        private Button changePass;
+        private Label UsernameLabelPasien;
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }

@@ -35,6 +35,10 @@
             button1 = new Button();
             comboBox1 = new ComboBox();
             textBox1 = new TextBox();
+            label4 = new Label();
+            label5 = new Label();
+            selectedKosDetailsLabel = new Label();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -45,7 +49,7 @@
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 72;
-            dataGridView1.Size = new Size(940, 523);
+            dataGridView1.Size = new Size(940, 402);
             dataGridView1.TabIndex = 2;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -73,7 +77,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 14.1428576F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(1036, 407);
+            label3.Location = new Point(1036, 408);
             label3.Name = "label3";
             label3.Size = new Size(167, 45);
             label3.TabIndex = 4;
@@ -93,8 +97,8 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Nama", "Harga" });
-            comboBox1.Location = new Point(1036, 470);
+            comboBox1.Items.AddRange(new object[] { "< 5,000,000", "5,000,000 - 10,000,000", "> 10,000,000" });
+            comboBox1.Location = new Point(1036, 506);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(312, 38);
             comboBox1.TabIndex = 6;
@@ -107,15 +111,59 @@
             textBox1.Size = new Size(312, 61);
             textBox1.TabIndex = 7;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 8.142858F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(1036, 453);
+            label4.Name = "label4";
+            label4.Size = new Size(89, 28);
+            label4.TabIndex = 4;
+            label4.Text = "by harga";
+            label4.Click += label3_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semibold", 14.1428576F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(49, 567);
+            label5.Name = "label5";
+            label5.Size = new Size(286, 45);
+            label5.TabIndex = 4;
+            label5.Text = "Kos yang dipilih : ";
+            // 
+            // selectedKosDetailsLabel
+            // 
+            selectedKosDetailsLabel.AutoSize = true;
+            selectedKosDetailsLabel.Font = new Font("Segoe UI Semibold", 14.1428576F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            selectedKosDetailsLabel.Location = new Point(341, 567);
+            selectedKosDetailsLabel.Name = "selectedKosDetailsLabel";
+            selectedKosDetailsLabel.Size = new Size(0, 45);
+            selectedKosDetailsLabel.TabIndex = 4;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(49, 635);
+            button2.Name = "button2";
+            button2.Size = new Size(131, 62);
+            button2.TabIndex = 8;
+            button2.Text = "Sewa";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // Homepage
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(button2);
             Controls.Add(textBox1);
             Controls.Add(comboBox1);
             Controls.Add(button1);
+            Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
+            Controls.Add(selectedKosDetailsLabel);
+            Controls.Add(label5);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
             Name = "Homepage";
@@ -135,5 +183,9 @@
         private Button button1;
         private ComboBox comboBox1;
         private TextBox textBox1;
+        private Label label4;
+        private Label label5;
+        private Label selectedKosDetailsLabel;
+        private Button button2;
     }
 }
