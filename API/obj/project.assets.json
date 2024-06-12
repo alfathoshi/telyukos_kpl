@@ -8063,19 +8063,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LENOVO\\.nuget\\packages\\": {}
+    "C:\\Users\\alfat\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\API\\obj\\",
+      "projectPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\alfat\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\alfat\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8089,11 +8089,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos-library\\telyukos_library.csproj": {
-              "projectPath": "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos-library\\telyukos_library.csproj"
+            "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos_library.csproj": {
+              "projectPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos_library.csproj"
             },
-            "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos\\telyukos.csproj": {
-              "projectPath": "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos\\telyukos.csproj"
+            "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos\\telyukos.csproj": {
+              "projectPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos\\telyukos.csproj"
             }
           }
         }

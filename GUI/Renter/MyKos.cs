@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI.Renter
 {
-    public partial class MyKos : Form
+    public partial class My_Kos : UserControl
     {
-        public MyKos()
+        public My_Kos()
         {
             InitializeComponent();
         }

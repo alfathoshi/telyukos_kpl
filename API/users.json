@@ -1,1 +1,65 @@
-[{"Email":"owner@gmail.com","Password":"e014db0a28fa5380980c7880f92692c4d1617b195963337e6452bcc78ffcdaef","Role":"Pemilik","Kos":[{"Id":1,"Nama":"sukapura","Harga":2000000,"Alamat":"jl.sukapura","Kapasitas":9,"Status":0,"Penyewa":null},{"Id":2,"Nama":"sukabirus","Harga":1200000,"Alamat":"jl.sukabirus","Kapasitas":5,"Status":0,"Penyewa":null}]},{"Email":"renter@gmail.com","Password":"40b0b8d5387bd7a1296f7109024dd96743a4baf6d66be092615259753ece1209","Role":"Penyewa","Kos":[{"Id":1,"Nama":"PGA","Harga":100000,"Alamat":"jl.PGA","Kapasitas":3,"Status":0,"Penyewa":null}]}]
+[
+  {
+    "Email": "owner@gmail.com",
+    "Password": "e014db0a28fa5380980c7880f92692c4d1617b195963337e6452bcc78ffcdaef",
+    "Role": "Pemilik",
+    "Kos": [
+      {
+        "Id": 1,
+        "Nama": "sukapura",
+        "Harga": 2000000,
+        "Alamat": "jl.sukapura",
+        "Kapasitas": 9,
+        "Status": 0,
+        "Penyewa": null
+      },
+      {
+        "Id": 2,
+        "Nama": "sukabirus",
+        "Harga": 1200000,
+        "Alamat": "jl.sukabirus",
+        "Kapasitas": 5,
+        "Status": 0,
+        "Penyewa": null
+      }
+    ]
+  },
+  {
+    "Email": "renter@gmail.com",
+    "Password": "40b0b8d5387bd7a1296f7109024dd96743a4baf6d66be092615259753ece1209",
+    "Role": "Penyewa",
+    "Kos": [
+      {
+        "Id": 1,
+        "Nama": "PGA",
+        "Harga": 100000,
+        "Alamat": "jl.PGA",
+        "Kapasitas": 3,
+        "Status": 0,
+        "Penyewa": null
+      }
+    ]
+  },
+  {
+    "Email": "bintang@gmail.com",
+    "Password": "89e052b38e0913e8ab59fdd88858c4d1474b03c08cb4177be197b7df73ef7cdf",
+    "Role": "Penyewa",
+    "Kos": null
+  },
+  {
+    "Email": "tes",
+    "Password": "ce0f6c28b5869ff166714da5fe08554c70c731a335ff9702e38b00f81ad348c6",
+    "Role": "penyewa",
+    "Kos": [
+      {
+        "Id": 1,
+        "Nama": "Rajawali",
+        "Harga": 10000000,
+        "Alamat": "Sukabirus",
+        "Kapasitas": 50,
+        "Status": 0,
+        "Penyewa": null
+      }
+    ]
+  }
+]

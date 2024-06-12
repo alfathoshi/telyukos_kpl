@@ -92,8 +92,6 @@ C:\Users\alfat\Documents\College\C#\telyukos\API\obj\Debug\net8.0\refint\API.dll
 C:\Users\alfat\Documents\College\C#\telyukos\API\obj\Debug\net8.0\API.pdb
 C:\Users\alfat\Documents\College\C#\telyukos\API\obj\Debug\net8.0\API.genruntimeconfig.cache
 C:\Users\alfat\Documents\College\C#\telyukos\API\obj\Debug\net8.0\ref\API.dll
-C:\Users\alfat\Documents\College\C#\telyukos\API\bin\Debug\net8.0\telyukos-library.dll
-C:\Users\alfat\Documents\College\C#\telyukos\API\bin\Debug\net8.0\telyukos-library.pdb
 D:\AAL\Coding\C#\GUITUBES\telyukos_kpl\API\bin\Debug\net8.0\appsettings.Development.json
 D:\AAL\Coding\C#\GUITUBES\telyukos_kpl\API\bin\Debug\net8.0\appsettings.json
 D:\AAL\Coding\C#\GUITUBES\telyukos_kpl\API\bin\Debug\net8.0\telyukos.deps.json
@@ -339,3 +337,5 @@ C:\TubesKPLGUI\API\bin\Debug\net8.0\telyukos.pdb
 C:\TubesKPLGUI\API\obj\Debug\net8.0\API.csproj.Up2Date
 C:\TubesKPLGUI\API\obj\Debug\net8.0\API.genruntimeconfig.cache
 C:\TubesKPLGUI\API\obj\Debug\net8.0\ref\API.dll
+C:\Users\alfat\Documents\College\C#\telyukos\API\bin\Debug\net8.0\telyukos_library.dll
+C:\Users\alfat\Documents\College\C#\telyukos\API\bin\Debug\net8.0\telyukos_library.pdb

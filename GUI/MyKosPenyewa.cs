@@ -1,27 +1,11 @@
-﻿using API.Controllers;
-using Microsoft.VisualBasic.ApplicationServices;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Drawing.Design;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Json;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using telyukos.Model;
-using telyukos.State;
+﻿using System.Net.Http.Json;
 using User = telyukos.Model.User;
 
 namespace GUI
 {
     public partial class MyKosPenyewa : Form
     {
-       
+
         private HttpClient httpClient;
         private static User Akun;
 
@@ -133,6 +117,11 @@ namespace GUI
                     MessageBox.Show("Gagal membatalkan sewa kos: " + response.StatusCode, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void KapasitasLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

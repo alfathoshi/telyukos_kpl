@@ -11,13 +11,13 @@ using System.Windows.Forms;
 using telyukos.Model;
 using telyukos_library.Searching;
 
-namespace GUI
+namespace GUI.Renter
 {
-    public partial class FormHome : Form
+    public partial class Homepage : UserControl
     {
         private HttpClient httpClient;
         private HttpResponseMessage resp;
-        public FormHome()
+        public Homepage()
         {
             InitializeComponent();
             httpClient = new HttpClient();
@@ -28,30 +28,22 @@ namespace GUI
         }
 
 
-
         private void InitializeDataGridView()
         {
-            // Make DataGridView read-only
             dataGridView1.ReadOnly = true;
 
-            // Set selection mode to FullRowSelect
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            // Disable user ability to sort columns
             dataGridView1.AllowUserToOrderColumns = false;
 
-            // Optional: Disable user ability to add or delete rows
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
 
-            // Optional: Set multi-select to false to allow only one row to be selected at a time
             dataGridView1.MultiSelect = false;
 
-            // Set no rows selected by default
             dataGridView1.ClearSelection();
             dataGridView1.CurrentCell = null;
 
-            // Auto size columns to fill DataGridView
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
@@ -91,6 +83,42 @@ namespace GUI
             {
                 Console.WriteLine("Terjadi kesalahan: " + ex.Message);
             }
+        }
+
+        public async void CariKos(String namaKos)
+        {
+            resp = await httpClient.GetAsync("api/Kos");
+            resp.EnsureSuccessStatusCode();
+            Kos[] findKos = await resp.Content.ReadFromJsonAsync<Kos[]>();
+
+            // Urutkan data berdasarkan ID
+            SelectionSort<Kos>.SortAscending(findKos, k => k.Id);
+            Kos cariKos = SearchKos.Search(findKos, k => k.Nama.Equals(namaKos));
+            if (cariKos != null)
+            {
+                MessageBox.Show($"Kos dengan nama {namaKos} ditemukan", "Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dataGridView1.DataSource = new List<Kos> { cariKos };
+            }
+            else
+            {
+                MessageBox.Show($"Kos dengan nama {namaKos} tidak ditemukan", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void Homepage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CariKos(textBox1.Text);
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

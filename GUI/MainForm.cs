@@ -5,6 +5,7 @@ namespace GUI
 {
     public partial class MainForm : Form
     {
+        UserControl user;
         public MainForm()
         {
             InitializeComponent();
@@ -17,7 +18,7 @@ namespace GUI
 
         private void OpenLoginForm()
         {
-            RenterHome loginForm = new RenterHome();
+            Login loginForm = new Login();
             loginForm.FormClosed += (s, args) => this.Close();
             loginForm.ShowDialog();
         }

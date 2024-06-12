@@ -1,7 +1,5 @@
 ﻿using GUI.Renter;
-using System.Net.Http.Json;
 using telyukos.Model;
-using telyukos_library.Searching;
 
 namespace GUI
 {
@@ -10,77 +8,72 @@ namespace GUI
 
         private static List<Kos> listkos;
 
+        private static User akun;
+
         FormHome home;
-        Reservasi formReservasi;
+
+        MyKosPenyewa myKosRenter;
 
 
-        public RenterHome()
+        public RenterHome(User user)
         {
             InitializeComponent();
+            akun = user;
+            Homepage home = new Homepage();
+            addUserControl(home);
 
         }
 
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void addUserControl(UserControl userControl)
         {
-
+            userControl.Dock = DockStyle.Fill;
+            panelController.Controls.Clear();
+            panelController.Controls.Add(userControl);
+            userControl.BringToFront();
         }
 
-        private void RenterHome_Load(object sender, EventArgs e)
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
-
+            Homepage home = new Homepage();
+            addUserControl(home);
         }
 
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            Reservasi reservasi = new Reservasi();
+            addUserControl(reservasi);
+        }
 
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            My_Kos mykos = new My_Kos();
+            addUserControl(mykos);
+        }
 
-
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            Profile profile = new Profile(akun);
+            addUserControl(profile);
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Dispose();
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void guna2Button5_Click(object sender, EventArgs e)
         {
-            if (home == null)
-            {
-                home = new FormHome();
-                home.MdiParent = this;
-                home.Show();
-            }
-            else
-            {
-                home.Activate();
-            }
-        }
-
-        private void Home_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            home = null;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (formReservasi == null)
-            {
-                formReservasi = new Reservasi();
-                formReservasi.MdiParent = this;
-                formReservasi.Show();
-            }
-            else
-            {
-                formReservasi.Activate();
-            }
+            Dispose ();
         }
     }
 }

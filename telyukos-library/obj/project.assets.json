@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\LENOVO\\.nuget\\packages\\": {}
+    "C:\\Users\\alfat\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos-library\\telyukos_library.csproj",
+      "projectUniqueName": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos_library.csproj",
       "projectName": "telyukos_library",
-      "projectPath": "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos-library\\telyukos_library.csproj",
-      "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LENOVO\\Desktop\\semester 4\\Kontruksi Perangkat Lunak (KPL)\\tubesTelyukos\\telyukos-library\\obj\\",
+      "projectPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\telyukos_library.csproj",
+      "packagesPath": "C:\\Users\\alfat\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\alfat\\Documents\\College\\C#\\telyukos\\telyukos-library\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\alfat\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -54,7 +54,7 @@ namespace GUI
 
                 // Panggil profilePemilik dan lempar data user
                 //kondisi jika user pemilik
-                if (user.Role.Equals("Pemilik",StringComparison.OrdinalIgnoreCase))
+                if (user.Role.Equals("Pemilik", StringComparison.OrdinalIgnoreCase))
                 {
                     profilePemilik FramePemilik = new profilePemilik(user);
                     FramePemilik.Show();
@@ -62,8 +62,10 @@ namespace GUI
                 //kondisi jika user penyewa
                 else if (user.Role.Equals("Penyewa", StringComparison.OrdinalIgnoreCase))
                 {
-                    profilePenyewa FramePenyewa = new profilePenyewa(user);
-                    FramePenyewa.Show();
+                    /*profilePenyewa FramePenyewa = new profilePenyewa(user);
+                    FramePenyewa.Show();*/
+                    RenterHome renterHome = new RenterHome(user);
+                    renterHome.Show();
                 }
                 else
                 {

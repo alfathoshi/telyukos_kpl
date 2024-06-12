@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace GUI.Renter
 {
-    public partial class Reservasi : Form
+    public partial class Reservasi : UserControl
     {
         public Reservasi()
         {

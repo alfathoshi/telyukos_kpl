@@ -28,164 +28,240 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RenterHome));
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            pictureBox1 = new PictureBox();
-            homepage = new Panel();
-            button1 = new Button();
-            reservasi = new Panel();
-            button2 = new Button();
-            mykos = new Panel();
-            button3 = new Button();
-            profile = new Panel();
-            button4 = new Button();
-            flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            homepage.SuspendLayout();
-            reservasi.SuspendLayout();
-            mykos.SuspendLayout();
-            profile.SuspendLayout();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            panel1 = new Panel();
+            guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            panelController = new Panel();
+            guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // panel1
             // 
-            flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            flowLayoutPanel1.BackColor = Color.WhiteSmoke;
-            flowLayoutPanel1.BorderStyle = BorderStyle.FixedSingle;
-            flowLayoutPanel1.Controls.Add(pictureBox1);
-            flowLayoutPanel1.Controls.Add(homepage);
-            flowLayoutPanel1.Controls.Add(reservasi);
-            flowLayoutPanel1.Controls.Add(mykos);
-            flowLayoutPanel1.Controls.Add(profile);
-            flowLayoutPanel1.ForeColor = SystemColors.ButtonHighlight;
-            flowLayoutPanel1.Location = new Point(0, 0);
-            flowLayoutPanel1.Margin = new Padding(0, 100, 0, 0);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Padding = new Padding(10, 30, 10, 10);
-            flowLayoutPanel1.Size = new Size(273, 900);
-            flowLayoutPanel1.TabIndex = 1;
-            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
+            panel1.BackColor = SystemColors.Window;
+            panel1.Controls.Add(guna2Button4);
+            panel1.Controls.Add(guna2Button3);
+            panel1.Controls.Add(guna2Button2);
+            panel1.Controls.Add(guna2Button1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 124);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1396, 83);
+            panel1.TabIndex = 4;
             // 
-            // pictureBox1
+            // guna2Button4
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(13, 33);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Padding = new Padding(4);
-            pictureBox1.Size = new Size(245, 115);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
+            guna2Button4.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            guna2Button4.CheckedState.CustomBorderColor = Color.FromArgb(192, 0, 0);
+            guna2Button4.CheckedState.FillColor = SystemColors.Window;
+            guna2Button4.CustomBorderColor = Color.White;
+            guna2Button4.CustomBorderThickness = new Padding(0, 0, 0, 3);
+            guna2Button4.CustomizableEdges = customizableEdges1;
+            guna2Button4.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button4.Dock = DockStyle.Right;
+            guna2Button4.FillColor = Color.White;
+            guna2Button4.Font = new Font("Segoe UI", 9F);
+            guna2Button4.ForeColor = Color.Black;
+            guna2Button4.HoverState.CustomBorderColor = Color.FromArgb(192, 0, 0);
+            guna2Button4.HoverState.FillColor = SystemColors.Control;
+            guna2Button4.Location = new Point(1081, 0);
+            guna2Button4.Name = "guna2Button4";
+            guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2Button4.Size = new Size(315, 83);
+            guna2Button4.TabIndex = 3;
+            guna2Button4.Text = "Profile";
+            guna2Button4.Click += guna2Button4_Click;
             // 
-            // homepage
+            // guna2Button3
             // 
-            homepage.Controls.Add(button1);
-            homepage.Location = new Point(13, 154);
-            homepage.Name = "homepage";
-            homepage.Size = new Size(245, 82);
-            homepage.TabIndex = 1;
+            guna2Button3.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            guna2Button3.CheckedState.CustomBorderColor = Color.FromArgb(192, 0, 0);
+            guna2Button3.CheckedState.FillColor = SystemColors.Window;
+            guna2Button3.CustomBorderColor = Color.White;
+            guna2Button3.CustomBorderThickness = new Padding(0, 0, 0, 3);
+            guna2Button3.CustomizableEdges = customizableEdges3;
+            guna2Button3.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button3.FillColor = Color.White;
+            guna2Button3.Font = new Font("Segoe UI", 9F);
+            guna2Button3.ForeColor = Color.Black;
+            guna2Button3.HoverState.CustomBorderColor = Color.FromArgb(192, 0, 0);
+            guna2Button3.HoverState.FillColor = SystemColors.Control;
+            guna2Button3.Location = new Point(717, 1);
+            guna2Button3.Name = "guna2Button3";
+            guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2Button3.Size = new Size(315, 79);
+            guna2Button3.TabIndex = 3;
+            guna2Button3.Text = "My Kos";
+            guna2Button3.Click += guna2Button3_Click;
             // 
-            // button1
+            // guna2Button2
             // 
-            button1.FlatStyle = FlatStyle.System;
-            button1.Location = new Point(0, 0);
-            button1.Margin = new Padding(3, 100, 3, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(245, 82);
-            button1.TabIndex = 0;
-            button1.Text = "HOMEPAGE";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click_1;
+            guna2Button2.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            guna2Button2.CheckedState.CustomBorderColor = Color.FromArgb(192, 0, 0);
+            guna2Button2.CheckedState.FillColor = SystemColors.Window;
+            guna2Button2.CustomBorderColor = Color.White;
+            guna2Button2.CustomBorderThickness = new Padding(0, 0, 0, 3);
+            guna2Button2.CustomizableEdges = customizableEdges5;
+            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button2.FillColor = Color.White;
+            guna2Button2.Font = new Font("Segoe UI", 9F);
+            guna2Button2.ForeColor = Color.Black;
+            guna2Button2.HoverState.CustomBorderColor = Color.FromArgb(192, 0, 0);
+            guna2Button2.HoverState.FillColor = SystemColors.Control;
+            guna2Button2.Location = new Point(364, 2);
+            guna2Button2.Name = "guna2Button2";
+            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2Button2.Size = new Size(315, 79);
+            guna2Button2.TabIndex = 3;
+            guna2Button2.Text = "Reservasi";
+            guna2Button2.Click += guna2Button2_Click;
             // 
-            // reservasi
+            // guna2Button1
             // 
-            reservasi.Controls.Add(button2);
-            reservasi.Location = new Point(13, 242);
-            reservasi.Name = "reservasi";
-            reservasi.Size = new Size(245, 82);
-            reservasi.TabIndex = 1;
+            guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            guna2Button1.Checked = true;
+            guna2Button1.CheckedState.BorderColor = SystemColors.Window;
+            guna2Button1.CheckedState.CustomBorderColor = Color.FromArgb(192, 0, 0);
+            guna2Button1.CheckedState.FillColor = Color.White;
+            guna2Button1.CustomBorderColor = Color.White;
+            guna2Button1.CustomBorderThickness = new Padding(0, 0, 0, 3);
+            guna2Button1.CustomizableEdges = customizableEdges7;
+            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.FillColor = SystemColors.Window;
+            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.FillColor = Color.White;
+            guna2Button1.Font = new Font("Segoe UI", 9F);
+            guna2Button1.ForeColor = Color.Black;
+            guna2Button1.HoverState.CustomBorderColor = Color.FromArgb(192, 0, 0);
+            guna2Button1.HoverState.FillColor = SystemColors.Control;
+            guna2Button1.Location = new Point(0, 1);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2Button1.Size = new Size(315, 79);
+            guna2Button1.TabIndex = 3;
+            guna2Button1.Text = "Homepage";
+            guna2Button1.Click += guna2Button1_Click;
             // 
-            // button2
+            // guna2PictureBox1
             // 
-            button2.FlatStyle = FlatStyle.System;
-            button2.Location = new Point(0, 0);
-            button2.Margin = new Padding(3, 100, 3, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(245, 82);
-            button2.TabIndex = 0;
-            button2.Text = "RESERVASI";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            guna2PictureBox1.CustomizableEdges = customizableEdges9;
+            guna2PictureBox1.Dock = DockStyle.Left;
+            guna2PictureBox1.FillColor = Color.DarkRed;
+            guna2PictureBox1.Image = (Image)resources.GetObject("guna2PictureBox1.Image");
+            guna2PictureBox1.ImageRotate = 0F;
+            guna2PictureBox1.Location = new Point(27, 27);
+            guna2PictureBox1.Name = "guna2PictureBox1";
+            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            guna2PictureBox1.Size = new Size(146, 70);
+            guna2PictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            guna2PictureBox1.TabIndex = 5;
+            guna2PictureBox1.TabStop = false;
+            guna2PictureBox1.Click += guna2PictureBox1_Click;
             // 
-            // mykos
+            // panelController
             // 
-            mykos.Controls.Add(button3);
-            mykos.Location = new Point(13, 330);
-            mykos.Name = "mykos";
-            mykos.Size = new Size(245, 82);
-            mykos.TabIndex = 1;
+            panelController.Dock = DockStyle.Fill;
+            panelController.Location = new Point(0, 207);
+            panelController.Name = "panelController";
+            panelController.Size = new Size(1396, 757);
+            panelController.TabIndex = 6;
             // 
-            // button3
+            // guna2Button5
             // 
-            button3.FlatStyle = FlatStyle.System;
-            button3.Location = new Point(0, 0);
-            button3.Margin = new Padding(3, 100, 3, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(245, 82);
-            button3.TabIndex = 0;
-            button3.Text = "MY KOS";
-            button3.UseVisualStyleBackColor = true;
+            guna2Button5.CustomizableEdges = customizableEdges11;
+            guna2Button5.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button5.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button5.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button5.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button5.Dock = DockStyle.Fill;
+            guna2Button5.FillColor = Color.DarkRed;
+            guna2Button5.Font = new Font("Segoe UI Black", 20.1428585F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2Button5.ForeColor = Color.White;
+            guna2Button5.HoverState.FillColor = Color.DarkRed;
+            guna2Button5.Location = new Point(1280, 27);
+            guna2Button5.Name = "guna2Button5";
+            guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            guna2Button5.Size = new Size(113, 70);
+            guna2Button5.TabIndex = 9;
+            guna2Button5.Text = "X";
+            guna2Button5.Click += guna2Button5_Click;
             // 
-            // profile
+            // tableLayoutPanel1
             // 
-            profile.Controls.Add(button4);
-            profile.Location = new Point(13, 418);
-            profile.Name = "profile";
-            profile.Size = new Size(245, 82);
-            profile.TabIndex = 1;
-            // 
-            // button4
-            // 
-            button4.FlatStyle = FlatStyle.System;
-            button4.Location = new Point(0, 0);
-            button4.Margin = new Padding(3, 100, 3, 3);
-            button4.Name = "button4";
-            button4.Size = new Size(245, 82);
-            button4.TabIndex = 0;
-            button4.Text = "PROFILE";
-            button4.UseVisualStyleBackColor = true;
+            tableLayoutPanel1.BackColor = Color.DarkRed;
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 91.3323746F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 8.667622F));
+            tableLayoutPanel1.Controls.Add(guna2Button5, 1, 0);
+            tableLayoutPanel1.Controls.Add(guna2PictureBox1, 0, 0);
+            tableLayoutPanel1.Dock = DockStyle.Top;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.Padding = new Padding(24, 24, 0, 24);
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Size = new Size(1396, 124);
+            tableLayoutPanel1.TabIndex = 8;
             // 
             // RenterHome
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1371, 900);
-            Controls.Add(flowLayoutPanel1);
+            BackColor = SystemColors.Window;
+            ClientSize = new Size(1396, 964);
+            Controls.Add(panelController);
+            Controls.Add(panel1);
+            Controls.Add(tableLayoutPanel1);
+            FormBorderStyle = FormBorderStyle.None;
             IsMdiContainer = true;
             Name = "RenterHome";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "RenterHome";
-            Load += RenterHome_Load;
-            flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            homepage.ResumeLayout(false);
-            reservasi.ResumeLayout(false);
-            mykos.ResumeLayout(false);
-            profile.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-        private FlowLayoutPanel flowLayoutPanel1;
-        private Button button1;
-        private Panel homepage;
-        private Panel reservasi;
-        private Button button2;
-        private Panel profile;
-        private Button button3;
         private Panel panel4;
-        private Button button4;
-        private PictureBox pictureBox1;
-        private Panel mykos;
+        private Panel panel1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Panel panelController;
+        private Guna.UI2.WinForms.Guna2Button guna2Button5;
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }

@@ -149,5 +149,10 @@ namespace GUI
             MyKosPenyewa frameMyKos = new MyKosPenyewa(user);
             frameMyKos.Show();
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
