@@ -24,7 +24,7 @@ namespace GUI
             textBox2.TextChanged += new EventHandler(this.textBox2_TextChanged);
         }
 
-        public async void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             // Ambil email dan password dari textbox
             string email = textBox1.Text;
@@ -51,25 +51,19 @@ namespace GUI
                 // Tampilkan pesan sukses
                 Akun = user;
                 MessageBox.Show("Login berhasil", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //ntar pindah disini
 
-                // Panggil profilePemilik dan lempar data user
-                //kondisi jika user pemilik
-                if (user.Role.Equals("Pemilik", StringComparison.OrdinalIgnoreCase))
+                //Pindah ke role user
+                if (user.Role == "Pemilik")
                 {
-                    profilePemilik FramePemilik = new profilePemilik(user);
-                    FramePemilik.Show();
-                }
-                //kondisi jika user penyewa
-                else if (user.Role.Equals("Penyewa", StringComparison.OrdinalIgnoreCase))
-                {
-                    /*profilePenyewa FramePenyewa = new profilePenyewa(user);
-                    FramePenyewa.Show();*/
-                    RenterHome renterHome = new RenterHome(user);
-                    renterHome.Show();
+                    // Buka HomePageOwner dan berikan objek user
+                    HomePageOwner homePageOwner = new HomePageOwner(Akun);
+                    homePageOwner.Show();
+                    this.Hide();    
                 }
                 else
                 {
-                    MessageBox.Show("Role tidak dikenali", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Peran pengguna tidak sesuai", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest || response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
@@ -83,7 +77,6 @@ namespace GUI
                 MessageBox.Show("Gagal login: " + response.StatusCode, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
