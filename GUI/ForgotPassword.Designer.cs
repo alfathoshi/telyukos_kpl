@@ -28,111 +28,102 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            textBoxVerificationCode = new TextBox();
-            textBoxEmail = new TextBox();
-            label2 = new Label();
-            textBoxNewPassword = new TextBox();
-            label3 = new Label();
-            buttonSubmit = new Button();
-            label4 = new Label();
+            LabelCheckOTP = new Label();
+            TextBoxVerificationCode = new TextBox();
+            TextBoxEmail = new TextBox();
+            LabelEmail = new Label();
+            TextBoxNewPassword = new TextBox();
+            LabelNewPassword = new Label();
+            ButtonSubmit = new Button();
+            ChangePasswordTitle = new Label();
             SuspendLayout();
             // 
-            // label1
+            // LabelCheckOTP
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(76, 378);
-            label1.Margin = new Padding(5, 0, 5, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(399, 30);
-            label1.TabIndex = 0;
-            label1.Text = "Check your email for the verification code";
-            label1.Click += label1_Click;
+            LabelCheckOTP.AutoSize = true;
+            LabelCheckOTP.Location = new Point(44, 189);
+            LabelCheckOTP.Name = "LabelCheckOTP";
+            LabelCheckOTP.Size = new Size(228, 15);
+            LabelCheckOTP.TabIndex = 0;
+            LabelCheckOTP.Text = "Check your email for the verification code";
+            
             // 
-            // textBoxVerificationCode
+            // TextBoxVerificationCode
             // 
-            textBoxVerificationCode.Location = new Point(76, 414);
-            textBoxVerificationCode.Margin = new Padding(5, 6, 5, 6);
-            textBoxVerificationCode.Name = "textBoxVerificationCode";
-            textBoxVerificationCode.Size = new Size(168, 35);
-            textBoxVerificationCode.TabIndex = 1;
-            textBoxVerificationCode.TextChanged += textBox1_TextChanged;
+            TextBoxVerificationCode.Location = new Point(44, 207);
+            TextBoxVerificationCode.Name = "TextBoxVerificationCode";
+            TextBoxVerificationCode.Size = new Size(100, 23);
+            TextBoxVerificationCode.TabIndex = 1;
+
             // 
-            // textBoxEmail
+            // TextBoxEmail
             // 
-            textBoxEmail.Location = new Point(76, 252);
-            textBoxEmail.Margin = new Padding(5, 6, 5, 6);
-            textBoxEmail.Name = "textBoxEmail";
-            textBoxEmail.Size = new Size(168, 35);
-            textBoxEmail.TabIndex = 3;
-            textBoxEmail.TextChanged += textBox2_TextChanged;
+            TextBoxEmail.Location = new Point(44, 126);
+            TextBoxEmail.Name = "TextBoxEmail";
+            TextBoxEmail.Size = new Size(100, 23);
+            TextBoxEmail.TabIndex = 3;
+            
             // 
-            // label2
+            // LabelEmail
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(76, 216);
-            label2.Margin = new Padding(5, 0, 5, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(584, 30);
-            label2.TabIndex = 2;
-            label2.Text = "Put your email of the account you want to reset the password";
-            label2.Click += label2_Click;
+            LabelEmail.AutoSize = true;
+            LabelEmail.Location = new Point(44, 108);
+            LabelEmail.Name = "LabelEmail";
+            LabelEmail.Size = new Size(331, 15);
+            LabelEmail.TabIndex = 2;
+            LabelEmail.Text = "Put your email of the account you want to reset the password";
+            
             // 
-            // textBoxNewPassword
+            // TextBoxNewPassword
             // 
-            textBoxNewPassword.Location = new Point(76, 572);
-            textBoxNewPassword.Margin = new Padding(5, 6, 5, 6);
-            textBoxNewPassword.Name = "textBoxNewPassword";
-            textBoxNewPassword.Size = new Size(168, 35);
-            textBoxNewPassword.TabIndex = 5;
+            TextBoxNewPassword.Location = new Point(44, 286);
+            TextBoxNewPassword.Name = "TextBoxNewPassword";
+            TextBoxNewPassword.Size = new Size(100, 23);
+            TextBoxNewPassword.TabIndex = 5;
             // 
-            // label3
+            // LabelNewPassword
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(76, 536);
-            label3.Margin = new Padding(5, 0, 5, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(226, 30);
-            label3.TabIndex = 4;
-            label3.Text = "Set new password here";
+            LabelNewPassword.AutoSize = true;
+            LabelNewPassword.Location = new Point(44, 268);
+            LabelNewPassword.Name = "LabelNewPassword";
+            LabelNewPassword.Size = new Size(127, 15);
+            LabelNewPassword.TabIndex = 4;
+            LabelNewPassword.Text = "Set new password here";
             // 
-            // buttonSubmit
+            // ButtonSubmit
             // 
-            buttonSubmit.Location = new Point(76, 702);
-            buttonSubmit.Margin = new Padding(5, 6, 5, 6);
-            buttonSubmit.Name = "buttonSubmit";
-            buttonSubmit.Size = new Size(128, 46);
-            buttonSubmit.TabIndex = 6;
-            buttonSubmit.Text = "Submit";
-            buttonSubmit.UseVisualStyleBackColor = true;
-            buttonSubmit.Click += buttonSubmit_Click;
+            ButtonSubmit.Location = new Point(44, 351);
+            ButtonSubmit.Name = "ButtonSubmit";
+            ButtonSubmit.Size = new Size(75, 23);
+            ButtonSubmit.TabIndex = 6;
+            ButtonSubmit.Text = "Submit";
+            ButtonSubmit.UseVisualStyleBackColor = true;
+            ButtonSubmit.Click += buttonSubmit_Click;
             // 
-            // label4
+            // ChangePasswordTitle
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 20F);
-            label4.Location = new Point(76, 114);
-            label4.Margin = new Padding(5, 0, 5, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(394, 62);
-            label4.TabIndex = 7;
-            label4.Text = "Change Password";
-            label4.Click += label4_Click;
+            ChangePasswordTitle.AutoSize = true;
+            ChangePasswordTitle.Font = new Font("Segoe UI", 20F);
+            ChangePasswordTitle.Location = new Point(44, 57);
+            ChangePasswordTitle.Name = "ChangePasswordTitle";
+            ChangePasswordTitle.Size = new Size(226, 37);
+            ChangePasswordTitle.TabIndex = 7;
+            ChangePasswordTitle.Text = "Change Password";
+            
             // 
             // ForgotPassword
             // 
-            AutoScaleDimensions = new SizeF(12F, 30F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1372, 900);
-            Controls.Add(label4);
-            Controls.Add(buttonSubmit);
-            Controls.Add(textBoxNewPassword);
-            Controls.Add(label3);
-            Controls.Add(textBoxEmail);
-            Controls.Add(label2);
-            Controls.Add(textBoxVerificationCode);
-            Controls.Add(label1);
-            Margin = new Padding(5, 6, 5, 6);
+            ClientSize = new Size(800, 450);
+            Controls.Add(ChangePasswordTitle);
+            Controls.Add(ButtonSubmit);
+            Controls.Add(TextBoxNewPassword);
+            Controls.Add(LabelNewPassword);
+            Controls.Add(TextBoxEmail);
+            Controls.Add(LabelEmail);
+            Controls.Add(TextBoxVerificationCode);
+            Controls.Add(LabelCheckOTP);
             Name = "ForgotPassword";
             Text = "Form1";
             ResumeLayout(false);
@@ -141,13 +132,13 @@
 
         #endregion
 
-        private Label label1;
-        private TextBox textBoxVerificationCode;
-        private TextBox textBoxEmail;
-        private Label label2;
-        private TextBox textBoxNewPassword;
-        private Label label3;
-        private Button buttonSubmit;
-        private Label label4;
+        private Label LabelCheckOTP;
+        private TextBox TextBoxVerificationCode;
+        private TextBox TextBoxEmail;
+        private Label LabelEmail;
+        private TextBox TextBoxNewPassword;
+        private Label LabelNewPassword;
+        private Button ButtonSubmit;
+        private Label ChangePasswordTitle;
     }
 }

@@ -19,9 +19,9 @@ namespace GUI
 
         private async void buttonSubmit_Click(object sender, EventArgs e)
         {
-            string verificationCode = textBoxVerificationCode.Text;
-            string email = textBoxEmail.Text;
-            string newPassword = textBoxNewPassword.Text;
+            string verificationCode = TextBoxVerificationCode.Text;
+            string email = TextBoxEmail.Text;
+            string newPassword = TextBoxNewPassword.Text;
 
             if (verificationCode != "1111")
             {
@@ -48,26 +48,6 @@ namespace GUI
                 MessageBox.Show("Gagal mengubah password: " + response.StatusCode, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void label1_Click(object sender, EventArgs e) { }
-        private void textBox1_TextChanged(object sender, EventArgs e) { }
 
 
     }

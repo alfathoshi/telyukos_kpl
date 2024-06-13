@@ -22,14 +22,14 @@ namespace GUI
             httpClient.BaseAddress = new Uri("https://localhost:7126/"); // Sesuaikan dengan URL API Anda
 
             // Add event handler for password TextBox
-            textBox2.TextChanged += new EventHandler(this.textBox2_TextChanged);
+            TextBoxPassword.TextChanged += new EventHandler(this.textBoxPassword_TextChanged);
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private async void signUpButton_Click(object sender, EventArgs e)
         {
             // Ambil email dan password dari textbox
-            string email = textBox1.Text;
-            string password = textBox2.Text;
+            string email = TextBoxEmail.Text;
+            string password = TextBoxPassword.Text;
 
             // Buat objek User untuk login
             User loginUser = new User { Email = email, Password = password, Role = "" };
@@ -83,9 +83,9 @@ namespace GUI
             }
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void textBoxPassword_TextChanged(object sender, EventArgs e)
         {
-            string password = textBox2.Text;
+            string password = TextBoxPassword.Text;
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -93,29 +93,19 @@ namespace GUI
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
+        private void switchSignUpPage_Click(object sender, EventArgs e)
         {
             SignUp signUpGui = new SignUp();
             signUpGui.ShowDialog();
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void switchForgotPasswordPage_Click(object sender, EventArgs e)
         {
             ForgotPassword forgotPasswordGui = new ForgotPassword();
             forgotPasswordGui.ShowDialog();
         }
 
-        private void textBox2_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void textBoxEmail_TextChanged(object sender, EventArgs e)
         {
 
         }

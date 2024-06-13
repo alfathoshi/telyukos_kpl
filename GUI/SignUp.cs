@@ -20,17 +20,17 @@ namespace GUI
             httpClient.BaseAddress = new Uri("https://localhost:7126/"); // Sesuaikan dengan URL API Anda
 
             // Event handler for password textbox text changed
-            textBoxPassword.TextChanged += TextBoxPassword_TextChanged;
+            TextBoxPassword.TextChanged += TextBoxPassword_TextChanged;
 
             // Event handler for password textbox text changed
-            textBoxEmail.TextChanged += textBoxEmail_TextChanged;
+            TextBoxEmail.TextChanged += textBoxEmail_TextChanged;
         }
 
         private async void buttonSignUp_Click(object sender, EventArgs e)
         {
-            string email = textBoxEmail.Text;
-            string password = textBoxPassword.Text;
-            string role = comboBoxRole.SelectedItem.ToString();
+            string email = TextBoxEmail.Text;
+            string password = TextBoxPassword.Text;
+            string role = ComboBoxRole.SelectedItem.ToString();
 
             // Validasi input email, password, dan role di sini jika diperlukan
             if (IsValidPassword(password) && IsValidEmail(email))
@@ -74,16 +74,16 @@ namespace GUI
 
         private void TextBoxPassword_TextChanged(object sender, EventArgs e)
         {
-            string password = textBoxPassword.Text;
+            string password = TextBoxPassword.Text;
             if (IsValidPassword(password))
             {
-                labelPasswordCheck.Text = "Valid Password";
-                labelPasswordCheck.ForeColor = Color.Green;
+                LabelPasswordCheck.Text = "Valid Password";
+                LabelPasswordCheck.ForeColor = Color.Green;
             }
             else
             {
-                labelPasswordCheck.Text = "Password must include symbols and numbers";
-                labelPasswordCheck.ForeColor = Color.Red;
+                LabelPasswordCheck.Text = "Password must include symbols and numbers";
+                LabelPasswordCheck.ForeColor = Color.Red;
             }
         }
 
@@ -97,11 +97,7 @@ namespace GUI
             return email.Contains("@gmail.com");
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void label5_Click(object sender, EventArgs e)
+        private void SwitchLoginPage_Click(object sender, EventArgs e)
         {
             Login loginGui = new Login();
             loginGui.ShowDialog();
@@ -110,16 +106,16 @@ namespace GUI
 
         private void textBoxEmail_TextChanged(object sender, EventArgs e)
         {
-            string email = textBoxEmail.Text;
+            string email = TextBoxEmail.Text;
             if (IsValidEmail(email))
             {
-                labelEmailCheck.Text = "Valid Email";
-                labelEmailCheck.ForeColor = Color.Green;
+                LabelEmailCheck.Text = "Valid Email";
+                LabelEmailCheck.ForeColor = Color.Green;
             }
             else
             {
-                labelEmailCheck.Text = "Email harus menggunakan domain";
-                labelEmailCheck.ForeColor = Color.Red;
+                LabelEmailCheck.Text = "Email harus menggunakan domain";
+                LabelEmailCheck.ForeColor = Color.Red;
             }
         }
 
@@ -131,6 +127,11 @@ namespace GUI
         private void guna2Button5_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void SignUp_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
