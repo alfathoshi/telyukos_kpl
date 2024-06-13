@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
+            namaKos = new TextBox();
             rangeHarga = new ComboBox();
-            button1 = new Button();
+            cariButton = new Button();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
@@ -39,13 +39,13 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // textBox1
+            // namaKos
             // 
-            textBox1.Location = new Point(1036, 213);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(312, 61);
-            textBox1.TabIndex = 18;
+            namaKos.Location = new Point(1036, 213);
+            namaKos.Multiline = true;
+            namaKos.Name = "namaKos";
+            namaKos.Size = new Size(312, 61);
+            namaKos.TabIndex = 18;
             // 
             // rangeHarga
             // 
@@ -56,14 +56,15 @@
             rangeHarga.Size = new Size(312, 38);
             rangeHarga.TabIndex = 17;
             // 
-            // button1
+            // cariButton
             // 
-            button1.Location = new Point(1217, 284);
-            button1.Name = "button1";
-            button1.Size = new Size(131, 49);
-            button1.TabIndex = 16;
-            button1.Text = "Cari";
-            button1.UseVisualStyleBackColor = true;
+            cariButton.Location = new Point(1217, 284);
+            cariButton.Name = "cariButton";
+            cariButton.Size = new Size(131, 49);
+            cariButton.TabIndex = 16;
+            cariButton.Text = "Cari";
+            cariButton.UseVisualStyleBackColor = true;
+            cariButton.Click += cariButton_Click;
             // 
             // label4
             // 
@@ -119,9 +120,9 @@
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(textBox1);
+            Controls.Add(namaKos);
             Controls.Add(rangeHarga);
-            Controls.Add(button1);
+            Controls.Add(cariButton);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -135,9 +136,9 @@
         }
 
         #endregion
-        private TextBox textBox1;
+        private TextBox namaKos;
         private ComboBox rangeHarga;
-        private Button button1;
+        private Button cariButton;
         private Label label4;
         private Label label3;
         private Label label2;

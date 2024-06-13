@@ -90,7 +90,7 @@
             button1.TabIndex = 5;
             button1.Text = "Cari";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            button1.Click += cariButton;
             // 
             // rangeHarga
             // 
@@ -146,7 +146,7 @@
             button2.TabIndex = 8;
             button2.Text = "Sewa";
             button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            button2.Click += reservasiButton;
             // 
             // Homepage
             // 

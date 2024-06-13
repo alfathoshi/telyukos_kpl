@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using System.Net.Http.Json;
+using GUI.Owner;
+using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using System.Net.Http.Json;
 using telyukos.Model;
@@ -48,6 +50,18 @@ namespace GUI.Renter
             if (response.IsSuccessStatusCode)
             {
                 MessageBox.Show("Profile Berhasil Diubah", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Akun = user;
+
+                // Close the current form and open a new instance with updated user data
+                var parentForm = this.FindForm(); // Find the parent form
+                if (parentForm != null)
+                {
+                    parentForm.Close(); // Close the parent form
+                }
+
+                // Open a new instance of the form with the updated user data
+                RenterHome renterHome = new RenterHome(Akun);
+                renterHome.Show();
             }
             //kondisi jika profile email saat login harus sesuai dengan saat sign up , agar dapat masuk kedalam profile 
             else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)

@@ -144,10 +144,10 @@ namespace GUI.Owner
                 MessageBox.Show($"Kos dengan nama {namaKos} tidak ditemukan", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            CariKos(textBox1.Text);
 
+        private void cariButton_Click(object sender, EventArgs e)
+        {
+            CariKos(namaKos.Text);
         }
     }
 }

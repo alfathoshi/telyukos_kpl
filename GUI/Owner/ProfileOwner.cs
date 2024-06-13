@@ -1,4 +1,5 @@
 ﻿using System.Net.Http.Json;
+using System.Net.Http.Json;
 using telyukos.Model;
 using telyukos.State;
 
@@ -6,7 +7,7 @@ namespace GUI.Owner
 {
     public partial class ProfileOwner : UserControl
     {
-        private User Akun;
+        private static User Akun;
         private HttpClient httpClient;
         public ProfileOwner(User user)
         {
@@ -76,6 +77,19 @@ namespace GUI.Owner
             if (response.IsSuccessStatusCode)
             {
                 MessageBox.Show("Profile Berhasil Diubah", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Akun = user;
+
+                // Close the current form and open a new instance with updated user data
+                var parentForm = this.FindForm(); // Find the parent form
+                if (parentForm != null)
+                {
+                    parentForm.Close(); // Close the parent form
+                }
+
+                // Open a new instance of the form with the updated user data
+                OwnerHome ownerHome = new OwnerHome(Akun);
+                ownerHome.Show();
+
             }
             //kondisi jika profile email saat login harus sesuai dengan saat sign up , agar dapat masuk kedalam profile 
             else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
@@ -97,5 +111,9 @@ namespace GUI.Owner
             forgotPassword.Show();
         }
 
+        private void EditEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
