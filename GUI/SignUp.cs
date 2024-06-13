@@ -12,7 +12,8 @@ namespace GUI
     public partial class SignUp : Form
     {
         private HttpClient httpClient;
-
+        UserFactory renter = new RenterFactory();
+        UserFactory owner = new OwnerFactory();
         public SignUp()
         {
             InitializeComponent();
@@ -35,7 +36,14 @@ namespace GUI
             // Validasi input email, password, dan role di sini jika diperlukan
             if (IsValidPassword(password) && IsValidEmail(email))
             {
-                User newUser = new User { Email = email, Password = password, Role = role };
+                User newUser = new User();
+                if (role == "Pemilik")
+                {
+                     newUser = owner.CreateUser(email, password, role);
+                } else
+                {
+                     newUser = renter.CreateUser(email, password, role);
+                }
                 HttpResponseMessage response = await httpClient.PostAsJsonAsync("api/Auth/register", newUser);
 
                 if (response.IsSuccessStatusCode)
