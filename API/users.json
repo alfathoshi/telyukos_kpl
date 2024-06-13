@@ -1,1 +1,97 @@
-[{"Email":"owner","Password":"4c1029697ee358715d3a14a2add817c4b01651440de808371f78165ac90dc581","Role":"Pemilik","Kos":[{"Id":1,"Nama":"Rajawali","Harga":10000000,"Alamat":"Sukabirus","Kapasitas":50,"Status":0,"Penyewa":null},{"Id":2,"Nama":"Cigan","Harga":15000000,"Alamat":"Ciganitri","Kapasitas":10,"Status":0,"Penyewa":null}]},{"Email":"renter","Password":"30750037dbf8e478904846489a8d99dc44f6ae532dc3e8ea6418519019538ac3","Role":"Penyewa","Kos":[{"Id":6,"Nama":"Mentari Ilmu","Harga":1500000,"Alamat":"Depan MSU","Kapasitas":25,"Status":0,"Penyewa":null}]},{"Email":"tes@gmail.com","Password":"74815d5f000d01ee57202e2dd338e55a2e6612fb52d30fbd9f02dda4992287e0","Role":"Penyewa","Kos":null},{"Email":"wildan@gmail.com","Password":"3e9e8c26e74c1c0ac9bed3232dbdac2fa178dfce6175844df9d8306b4845486f","Role":"Pemilik","Kos":[{"Id":0,"Nama":"Syamsul Ulum","Harga":1000000,"Alamat":"jalan sukabirus","Kapasitas":13,"Status":0,"Penyewa":null}]},{"Email":"star@gmail.com","Password":"2aa7296ca2b8aff3119ed8ae1c401b2e627018f0a7ec937923f4df3fcdb10fe6","Role":"Penyewa","Kos":null},{"Email":"asep@gmail.com","Password":"fdc72fbf807c88503eb091cd59084cc7bfec49b3b86d5086e30abde7410df097","Role":"Pemilik","Kos":null}]
+[
+  {
+    "Email": "owner",
+    "Password": "4c1029697ee358715d3a14a2add817c4b01651440de808371f78165ac90dc581",
+    "Role": "Pemilik",
+    "Kos": [
+      {
+        "Id": 1,
+        "Nama": "Rajawali",
+        "Harga": 10000000,
+        "Alamat": "Sukabirus",
+        "Kapasitas": 50,
+        "Status": 0,
+        "Penyewa": null
+      },
+      {
+        "Id": 2,
+        "Nama": "Cigan",
+        "Harga": 15000000,
+        "Alamat": "Ciganitri",
+        "Kapasitas": 10,
+        "Status": 0,
+        "Penyewa": null
+      }
+    ]
+  },
+  {
+    "Email": "renter",
+    "Password": "30750037dbf8e478904846489a8d99dc44f6ae532dc3e8ea6418519019538ac3",
+    "Role": "Penyewa",
+    "Kos": [
+      {
+        "Id": 6,
+        "Nama": "Mentari Ilmu",
+        "Harga": 1500000,
+        "Alamat": "Depan MSU",
+        "Kapasitas": 25,
+        "Status": 0,
+        "Penyewa": null
+      }
+    ]
+  },
+  {
+    "Email": "tes@gmail.com",
+    "Password": "74815d5f000d01ee57202e2dd338e55a2e6612fb52d30fbd9f02dda4992287e0",
+    "Role": "Penyewa",
+    "Kos": null
+  },
+  {
+    "Email": "wildan@gmail.com",
+    "Password": "3e9e8c26e74c1c0ac9bed3232dbdac2fa178dfce6175844df9d8306b4845486f",
+    "Role": "Pemilik",
+    "Kos": [
+      {
+        "Id": 0,
+        "Nama": "Syamsul Ulum",
+        "Harga": 1000000,
+        "Alamat": "Jl. Sukabirus",
+        "Kapasitas": 13,
+        "Status": 0,
+        "Penyewa": null
+      }
+    ]
+  },
+  {
+    "Email": "star@gmail.com",
+    "Password": "2aa7296ca2b8aff3119ed8ae1c401b2e627018f0a7ec937923f4df3fcdb10fe6",
+    "Role": "Penyewa",
+    "Kos": [
+      {
+        "Id": 4,
+        "Nama": "Villa Permai",
+        "Harga": 8000000,
+        "Alamat": "Gang Selamet, Sukabirus",
+        "Kapasitas": 30,
+        "Status": 0,
+        "Penyewa": null
+      }
+    ]
+  },
+  {
+    "Email": "asep@gmail.com",
+    "Password": "fdc72fbf807c88503eb091cd59084cc7bfec49b3b86d5086e30abde7410df097",
+    "Role": "Pemilik",
+    "Kos": [
+      {
+        "Id": 5,
+        "Nama": "Kos Asep",
+        "Harga": 9000000,
+        "Alamat": "Baleendah",
+        "Kapasitas": 25,
+        "Status": 0,
+        "Penyewa": null
+      }
+    ]
+  }
+]
