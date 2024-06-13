@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.Owner;
+using System;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Windows.Forms;
@@ -11,7 +12,7 @@ namespace GUI
     {
         private readonly HttpClient _httpClient;
         private readonly User _akun;
-
+        Kos[] listKos;
         public event EventHandler KosAdded;
 
         public AddKos(User akun)
@@ -35,16 +36,31 @@ namespace GUI
         {
             if (IsValidInput(out string errorMessage))
             {
-                Kos newKos = CreateKosFromInput();
+                Kos newKos = await CreateKosFromInputAsync();
 
                 try
                 {
                     HttpResponseMessage response = await _httpClient.PostAsJsonAsync("api/Kos", newKos);
+                    HttpResponseMessage resp = await _httpClient.PutAsJsonAsync($"api/Auth/{_akun.Email}", newKos);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        // Add user to the list of tenants
+                        newKos.Penyewa.Add(_akun.Email);
+                        Kos updatedKos = newKos;
+                        response = await _httpClient.PutAsJsonAsync($"api/Kos/{newKos.Id}", updatedKos);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Gagal menambahkan kos");
+                    }
+
                     response.EnsureSuccessStatusCode();
 
                     KosAdded?.Invoke(this, EventArgs.Empty); // Trigger event
 
                     MessageBox.Show("Kos berhasil ditambahkan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MyKosOwner myKos = new MyKosOwner(_akun);
+                    await myKos.loadDataKos();
                     Close();
                 }
                 catch (Exception ex)
@@ -86,16 +102,22 @@ namespace GUI
             return true;
         }
 
-        private Kos CreateKosFromInput()
+        private async Task<Kos> CreateKosFromInputAsync()
         {
+            HttpResponseMessage daftarKos = await _httpClient.GetAsync("api/Kos");
+            daftarKos.EnsureSuccessStatusCode();
+            listKos = await daftarKos.Content.ReadFromJsonAsync<Kos[]>();
+
             return new Kos
             {
+                Id = listKos.Count() + 1,
                 Nama = NamaKosBox.Text,
                 Harga = int.Parse(HargaBox.Text),
                 Alamat = AlamatBox.Text,
                 Kapasitas = int.Parse(KapasitasBox.Text),
                 Status = KosStatus.RentsStatus.AVAIL,
                 Penyewa = new List<string>()
+
             };
         }
     }

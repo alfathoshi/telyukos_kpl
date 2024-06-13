@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             textBox1 = new TextBox();
-            comboBox1 = new ComboBox();
+            rangeHarga = new ComboBox();
             button1 = new Button();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            selectedKosDetailsLabel = new Label();
             label1 = new Label();
             dataGridView1 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -48,14 +47,14 @@
             textBox1.Size = new Size(312, 61);
             textBox1.TabIndex = 18;
             // 
-            // comboBox1
+            // rangeHarga
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "< 5,000,000", "5,000,000 - 10,000,000", "> 10,000,000" });
-            comboBox1.Location = new Point(1036, 518);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(312, 38);
-            comboBox1.TabIndex = 17;
+            rangeHarga.FormattingEnabled = true;
+            rangeHarga.Items.AddRange(new object[] { "All", "< 5,000,000", "5,000,000 - 10,000,000", "> 10,000,000" });
+            rangeHarga.Location = new Point(1036, 518);
+            rangeHarga.Name = "rangeHarga";
+            rangeHarga.Size = new Size(312, 38);
+            rangeHarga.TabIndex = 17;
             // 
             // button1
             // 
@@ -96,15 +95,6 @@
             label2.TabIndex = 12;
             label2.Text = "Cari Kos";
             // 
-            // selectedKosDetailsLabel
-            // 
-            selectedKosDetailsLabel.AutoSize = true;
-            selectedKosDetailsLabel.Font = new Font("Segoe UI Semibold", 14.1428576F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            selectedKosDetailsLabel.Location = new Point(341, 579);
-            selectedKosDetailsLabel.Name = "selectedKosDetailsLabel";
-            selectedKosDetailsLabel.Size = new Size(0, 45);
-            selectedKosDetailsLabel.TabIndex = 13;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -130,12 +120,11 @@
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(textBox1);
-            Controls.Add(comboBox1);
+            Controls.Add(rangeHarga);
             Controls.Add(button1);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(selectedKosDetailsLabel);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
             Name = "HomepageOwner";
@@ -147,12 +136,11 @@
 
         #endregion
         private TextBox textBox1;
-        private ComboBox comboBox1;
+        private ComboBox rangeHarga;
         private Button button1;
         private Label label4;
         private Label label3;
         private Label label2;
-        private Label selectedKosDetailsLabel;
         private Label label1;
         private DataGridView dataGridView1;
     }

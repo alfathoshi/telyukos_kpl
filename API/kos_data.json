@@ -7,7 +7,6 @@
     "Kapasitas": 50,
     "Status": 0,
     "Penyewa": [
-      "renter"
     ]
   },
   {
@@ -36,46 +35,6 @@
     "Harga": 8000000,
     "Alamat": "Gang Selamet, Sukabirus",
     "Kapasitas": 30,
-    "Status": 0,
-    "Penyewa": [
-    ]
-  },
-  {
-    "Id": 5,
-    "Nama": "NN",
-    "Harga": 3000000,
-    "Alamat": "Gang Kotaku, Sukabirus",
-    "Kapasitas": 40,
-    "Status": 0,
-    "Penyewa": [
-    ]
-  },
-  {
-    "Id": 6,
-    "Nama": "Mentari Ilmu",
-    "Harga": 1500000,
-    "Alamat": "Depan MSU",
-    "Kapasitas": 25,
-    "Status": 0,
-    "Penyewa": [
-    ]
-  },
-  {
-    "Id": 7,
-    "Nama": "Tes",
-    "Harga": 10000000,
-    "Alamat": "Sukabirus",
-    "Kapasitas": 25,
-    "Status": 0,
-    "Penyewa": [
-    ]
-  },
-  {
-    "Id": 8,
-    "Nama": "Coba",
-    "Harga": 10000000,
-    "Alamat": "Sukabirus",
-    "Kapasitas": 50,
     "Status": 0,
     "Penyewa": [
     ]

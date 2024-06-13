@@ -9,6 +9,7 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using telyukos;
 using telyukos.Model;
 using telyukos_library.Searching;
 using User = telyukos.Model.User;
@@ -20,13 +21,15 @@ namespace GUI.Owner
     {
         private HttpClient httpClient;
         private HttpResponseMessage resp;
-        private static User akun;
+        private User akun;
         Kos[] listKos;
         Kos selectedKos;
+        apiClient apiClient;
         public MyKosOwner(User user)
         {
             InitializeComponent();
             httpClient = new HttpClient();
+            apiClient = new apiClient();
             httpClient.BaseAddress = new Uri("https://localhost:7126/");
             akun = user;
             loadDataKos();
@@ -65,7 +68,7 @@ namespace GUI.Owner
                 }
                 selectedKos = selected;
             }
-           
+
         }
 
         private void DataGridView1_SizeChanged(object sender, EventArgs e)
@@ -105,6 +108,111 @@ namespace GUI.Owner
             catch (Exception ex)
             {
                 Console.WriteLine("Terjadi kesalahan: " + ex.Message);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddKos addKosGui = new AddKos(akun);
+            addKosGui.ShowDialog();
+        }
+
+        private async void EditButton_Click(object sender, EventArgs e)
+        {
+            //Dengan asumsi variable baru ditampilkan di textfield
+            string newNama = NamaText.Text;
+            string newHargaString = HargaText.Text;
+            string newAlamat = AlamatText.Text;
+            string newKapasitasString = KapasitasText.Text;
+            var email = akun.Email;
+
+            // kondisi untuk mengubah harga dan kapasitas string menjadi bilangan bulat/int
+            if (!int.TryParse(newHargaString, out int newHarga))
+            {
+                MessageBox.Show("Harga harus berupa angka.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!int.TryParse(newKapasitasString, out int newKapasitas))
+            {
+                MessageBox.Show("Kapasitas harus berupa angka.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Buat objek User untuk mengubah password dan email
+            Kos updatedKos = new Kos { Id = selectedKos.Id, Nama = newNama, Harga = newHarga, Alamat = newAlamat, Kapasitas = newKapasitas };
+
+            // Buat permintaan PUT untuk mengubah password dan email
+            HttpResponseMessage response = await httpClient.PutAsJsonAsync($"api/Auth/update-kos/{email}", updatedKos);
+
+            if (response.IsSuccessStatusCode)
+            {
+                //kondisi jika data berhasil diupdate
+                MessageBox.Show("Data Berhasil Terupdate", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+            {
+                //kondisi jika nama kos tidak sesuai dengan saat daftar kos
+                MessageBox.Show("Nama Kos tidak sesuai", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                //kondisi jika email dan data kos tidak valid
+                MessageBox.Show("Gagal mengubah data kos :" + response.StatusCode, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            loadDataKos();
+        }
+
+        private async void HapusButton_Click(object sender, EventArgs e)
+        {
+            // Periksa apakah ada baris yang dipilih di DataGridView
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                //untuk ambil baris yang dipilih
+
+                //Ambil nama kos dari sel pertama
+                var kosNama = selectedKos.Nama;
+                // Ambil email pengguna dari objek Akun
+                var email = akun.Email;
+
+                // Periksa apakah nama kos valid
+                if (string.IsNullOrEmpty(kosNama))
+                {
+                    MessageBox.Show("Kos tidak valid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Tampilkan kotak dialog konfirmasi untuk penghapusan 
+                var confirmResult = MessageBox.Show("Apakah Anda yakin ingin menghapus kos ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                // Jika pengguna mengkonfirmasi penghapusan
+                if (confirmResult == DialogResult.Yes)
+                {
+                    // Kirim permintaan DELETE untuk menghapus data kos
+                    HttpResponseMessage response = await httpClient.DeleteAsync($"api/Auth/delete-kos/{email}/{kosNama}");
+                    await apiClient.DeleteKos(httpClient, selectedKos.Id);
+                    // Periksa apakah permintaan berhasil
+                    if (response.IsSuccessStatusCode)
+                    {
+                        MessageBox.Show("Kos berhasil dihapus.", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //update data grid table view setelah dihapus
+                        await loadDataKos();
+                    }
+                    else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                    {
+                        //kondisi jika data kos yang ingin dihapus tidak sesuai
+                        MessageBox.Show("Kos tidak ditemukan.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        //kondisi jika data kos dan email tidak valid 
+                        MessageBox.Show("Gagal menghapus kos: " + response.StatusCode, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                //kondisi jika belum memilih table grid 
+                MessageBox.Show("Pilih kos yang ingin dihapus.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

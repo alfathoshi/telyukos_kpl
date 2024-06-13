@@ -20,9 +20,45 @@ namespace GUI.Renter
             akun = user;
             loadDataKos();
             InitializeDataGridView();
+            InitializeComboBox();
             dataGridView1.SizeChanged += DataGridView1_SizeChanged;
             dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;
         }
+
+        private void InitializeComboBox()
+        {
+            // Populate the ComboBox with price ranges
+
+            rangeHarga.SelectedIndex = 0; // Set default selection to "All"
+
+            rangeHarga.SelectedIndexChanged += ComboBoxPriceRange_SelectedIndexChanged;
+        }
+
+        private void ComboBoxPriceRange_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedRange = rangeHarga.SelectedItem.ToString();
+            IEnumerable<Kos> filteredKosList;
+
+            switch (selectedRange)
+            {
+                case "< 5,000,000":
+                    filteredKosList = listKos.Where(k => k.Harga >= 0 && k.Harga <= 5000000);
+                    break;
+                case "5,000,000 - 10,000,000":
+                    filteredKosList = listKos.Where(k => k.Harga >= 5000001 && k.Harga <= 10000000);
+                    break;
+                case "> 10,000,000":
+                    filteredKosList = listKos.Where(k => k.Harga >= 10000001);
+                    break;
+                default:
+                    filteredKosList = listKos; // Show all if "All" is selected
+                    break;
+            }
+
+            // Bind the filtered data to the DataGridView
+            dataGridView1.DataSource = filteredKosList.ToList();
+        }
+
 
         private void InitializeDataGridView()
         {
@@ -118,56 +154,6 @@ namespace GUI.Renter
             }
         }
 
-        /*public void filterKos()
-        {
-            int minPrice;
-            bool validInputMinPrice = false;
-            do
-            {
-                Console.Write("Masukkan harga minimum: ");
-                minPrice = Convert.ToInt32(Console.ReadLine());
-
-                // Memeriksa apakah harga minimum memenuhi kontrak
-                validInputMinPrice = FilterContract.CheckContract(minPrice, 100000, 15000000);
-
-                if (!validInputMinPrice)
-                {
-                    Console.WriteLine("Input tidak sesuai kontrak. Harga minimal harus lebih dari atau sama dengan Rp. 100.000");
-                }
-            } while (!validInputMinPrice);
-
-            int maxPrice;
-            bool validInputMaxPrice = false;
-            do
-            {
-                Console.Write("Masukkan harga maksimum: ");
-                maxPrice = Convert.ToInt32(Console.ReadLine());
-
-                // Memeriksa apakah harga maksimum memenuhi kontrak
-                validInputMaxPrice = FilterContract.CheckContract(maxPrice, 100000, 15000000);
-
-                if (!validInputMaxPrice)
-                {
-                    Console.WriteLine("Input tidak sesuai kontrak. Harga maksimal harus kurang dari atau sama dengan Rp. 15.000.000");
-                }
-            } while (!validInputMaxPrice);
-
-            var filteredKos = FilterKosByPrice(filterKos, minPrice, maxPrice);
-
-            if (filteredKos.Any())
-            {
-                Console.WriteLine($"Kos dengan harga antara {minPrice} dan {maxPrice} ditemukan:");
-                foreach (var kos in filteredKos)
-                {
-                    Console.WriteLine($"ID: {kos.Id},  Nama: {kos.Nama}, Harga: {kos.Harga}, Alamat: {kos.Alamat}");
-                }
-            }
-            else
-            {
-                Console.WriteLine($"Tidak ada kos dengan harga antara {minPrice} dan {maxPrice} ditemukan.");
-            }
-        }*/
-
         public async Task reservasiAsync(Kos selectedKos)
         {
             if (selectedKos == null)
@@ -236,25 +222,9 @@ namespace GUI.Renter
             }
         }
 
-
-        private void Homepage_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             CariKos(textBox1.Text);
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
         }
 

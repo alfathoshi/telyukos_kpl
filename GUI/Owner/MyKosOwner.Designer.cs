@@ -76,6 +76,7 @@
             HapusButton.TabIndex = 28;
             HapusButton.Text = "Delete";
             HapusButton.UseVisualStyleBackColor = false;
+            HapusButton.Click += HapusButton_Click;
             // 
             // EditButton
             // 
@@ -88,6 +89,7 @@
             EditButton.TabIndex = 27;
             EditButton.Text = "Edit";
             EditButton.UseVisualStyleBackColor = false;
+            EditButton.Click += EditButton_Click;
             // 
             // label6
             // 
@@ -176,12 +178,13 @@
             // 
             button1.BackColor = Color.Firebrick;
             button1.ForeColor = Color.White;
-            button1.Location = new Point(1001, 600);
+            button1.Location = new Point(958, 628);
             button1.Name = "button1";
-            button1.Size = new Size(165, 54);
+            button1.Size = new Size(344, 70);
             button1.TabIndex = 29;
             button1.Text = "Tambah Kos";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // MyKosOwner
             // 

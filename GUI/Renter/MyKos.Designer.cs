@@ -38,7 +38,7 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            button1 = new Button();
+            label1 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -46,17 +46,19 @@
             // 
             BatalSewaButton.BackColor = Color.Firebrick;
             BatalSewaButton.ForeColor = Color.White;
-            BatalSewaButton.Location = new Point(1155, 571);
+            BatalSewaButton.Location = new Point(1155, 637);
             BatalSewaButton.Margin = new Padding(4);
             BatalSewaButton.Name = "BatalSewaButton";
             BatalSewaButton.Size = new Size(160, 58);
             BatalSewaButton.TabIndex = 8;
             BatalSewaButton.Text = "Batal Sewa";
             BatalSewaButton.UseVisualStyleBackColor = false;
+            BatalSewaButton.Click += BatalSewaButton_Click;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(242, 239, 234);
+            panel1.Controls.Add(label1);
             panel1.Controls.Add(KapasitasLabel);
             panel1.Controls.Add(AlamatLabel);
             panel1.Controls.Add(HargaLabel);
@@ -86,7 +88,7 @@
             // 
             AlamatLabel.AutoSize = true;
             AlamatLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            AlamatLabel.Location = new Point(184, 363);
+            AlamatLabel.Location = new Point(184, 422);
             AlamatLabel.Margin = new Padding(4, 0, 4, 0);
             AlamatLabel.Name = "AlamatLabel";
             AlamatLabel.Size = new Size(103, 38);
@@ -97,7 +99,7 @@
             // 
             HargaLabel.AutoSize = true;
             HargaLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            HargaLabel.Location = new Point(184, 208);
+            HargaLabel.Location = new Point(184, 302);
             HargaLabel.Margin = new Padding(4, 0, 4, 0);
             HargaLabel.Name = "HargaLabel";
             HargaLabel.Size = new Size(91, 38);
@@ -108,7 +110,7 @@
             // 
             NamaLabel.AutoSize = true;
             NamaLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            NamaLabel.Location = new Point(184, 55);
+            NamaLabel.Location = new Point(184, 183);
             NamaLabel.Margin = new Padding(4, 0, 4, 0);
             NamaLabel.Name = "NamaLabel";
             NamaLabel.Size = new Size(90, 38);
@@ -130,7 +132,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F);
-            label4.Location = new Point(25, 363);
+            label4.Location = new Point(25, 422);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(109, 38);
@@ -141,7 +143,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F);
-            label3.Location = new Point(25, 208);
+            label3.Location = new Point(25, 302);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(97, 38);
@@ -152,24 +154,22 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(25, 55);
+            label2.Location = new Point(25, 183);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(147, 38);
             label2.TabIndex = 0;
             label2.Text = "Nama Kos:";
             // 
-            // button1
+            // label1
             // 
-            button1.BackColor = Color.Firebrick;
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(1155, 637);
-            button1.Margin = new Padding(4);
-            button1.Name = "button1";
-            button1.Size = new Size(160, 58);
-            button1.TabIndex = 6;
-            button1.Text = "Home";
-            button1.UseVisualStyleBackColor = false;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15.8571434F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(25, 64);
+            label1.Name = "label1";
+            label1.Size = new Size(198, 50);
+            label1.TabIndex = 8;
+            label1.Text = "Detail Kos\r\n";
             // 
             // My_Kos
             // 
@@ -177,7 +177,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(BatalSewaButton);
             Controls.Add(panel1);
-            Controls.Add(button1);
             Name = "My_Kos";
             Size = new Size(1396, 765);
             panel1.ResumeLayout(false);
@@ -197,6 +196,6 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private Button button1;
+        private Label label1;
     }
 }

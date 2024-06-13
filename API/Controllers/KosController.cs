@@ -76,8 +76,8 @@ namespace API.Controllers
             // Precondition: Kos tidak boleh null
             System.Diagnostics.Debug.Assert(kos != null);
 
-         /*   // Precondition: ID harus positif
-            System.Diagnostics.Debug.Assert(kos.Id > 0);*/
+            /*   // Precondition: ID harus positif
+               System.Diagnostics.Debug.Assert(kos.Id > 0);*/
 
             // Precondition: Nama tidak boleh kosong
             System.Diagnostics.Debug.Assert(!string.IsNullOrWhiteSpace(kos.Nama));
@@ -168,6 +168,29 @@ namespace API.Controllers
             SaveKosListToFile(); // Simpan data ke file setelah dihapus
             return Ok("Kos berhasil dihapus");
         }
+        [HttpDelete("{email}/{namaKos}")]
+        public IActionResult DeleteUserfromKos(string email, string namaKos)
+        {
+            // Ensure email is not null or empty
+            System.Diagnostics.Debug.Assert(!string.IsNullOrEmpty(email));
+
+            // Find the kos by namaKos
+            var existingKos = _kosList.FirstOrDefault(k => k.Nama == namaKos);
+            if (existingKos == null)
+            {
+                return NotFound("Kos tidak ditemukan");
+            }
+
+            // Find the user by email and remove it
+
+            existingKos.Penyewa.Remove(email);
+
+            // Save the updated list to file
+            SaveKosListToFile();
+
+            return Ok("Penyewa berhasil dihapus");
+        }
+
 
         private void SaveKosListToFile()
         {

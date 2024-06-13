@@ -47,6 +47,7 @@ namespace GUI
             {
                 MessageBox.Show("Gagal mengubah password: " + response.StatusCode, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            Close();
         }
 
 
