@@ -25,29 +25,24 @@ namespace GUI
             userControl.BringToFront();
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void homepageTab(object sender, EventArgs e)
         {
             Homepage home = new Homepage(akun);
             addUserControl(home);
         }
 
-        private void guna2Button3_Click(object sender, EventArgs e)
+        private void myKosTab(object sender, EventArgs e)
         {
             My_Kos mykos = new My_Kos(akun);
             addUserControl(mykos);
         }
 
-        private void guna2Button4_Click(object sender, EventArgs e)
+        private void profileTab(object sender, EventArgs e)
         {
             Profile profile = new Profile(akun);
             addUserControl(profile);
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Dispose();
-        }
-        private void guna2Button5_Click(object sender, EventArgs e)
+        private void closeApp(object sender, EventArgs e)
         {
             Dispose();
         }

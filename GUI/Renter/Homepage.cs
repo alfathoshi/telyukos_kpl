@@ -222,13 +222,13 @@ namespace GUI.Renter
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void cariButton(object sender, EventArgs e)
         {
             CariKos(textBox1.Text);
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void reservasiButton(object sender, EventArgs e)
         {
             reservasiAsync(selectedKos);
         }

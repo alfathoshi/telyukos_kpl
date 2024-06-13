@@ -88,7 +88,7 @@
             guna2Button4.Size = new Size(315, 83);
             guna2Button4.TabIndex = 3;
             guna2Button4.Text = "Profile";
-            guna2Button4.Click += guna2Button4_Click;
+            guna2Button4.Click += profileTab;
             // 
             // guna2Button3
             // 
@@ -113,7 +113,7 @@
             guna2Button3.Size = new Size(315, 79);
             guna2Button3.TabIndex = 3;
             guna2Button3.Text = "My Kos";
-            guna2Button3.Click += guna2Button3_Click;
+            guna2Button3.Click += myKosTab;
             // 
             // guna2Button1
             // 
@@ -140,7 +140,7 @@
             guna2Button1.Size = new Size(315, 79);
             guna2Button1.TabIndex = 3;
             guna2Button1.Text = "Homepage";
-            guna2Button1.Click += guna2Button1_Click;
+            guna2Button1.Click += homepageTab;
             // 
             // guna2PictureBox1
             // 
@@ -183,7 +183,7 @@
             guna2Button5.Size = new Size(113, 70);
             guna2Button5.TabIndex = 9;
             guna2Button5.Text = "X";
-            guna2Button5.Click += guna2Button5_Click;
+            guna2Button5.Click += closeApp;
             // 
             // tableLayoutPanel1
             // 

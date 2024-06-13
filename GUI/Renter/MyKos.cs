@@ -43,7 +43,6 @@ namespace GUI.Renter
             }
         }
 
-
         private async void BatalSewaButton_Click(object sender, EventArgs e)
         {
             // Pastikan Akun dan Kos diset dengan detail yang benar
