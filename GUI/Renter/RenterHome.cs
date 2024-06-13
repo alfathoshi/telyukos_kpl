@@ -31,8 +31,6 @@ namespace GUI
             addUserControl(home);
         }
 
-
-
         private void guna2Button3_Click(object sender, EventArgs e)
         {
             My_Kos mykos = new My_Kos(akun);
@@ -49,17 +47,6 @@ namespace GUI
         {
             Dispose();
         }
-
-        private void guna2PictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void guna2Button5_Click(object sender, EventArgs e)
         {
             Dispose();

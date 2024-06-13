@@ -33,7 +33,7 @@
             label2 = new Label();
             label3 = new Label();
             button1 = new Button();
-            comboBox1 = new ComboBox();
+            rangeHarga = new ComboBox();
             textBox1 = new TextBox();
             label4 = new Label();
             label5 = new Label();
@@ -51,7 +51,6 @@
             dataGridView1.RowHeadersWidth = 72;
             dataGridView1.Size = new Size(940, 402);
             dataGridView1.TabIndex = 2;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // label1
             // 
@@ -82,7 +81,6 @@
             label3.Size = new Size(167, 45);
             label3.TabIndex = 4;
             label3.Text = "Sortir Kos";
-            label3.Click += label3_Click;
             // 
             // button1
             // 
@@ -94,14 +92,14 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // comboBox1
+            // rangeHarga
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "< 5,000,000", "5,000,000 - 10,000,000", "> 10,000,000" });
-            comboBox1.Location = new Point(1036, 506);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(312, 38);
-            comboBox1.TabIndex = 6;
+            rangeHarga.FormattingEnabled = true;
+            rangeHarga.Items.AddRange(new object[] { "All", "< 5,000,000", "5,000,000 - 10,000,000", "> 10,000,000" });
+            rangeHarga.Location = new Point(1036, 506);
+            rangeHarga.Name = "rangeHarga";
+            rangeHarga.Size = new Size(312, 38);
+            rangeHarga.TabIndex = 6;
             // 
             // textBox1
             // 
@@ -120,7 +118,6 @@
             label4.Size = new Size(89, 28);
             label4.TabIndex = 4;
             label4.Text = "by harga";
-            label4.Click += label3_Click;
             // 
             // label5
             // 
@@ -157,7 +154,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(button2);
             Controls.Add(textBox1);
-            Controls.Add(comboBox1);
+            Controls.Add(rangeHarga);
             Controls.Add(button1);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -168,7 +165,6 @@
             Controls.Add(dataGridView1);
             Name = "Homepage";
             Size = new Size(1396, 765);
-            Load += Homepage_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -181,7 +177,7 @@
         private Label label2;
         private Label label3;
         private Button button1;
-        private ComboBox comboBox1;
+        private ComboBox rangeHarga;
         private TextBox textBox1;
         private Label label4;
         private Label label5;

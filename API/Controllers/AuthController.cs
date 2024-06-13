@@ -1,4 +1,4 @@
-﻿ using Microsoft.AspNetCore.Identity.Data;
+﻿using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -228,6 +228,18 @@ namespace API.Controllers
             {
                 existingUser.Kos = new List<Kos>();
             }
+            var emptyId = _kos.FirstOrDefault(k => k.Id == 0);
+            if (emptyId != null)
+            {
+                // Gunakan ID yang kosong
+                kos.Id = emptyId.Id;
+                emptyId.Nama = kos.Nama;
+                emptyId.Harga = kos.Harga;
+                emptyId.Alamat = kos.Alamat;
+                emptyId.Status = kos.Status;
+                emptyId.Kapasitas = kos.Kapasitas;
+                emptyId.Penyewa = kos.Penyewa;
+            }
             kos.Penyewa = null;
             existingUser.Kos.Add(kos);
             SaveUsers(); // Simpan data ke file setelah diperbarui
@@ -286,8 +298,6 @@ namespace API.Controllers
 
             }
             //hash password sebelum disimpan 
-            existingUser.Password = ComputeSha256Hash(updateUser.Password);
-            //update profile
             existingUser.Email = updateUser.Email;
             SaveUsers();
 
@@ -314,7 +324,7 @@ namespace API.Controllers
             }
 
             // Temukan Kos yang ada yang cocok dengan nama Kos yang diperbarui di daftar Kos pengguna
-            var existingKos = existingUser.Kos?.Find(k => k.Nama == updatedKos.Nama);
+            var existingKos = existingUser.Kos?.Find(k => k.Id == updatedKos.Id);
             if (existingKos == null)
             {
                 // Mengembalikan respon NotFound jika Kos dengan nama yang diberikan tidak ditemukan
@@ -322,6 +332,7 @@ namespace API.Controllers
             }
 
             // Update kos properties dengan nilai dari Kos yang diperbarui
+            existingKos.Nama = updatedKos.Nama;
             existingKos.Harga = updatedKos.Harga;
             existingKos.Alamat = updatedKos.Alamat;
             existingKos.Kapasitas = updatedKos.Kapasitas;
@@ -358,9 +369,9 @@ namespace API.Controllers
             }
 
             // Hapus Kos yang ditemukan dari daftar Kos pengguna
-            user.Kos.Remove(kos);   
+            user.Kos.Remove(kos);
             //simpan perubahan pada data
-            SaveUsers(); 
+            SaveUsers();
 
             return Ok("Kos berhasil dihapus.");
         }
@@ -379,7 +390,7 @@ namespace API.Controllers
             }
 
             //Temukan data nama Kos dari data pengguna
-            var kos = user.Kos?.FirstOrDefault(k => k.Nama == kosNama );
+            var kos = user.Kos?.FirstOrDefault(k => k.Nama == kosNama);
             //kondisi jika nama nama kos tidak ada,atau kosong
             if (kos == null)
             {
@@ -390,7 +401,7 @@ namespace API.Controllers
             // batalkan sewa kos , jika nama kos ditemukan dari daftar Kos pengguna
             user.Kos.Remove(kos);
             //simpan perubahan pada data
-            SaveUsers(); 
+            SaveUsers();
 
             return Ok("Sewa kos berhasil dibatalkan.");
         }

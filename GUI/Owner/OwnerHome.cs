@@ -5,7 +5,7 @@ namespace GUI.Owner
 {
     public partial class OwnerHome : Form
     {
-        private static User akun;
+        private User akun;
         public OwnerHome(User user)
         {
             InitializeComponent();

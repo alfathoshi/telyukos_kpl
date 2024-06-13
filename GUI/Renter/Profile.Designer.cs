@@ -107,7 +107,6 @@
             RoleLabelPasien.Size = new Size(53, 30);
             RoleLabelPasien.TabIndex = 5;
             RoleLabelPasien.Text = "Role";
-            RoleLabelPasien.Click += RoleLabelPasien_Click;
             // 
             // EditEmail
             // 

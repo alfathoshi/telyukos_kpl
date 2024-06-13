@@ -101,7 +101,7 @@ namespace GUI
         {
             Login loginGui = new Login();
             loginGui.ShowDialog();
-
+            this.Close();
         }
 
         private void textBoxEmail_TextChanged(object sender, EventArgs e)

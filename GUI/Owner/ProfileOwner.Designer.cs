@@ -56,6 +56,7 @@
             EditButtonPenyewa.TabIndex = 16;
             EditButtonPenyewa.Text = "Update\r\nEmail\r\n";
             EditButtonPenyewa.UseVisualStyleBackColor = false;
+            EditButtonPenyewa.Click += EditButtonPenyewa_Click_1;
             // 
             // panel1
             // 
@@ -139,6 +140,7 @@
             changePass.TabIndex = 17;
             changePass.Text = "Change \r\nPassword";
             changePass.UseVisualStyleBackColor = false;
+            changePass.Click += changePass_Click_1;
             // 
             // pictureBox1
             // 

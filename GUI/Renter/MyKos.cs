@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Json;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Net.Http.Json;
 using telyukos.Model;
 
 namespace GUI.Renter
@@ -50,6 +40,65 @@ namespace GUI.Renter
             {
                 //jika data kos tidak ada kosong
                 MessageBox.Show("Tidak ditemukan data kos untuk pengguna saat ini.");
+            }
+        }
+
+
+        private async void BatalSewaButton_Click(object sender, EventArgs e)
+        {
+            // Pastikan Akun dan Kos diset dengan detail yang benar
+            var userEmail = Akun?.Email;
+            var kosNama = NamaLabel.Text; // Dengan asumsi kos nama ditampilkan di namaLabel
+
+
+
+            if (string.IsNullOrEmpty(userEmail) || string.IsNullOrEmpty(kosNama))
+            {
+                //kondisi jika nama email dan nama kos tidak valid
+                MessageBox.Show("User email or kos name is not available.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Tampilkan kotak dialog konfirmasi untuk batal sewa
+            var confirmResult = MessageBox.Show("Apakah Anda yakin ingin membatalkan sewa kos ini?", "Konfirmasi Batal Sewa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirmResult == DialogResult.Yes)
+            {
+                //mengecek response pada api di auth
+                HttpResponseMessage response = await httpClient.DeleteAsync($"api/Auth/cancel-rental/{userEmail}/{kosNama}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    //jika succes maka data masa sewa kos berhasil di batalkan
+                    HttpResponseMessage responseRenter = await httpClient.DeleteAsync($"api/Kos/{userEmail}/{kosNama}");
+                    if (responseRenter.IsSuccessStatusCode)
+                    {
+                        LoadUserMyKosPenyewa();
+                        MessageBox.Show("Sewa kos berhasil dibatalkan.", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Gagal menghapus user: " + responseRenter.StatusCode, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+
+                }
+                else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    //jika status data kos tidak sesuai
+                    MessageBox.Show("Kos tidak ditemukan.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    //kondisi jika email, dan data kos tidak valid
+                    MessageBox.Show("Gagal membatalkan sewa kos: " + response.StatusCode, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                if (Akun.Kos.Count == 0)
+                {
+                    NamaLabel.Text = "Null";
+                    HargaLabel.Text = "Null";
+                    AlamatLabel.Text = "Null";
+                    KapasitasLabel.Text = "Null";
+                }
             }
         }
     }

@@ -19,8 +19,43 @@ namespace GUI.Owner
             akun = user;
             loadDataKos();
             InitializeDataGridView();
+            InitializeComboBox();
             dataGridView1.SizeChanged += DataGridView1_SizeChanged;
             dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;
+        }
+
+        private void InitializeComboBox()
+        {
+            // Populate the ComboBox with price ranges
+
+            rangeHarga.SelectedIndex = 0; // Set default selection to "All"
+
+            rangeHarga.SelectedIndexChanged += ComboBoxPriceRange_SelectedIndexChanged;
+        }
+
+        private void ComboBoxPriceRange_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedRange = rangeHarga.SelectedItem.ToString();
+            IEnumerable<Kos> filteredKosList;
+
+            switch (selectedRange)
+            {
+                case "< 5,000,000":
+                    filteredKosList = listKos.Where(k => k.Harga >= 0 && k.Harga <= 5000000);
+                    break;
+                case "5,000,000 - 10,000,000":
+                    filteredKosList = listKos.Where(k => k.Harga >= 5000001 && k.Harga <= 10000000);
+                    break;
+                case "> 10,000,000":
+                    filteredKosList = listKos.Where(k => k.Harga >= 10000001);
+                    break;
+                default:
+                    filteredKosList = listKos; // Show all if "All" is selected
+                    break;
+            }
+
+            // Bind the filtered data to the DataGridView
+            dataGridView1.DataSource = filteredKosList.ToList();
         }
         private void InitializeDataGridView()
         {
@@ -46,16 +81,10 @@ namespace GUI.Owner
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 var selected = dataGridView1.SelectedRows[0].DataBoundItem as Kos;
-                if (selected != null)
-                {
-                    selectedKosDetailsLabel.Text = selected.Nama;
-                }
+
                 selectedKos = selected;
             }
-            else
-            {
-                selectedKosDetailsLabel.Text = "No Kos selected";
-            }
+
         }
 
         private void DataGridView1_SizeChanged(object sender, EventArgs e)

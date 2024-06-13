@@ -31,27 +31,15 @@ namespace GUI.Renter
                 UsernameLabelPasien.Text = Akun.Email;
             }
         }
-        private async void EditButtonPasien_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void RoleLabelPasien_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private async void EditButtonPenyewa_Click(object sender, EventArgs e)
         {
             string newEmail = EditEmail.Text;
+            string newPassword = Akun.Password;
+            string roleLama = Akun.Role;
 
-            // Buat objek User untuk mengubah password dan email
-            var user = new { Email = newEmail, Password = "", Role = "" };
+            // Buat objek User untuk mengubah password dan email.
+            User user = new User { Email = newEmail, Password = newPassword, Role = roleLama };
 
             // Buat permintaan API untuk mengubah password dan email.
             HttpResponseMessage response = await httpClient.PutAsJsonAsync("api/Auth/update-profile/", user);
@@ -59,13 +47,20 @@ namespace GUI.Renter
             //kondisi jika profile berhasil diubah.
             if (response.IsSuccessStatusCode)
             {
-                MessageBox.Show("Email berhasil diperbarui", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Profile Berhasil Diubah", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             //kondisi jika profile email saat login harus sesuai dengan saat sign up , agar dapat masuk kedalam profile 
             else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
             {
                 MessageBox.Show("Email tidak valid", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            //kondisi jika password yang diubah tidak valid.
+            else
+            {
+                MessageBox.Show("Gagal mengubah password: " + response.StatusCode, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            Akun = user;
+            LoadUserProfilePenyewa();
         }
 
         private void changePass_Click(object sender, EventArgs e)

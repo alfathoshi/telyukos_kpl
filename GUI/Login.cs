@@ -11,7 +11,7 @@ namespace GUI
 {
     public partial class Login : Form
     {
-        private static User Akun;
+        private static User Akun { get; set; } 
         private HttpClient httpClient;
         private static AuthState app = new AuthState();
 
@@ -90,13 +90,14 @@ namespace GUI
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+            //ini untuk load isi UI
         }
 
         private void switchSignUpPage_Click(object sender, EventArgs e)
         {
             SignUp signUpGui = new SignUp();
             signUpGui.ShowDialog();
+            this.Close();
         }
 
         private void switchForgotPasswordPage_Click(object sender, EventArgs e)
@@ -107,7 +108,7 @@ namespace GUI
 
         private void textBoxEmail_TextChanged(object sender, EventArgs e)
         {
-
+            //ini untuk event handler
         }
 
         private void guna2Button5_Click(object sender, EventArgs e)
